@@ -1,9 +1,35 @@
 
+let recommendations = [];
+
 // Event listener for page load
 window.addEventListener("load", function() {
     console.log('Page loaded.');
+    const title = document.querySelector("title");
+    if (title.innerHTML === "Recommendations - ") {
+        loadRecommendations();
+    }
     init();
 });
+
+// This will load only on recommendations page
+function loadRecommendations() {
+    fetch('recommendations.json')
+        .then(response => response.json())
+        .then(data => {
+            data.forEach(obj => {
+                let rec = {
+                    id: obj.id,
+                    author: obj.author,
+                    relationship: obj.relationship,
+                    recText: obj.recText
+                }
+                recommendations.push(rec);
+            });     
+
+    });
+    // console.log(recommendations);
+
+}
 
 // DOM code for page elements
 function init() {
@@ -16,13 +42,13 @@ function init() {
     tabTitle.innerHTML += "Caroline Jones | Web Developer";
 
 
-    /** HEADER CONTENT **/
+    /** HEADER **/
 
     const header = document.querySelector("header");
 
     header.innerHTML = `
         <nav class="nav-container container">
-            <h1>Caroline R. Jones &nbsp;|&nbsp; Web Developer</h1>
+            <h1>Caroline R. Jones</h1>
             <button type="button" class="nav-button" aria-label="Open dropdown nav">
                 <span class="tri-bar"></span>
                 <span class="tri-bar"></span>
@@ -76,4 +102,33 @@ function init() {
 
     navMenu.addEventListener("click", closeDropdown);
 
+
+    /** RECOMMENDATIONS **/
+
+    let recArea = document.querySelector("#rec-area");
+    displayRecommendations();
+
+    function displayRecommendations() {
+        console.log("Adding recommendations")
+        setTimeout(function() {
+            for (let i=0; i < recommendations.length; i++) {
+                console.log("Added rec " + i);
+                recArea.innerHTML += `
+                    <div class="rec-block">
+                        <p><span class="rec-name">${recommendations[i].author}</span><br />
+                        <span class="rec-role">${recommendations[i].relationship}</span></p>
+                        <p>${recommendations[i].recText}</p>
+                    </div>
+                `;
+            }
+        }, 200); // only needs a little delay
+    }
+    
+    /** FOOTER **/ 
+
+    const footer = document.querySelector("footer");
+
+    footer.innerHTML = `
+        <p class="off-white-text">Caroline R. Jones | Web Developer</p>
+    `;
 }

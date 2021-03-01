@@ -3,6 +3,7 @@ $secondary-color: #eee;
 $primary-font: "Barlow", sans-serif;
 $header-font: "Barlow", sans-serif;
 $accent-color: #56830e;
+$light-accent-color: #6ca314;
 $highlight-color: white;
 $navbar-height: 80px;
 
@@ -30,11 +31,9 @@ body {
 }
 
 header {
-    color: $secondary-color;
-    // background-color: $accent-color;
     height: 80px;
     width: 100vw;
-    margin: 0px 0px 30px;
+    margin: 0px;
     padding: 20px;
 }
 
@@ -42,19 +41,23 @@ main {
     display: flex;
     flex-direction: column;
     width: 100vw;
-    margin: 100px 10vw;
-    padding: 10px 20px;
+    margin: 0px;
+    padding: 30px 10vw;
 }
 
 footer {
+    background-color: $accent-color;
     width: 100vw;
+    height: 60px;
     margin: 0px;
-    padding: 10px 20px;
+    padding: 20px;
 }
 
 h1 {
-    font-weight: 400;
+    font-size: 2rem;
+    font-weight: 600;
     color: $accent-color;
+    margin: 0px 0px 30px;
 }
 
 h2 {
@@ -66,8 +69,24 @@ h4 {
     margin: 10px 0px 0px;
 }
 
+hr {
+    height: 2px;
+    margin: 10px 0px;
+}
+
 p {
+    font-size: 0.95rem;
     margin: 0px 15px 10px 0px;
+}
+
+a {
+    color: $accent-color;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+a:hover {
+    color: $light-accent-color;
 }
 
 
@@ -93,7 +112,30 @@ p {
     font-size: 2rem;
     text-transform: uppercase; 
     letter-spacing: 3px;
-    margin: 0px;
+    margin: 20px 0px;
+}
+
+.more-info {
+    font-style: italic;
+}
+
+
+.off-white-text {
+    color: $secondary-color;
+}
+
+.rec-block {
+    margin: 0px 0px 35px;
+}
+
+.rec-name {
+    font-weight: 600;
+    font-size: 1.4rem;
+}
+
+.rec-role {
+    font-weight: 200;
+    font-size: 1.1rem;
 }
 
 .project-block {
@@ -151,7 +193,6 @@ p {
 /**** NAV BAR ****/
 
 #navbar {
-    position: fixed;
     background-color: $primary-color;
     height: $navbar-height;
     left: 0;

@@ -20,10 +20,9 @@ body {
 }
 
 header {
-  color: #eee;
   height: 80px;
   width: 100vw;
-  margin: 0px 0px 30px;
+  margin: 0px;
   padding: 20px;
 }
 
@@ -36,19 +35,23 @@ main {
       -ms-flex-direction: column;
           flex-direction: column;
   width: 100vw;
-  margin: 100px 10vw;
-  padding: 10px 20px;
+  margin: 0px;
+  padding: 30px 10vw;
 }
 
 footer {
+  background-color: #56830e;
   width: 100vw;
+  height: 60px;
   margin: 0px;
-  padding: 10px 20px;
+  padding: 20px;
 }
 
 h1 {
-  font-weight: 400;
+  font-size: 2rem;
+  font-weight: 600;
   color: #56830e;
+  margin: 0px 0px 30px;
 }
 
 h2 {
@@ -60,8 +63,24 @@ h4 {
   margin: 10px 0px 0px;
 }
 
+hr {
+  height: 2px;
+  margin: 10px 0px;
+}
+
 p {
+  font-size: 0.95rem;
   margin: 0px 15px 10px 0px;
+}
+
+a {
+  color: #56830e;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #6ca314;
 }
 
 /**** IDs ****/
@@ -83,7 +102,29 @@ p {
   font-size: 2rem;
   text-transform: uppercase;
   letter-spacing: 3px;
-  margin: 0px;
+  margin: 20px 0px;
+}
+
+.more-info {
+  font-style: italic;
+}
+
+.off-white-text {
+  color: #eee;
+}
+
+.rec-block {
+  margin: 0px 0px 35px;
+}
+
+.rec-name {
+  font-weight: 600;
+  font-size: 1.4rem;
+}
+
+.rec-role {
+  font-weight: 200;
+  font-size: 1.1rem;
 }
 
 .project-block {
@@ -142,7 +183,6 @@ p {
 /**** ANIMATIONS ****/
 /**** NAV BAR ****/
 #navbar {
-  position: fixed;
   background-color: #333;
   height: 80px;
   left: 0;
