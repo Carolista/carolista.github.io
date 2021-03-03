@@ -31,7 +31,7 @@ function init() {
 
     const header = document.querySelector("header");
     header.innerHTML = `
-        <nav class="nav-container container">
+        <nav class="nav-container">
             <p id="header-name"><a class="inverted" href="/">Caroline R. Jones</a></p>
             <button type="button" class="nav-button" aria-label="Open dropdown nav">
                 <span class="tri-bar"></span>
@@ -220,7 +220,7 @@ function init() {
     function displayEducation() {
         setTimeout(function() {
             for (let i=0; i < educationData.length; i++) {
-                // TODO: move link to institution website to a property and redo HTML below
+                // FIXME: move link to institution website to a property and redo HTML below
                 // TODO: decide if using logos or not
                 edArea.innerHTML += `
                 <div class="content-block">                        
