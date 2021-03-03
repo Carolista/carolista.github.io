@@ -16,10 +16,20 @@ function init() {
     const tabTitle = document.querySelector("title");
     tabTitle.innerHTML += "Caroline Jones | Web Developer";
 
+
+    /** STYLE SHEETS & FONTS **/
+
+    const head = document.querySelector("head");
+    head.innerHTML += `
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps&family=Barlow:wght@200;400;600;800&display=swap" rel="stylesheet">
+    `
+
+
     /** HEADER **/
 
     const header = document.querySelector("header");
-
     header.innerHTML = `
         <nav class="nav-container container">
             <p id="header-name"><a class="inverted" href="/">Caroline R. Jones</a></p>
@@ -304,10 +314,9 @@ function init() {
     /** FOOTER **/ 
 
     const footer = document.querySelector("footer");
-
     footer.innerHTML = `
         <p class="off-white-text text-center">
-            &copy;2021 Caroline R. Jones &nbsp;&nbsp;&nbsp;&nbsp;
+            &copy; 2021 Caroline R. Jones &nbsp;&nbsp;&nbsp;&nbsp;
             St. Louis, MO &nbsp;&nbsp;&nbsp;&nbsp;
             <a class="inverted" href="https://www.linkedin.com/in/carolinerjones/" target="_blank">LinkedIn</a> &nbsp;|&nbsp; 
             <a class="inverted" href="https://www.hackerrank.com/Carolina49a" target="_blank">HackerRank</a> &nbsp;|&nbsp; 
@@ -315,5 +324,5 @@ function init() {
              
         </p>
     `;
-    
+
 }
