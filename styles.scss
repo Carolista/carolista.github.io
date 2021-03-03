@@ -2,6 +2,7 @@ $primary-color: #333;
 $secondary-color: #eee;
 $primary-font: "Barlow", sans-serif;
 $header-font: "Barlow", sans-serif;
+$title-font: "Oleo Script Swash Caps", cursive;
 $accent-color: #56830e;
 $light-accent-color: #6ca314;
 $highlight-color: white;
@@ -46,6 +47,8 @@ main {
 }
 
 footer {
+    display: flex;
+    flex-direction: column;
     background-color: $accent-color;
     width: 100vw;
     height: 60px;
@@ -57,7 +60,7 @@ h1 {
     font-size: 2rem;
     font-weight: 600;
     color: $accent-color;
-    margin: 0px 0px 30px;
+    margin: 25px 0px 30px;
 }
 
 h2 {
@@ -89,11 +92,22 @@ a:hover {
     color: $light-accent-color;
 }
 
+a.inverted {
+    color: $secondary-color;
+}
 
+a.inverted:hover {
+    color: $highlight-color;
+}
 
 /**** IDs ****/
 
-
+#header-name {
+    font-family: $title-font;
+    font-size: 2rem;
+    color: $secondary-color;
+    margin: 25px 0px 30px;
+}
 
 /**** CLASSES ****/
 
@@ -109,10 +123,9 @@ a:hover {
 .page-title {
     font-family: $header-font;
     font-weight: 600;
-    font-size: 2rem;
+    font-size: 1.6rem;
     text-transform: uppercase; 
-    letter-spacing: 3px;
-    margin: 20px 0px;
+    margin: 20px 0px 30px;
 }
 
 .more-info {
@@ -124,18 +137,18 @@ a:hover {
     color: $secondary-color;
 }
 
-.rec-block {
-    margin: 0px 0px 35px;
+.content-block {
+    margin: 0px 0px 40px;
 }
 
 .rec-name {
     font-weight: 600;
-    font-size: 1.4rem;
+    font-size: 1rem;
 }
 
 .rec-role {
     font-weight: 200;
-    font-size: 1.1rem;
+    font-size: 0.9rem;
 }
 
 .project-block {
@@ -183,6 +196,14 @@ a:hover {
     font-weight: 200;
 }
 
+.text-right {
+    text-align: right;
+}
+
+.text-center {
+    text-align: center;
+}
+
 
 /**** ANIMATIONS ****/
 
@@ -214,13 +235,13 @@ a:hover {
 
 .nav-link {
     color: $secondary-color;
-    transition: color 0.2s ease-in-out;
+    transition: color 0.8s ease-in-out;
     text-decoration: none;
     display: flex;
     font-weight: 400;
     align-items: center;
-    transition: background-color 0.2s ease-in-out,
-                color 0.2s ease-in-out;
+    transition: background-color 0.8s ease-in-out,
+                color 0.8s ease-in-out;
 }
 
 .nav-link {
@@ -251,11 +272,11 @@ a:hover {
 .tri-bar {
     display: block;
     width: 25px;
-    height: 4px;
-    margin: 2px;
-    transition: background-color 0.2s ease-in-out,
-                transform 0.2s ease-in-out,
-                opacity 0.2s ease-in-out;
+    height: 2px;
+    margin: 3px;
+    transition: background-color 0.5s ease-in-out,
+                transform 0.5s ease-in-out,
+                opacity 0.5s ease-in-out;
     background-color: $secondary-color;
 }
 
@@ -322,7 +343,7 @@ a:hover {
     max-height: none;
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 950px) {
     .nav-button {
         display: none;
     }

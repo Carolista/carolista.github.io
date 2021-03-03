@@ -40,6 +40,13 @@ main {
 }
 
 footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   background-color: #56830e;
   width: 100vw;
   height: 60px;
@@ -51,7 +58,7 @@ h1 {
   font-size: 2rem;
   font-weight: 600;
   color: #56830e;
-  margin: 0px 0px 30px;
+  margin: 25px 0px 30px;
 }
 
 h2 {
@@ -83,7 +90,22 @@ a:hover {
   color: #6ca314;
 }
 
+a.inverted {
+  color: #eee;
+}
+
+a.inverted:hover {
+  color: white;
+}
+
 /**** IDs ****/
+#header-name {
+  font-family: "Oleo Script Swash Caps", cursive;
+  font-size: 2rem;
+  color: #eee;
+  margin: 25px 0px 30px;
+}
+
 /**** CLASSES ****/
 .container {
   display: -webkit-box;
@@ -99,10 +121,9 @@ a:hover {
 .page-title {
   font-family: "Barlow", sans-serif;
   font-weight: 600;
-  font-size: 2rem;
+  font-size: 1.6rem;
   text-transform: uppercase;
-  letter-spacing: 3px;
-  margin: 20px 0px;
+  margin: 20px 0px 30px;
 }
 
 .more-info {
@@ -113,18 +134,18 @@ a:hover {
   color: #eee;
 }
 
-.rec-block {
-  margin: 0px 0px 35px;
+.content-block {
+  margin: 0px 0px 40px;
 }
 
 .rec-name {
   font-weight: 600;
-  font-size: 1.4rem;
+  font-size: 1rem;
 }
 
 .rec-role {
   font-weight: 200;
-  font-size: 1.1rem;
+  font-size: 0.9rem;
 }
 
 .project-block {
@@ -180,6 +201,14 @@ a:hover {
   font-weight: 200;
 }
 
+.text-right {
+  text-align: right;
+}
+
+.text-center {
+  text-align: center;
+}
+
 /**** ANIMATIONS ****/
 /**** NAV BAR ****/
 #navbar {
@@ -211,8 +240,8 @@ a:hover {
 
 .nav-link {
   color: #eee;
-  -webkit-transition: color 0.2s ease-in-out;
-  transition: color 0.2s ease-in-out;
+  -webkit-transition: color 0.8s ease-in-out;
+  transition: color 0.8s ease-in-out;
   text-decoration: none;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -221,8 +250,8 @@ a:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  -webkit-transition: background-color 0.8s ease-in-out, color 0.8s ease-in-out;
+  transition: background-color 0.8s ease-in-out, color 0.8s ease-in-out;
 }
 
 .nav-link {
@@ -264,12 +293,12 @@ a:hover {
 .tri-bar {
   display: block;
   width: 25px;
-  height: 4px;
-  margin: 2px;
-  -webkit-transition: background-color 0.2s ease-in-out, opacity 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
-  transition: background-color 0.2s ease-in-out, opacity 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
-  transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
-  transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out, opacity 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
+  height: 2px;
+  margin: 3px;
+  -webkit-transition: background-color 0.5s ease-in-out, opacity 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+  transition: background-color 0.5s ease-in-out, opacity 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+  transition: background-color 0.5s ease-in-out, transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  transition: background-color 0.5s ease-in-out, transform 0.5s ease-in-out, opacity 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
   background-color: #eee;
 }
 
@@ -346,7 +375,7 @@ a:hover {
   max-height: none;
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 950px) {
   .nav-button {
     display: none;
   }
