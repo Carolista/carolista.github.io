@@ -2,11 +2,11 @@
     {
         "id": 0,
         "employer": "LaunchCode",
-        "period": "Aug 2020 - Present",
+        "period": "August 2020 - Present",
         "title": "Tech Leadership Fellow",
         "type": "Freelance",
         "location": "St. Louis, MO",
-        "desc": "Mentoring students in the intensive CoderGirl program (WebDev/FrontEnd track). Unit 1 covered JavaScript, HTML, CSS, consuming APIs, the DOM, TypeScript, and Angular, including skills in unit testing, git workflow, and more. Unit 2 takes students on a deep dive into Angular and introduces Bootstrap. In Liftoff, the course focuses on career prep with resume-building, behavioral and technical interview skills, and a capstone project using AGILE methodology.</p> <p>Designed 45+ practice problems/projects for students (see linked document) to complement the Unit 1 LaunchCode curriculum and help students prepare for more difficult graded assignments. These exercises are also now in use by students in LaunchCode's LC101 and CodeCamp programs. More exercises are being added regularly.</p> <p class='more-info'>Related: <a href='https://tinyurl.com/y3bn6st4' target='_blank'>WebDev Unit 1 Practice for LaunchCoders</a>"
+        "desc": "Mentoring students in the intensive CoderGirl program (WebDev/FrontEnd track). Unit 1 covered JavaScript, HTML, CSS, consuming APIs, the DOM, TypeScript, and Angular, including skills in unit testing, git workflow, and more. Unit 2 takes students on a deep dive into Angular and introduces Bootstrap. In Liftoff, the course focuses on career prep with resume-building, behavioral and technical interview skills, and a capstone project using Agile methodology.</p> <p>Designed 45+ practice problems/projects for students (see linked document) to complement the Unit 1 LaunchCode curriculum and help students prepare for more difficult graded assignments. These exercises are also now in use by students in LaunchCode's LC101 and CodeCamp programs. More exercises are being added regularly.</p> <p class='more-info'>Related: <a href='https://tinyurl.com/y3bn6st4' target='_blank'>WebDev Unit 1 Practice for LaunchCoders</a>"
     },
     {
         "id": 1,

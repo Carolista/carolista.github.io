@@ -141,6 +141,28 @@ a.inverted:hover {
     margin: 0px 0px 40px;
 }
 
+.employer {
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+
+.job-title {
+    font-weight: 600;
+    font-size: 1rem;
+    color: $accent-color;
+}
+
+.institution {
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+
+.degree {
+    font-weight: 600;
+    font-size: 1rem;
+    color: $accent-color;
+}
+
 .rec-name {
     font-weight: 600;
     font-size: 1rem;
@@ -150,6 +172,8 @@ a.inverted:hover {
     font-weight: 200;
     font-size: 0.9rem;
 }
+
+
 
 .project-block {
     display: flex;

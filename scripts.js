@@ -187,7 +187,10 @@ function init() {
             for (let i=0; i < experienceData.length; i++) {
                 expArea.innerHTML += `
                     <div class="content-block">                        
-
+                        <p><span class="employer">${experienceData[i].employer}</span><br />
+                        ${experienceData[i].type} &nbsp;&bull;&nbsp; ${experienceData[i].location} &nbsp;&bull;&nbsp; ${experienceData[i].period}</p>
+                        <p class="job-title">${experienceData[i].title}</p>
+                        <p>${experienceData[i].desc}</p>
                     </div>
                 `;
             }
@@ -217,10 +220,15 @@ function init() {
     function displayEducation() {
         setTimeout(function() {
             for (let i=0; i < educationData.length; i++) {
+                // TODO: move link to institution website to a property and redo HTML below
+                // TODO: decide if using logos or not
                 edArea.innerHTML += `
-                    <div class="content-block">                        
-
-                    </div>
+                <div class="content-block">                        
+                    <p><span class="institution">${educationData[i].institution}</span><br />
+                    ${educationData[i].gradDate}</p>
+                    <p class="degree">${educationData[i].degree}</p>
+                <p>${educationData[i].desc}</p>
+            </div>
                 `;
             }
         }, 200); // only needs a slight delay
