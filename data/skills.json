@@ -7,7 +7,7 @@
     },
     {
         "id": 1,
-        "skillName": "Bootstrap",
+        "skillName": "Bootstrap 4",
         "category": "Frameworks",
         "type": "Tech"
     },
@@ -272,97 +272,91 @@
     {
         "id": 45,
         "skillName": "Graphic Design",
-        "category": "Industry Knowledge",
+        "category": "Knowledge",
         "type": "General"
     },
     {
         "id": 46,
         "skillName": "Publication Design",
-        "category": "Industry Knowledge",
+        "category": "Knowledge",
         "type": "General"
     },
     {
         "id": 47,
         "skillName": "Technical Writing",
-        "category": "Industry Knowledge",
+        "category": "Knowledge",
         "type": "General"
     },
     {
         "id": 48,
         "skillName": "Grant Writing",
-        "category": "Industry Knowledge",
+        "category": "Knowledge",
         "type": "General"
     },
     {
         "id": 49,
         "skillName": "Copy Writing",
-        "category": "Industry Knowledge",
-        "type": "General"
-    },
-    {
-        "id": 50,
-        "skillName": "Publication Design",
-        "category": "Industry Knowledge",
+        "category": "Knowledge",
         "type": "General"
     },
     {
         "id": 51,
         "skillName": "Budgets & Accounting",
-        "category": "Industry Knowledge",
+        "category": "Knowledge",
         "type": "General"
     },
     {
         "id": 52,
         "skillName": "Curriculum Development",
-        "category": "Industry Knowledge",
+        "category": "Knowledge",
         "type": "General"
     },
     {
         "id": 53,
         "skillName": "UI Design",
-        "category": "Industry Knowledge",
+        "category": "Knowledge",
         "type": "Tech"
     },
     {
         "id": 54,
         "skillName": "UX Design",
-        "category": "Industry Knowledge",
+        "category": "Knowledge",
         "type": "Tech"
     },
     {
         "id": 55,
         "skillName": "Agile Methodologies",
-        "category": "Industry Knowledge",
+        "category": "Knowledge",
         "type": "Tech"
     },
     {
         "id": 56,
         "skillName": "Data Collection & Analysis",
-        "category": "Industry Knowledge",
+        "category": "Knowledge",
         "type": "Tech"
     },
     {
         "id": 57,
         "skillName": "Writing User Stories",
-        "category": "Industry Knowledge",
+        "category": "Knowledge",
         "type": "Tech"
     },
     {
         "id": 58,
         "skillName": "Test-Driven Development",
-        "category": "Industry Knowledge",
+        "category": "Knowledge",
         "type": "Tech"
     },
     {
         "id": 59,
         "skillName": "Web Design",
-        "category": "Industry Knowledge",
+        "category": "Knowledge",
         "type": "Tech"
     },
     {
         "id": 60,
         "skillName": "Web Development",
-        "category": "Industry Knowledge",
+        "category": "Knowledge",
         "type": "Tech"
     }
 ]

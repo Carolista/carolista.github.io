@@ -63,6 +63,11 @@ h1 {
 
 h2 {
   font-weight: 600;
+  margin: 10px 0px 30px;
+}
+
+h3 {
+  margin: 0px 0px 10px;
 }
 
 h4 {
@@ -129,6 +134,14 @@ a.inverted:hover {
           flex-direction: column;
 }
 
+.w-25 {
+  width: 25%;
+}
+
+.w-33 {
+  width: 33%;
+}
+
 .page-title {
   font-family: "Barlow", sans-serif;
   font-weight: 600;
@@ -146,7 +159,9 @@ a.inverted:hover {
 }
 
 .content-block {
-  margin: 0px 0px 40px;
+  margin: 0px 0px 50px;
+  border-left: 8px #56830e solid;
+  padding-left: 15px;
 }
 
 .employer {
@@ -169,6 +184,10 @@ a.inverted:hover {
   font-weight: 600;
   font-size: 1rem;
   color: #56830e;
+}
+
+.skill-name {
+  margin: 0px 0px 5px;
 }
 
 .rec-name {

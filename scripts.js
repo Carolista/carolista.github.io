@@ -112,7 +112,13 @@ function init() {
     let projectArea = document.querySelector("#project-area");
     let expArea = document.querySelector("#exp-area");
     let edArea = document.querySelector("#ed-area");
-    let skillsArea = document.querySelector("#skills-area");
+    let techFrameworksArea = document.querySelector("#tech-frameworks-area");
+    let techLanguagesArea = document.querySelector("#tech-languages-area");
+    let techToolsArea = document.querySelector("#tech-tools-area");
+    let techKnowledgeArea = document.querySelector("#tech-knowledge-area");
+    let generalToolsArea = document.querySelector("#general-tools-area");
+    let generalStrengthsArea = document.querySelector("#general-strengths-area");
+    let generalKnowledgeArea = document.querySelector("#general-knowledge-area");
     let recArea = document.querySelector("#rec-area");
 
     // Determine which data should be loaded, if any
@@ -272,12 +278,44 @@ function init() {
 
     function displaySkills() {
         setTimeout(function() {
-            for (let i=0; i < skillsData.length; i++) {
-                skillsArea.innerHTML += `
-                    <div class="content-block">                        
-
-                    </div>
-                `;
+            for (group in skillsData) {
+                skillsData[group].sort((a, b) => a.skillName > b.skillName ? 1 : -1);
+                for (let i=0; i < skillsData[group].length; i++) {
+                    if (skillsData[group][i].type === "Tech") {
+                        if (skillsData[group][i].category === "Frameworks") {
+                            techFrameworksArea.innerHTML += `
+                                <p class="skill-name">${skillsData[group][i].skillName}</p>
+                            `
+                        } else if (skillsData[group][i].category === "Languages") {
+                            techLanguagesArea.innerHTML += `
+                                <p class="skill-name">${skillsData[group][i].skillName}</p>
+                            `
+                        } else if (skillsData[group][i].category === "Tools") {
+                            techToolsArea.innerHTML += `
+                                <p class="skill-name">${skillsData[group][i].skillName}</p>
+                            `
+                        } else if (skillsData[group][i].category === "Knowledge") {
+                            techKnowledgeArea.innerHTML += `
+                                <p class="skill-name">${skillsData[group][i].skillName}</p>
+                            `
+                        }
+                    } else if (skillsData[group][i].type === "General") {
+                        if (skillsData[group][i].category === "Tools") {
+                            generalToolsArea.innerHTML += `
+                                <p class="skill-name">${skillsData[group][i].skillName}</p>
+                            `
+                        } else if (skillsData[group][i].category === "Strengths") {
+                            generalStrengthsArea.innerHTML += `
+                                <p class="skill-name">${skillsData[group][i].skillName}</p>
+                            `
+                        } else if (skillsData[group][i].category === "Knowledge") {
+                            generalKnowledgeArea.innerHTML += `
+                                <p class="skill-name">${skillsData[group][i].skillName}</p>
+                            `
+                        }
+                    }
+                }
+                
             }
         }, 200); // only needs a slight delay
     }
