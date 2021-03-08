@@ -13,7 +13,7 @@ function init() {
 
     /** TAB TITLE **/
 
-    const tabTitle = document.querySelector("title");
+    let tabTitle = document.querySelector("title");
     tabTitle.innerHTML += "Caroline Jones | Web Developer";
 
 
@@ -178,8 +178,14 @@ function init() {
                 // TODO: create responsive gallery of all projects not in progress
                 if (! projectData[i].inProgress) {
                     projectArea.innerHTML += `
-                        <div class="content-block">                        
-                        </div>
+                            <div class="gallery-column">
+                                <div class="project-content">
+                                <a href="project-details.html?id=${projectData[i].id}" target="_blank"><img class="project-image" src="images/${projectData[i].images[0]}"></a>
+                                    <h3>${projectData[i].title}</h3>
+                                    <p>${projectData[i].subtitle}</p>
+                                    <p class="text-right project-link"><a href="project-details.html?id=${projectData[i].id}" target="_blank">View Details &gt;</a></p>
+                                </div>
+                            </div>
                     `;
                 }
             }
@@ -199,8 +205,9 @@ function init() {
                 }
             }
             let currentProject = projectData[projectIndex];
-            // Add project name to front of tab title
-            tabTitle.innerHTML = currentProject["title"] + " - " + tabTitle.innerHTML;
+            // FIXME: Add project name to front of tab title - tab is not updating
+            tabTitle.innerHTML = currentProject.title + " - " + tabTitle.innerHTML;
+            console.log(tabTitle); // but it is correct in the console
             // Create bullet points from noteworthy array
             let bullets = "";
             for (let i=0; i<currentProject.noteworthy.length; i++) {

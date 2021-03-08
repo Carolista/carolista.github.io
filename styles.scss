@@ -1,5 +1,6 @@
 $primary-color: #333;
 $secondary-color: #eee;
+$muted-color: #ccc;
 $primary-font: "Barlow", sans-serif;
 $header-font: "Barlow", sans-serif;
 $title-font: "Oleo Script Swash Caps", cursive;
@@ -219,8 +220,6 @@ a.inverted:hover {
     font-size: 0.9rem;
 }
 
-
-
 .project-block {
     display: flex;
     flex-direction: row;  /* 1 column for images, 1 column for text */
@@ -273,12 +272,6 @@ a.inverted:hover {
 .text-center {
     text-align: center;
 }
-
-
-/**** ANIMATIONS ****/
-
-
-
 
 
 /**** NAV BAR ****/
@@ -443,4 +436,85 @@ a.inverted:hover {
     #navbar .nav-link:last-child {
         margin-right: 0;
     }
+}
+
+
+/**** GALLERY ****/
+
+// space between project blocks
+.gallery-row,
+.gallery-row > .gallery-column {
+  padding: 8px;
+}
+
+// default for wide layout - create three columns 
+.gallery-column {
+  float: left;
+  width: 33%;
+}
+
+// clear floats
+.gallery-row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+// Link at bottom
+.project-link {
+    margin-top: 10px;
+}
+
+// container for each project in gallery
+.project-content {
+  background-color: white;
+  height: calc(80vw / 3.2);
+  padding: 15px;
+}
+
+.project-image {
+    width: 100%;
+    border: 1px solid $muted-color;
+}
+
+// responsive to width - create 2 columns 
+@media screen and (max-width: 1200px) {
+  .gallery-column {
+    width: 50%;
+  }
+  .project-content {
+      height: calc(80vw / 2.3 );
+  }
+}
+
+
+// responsive to width - create 2 columns 
+@media screen and (max-width: 1100px) {
+    .gallery-column {
+      width: 50%;
+    }
+    .project-content {
+        height: calc(80vw / 2.2 );
+    }
+}
+
+// responsive to width - create 2 columns 
+@media screen and (max-width: 1000px) {
+    .gallery-column {
+      width: 50%;
+    }
+    .project-content {
+        height: calc(80vw / 2.1 );
+    }
+}
+
+
+// responsive to width - create a single column
+@media screen and (max-width: 800px) {
+  .gallery-column {
+    width: 100%;
+  }
+  .project-content {
+      height: auto;
+  }
 }
