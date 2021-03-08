@@ -111,6 +111,18 @@ a.inverted:hover {
   margin: 25px 0px 30px;
 }
 
+#project-title {
+  margin-bottom: 5px;
+}
+
+#project-subtitle {
+  margin-bottom: 15px;
+}
+
+#project-links {
+  margin: 20px 0px;
+}
+
 /**** CLASSES ****/
 .container {
   display: -webkit-box;
@@ -162,6 +174,14 @@ a.inverted:hover {
   margin: 0px 0px 50px;
   border-left: 8px #56830e solid;
   padding-left: 15px;
+}
+
+.bullet-points {
+  margin-left: 35px;
+}
+
+.project-section {
+  margin: 20px 0px 5px;
 }
 
 .employer {

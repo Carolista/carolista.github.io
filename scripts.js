@@ -17,6 +17,7 @@ function init() {
     tabTitle.innerHTML += "Caroline Jones | Web Developer";
 
 
+
     /** STYLE SHEETS & FONTS **/
 
     const head = document.querySelector("head");
@@ -52,9 +53,12 @@ function init() {
     `;
 
 
+
     /** NAV BAR **/
 
     // TODO: Add event listeners to highlight current page on navbar
+    // FIXME: remove fade-in upon page loading
+    // FIXME: change up colors
 
     const navbar = document.getElementById("navbar");
     const navButton = navbar.querySelector(".nav-button");
@@ -87,10 +91,11 @@ function init() {
     navMenu.addEventListener("click", closeDropdown);
 
 
+
     /** MAIN **/
 
     /*
-        Everything below controls the contents with the <main> element of each page, but data from JSON will only load for the matching page accessing this file.
+        Everything below controls the contents with the <main> element of each page, but data from JSON will only load for the matching page.
     */
 
     // Arrays to hold any data loaded
@@ -110,6 +115,7 @@ function init() {
     
     // DOM elements for each page where content should be displayed
     let projectArea = document.querySelector("#project-area");
+    let detailArea = document.querySelector("#detail-area");
     let expArea = document.querySelector("#exp-area");
     let edArea = document.querySelector("#ed-area");
     let techFrameworksArea = document.querySelector("#tech-frameworks-area");
@@ -123,7 +129,7 @@ function init() {
 
     // Determine which data should be loaded, if any
     function loadAndDisplayData() {
-        if (tabTitle.innerHTML.toLowerCase().includes("projects")) {
+        if (tabTitle.innerHTML.toLowerCase().includes("project")) { // for both gallery & detail pages
             loadProjects();
         } else if (tabTitle.innerHTML.toLowerCase().includes("experience")) {
             loadExperience();
@@ -143,27 +149,87 @@ function init() {
             .then(data => {
                 data.forEach(obj => {
                     let project = {
-                        // TODO: set up property transfers once JSON is created
-                        // id: obj.id,
-                        // author: obj.author,
-                        // relationship: obj.relationship,
-                        // recText: obj.recText
+                        id: obj.id,
+                        title: obj.title,
+                        subtitle: obj.subtitle,
+                        desc: obj.desc,
+                        tech: obj.tech,
+                        noteworthy: obj.noteworthy,
+                        demo: { type: obj.demo.type, url: obj.demo.url},
+                        code: { type: obj.code.type, url: obj.code.url},
+                        images: obj.images,
+                        inProgress: obj.inProgress
                     }
                     projectData.push(project);
                 });     
         });
-        displayProjects();
+        // Determine which information to display (full gallery or detail)
+        if (tabTitle.innerHTML.toLowerCase().includes("projects")) {
+            displayProjects();
+        } else {
+            displayProjectDetail();
+        }
+        
     }
 
     function displayProjects() {
         setTimeout(function() {
             for (let i=0; i < projectData.length; i++) {
-                projectArea.innerHTML += `
-                    <div class="content-block">                        
-
-                    </div>
-                `;
+                // TODO: create responsive gallery of all projects not in progress
+                if (! projectData[i].inProgress) {
+                    projectArea.innerHTML += `
+                        <div class="content-block">                        
+                        </div>
+                    `;
+                }
             }
+        }, 200); // only needs a slight delay
+    }
+
+    function displayProjectDetail() {
+        setTimeout(function() {
+            // Get query parameter to get id number (index)
+            let param = new URLSearchParams(window.location.search);
+            let projectId = param.get('id');
+            let projectIndex;
+            //Get index from array based on project id
+            for (let j=0; j < projectData.length; j++) {
+                if (projectData[j].id === Number(projectId)) {
+                    projectIndex = j;
+                }
+            }
+            let currentProject = projectData[projectIndex];
+            // Add project name to front of tab title
+            tabTitle.innerHTML = currentProject["title"] + " - " + tabTitle.innerHTML;
+            // Create bullet points from noteworthy array
+            let bullets = "";
+            for (let i=0; i<currentProject.noteworthy.length; i++) {
+                bullets += `
+                    <li>${currentProject.noteworthy[i]}</li>
+                `
+            }
+            // Create links
+            let links = "";
+            if (currentProject.demo.url !== "") {
+                links += `<b>Demo:</b> <a href="${currentProject.demo.url}" target="_blank">${currentProject.demo.type}</a>`;
+            }
+            if (currentProject.demo.url !== "" && currentProject.code.url !== "") {
+                links += ` &nbsp;&#124;&nbsp; `;
+            }
+            if (currentProject.code.url !== "") {
+                links += `<b>Code:</b> <a href="${currentProject.code.url}" target="_blank">${currentProject.code.type}</a>`;
+            }
+            // Assemble all HTML for project details
+            detailArea.innerHTML = `
+                <h1 id="project-title" class="page-title">${currentProject.title}</h1>
+                <h3 id="project-subtitle">${currentProject.subtitle}</h3>
+                <p>${currentProject.desc}</p>
+                <h4 class="project-section">Tech Stack</h4>
+                <p>${currentProject.tech}</p>
+                <h4 class="project-section">Noteworthy </h4>
+                <ul class="bullet-points">${bullets}</ul>
+                <p id="project-links">${links}</p>
+            `
         }, 200); // only needs a slight delay
     }
 

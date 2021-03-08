@@ -105,6 +105,7 @@ a.inverted:hover {
     color: $highlight-color;
 }
 
+
 /**** IDs ****/
 
 #header-name {
@@ -113,6 +114,19 @@ a.inverted:hover {
     color: $secondary-color;
     margin: 25px 0px 30px;
 }
+
+#project-title {
+    margin-bottom: 5px;
+}
+
+#project-subtitle {
+    margin-bottom: 15px;
+}
+
+#project-links {
+    margin: 20px 0px;
+}
+
 
 /**** CLASSES ****/
 
@@ -159,6 +173,14 @@ a.inverted:hover {
     margin: 0px 0px 50px;
     border-left: 8px $accent-color solid;
     padding-left: 15px;
+}
+
+.bullet-points {
+    margin-left: 35px;
+}
+
+.project-section {
+    margin: 20px 0px 5px;
 }
 
 .employer {
