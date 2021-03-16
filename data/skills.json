@@ -1,0 +1,362 @@
+[
+    {
+        "id": 0,
+        "skillName": "Angular 10",
+        "category": "Frameworks",
+        "type": "Tech"
+    },
+    {
+        "id": 1,
+        "skillName": "Bootstrap 4",
+        "category": "Frameworks",
+        "type": "Tech"
+    },
+    {
+        "id": 2,
+        "skillName": "Mule 4",
+        "category": "Frameworks",
+        "type": "Tech"
+    },
+    {
+        "id": 3,
+        "skillName": "Spring Boot",
+        "category": "Frameworks",
+        "type": "Tech"
+    },
+    {
+        "id": 4,
+        "skillName": "MySQL",
+        "category": "Databases",
+        "type": "Tech"
+    },
+    {
+        "id": 5,
+        "skillName": "MS SQL Server",
+        "category": "Databases",
+        "type": "Tech"
+    },
+    {
+        "id": 6,
+        "skillName": "JavaScript",
+        "category": "Languages",
+        "type": "Tech"
+    },
+    {
+        "id": 7,
+        "skillName": "TypeScript",
+        "category": "Languages",
+        "type": "Tech"
+    },
+    {
+        "id": 8,
+        "skillName": "HTML5",
+        "category": "Languages",
+        "type": "Tech"
+    },
+    {
+        "id": 9,
+        "skillName": "CSS3",
+        "category": "Languages",
+        "type": "Tech"
+    },
+    {
+        "id": 10,
+        "skillName": "SCSS",
+        "category": "Languages",
+        "type": "Tech"
+    },
+    {
+        "id": 11,
+        "skillName": "Python",
+        "category": "Languages",
+        "type": "Tech"
+    },
+    {
+        "id": 12,
+        "skillName": "Java 13",
+        "category": "Languages",
+        "type": "Tech"
+    },
+    {
+        "id": 13,
+        "skillName": "DataWeave 2.0",
+        "category": "Languages",
+        "type": "Tech"
+    },
+    {
+        "id": 14,
+        "skillName": "RAML",
+        "category": "Languages",
+        "type": "Tech"
+    },
+    {
+        "id": 15,
+        "skillName": "XML",
+        "category": "Languages",
+        "type": "Tech"
+    },
+    {
+        "id": 16,
+        "skillName": "Git",
+        "category": "Tools",
+        "type": "Tech"
+    },
+    {
+        "id": 17,
+        "skillName": "GitHub",
+        "category": "Tools",
+        "type": "Tech"
+    },
+    {
+        "id": 18,
+        "skillName": "Anypoint Studio",
+        "category": "Tools",
+        "type": "Tech"
+    },
+    {
+        "id": 19,
+        "skillName": "Visual Studio Code",
+        "category": "Tools",
+        "type": "Tech"
+    },
+    {
+        "id": 20,
+        "skillName": "IntelliJ IDEA",
+        "category": "Tools",
+        "type": "Tech"
+    },
+    {
+        "id": 21,
+        "skillName": "Node.js",
+        "category": "Tools",
+        "type": "Tech"
+    },
+    {
+        "id": 22,
+        "skillName": "NPM",
+        "category": "Tools",
+        "type": "Tech"
+    },
+    {
+        "id": 23,
+        "skillName": "Gradle",
+        "category": "Tools",
+        "type": "Tech"
+    },
+    {
+        "id": 24,
+        "skillName": "Maven",
+        "category": "Tools",
+        "type": "Tech"
+    },
+    {
+        "id": 25,
+        "skillName": "Thymeleaf",
+        "category": "Tools",
+        "type": "Tech"
+    },
+    {
+        "id": 26,
+        "skillName": "Jasmine",
+        "category": "Tools",
+        "type": "Tech"
+    },
+    {
+        "id": 27,
+        "skillName": "JUnit",
+        "category": "Tools",
+        "type": "Tech"
+    },
+    {
+        "id": 28,
+        "skillName": "Hibernate",
+        "category": "Tools",
+        "type": "Tech"
+    },
+    {
+        "id": 29,
+        "skillName": "Microsoft Office Pro",
+        "category": "Tools",
+        "type": "General"
+    },
+    {
+        "id": 30,
+        "skillName": "Adobe InDesign",
+        "category": "Tools",
+        "type": "General"
+    },
+    {
+        "id": 31,
+        "skillName": "Adobe Acrobat Pro",
+        "category": "Tools",
+        "type": "General"
+    },
+    {
+        "id": 32,
+        "skillName": "Adobe Illustrator",
+        "category": "Tools",
+        "type": "General"
+    },
+    {
+        "id": 33,
+        "skillName": "Adobe Photoshop",
+        "category": "Tools",
+        "type": "General"
+    },
+    {
+        "id": 34,
+        "skillName": "GIMP",
+        "category": "Tools",
+        "type": "General"
+    },
+    {
+        "id": 35,
+        "skillName": "Problem Solving",
+        "category": "Strengths",
+        "type": "General"
+    },
+    {
+        "id": 36,
+        "skillName": "Teaching",
+        "category": "Strengths",
+        "type": "General"
+    },
+    {
+        "id": 37,
+        "skillName": "Visual Communication",
+        "category": "Strengths",
+        "type": "General"
+    },
+    {
+        "id": 38,
+        "skillName": "Communication",
+        "category": "Strengths",
+        "type": "General"
+    },
+    {
+        "id": 39,
+        "skillName": "Attention to Detail",
+        "category": "Strengths",
+        "type": "General"
+    },
+    {
+        "id": 40,
+        "skillName": "Big Picture View",
+        "category": "Strengths",
+        "type": "General"
+    },
+    {
+        "id": 41,
+        "skillName": "Team Leadership",
+        "category": "Strengths",
+        "type": "General"
+    },
+    {
+        "id": 42,
+        "skillName": "Analytical Thinking",
+        "category": "Strengths",
+        "type": "General"
+    },
+    {
+        "id": 43,
+        "skillName": "Versatility",
+        "category": "Strengths",
+        "type": "General"
+    },
+    {
+        "id": 44,
+        "skillName": "Mentoring",
+        "category": "Strengths",
+        "type": "General"
+    },
+    {
+        "id": 45,
+        "skillName": "Graphic Design",
+        "category": "Knowledge",
+        "type": "General"
+    },
+    {
+        "id": 46,
+        "skillName": "Publication Design",
+        "category": "Knowledge",
+        "type": "General"
+    },
+    {
+        "id": 47,
+        "skillName": "Technical Writing",
+        "category": "Knowledge",
+        "type": "General"
+    },
+    {
+        "id": 48,
+        "skillName": "Grant Writing",
+        "category": "Knowledge",
+        "type": "General"
+    },
+    {
+        "id": 49,
+        "skillName": "Copy Writing",
+        "category": "Knowledge",
+        "type": "General"
+    },
+    {
+        "id": 51,
+        "skillName": "Budgets & Accounting",
+        "category": "Knowledge",
+        "type": "General"
+    },
+    {
+        "id": 52,
+        "skillName": "Curriculum Development",
+        "category": "Knowledge",
+        "type": "General"
+    },
+    {
+        "id": 53,
+        "skillName": "UI Design",
+        "category": "Knowledge",
+        "type": "Tech"
+    },
+    {
+        "id": 54,
+        "skillName": "UX Design",
+        "category": "Knowledge",
+        "type": "Tech"
+    },
+    {
+        "id": 55,
+        "skillName": "Agile Methodologies",
+        "category": "Knowledge",
+        "type": "Tech"
+    },
+    {
+        "id": 56,
+        "skillName": "Data Collection & Analysis",
+        "category": "Knowledge",
+        "type": "Tech"
+    },
+    {
+        "id": 57,
+        "skillName": "Writing User Stories",
+        "category": "Knowledge",
+        "type": "Tech"
+    },
+    {
+        "id": 58,
+        "skillName": "Test-Driven Development",
+        "category": "Knowledge",
+        "type": "Tech"
+    },
+    {
+        "id": 59,
+        "skillName": "Web Design",
+        "category": "Knowledge",
+        "type": "Tech"
+    },
+    {
+        "id": 60,
+        "skillName": "Web Development",
+        "category": "Knowledge",
+        "type": "Tech"
+    }
+]
