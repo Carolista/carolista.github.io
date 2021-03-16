@@ -68,7 +68,7 @@
         "noteworthy": [],
         "demo": { "type": "Try it now!", "url": "https://carolista.github.io/LC-Form-Basics/"},
         "code": { "type": "GitHub", "url": "https://github.com/Carolista/LC-Form-Basics"},
-        "images": [],
+        "images": ["this-week.png"],
         "inProgress": false
     }
 ]

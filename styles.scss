@@ -7,7 +7,6 @@ $title-font: "Oleo Script Swash Caps", cursive;
 $accent-color: #56830e;
 $light-accent-color: #6ca314;
 $highlight-color: white;
-$navbar-height: 80px;
 
 /**** DO NOT EDIT CSS FILE - JUST SCSS ****/
 
@@ -120,6 +119,15 @@ a.inverted:hover {
     margin-bottom: 5px;
 }
 
+// #project-title {
+//     margin-top: 20px;
+//     color: red;
+// }
+
+// #project-detail-title {
+//     margin-bottom: 5px;
+// }
+
 #project-subtitle {
     margin-bottom: 15px;
 }
@@ -127,6 +135,12 @@ a.inverted:hover {
 #project-links {
     margin: 20px 0px;
 }
+
+// Link at bottom of each project block on gallery page
+// #project-link {
+//     position: absolute;
+//     bottom: 0;
+// }
 
 
 /**** CLASSES ****/
@@ -220,36 +234,36 @@ a.inverted:hover {
     font-size: 0.9rem;
 }
 
-.project-block {
-    display: flex;
-    flex-direction: row;  /* 1 column for images, 1 column for text */
-    // background-color: white;
-    opacity: 0.8;
-    width: 75vw;
-    margin: 10px 0px;
-    // padding: 10px;
-}
+// .project-block {
+//     display: flex;
+//     flex-direction: row;  /* 1 column for images, 1 column for text */
+//     // background-color: white;
+//     opacity: 0.8;
+//     width: 75vw;
+//     margin: 10px 0px;
+//     // padding: 10px;
+// }
 
-.project-info-col {
-    width: 35vw;
-    padding: 0px 15px 0px 0px;
-    // color: $secondary-color;
-    // background-color: $accent-color;
-}
+// .project-info-col {
+//     width: 35vw;
+//     padding: 0px 15px 0px 0px;
+//     // color: $secondary-color;
+//     // background-color: $accent-color;
+// }
 
-.project-photo-col-lg {
-    // background-color: $secondary-color;
-    width: 30vw;
-}
+// .project-photo-col-lg {
+//     // background-color: $secondary-color;
+//     width: 30vw;
+// }
 
-.project-photo-col-sm {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 10vw;
-    // height: 22.5vw;
-    padding: 0px 10px; /* controls spacing to left and right */
-}
+// .project-photo-col-sm {
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: space-between;
+//     width: 10vw;
+//     // height: 22.5vw;
+//     padding: 0px 10px; /* controls spacing to left and right */
+// }
 
 .img-lg {
     width: 30vw;
