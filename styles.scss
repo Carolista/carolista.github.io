@@ -7,6 +7,7 @@ $title-font: "Oleo Script Swash Caps", cursive;
 $accent-color: #56830e;
 $light-accent-color: #6ca314;
 $highlight-color: white;
+$navbar-height: 80px;
 
 /**** DO NOT EDIT CSS FILE - JUST SCSS ****/
 
@@ -20,6 +21,8 @@ $highlight-color: white;
 }
 
 body {
+    display: flex;
+    flex-direction: column;
     color: $primary-color;
     font-family: $primary-font;
     font-size: 11pt;
@@ -32,7 +35,7 @@ body {
 }
 
 header {
-    height: 80px;
+    height: $navbar-height;
     width: 100vw;
     margin: 0px;
     padding: 20px;
@@ -41,7 +44,9 @@ header {
 main {
     display: flex;
     flex-direction: column;
+    flex: 1;
     width: 100vw;
+    // height: calc(100vh - 80px - $navbar-height);
     margin: 0px;
     padding: 30px 10vw;
 }
@@ -51,8 +56,8 @@ footer {
     flex-direction: column;
     background-color: $accent-color;
     width: 100vw;
-    height: 60px;
-    margin: 0px;
+    height: 80px;
+    margin: 30px 0px 0px;
     padding: 20px;
 }
 
@@ -69,7 +74,7 @@ h2 {
 }
 
 h3 {
-    margin: 4px 0px 8px;
+    margin: 10px 0px 8px;
 }
 
 h4 {
@@ -137,9 +142,14 @@ a.inverted:hover {
 }
 
 // Link at bottom of each project block on gallery page
-// #project-link {
-//     position: absolute;
-//     bottom: 0;
+#project-link {
+    position: absolute;
+    bottom: 0;
+}
+
+// #detail-area {
+//     display: flex;
+//     flex-direction: row; 
 // }
 
 
@@ -491,6 +501,25 @@ a.inverted:hover {
     border: 1px solid $muted-color;
 }
 
+.project-detail-image {
+    width: 90%;
+    border: 1px solid $muted-color;
+    margin: 30px 0px -15px 30px;
+}
+// TODO: crop images in the GIMP to be the same proportions (and smaller)
+
+// space between project blocks
+.project-details-row, 
+    .project-details-row > .project-details-col {
+  padding: 0px;
+}
+
+// columns for project details page
+.project-details-col {
+    float: left;
+    width: 50%;
+}
+
 // responsive to width - create 2 columns 
 @media screen and (max-width: 1200px) {
   .gallery-column {
@@ -531,4 +560,11 @@ a.inverted:hover {
   .project-content {
       height: auto;
   }
+  .project-details-col {
+      width: 100%;
+  }
+  .project-detail-image {
+    width: 100%;
+    margin: 15px 0px 0px;
+  }   
 }

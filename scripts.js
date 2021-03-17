@@ -57,6 +57,7 @@ function init() {
     /** NAV BAR **/
 
     // TODO: Add event listeners to highlight current page on navbar
+    // TODO: Consider adding dropdown for projects
     // FIXME: remove fade-in upon page loading
     // FIXME: change up colors
 
@@ -180,7 +181,7 @@ function init() {
                     projectArea.innerHTML += `
                             <div class="gallery-column">
                                 <div class="project-content">
-                                <a href="project-details.html?id=${projectData[i].id}" target="_blank"><img class="project-image" src="images/${projectData[i].images[0]}"></a>
+                                    <a href="project-details.html?id=${projectData[i].id}" target="_blank"><img class="project-image" src="images/${projectData[i].images[0]}"></a>
                                     <h3>${projectData[i].title}</h3>
                                     <p>${projectData[i].subtitle}</p>
                                     <p class="text-right project-link"><a href="project-details.html?id=${projectData[i].id}" target="_blank">View Details &gt;</a></p>
@@ -208,6 +209,7 @@ function init() {
             // FIXME: Add project name to front of tab title - tab is not updating
             tabTitle.innerHTML = currentProject.title + " - " + tabTitle.innerHTML;
             console.log(tabTitle); // but it is correct in the console
+
             // Create bullet points from noteworthy array
             let bullets = "";
             for (let i=0; i<currentProject.noteworthy.length; i++) {
@@ -226,16 +228,28 @@ function init() {
             if (currentProject.code.url !== "") {
                 links += `<b>Code:</b> <a href="${currentProject.code.url}" target="_blank">${currentProject.code.type}</a>`;
             }
+            // Create images
+            let images = "";
+            for (let i=0; i<currentProject.images.length; i++) {
+                images += `
+                    <img class="project-detail-image" src="images/${currentProject.images[i]}" />
+                `
+            }
             // Assemble all HTML for project details
             detailArea.innerHTML = `
-                <h1 id="project-title" class="page-title">${currentProject.title}</h1>
-                <h3 id="project-subtitle">${currentProject.subtitle}</h3>
-                <p>${currentProject.desc}</p>
-                <h4 class="project-section">Tech Stack</h4>
-                <p>${currentProject.tech}</p>
-                <h4 class="project-section">Noteworthy </h4>
-                <ul class="bullet-points">${bullets}</ul>
-                <p id="project-links">${links}</p>
+                <div class="project-details-col">
+                    <h1 id="project-title" class="page-title">${currentProject.title}</h1>
+                    <h3 id="project-subtitle">${currentProject.subtitle}</h3>
+                    <p>${currentProject.desc}</p>
+                    <h4 class="project-section">Tech Stack</h4>
+                    <p>${currentProject.tech}</p>
+                    <h4 class="project-section">Noteworthy</h4>
+                    <ul class="bullet-points">${bullets}</ul>
+                    <p id="project-links">${links}</p>
+                </div>
+                <div class="project-details-col">
+                    ${images}
+                </div>
             `
         }, 200); // only needs a slight delay
     }
@@ -436,8 +450,8 @@ function init() {
     footer.innerHTML = `
         <p class="off-white-text text-center">
             &copy; 2021 Caroline R. Jones &nbsp;&nbsp;&nbsp;&nbsp;
-            St. Louis, MO &nbsp;&nbsp;&nbsp;&nbsp;
-            <a class="inverted" href="https://www.linkedin.com/in/carolinerjones/" target="_blank">LinkedIn</a> &nbsp;|&nbsp; 
+            St. Louis, MO</p>
+            <p class="off-white-text text-center"><a class="inverted" href="https://www.linkedin.com/in/carolinerjones/" target="_blank">LinkedIn</a> &nbsp;|&nbsp; 
             <a class="inverted" href="https://www.hackerrank.com/Carolina49a" target="_blank">HackerRank</a> &nbsp;|&nbsp; 
             <a class="inverted" href="https://github.com/Carolista" target="_blank">GitHub</a>
              

@@ -8,6 +8,13 @@
 }
 
 body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   color: #333;
   font-family: "Barlow", sans-serif;
   font-size: 11pt;
@@ -34,6 +41,9 @@ main {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   width: 100vw;
   margin: 0px;
   padding: 30px 10vw;
@@ -49,8 +59,8 @@ footer {
           flex-direction: column;
   background-color: #56830e;
   width: 100vw;
-  height: 60px;
-  margin: 0px;
+  height: 80px;
+  margin: 30px 0px 0px;
   padding: 20px;
 }
 
@@ -67,7 +77,7 @@ h2 {
 }
 
 h3 {
-  margin: 4px 0px 8px;
+  margin: 10px 0px 8px;
 }
 
 h4 {
@@ -121,6 +131,11 @@ a.inverted:hover {
 
 #project-links {
   margin: 20px 0px;
+}
+
+#project-link {
+  position: absolute;
+  bottom: 0;
 }
 
 /**** CLASSES ****/
@@ -218,45 +233,6 @@ a.inverted:hover {
 .rec-role {
   font-weight: 200;
   font-size: 0.9rem;
-}
-
-.project-block {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  /* 1 column for images, 1 column for text */
-  opacity: 0.8;
-  width: 75vw;
-  margin: 10px 0px;
-}
-
-.project-info-col {
-  width: 35vw;
-  padding: 0px 15px 0px 0px;
-}
-
-.project-photo-col-lg {
-  width: 30vw;
-}
-
-.project-photo-col-sm {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  width: 10vw;
-  padding: 0px 10px;
-  /* controls spacing to left and right */
 }
 
 .img-lg {
@@ -513,6 +489,22 @@ a.inverted:hover {
   border: 1px solid #ccc;
 }
 
+.project-detail-image {
+  width: 90%;
+  border: 1px solid #ccc;
+  margin: 30px 0px -15px 30px;
+}
+
+.project-details-row,
+.project-details-row > .project-details-col {
+  padding: 0px;
+}
+
+.project-details-col {
+  float: left;
+  width: 50%;
+}
+
 @media screen and (max-width: 1200px) {
   .gallery-column {
     width: 50%;
@@ -546,6 +538,13 @@ a.inverted:hover {
   }
   .project-content {
     height: auto;
+  }
+  .project-details-col {
+    width: 100%;
+  }
+  .project-detail-image {
+    width: 100%;
+    margin: 15px 0px 0px;
   }
 }
 /*# sourceMappingURL=styles.css.map */
