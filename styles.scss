@@ -1,5 +1,5 @@
 $primary-color: #333;
-$secondary-color: #eee;
+$contrast-color: #eee;
 $muted-color: #ccc;
 $accent-color: #56830e;
 $light-accent-color: #6ca314;
@@ -27,7 +27,7 @@ body {
     font-family: $primary-font;
     font-size: 11pt;
     font-weight: 400;
-    background-color: $secondary-color;
+    background-color: $contrast-color;
     height: 100vh;
     margin: 0px;
     padding: 0px;
@@ -102,80 +102,33 @@ a:hover {
 }
 
 a.inverted {
-    color: $secondary-color;
+    color: $contrast-color;
 }
 
 a.inverted:hover {
     color: $highlight-color;
 }
 
+ul {
+    margin-left: 35px;
+}
+
 
 /**** IDs ****/
 
-#header-name {
+#my-name {
     font-family: $title-font;
     font-size: 2rem;
-    color: $secondary-color;
+    color: $contrast-color;
     margin: 25px 0px 30px;
 }
-
-#project-title {
-    margin-bottom: 5px;
-}
-
-// #project-title {
-//     margin-top: 20px;
-//     color: red;
-// }
-
-// #project-detail-title {
-//     margin-bottom: 5px;
-// }
-
-#project-subtitle {
-    margin-bottom: 15px;
-}
-
-#project-links {
-    margin: 20px 0px;
-}
-
-// Link at bottom of each project block on gallery page
-#project-link {
-    position: absolute;
-    bottom: 0;
-}
-
-// #detail-area {
-//     display: flex;
-//     flex-direction: row; 
-// }
 
 
 /**** CLASSES ****/
 
-.container {
-    display: flex;
-    margin-left: auto;
-    margin-right: auto;
-}
+/** GENERAL USE **/
 
-.row {
-    flex-direction: row;
-}
-
-.column {
-    flex-direction: column;
-}
-
-.w-25 {
-    width: 25%;
-}
-
-.w-33 {
-    width: 33%
-}
-
+// for h1 titles on each page
 .page-title {
     font-family: $header-font;
     font-weight: 600;
@@ -184,54 +137,80 @@ a.inverted:hover {
     margin: 20px 0px 30px;
 }
 
+.text-right {
+    text-align: right;
+}
+
+.text-center {
+    text-align: center;
+}
+
+// use for italicized notes/footnotes
 .more-info {
     font-style: italic;
 }
 
-
+// for use on darker backgrounds, such as footer
 .off-white-text {
-    color: $secondary-color;
+    color: $contrast-color;
 }
 
+// used as basic container for non-responsive (100% wide) content
 .content-block {
     margin: 0px 0px 50px;
     border-left: 8px $accent-color solid;
     padding-left: 15px;
 }
 
-.bullet-points {
-    margin-left: 35px;
-}
+/** EXPERIENCE & EDUCATION PAGES **/
 
-.project-section {
-    margin: 20px 0px 5px;
-}
-
-.employer {
+.employer, .institution {
     font-weight: 600;
     font-size: 1.3rem;
 }
 
-.job-title {
+.job-title, .degree {
     font-weight: 600;
     font-size: 1rem;
     color: $accent-color;
 }
 
-.institution {
-    font-weight: 600;
-    font-size: 1.3rem;
+/** SKILLS PAGE **/
+
+.skills-subsection {
+    margin-bottom: 5px;
 }
 
-.degree {
-    font-weight: 600;
-    font-size: 1rem;
-    color: $accent-color;
+.skills-line {
+    border: 4px solid $muted-color;
+    margin: 0px;
 }
 
-.skill-name {
+.skills-name {
     margin: 0px 0px 5px;
 }
+
+// space between project blocks
+.skills-row,
+.skills-row > .skills-column {
+  padding: 8px;
+}
+
+// default for wide layout - create four columns 
+.skills-column {
+  float: left;
+  width: 25%;
+  height: 400px;
+}
+
+// clear floats
+.skills-row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/** RECOMMENDATION PAGE **/
 
 .rec-name {
     font-weight: 600;
@@ -243,57 +222,141 @@ a.inverted:hover {
     font-size: 0.9rem;
 }
 
-// .project-block {
-//     display: flex;
-//     flex-direction: row;  /* 1 column for images, 1 column for text */
-//     // background-color: white;
-//     opacity: 0.8;
-//     width: 75vw;
-//     margin: 10px 0px;
-//     // padding: 10px;
-// }
+/** PROJECT GALLERY PAGE **/
 
-// .project-info-col {
-//     width: 35vw;
-//     padding: 0px 15px 0px 0px;
-//     // color: $secondary-color;
-//     // background-color: $accent-color;
-// }
-
-// .project-photo-col-lg {
-//     // background-color: $secondary-color;
-//     width: 30vw;
-// }
-
-// .project-photo-col-sm {
-//     display: flex;
-//     flex-direction: column;
-//     justify-content: space-between;
-//     width: 10vw;
-//     // height: 22.5vw;
-//     padding: 0px 10px; /* controls spacing to left and right */
-// }
-
-.img-lg {
-    width: 30vw;
-    border: 2px solid $primary-color;
+// Link at bottom of each project block on gallery page
+.view-details {
+    margin-top: 10px;
 }
 
-.img-sm {
-    width: calc(10vw - 6px);
-    border: 2px solid $primary-color;
+// space between project blocks
+.gallery-row,
+.gallery-row > .gallery-column {
+  padding: 8px;
 }
 
-.light {
-    font-weight: 200;
+// default for wide layout - create three columns 
+.gallery-column {
+  float: left;
+  width: 33%;
 }
 
-.text-right {
-    text-align: right;
+// clear floats
+.gallery-row:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
-.text-center {
-    text-align: center;
+// container for each project in gallery
+.project-content {
+  background-color: white;
+  height: calc(80vw / 3.2);
+  padding: 15px;
+}
+
+.project-image {
+    width: 100%;
+    border: 1px solid $muted-color;
+}
+
+/** PROJECT DETAILS PAGE **/
+
+// used for Tech Stack and Noteworthy subheaders in project details page
+.project-section {
+    margin: 20px 0px 5px;
+}
+
+.project-title {
+    margin-bottom: 5px;
+}
+
+.project-subtitle {
+    margin-bottom: 15px;
+}
+
+// for links to code and demo
+.project-links {
+    margin: 20px 0px;
+}
+
+.project-detail-image {
+    width: 90%;
+    border: 1px solid $muted-color;
+    margin: 30px 0px -15px 30px;
+}
+// TODO: crop images in the GIMP to be the same proportions (and smaller)
+
+// space between project details and images when side-by-side
+.project-details-row, 
+    .project-details-row > .project-details-col {
+  padding: 0px;
+}
+
+// columns for project details page
+.project-details-col {
+    float: left;
+    width: 50%;
+}
+
+
+/**** MEDIA QUERIES FOR MAIN CONTENT ****/
+
+// responsive to width - create 2 columns 
+@media screen and (max-width: 1200px) {
+  .gallery-column {
+    width: 50%;
+  }
+  .project-content {
+      height: calc(80vw / 2.3 );
+  }
+}
+
+
+@media screen and (max-width: 1100px) {
+    .gallery-column {
+      width: 50%;
+    }
+    .project-content {
+        height: calc(80vw / 2.2 );
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .gallery-column {
+      width: 50%;
+    }
+    .project-content {
+        height: calc(80vw / 2.1 );
+    }
+    .skills-column {
+        width: 33%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+  .gallery-column {
+    width: 100%;
+  }
+  .project-content {
+      height: auto;
+  }
+  .project-details-col {
+      width: 100%;
+  }
+  .project-detail-image {
+    width: 100%;
+    margin: 15px 0px 0px;
+  }   
+  .skills-column {
+      width: 50%
+  }
+}
+
+@media screen and (max-width: 500px) {
+    .skills-column {
+        width: 100%
+    }
 }
 
 
@@ -320,21 +383,17 @@ a.inverted:hover {
 }
 
 .nav-link {
-    color: $secondary-color;
-    transition: color 0.8s ease-in-out;
-    text-decoration: none;
     display: flex;
+    color: $contrast-color;
+    text-decoration: none;
     font-weight: 400;
     align-items: center;
-    transition: background-color 0.8s ease-in-out,
-                color 0.8s ease-in-out;
-}
-
-.nav-link {
     justify-content: center;
     width: 100%;
     padding: 0.4em 0.8em;
     border-radius: 5px;
+    transition: background-color 0.8s ease-in-out,
+                color 0.8s ease-in-out;
 }
 
 .nav-link:focus,
@@ -355,6 +414,7 @@ a.inverted:hover {
     flex-direction: column;
 }
 
+// for hamburger menu
 .tri-bar {
     display: block;
     width: 25px;
@@ -363,7 +423,7 @@ a.inverted:hover {
     transition: background-color 0.5s ease-in-out,
                 transform 0.5s ease-in-out,
                 opacity 0.5s ease-in-out;
-    background-color: $secondary-color;
+    background-color: $contrast-color;
 }
 
 .nav-button:focus .tri-bar,
@@ -459,111 +519,4 @@ a.inverted:hover {
     #navbar .nav-link:last-child {
         margin-right: 0;
     }
-}
-
-
-/**** GALLERY ****/
-
-// space between project blocks
-.gallery-row,
-.gallery-row > .gallery-column {
-  padding: 8px;
-}
-
-// default for wide layout - create three columns 
-.gallery-column {
-  float: left;
-  width: 33%;
-}
-
-// clear floats
-.gallery-row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-// Link at bottom
-.project-link {
-    margin-top: 10px;
-}
-
-// container for each project in gallery
-.project-content {
-  background-color: white;
-  height: calc(80vw / 3.2);
-  padding: 15px;
-}
-
-.project-image {
-    width: 100%;
-    border: 1px solid $muted-color;
-}
-
-.project-detail-image {
-    width: 90%;
-    border: 1px solid $muted-color;
-    margin: 30px 0px -15px 30px;
-}
-// TODO: crop images in the GIMP to be the same proportions (and smaller)
-
-// space between project blocks
-.project-details-row, 
-    .project-details-row > .project-details-col {
-  padding: 0px;
-}
-
-// columns for project details page
-.project-details-col {
-    float: left;
-    width: 50%;
-}
-
-// responsive to width - create 2 columns 
-@media screen and (max-width: 1200px) {
-  .gallery-column {
-    width: 50%;
-  }
-  .project-content {
-      height: calc(80vw / 2.3 );
-  }
-}
-
-
-// responsive to width - create 2 columns 
-@media screen and (max-width: 1100px) {
-    .gallery-column {
-      width: 50%;
-    }
-    .project-content {
-        height: calc(80vw / 2.2 );
-    }
-}
-
-// responsive to width - create 2 columns 
-@media screen and (max-width: 1000px) {
-    .gallery-column {
-      width: 50%;
-    }
-    .project-content {
-        height: calc(80vw / 2.1 );
-    }
-}
-
-
-// responsive to width - create a single column
-@media screen and (max-width: 800px) {
-  .gallery-column {
-    width: 100%;
-  }
-  .project-content {
-      height: auto;
-  }
-  .project-details-col {
-      width: 100%;
-  }
-  .project-detail-image {
-    width: 100%;
-    margin: 15px 0px 0px;
-  }   
 }
