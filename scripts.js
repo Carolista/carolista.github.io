@@ -13,9 +13,8 @@ function init() {
 
     /** TAB TITLE **/
 
-    let tabTitle = document.querySelector("title");
-    tabTitle.innerHTML += "Caroline Jones | Web Developer";
-
+    // Tack on to end of <title> content specified in html doc
+    document.title += "Caroline Jones | Web Developer";
 
 
     /** STYLE SHEETS & FONTS **/
@@ -125,15 +124,15 @@ function init() {
 
     // Determine which data should be loaded, if any
     function loadAndDisplayData() {
-        if (tabTitle.innerHTML.toLowerCase().includes("project")) { // for both gallery & detail pages
+        if (document.title.toLowerCase().includes("project")) { // for both gallery & detail pages
             loadProjects();
-        } else if (tabTitle.innerHTML.toLowerCase().includes("experience")) {
+        } else if (document.title.toLowerCase().includes("experience")) {
             loadExperience();
-        } else if (tabTitle.innerHTML.toLowerCase().includes("education")) {
+        } else if (document.title.toLowerCase().includes("education")) {
             loadEducation();
-        } else if (tabTitle.innerHTML.toLowerCase().includes("skills")) {
+        } else if (document.title.toLowerCase().includes("skills")) {
             loadSkills();
-        } else if (tabTitle.innerHTML.toLowerCase().includes("recommendations")) {
+        } else if (document.title.toLowerCase().includes("recommendations")) {
             loadRecommendations();
         }
     }
@@ -160,7 +159,7 @@ function init() {
                 });     
         });
         // Determine which information to display (full gallery or detail)
-        if (tabTitle.innerHTML.toLowerCase().includes("projects")) {
+        if (document.title.toLowerCase().includes("projects")) {
             displayProjects();
         } else {
             displayProjectDetail();
@@ -176,7 +175,7 @@ function init() {
                     projectArea.innerHTML += `
                             <div class="gallery-column">
                                 <div class="project-content">
-                                    <a href="project-details.html?id=${projectData[i].id}" target="_blank"><img class="project-image" src="images/${projectData[i].images[0]}"></a>
+                                    <a href="project-details.html?id=${projectData[i].id}"><img class="project-image" src="images/${projectData[i].images[0]}"></a>
                                     <h3>${projectData[i].title}</h3>
                                     <p>${projectData[i].subtitle}</p>
                                     <p class="text-right view-details"><a href="project-details.html?id=${projectData[i].id}" target="_blank">View Details &gt;</a></p>
@@ -200,10 +199,11 @@ function init() {
                     projectIndex = j;
                 }
             }
+
             let currentProject = projectData[projectIndex];
-            // FIXME: Add project name to front of tab title - tab is not updating
-            tabTitle.innerHTML = currentProject.title + " - " + tabTitle.innerHTML;
-            console.log(tabTitle); // but it is correct in the console
+            
+            // Update browser tab with specific project name
+            document.title = currentProject.title + " - " + document.title;
 
             // Create bullet points from noteworthy array
             let bullets = "";
