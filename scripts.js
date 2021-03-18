@@ -33,7 +33,7 @@ function init() {
     const header = document.querySelector("header");
     header.innerHTML = `
         <nav class="nav-container">
-            <p id="header-name"><a class="inverted" href="/">Caroline R. Jones</a></p>
+            <p id="my-name"><a class="inverted" href="/">Caroline R. Jones</a></p>
             <button type="button" class="nav-button" aria-label="Open dropdown nav">
                 <span class="tri-bar"></span>
                 <span class="tri-bar"></span>
@@ -184,7 +184,7 @@ function init() {
                                     <a href="project-details.html?id=${projectData[i].id}" target="_blank"><img class="project-image" src="images/${projectData[i].images[0]}"></a>
                                     <h3>${projectData[i].title}</h3>
                                     <p>${projectData[i].subtitle}</p>
-                                    <p class="text-right project-link"><a href="project-details.html?id=${projectData[i].id}" target="_blank">View Details &gt;</a></p>
+                                    <p class="text-right view-details"><a href="project-details.html?id=${projectData[i].id}" target="_blank">View Details &gt;</a></p>
                                 </div>
                             </div>
                     `;
@@ -238,14 +238,14 @@ function init() {
             // Assemble all HTML for project details
             detailArea.innerHTML = `
                 <div class="project-details-col">
-                    <h1 id="project-title" class="page-title">${currentProject.title}</h1>
-                    <h3 id="project-subtitle">${currentProject.subtitle}</h3>
+                    <h1 class="project-title" class="page-title">${currentProject.title}</h1>
+                    <h3 class="project-subtitle">${currentProject.subtitle}</h3>
                     <p>${currentProject.desc}</p>
                     <h4 class="project-section">Tech Stack</h4>
                     <p>${currentProject.tech}</p>
                     <h4 class="project-section">Noteworthy</h4>
-                    <ul class="bullet-points">${bullets}</ul>
-                    <p id="project-links">${links}</p>
+                    <ul>${bullets}</ul>
+                    <p class="project-links">${links}</p>
                 </div>
                 <div class="project-details-col">
                     ${images}
@@ -363,6 +363,18 @@ function init() {
         displaySkills();
     }
 
+    let techSkillCategories = [
+        { category: "Languages", divId: "tech-languages-area" },
+        { category: "Frameworks", divId: "tech-frameworks-area" },
+        { category: "Tools", divId: "tech-tools-area" },
+        { category: "Knowledge", divId: "tech-knowledge-area" }
+    ]
+    let generalSkillCategories = [
+        { category: "Tools", divId: "general-tools-area" },
+        { category: "Knowledge", divId: "general-knowledge-area" },
+        { category: "Strengths", divId: "general-strengths-area" }
+    ]
+
     function displaySkills() {
         setTimeout(function() {
             for (group in skillsData) {
@@ -430,7 +442,6 @@ function init() {
             for (let i=0; i < recommendationData.length; i++) {
                 recArea.innerHTML += `
                     <div class="content-block">
-                        
                         <p>${recommendationData[i].recText}</p>
                         <p class="text-right"><span class="rec-name">${recommendationData[i].author}</span><br />
                         <span class="rec-role">${recommendationData[i].relationship}</span></p>
@@ -448,14 +459,13 @@ function init() {
 
     const footer = document.querySelector("footer");
     footer.innerHTML = `
-        <p class="off-white-text text-center">
-            &copy; 2021 Caroline R. Jones &nbsp;&nbsp;&nbsp;&nbsp;
-            St. Louis, MO</p>
-            <p class="off-white-text text-center"><a class="inverted" href="https://www.linkedin.com/in/carolinerjones/" target="_blank">LinkedIn</a> &nbsp;|&nbsp; 
-            <a class="inverted" href="https://www.hackerrank.com/Carolina49a" target="_blank">HackerRank</a> &nbsp;|&nbsp; 
-            <a class="inverted" href="https://github.com/Carolista" target="_blank">GitHub</a>
-             
-        </p>
+        <span class="off-white-text text-center">
+            <p>&copy; 2021&nbsp; Caroline R. Jones &nbsp;&nbsp;&nbsp;&nbsp;
+                St. Louis, MO</p>
+            <p><a class="inverted" href="https://www.linkedin.com/in/carolinerjones/" target="_blank">LinkedIn</a> &nbsp;|&nbsp; 
+                <a class="inverted" href="https://www.hackerrank.com/Carolina49a" target="_blank">HackerRank</a> &nbsp;|&nbsp; 
+                <a class="inverted" href="https://github.com/Carolista" target="_blank">GitHub</a></p>
+        </span>
     `;
 
 }
