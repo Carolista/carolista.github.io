@@ -361,15 +361,15 @@ function init() {
 
     // Data structures to hold everything needed to display lists on Skills page
     let techSkillsCategories = {
-        languages: { category: "Languages", list: "" },
-        frameworks: { category: "Frameworks", list: "" },
-        tools: { category: "Tools", list: "" },
-        knowledge: { category: "Knowledge", list: "" }
+        languages: { category: "Languages", list: "", count: 0 },
+        frameworks: { category: "Frameworks", list: "", count: 0 },
+        tools: { category: "Tools", list: "", count: 0 },
+        knowledge: { category: "Knowledge", list: "", count: 0 }
     }
     let generalSkillsCategories = {
-        tools: { category: "Tools", list: "" },
-        knowledge: { category: "Knowledge", list: "" },
-        strengths: { category: "Strengths", list: "" }
+        tools: { category: "Tools", list: "", count: 0 },
+        knowledge: { category: "Knowledge", list: "", count: 0 },
+        strengths: { category: "Strengths", list: "", count: 0 }
     }
 
     function buildSkillsHTML() {
@@ -379,21 +379,28 @@ function init() {
                 for (let i=0; i < skillsData[group].length; i++) {
                     if (skillsData[group][i].type === "Tech") {
                         if (skillsData[group][i].category === "Frameworks") {
-                            techSkillsCategories.frameworks.list += `<p class='skill-name'>${skillsData[group][i].skillName}</p>`
+                            techSkillsCategories.frameworks.list += `<p class='skill-name'>${skillsData[group][i].skillName}</p>`;
+                            techSkillsCategories.frameworks.count += 1;
                         } else if (skillsData[group][i].category === "Languages") {
-                            techSkillsCategories.languages.list += `<p class='skill-name'>${skillsData[group][i].skillName}</p>`
+                            techSkillsCategories.languages.list += `<p class='skill-name'>${skillsData[group][i].skillName}</p>`;
+                            techSkillsCategories.languages.count += 1;
                         } else if (skillsData[group][i].category === "Tools") {
-                            techSkillsCategories.tools.list += `<p class='skill-name'>${skillsData[group][i].skillName}</p>`
+                            techSkillsCategories.tools.list += `<p class='skill-name'>${skillsData[group][i].skillName}</p>`;
+                            techSkillsCategories.tools.count += 1;
                         } else if (skillsData[group][i].category === "Knowledge") {
-                            techSkillsCategories.knowledge.list += `<p class='skill-name'>${skillsData[group][i].skillName}</p>`
+                            techSkillsCategories.knowledge.list += `<p class='skill-name'>${skillsData[group][i].skillName}</p>`;
+                            techSkillsCategories.knowledge.count += 1;
                         }
                     } else if (skillsData[group][i].type === "General") {
                         if (skillsData[group][i].category === "Tools") {
-                            generalSkillsCategories.tools.list += `<p class='skill-name'>${skillsData[group][i].skillName}</p>`
+                            generalSkillsCategories.tools.list += `<p class='skill-name'>${skillsData[group][i].skillName}</p>`;
+                            generalSkillsCategories.tools.count += 1;
                         } else if (skillsData[group][i].category === "Strengths") {
-                            generalSkillsCategories.strengths.list += `<p class='skill-name'>${skillsData[group][i].skillName}</p>`
+                            generalSkillsCategories.strengths.list += `<p class='skill-name'>${skillsData[group][i].skillName}</p>`;
+                            generalSkillsCategories.strengths.count += 1;
                         } else if (skillsData[group][i].category === "Knowledge") {
-                            generalSkillsCategories.knowledge.list += `<p class='skill-name'>${skillsData[group][i].skillName}</p>`
+                            generalSkillsCategories.knowledge.list += `<p class='skill-name'>${skillsData[group][i].skillName}</p>`;
+                            generalSkillsCategories.knowledge.count += 1;
                         }
                     }
                 }
@@ -403,25 +410,37 @@ function init() {
 
     function displaySkills() {
         setTimeout(function() {
+            // Tech subsection
+            let techArray = [];
+            for (techCategory in techSkillsCategories) {
+                techArray.push(techSkillsCategories[techCategory]);
+            }
+            techArray.sort((a, b) => a.count < b.count ? 1 : -1);
             let allTechSkills = "";
-            for (eachCategory in techSkillsCategories) {
+            for (let i=0; i < techArray.length; i++) {
                 allTechSkills += `
                     <div class="skills-column">
                         <div class="content-block">
-                            <h3>${techSkillsCategories[eachCategory].category}</h3>
-                            <div>${techSkillsCategories[eachCategory].list}</div> 
+                            <h3>${techArray[i].category}</h3>
+                            <div>${techArray[i].list}</div> 
                         </div>
                     </div>
                 `
             }
             techSkillsArea.innerHTML = allTechSkills;
+            // General subsection
+            let generalArray = [];
+            for (generalCategory in generalSkillsCategories) {
+                generalArray.push(generalSkillsCategories[generalCategory]);
+            }
+            generalArray.sort((a, b) => a.count < b.count ? 1: -1);
             let allGeneralSkills = "";
-            for (eachCategory in generalSkillsCategories) {
+            for (let i=0; i < generalArray.length; i++) {
                 allGeneralSkills += `
                     <div class="skills-column">
                         <div class="content-block">
-                            <h3>${generalSkillsCategories[eachCategory].category}</h3>
-                            <div>${generalSkillsCategories[eachCategory].list}</div> 
+                            <h3>${generalArray[i].category}</h3>
+                            <div>${generalArray[i].list}</div> 
                         </div>
                     </div>
                 `
