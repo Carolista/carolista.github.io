@@ -1,12 +1,12 @@
 $primary-color: #333;
 $secondary-color: #eee;
 $muted-color: #ccc;
-$primary-font: "Barlow", sans-serif;
-$header-font: "Barlow", sans-serif;
-$title-font: "Oleo Script Swash Caps", cursive;
 $accent-color: #56830e;
 $light-accent-color: #6ca314;
 $highlight-color: white;
+$primary-font: "Barlow", sans-serif;
+$header-font: "Barlow", sans-serif;
+$title-font: "Oleo Script Swash Caps", cursive;
 $navbar-height: 80px;
 
 /**** DO NOT EDIT CSS FILE - JUST SCSS ****/
@@ -46,7 +46,6 @@ main {
     flex-direction: column;
     flex: 1;
     width: 100vw;
-    // height: calc(100vh - 80px - $navbar-height);
     margin: 0px;
     padding: 30px 10vw;
 }
