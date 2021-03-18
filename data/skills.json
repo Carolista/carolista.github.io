@@ -144,12 +144,6 @@
         "type": "Tech"
     },
     {
-        "id": 24,
-        "skillName": "Maven",
-        "category": "Tools",
-        "type": "Tech"
-    },
-    {
         "id": 25,
         "skillName": "Thymeleaf",
         "category": "Tools",

@@ -119,13 +119,8 @@ function init() {
     let detailArea = document.querySelector("#detail-area");
     let expArea = document.querySelector("#exp-area");
     let edArea = document.querySelector("#ed-area");
-    let techFrameworksArea = document.querySelector("#tech-frameworks-area");
-    let techLanguagesArea = document.querySelector("#tech-languages-area");
-    let techToolsArea = document.querySelector("#tech-tools-area");
-    let techKnowledgeArea = document.querySelector("#tech-knowledge-area");
-    let generalToolsArea = document.querySelector("#general-tools-area");
-    let generalStrengthsArea = document.querySelector("#general-strengths-area");
-    let generalKnowledgeArea = document.querySelector("#general-knowledge-area");
+    let techSkillsArea = document.querySelector("#tech-skills-area");
+    let generalSkillsArea = document.querySelector("#general-skills-area");
     let recArea = document.querySelector("#rec-area");
 
     // Determine which data should be loaded, if any
@@ -360,62 +355,79 @@ function init() {
                     }
                 });     
         });
+        buildSkillsHTML();
         displaySkills();
     }
 
-    let techSkillCategories = [
-        { category: "Languages", divId: "tech-languages-area" },
-        { category: "Frameworks", divId: "tech-frameworks-area" },
-        { category: "Tools", divId: "tech-tools-area" },
-        { category: "Knowledge", divId: "tech-knowledge-area" }
-    ]
-    let generalSkillCategories = [
-        { category: "Tools", divId: "general-tools-area" },
-        { category: "Knowledge", divId: "general-knowledge-area" },
-        { category: "Strengths", divId: "general-strengths-area" }
-    ]
+    // Data structures to hold everything needed to display lists on Skills page
+    let techSkillsCategories = {
+        languages: { category: "Languages", list: "" },
+        frameworks: { category: "Frameworks", list: "" },
+        tools: { category: "Tools", list: "" },
+        knowledge: { category: "Knowledge", list: "" }
+    }
+    let generalSkillsCategories = {
+        tools: { category: "Tools", list: "" },
+        knowledge: { category: "Knowledge", list: "" },
+        strengths: { category: "Strengths", list: "" }
+    }
 
-    function displaySkills() {
+    function buildSkillsHTML() {
         setTimeout(function() {
             for (group in skillsData) {
                 skillsData[group].sort((a, b) => a.skillName > b.skillName ? 1 : -1);
                 for (let i=0; i < skillsData[group].length; i++) {
                     if (skillsData[group][i].type === "Tech") {
                         if (skillsData[group][i].category === "Frameworks") {
-                            techFrameworksArea.innerHTML += `
-                                <p class="skill-name">${skillsData[group][i].skillName}</p>
-                            `
+                            techSkillsCategories.frameworks.list += `<p class='skill-name'>${skillsData[group][i].skillName}</p>`
                         } else if (skillsData[group][i].category === "Languages") {
-                            techLanguagesArea.innerHTML += `
-                                <p class="skill-name">${skillsData[group][i].skillName}</p>
-                            `
+                            techSkillsCategories.languages.list += `<p class='skill-name'>${skillsData[group][i].skillName}</p>`
                         } else if (skillsData[group][i].category === "Tools") {
-                            techToolsArea.innerHTML += `
-                                <p class="skill-name">${skillsData[group][i].skillName}</p>
-                            `
+                            techSkillsCategories.tools.list += `<p class='skill-name'>${skillsData[group][i].skillName}</p>`
                         } else if (skillsData[group][i].category === "Knowledge") {
-                            techKnowledgeArea.innerHTML += `
-                                <p class="skill-name">${skillsData[group][i].skillName}</p>
-                            `
+                            techSkillsCategories.knowledge.list += `<p class='skill-name'>${skillsData[group][i].skillName}</p>`
                         }
                     } else if (skillsData[group][i].type === "General") {
                         if (skillsData[group][i].category === "Tools") {
-                            generalToolsArea.innerHTML += `
-                                <p class="skill-name">${skillsData[group][i].skillName}</p>
-                            `
+                            generalSkillsCategories.tools.list += `<p class='skill-name'>${skillsData[group][i].skillName}</p>`
                         } else if (skillsData[group][i].category === "Strengths") {
-                            generalStrengthsArea.innerHTML += `
-                                <p class="skill-name">${skillsData[group][i].skillName}</p>
-                            `
+                            generalSkillsCategories.strengths.list += `<p class='skill-name'>${skillsData[group][i].skillName}</p>`
                         } else if (skillsData[group][i].category === "Knowledge") {
-                            generalKnowledgeArea.innerHTML += `
-                                <p class="skill-name">${skillsData[group][i].skillName}</p>
-                            `
+                            generalSkillsCategories.knowledge.list += `<p class='skill-name'>${skillsData[group][i].skillName}</p>`
                         }
                     }
                 }
-                
             }
+        }, 200); // only needs a slight delay
+    }
+
+    function displaySkills() {
+        setTimeout(function() {
+            let allTechSkills = "";
+            for (eachCategory in techSkillsCategories) {
+                allTechSkills += `
+                    <div class="skills-column">
+                        <div class="content-block">
+                            <h3>${techSkillsCategories[eachCategory].category}</h3>
+                            <div>${techSkillsCategories[eachCategory].list}</div> 
+                        </div>
+                    </div>
+                `
+            }
+            techSkillsArea.innerHTML = allTechSkills;
+            let allGeneralSkills = "";
+            for (eachCategory in generalSkillsCategories) {
+                allGeneralSkills += `
+                    <div class="skills-column">
+                        <div class="content-block">
+                            <h3>${generalSkillsCategories[eachCategory].category}</h3>
+                            <div>${generalSkillsCategories[eachCategory].list}</div> 
+                        </div>
+                    </div>
+                `
+            }
+            generalSkillsArea.innerHTML = allGeneralSkills;
+
         }, 200); // only needs a slight delay
     }
 
