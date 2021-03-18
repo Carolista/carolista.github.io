@@ -33,7 +33,7 @@ function init() {
     const header = document.querySelector("header");
     header.innerHTML = `
         <nav class="nav-container">
-            <p id="header-name"><a class="inverted" href="/">Caroline R. Jones</a></p>
+            <p id="my-name"><a class="inverted" href="/">Caroline R. Jones</a></p>
             <button type="button" class="nav-button" aria-label="Open dropdown nav">
                 <span class="tri-bar"></span>
                 <span class="tri-bar"></span>
@@ -119,13 +119,8 @@ function init() {
     let detailArea = document.querySelector("#detail-area");
     let expArea = document.querySelector("#exp-area");
     let edArea = document.querySelector("#ed-area");
-    let techFrameworksArea = document.querySelector("#tech-frameworks-area");
-    let techLanguagesArea = document.querySelector("#tech-languages-area");
-    let techToolsArea = document.querySelector("#tech-tools-area");
-    let techKnowledgeArea = document.querySelector("#tech-knowledge-area");
-    let generalToolsArea = document.querySelector("#general-tools-area");
-    let generalStrengthsArea = document.querySelector("#general-strengths-area");
-    let generalKnowledgeArea = document.querySelector("#general-knowledge-area");
+    let techSkillsArea = document.querySelector("#tech-skills-area");
+    let generalSkillsArea = document.querySelector("#general-skills-area");
     let recArea = document.querySelector("#rec-area");
 
     // Determine which data should be loaded, if any
@@ -184,7 +179,7 @@ function init() {
                                     <a href="project-details.html?id=${projectData[i].id}" target="_blank"><img class="project-image" src="images/${projectData[i].images[0]}"></a>
                                     <h3>${projectData[i].title}</h3>
                                     <p>${projectData[i].subtitle}</p>
-                                    <p class="text-right project-link"><a href="project-details.html?id=${projectData[i].id}" target="_blank">View Details &gt;</a></p>
+                                    <p class="text-right view-details"><a href="project-details.html?id=${projectData[i].id}" target="_blank">View Details &gt;</a></p>
                                 </div>
                             </div>
                     `;
@@ -238,14 +233,14 @@ function init() {
             // Assemble all HTML for project details
             detailArea.innerHTML = `
                 <div class="project-details-col">
-                    <h1 id="project-title" class="page-title">${currentProject.title}</h1>
-                    <h3 id="project-subtitle">${currentProject.subtitle}</h3>
+                    <h1 class="project-title" class="page-title">${currentProject.title}</h1>
+                    <h3 class="project-subtitle">${currentProject.subtitle}</h3>
                     <p>${currentProject.desc}</p>
                     <h4 class="project-section">Tech Stack</h4>
                     <p>${currentProject.tech}</p>
                     <h4 class="project-section">Noteworthy</h4>
-                    <ul class="bullet-points">${bullets}</ul>
-                    <p id="project-links">${links}</p>
+                    <ul>${bullets}</ul>
+                    <p class="project-links">${links}</p>
                 </div>
                 <div class="project-details-col">
                     ${images}
@@ -360,50 +355,98 @@ function init() {
                     }
                 });     
         });
+        buildSkillsHTML();
         displaySkills();
     }
 
-    function displaySkills() {
+    // Data structures to hold everything needed to display lists on Skills page
+    let techSkillsCategories = {
+        languages: { category: "Languages", list: "", count: 0 },
+        frameworks: { category: "Frameworks", list: "", count: 0 },
+        tools: { category: "Tools", list: "", count: 0 },
+        knowledge: { category: "Knowledge", list: "", count: 0 }
+    }
+    let generalSkillsCategories = {
+        tools: { category: "Tools", list: "", count: 0 },
+        knowledge: { category: "Knowledge", list: "", count: 0 },
+        strengths: { category: "Strengths", list: "", count: 0 }
+    }
+
+    function buildSkillsHTML() {
         setTimeout(function() {
             for (group in skillsData) {
                 skillsData[group].sort((a, b) => a.skillName > b.skillName ? 1 : -1);
                 for (let i=0; i < skillsData[group].length; i++) {
                     if (skillsData[group][i].type === "Tech") {
                         if (skillsData[group][i].category === "Frameworks") {
-                            techFrameworksArea.innerHTML += `
-                                <p class="skill-name">${skillsData[group][i].skillName}</p>
-                            `
+                            techSkillsCategories.frameworks.list += `<p class='skill-name'>${skillsData[group][i].skillName}</p>`;
+                            techSkillsCategories.frameworks.count += 1;
                         } else if (skillsData[group][i].category === "Languages") {
-                            techLanguagesArea.innerHTML += `
-                                <p class="skill-name">${skillsData[group][i].skillName}</p>
-                            `
+                            techSkillsCategories.languages.list += `<p class='skill-name'>${skillsData[group][i].skillName}</p>`;
+                            techSkillsCategories.languages.count += 1;
                         } else if (skillsData[group][i].category === "Tools") {
-                            techToolsArea.innerHTML += `
-                                <p class="skill-name">${skillsData[group][i].skillName}</p>
-                            `
+                            techSkillsCategories.tools.list += `<p class='skill-name'>${skillsData[group][i].skillName}</p>`;
+                            techSkillsCategories.tools.count += 1;
                         } else if (skillsData[group][i].category === "Knowledge") {
-                            techKnowledgeArea.innerHTML += `
-                                <p class="skill-name">${skillsData[group][i].skillName}</p>
-                            `
+                            techSkillsCategories.knowledge.list += `<p class='skill-name'>${skillsData[group][i].skillName}</p>`;
+                            techSkillsCategories.knowledge.count += 1;
                         }
                     } else if (skillsData[group][i].type === "General") {
                         if (skillsData[group][i].category === "Tools") {
-                            generalToolsArea.innerHTML += `
-                                <p class="skill-name">${skillsData[group][i].skillName}</p>
-                            `
+                            generalSkillsCategories.tools.list += `<p class='skill-name'>${skillsData[group][i].skillName}</p>`;
+                            generalSkillsCategories.tools.count += 1;
                         } else if (skillsData[group][i].category === "Strengths") {
-                            generalStrengthsArea.innerHTML += `
-                                <p class="skill-name">${skillsData[group][i].skillName}</p>
-                            `
+                            generalSkillsCategories.strengths.list += `<p class='skill-name'>${skillsData[group][i].skillName}</p>`;
+                            generalSkillsCategories.strengths.count += 1;
                         } else if (skillsData[group][i].category === "Knowledge") {
-                            generalKnowledgeArea.innerHTML += `
-                                <p class="skill-name">${skillsData[group][i].skillName}</p>
-                            `
+                            generalSkillsCategories.knowledge.list += `<p class='skill-name'>${skillsData[group][i].skillName}</p>`;
+                            generalSkillsCategories.knowledge.count += 1;
                         }
                     }
                 }
-                
             }
+        }, 200); // only needs a slight delay
+    }
+
+    function displaySkills() {
+        setTimeout(function() {
+            // Tech subsection
+            let techArray = [];
+            for (techCategory in techSkillsCategories) {
+                techArray.push(techSkillsCategories[techCategory]);
+            }
+            techArray.sort((a, b) => a.count < b.count ? 1 : -1);
+            let allTechSkills = "";
+            for (let i=0; i < techArray.length; i++) {
+                allTechSkills += `
+                    <div class="skills-column">
+                        <div class="content-block">
+                            <h3>${techArray[i].category}</h3>
+                            <div>${techArray[i].list}</div> 
+                        </div>
+                    </div>
+                `
+            }
+            techSkillsArea.innerHTML = allTechSkills;
+            // General subsection
+            let generalArray = [];
+            for (generalCategory in generalSkillsCategories) {
+                generalArray.push(generalSkillsCategories[generalCategory]);
+            }
+            generalArray.sort((a, b) => a.count < b.count ? 1: -1);
+            let allGeneralSkills = "";
+            for (let i=0; i < generalArray.length; i++) {
+                allGeneralSkills += `
+                    <div class="skills-column">
+                        <div class="content-block">
+                            <h3>${generalArray[i].category}</h3>
+                            <div>${generalArray[i].list}</div> 
+                        </div>
+                    </div>
+                `
+            }
+            generalSkillsArea.innerHTML = allGeneralSkills;
+
         }, 200); // only needs a slight delay
     }
 
@@ -430,7 +473,6 @@ function init() {
             for (let i=0; i < recommendationData.length; i++) {
                 recArea.innerHTML += `
                     <div class="content-block">
-                        
                         <p>${recommendationData[i].recText}</p>
                         <p class="text-right"><span class="rec-name">${recommendationData[i].author}</span><br />
                         <span class="rec-role">${recommendationData[i].relationship}</span></p>
@@ -448,14 +490,13 @@ function init() {
 
     const footer = document.querySelector("footer");
     footer.innerHTML = `
-        <p class="off-white-text text-center">
-            &copy; 2021 Caroline R. Jones &nbsp;&nbsp;&nbsp;&nbsp;
-            St. Louis, MO</p>
-            <p class="off-white-text text-center"><a class="inverted" href="https://www.linkedin.com/in/carolinerjones/" target="_blank">LinkedIn</a> &nbsp;|&nbsp; 
-            <a class="inverted" href="https://www.hackerrank.com/Carolina49a" target="_blank">HackerRank</a> &nbsp;|&nbsp; 
-            <a class="inverted" href="https://github.com/Carolista" target="_blank">GitHub</a>
-             
-        </p>
+        <span class="off-white-text text-center">
+            <p>&copy; 2021&nbsp; Caroline R. Jones &nbsp;&nbsp;&nbsp;&nbsp;
+                St. Louis, MO</p>
+            <p><a class="inverted" href="https://www.linkedin.com/in/carolinerjones/" target="_blank">LinkedIn</a> &nbsp;|&nbsp; 
+                <a class="inverted" href="https://www.hackerrank.com/Carolina49a" target="_blank">HackerRank</a> &nbsp;|&nbsp; 
+                <a class="inverted" href="https://github.com/Carolista" target="_blank">GitHub</a></p>
+        </span>
     `;
 
 }

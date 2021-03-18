@@ -113,68 +113,34 @@ a.inverted:hover {
   color: white;
 }
 
+ul {
+  margin-left: 35px;
+}
+
 /**** IDs ****/
-#header-name {
+#my-name {
   font-family: "Oleo Script Swash Caps", cursive;
   font-size: 2rem;
   color: #eee;
   margin: 25px 0px 30px;
 }
 
-#project-title {
-  margin-bottom: 5px;
-}
-
-#project-subtitle {
-  margin-bottom: 15px;
-}
-
-#project-links {
-  margin: 20px 0px;
-}
-
-#project-link {
-  position: absolute;
-  bottom: 0;
-}
-
 /**** CLASSES ****/
-.container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.row {
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-}
-
-.column {
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-.w-25 {
-  width: 25%;
-}
-
-.w-33 {
-  width: 33%;
-}
-
+/** GENERAL USE **/
 .page-title {
   font-family: "Barlow", sans-serif;
   font-weight: 600;
   font-size: 1.6rem;
   text-transform: uppercase;
   margin: 20px 0px 30px;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-center {
+  text-align: center;
 }
 
 .more-info {
@@ -191,40 +157,50 @@ a.inverted:hover {
   padding-left: 15px;
 }
 
-.bullet-points {
-  margin-left: 35px;
-}
-
-.project-section {
-  margin: 20px 0px 5px;
-}
-
-.employer {
+/** EXPERIENCE & EDUCATION PAGES **/
+.employer, .institution {
   font-weight: 600;
   font-size: 1.3rem;
 }
 
-.job-title {
+.job-title, .degree {
   font-weight: 600;
   font-size: 1rem;
   color: #56830e;
 }
 
-.institution {
-  font-weight: 600;
-  font-size: 1.3rem;
+/** SKILLS PAGE **/
+.skills-subsection {
+  margin-bottom: 5px;
 }
 
-.degree {
-  font-weight: 600;
-  font-size: 1rem;
-  color: #56830e;
+.skills-line {
+  border: 4px solid #ccc;
+  margin: 0px;
 }
 
-.skill-name {
+.skills-name {
   margin: 0px 0px 5px;
 }
 
+.skills-row,
+.skills-row > .skills-column {
+  padding: 8px;
+}
+
+.skills-column {
+  float: left;
+  width: 25%;
+  height: 400px;
+}
+
+.skills-row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/** RECOMMENDATION PAGE **/
 .rec-name {
   font-weight: 600;
   font-size: 1rem;
@@ -235,26 +211,125 @@ a.inverted:hover {
   font-size: 0.9rem;
 }
 
-.img-lg {
-  width: 30vw;
-  border: 2px solid #333;
+/** PROJECT GALLERY PAGE **/
+.view-details {
+  margin-top: 10px;
 }
 
-.img-sm {
-  width: calc(10vw - 6px);
-  border: 2px solid #333;
+.gallery-row,
+.gallery-row > .gallery-column {
+  padding: 8px;
 }
 
-.light {
-  font-weight: 200;
+.gallery-column {
+  float: left;
+  width: 33%;
 }
 
-.text-right {
-  text-align: right;
+.gallery-row:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
-.text-center {
-  text-align: center;
+.project-content {
+  background-color: white;
+  height: calc(80vw / 3.2);
+  padding: 15px;
+}
+
+.project-image {
+  width: 100%;
+  border: 1px solid #ccc;
+}
+
+/** PROJECT DETAILS PAGE **/
+.project-section {
+  margin: 20px 0px 5px;
+}
+
+.project-title {
+  margin-bottom: 5px;
+}
+
+.project-subtitle {
+  margin-bottom: 15px;
+}
+
+.project-links {
+  margin: 20px 0px;
+}
+
+.project-detail-image {
+  width: 90%;
+  border: 1px solid #ccc;
+  margin: 30px 0px -15px 30px;
+}
+
+.project-details-row,
+.project-details-row > .project-details-col {
+  padding: 0px;
+}
+
+.project-details-col {
+  float: left;
+  width: 50%;
+}
+
+/**** MEDIA QUERIES FOR MAIN CONTENT ****/
+@media screen and (max-width: 1200px) {
+  .gallery-column {
+    width: 50%;
+  }
+  .project-content {
+    height: calc(80vw / 2.3);
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .gallery-column {
+    width: 50%;
+  }
+  .project-content {
+    height: calc(80vw / 2.2);
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .gallery-column {
+    width: 50%;
+  }
+  .project-content {
+    height: calc(80vw / 2.1);
+  }
+  .skills-column {
+    width: 33%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .gallery-column {
+    width: 100%;
+  }
+  .project-content {
+    height: auto;
+  }
+  .project-details-col {
+    width: 100%;
+  }
+  .project-detail-image {
+    width: 100%;
+    margin: 15px 0px 0px;
+  }
+  .skills-column {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skills-column {
+    width: 100%;
+  }
 }
 
 /**** NAV BAR ****/
@@ -286,28 +361,23 @@ a.inverted:hover {
 }
 
 .nav-link {
-  color: #eee;
-  -webkit-transition: color 0.8s ease-in-out;
-  transition: color 0.8s ease-in-out;
-  text-decoration: none;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  color: #eee;
+  text-decoration: none;
   font-weight: 400;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-transition: background-color 0.8s ease-in-out, color 0.8s ease-in-out;
-  transition: background-color 0.8s ease-in-out, color 0.8s ease-in-out;
-}
-
-.nav-link {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   width: 100%;
   padding: 0.4em 0.8em;
   border-radius: 5px;
+  -webkit-transition: background-color 0.8s ease-in-out, color 0.8s ease-in-out;
+  transition: background-color 0.8s ease-in-out, color 0.8s ease-in-out;
 }
 
 .nav-link:focus,
@@ -454,97 +524,6 @@ a.inverted:hover {
   }
   #navbar .nav-link:last-child {
     margin-right: 0;
-  }
-}
-
-/**** GALLERY ****/
-.gallery-row,
-.gallery-row > .gallery-column {
-  padding: 8px;
-}
-
-.gallery-column {
-  float: left;
-  width: 33%;
-}
-
-.gallery-row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-.project-link {
-  margin-top: 10px;
-}
-
-.project-content {
-  background-color: white;
-  height: calc(80vw / 3.2);
-  padding: 15px;
-}
-
-.project-image {
-  width: 100%;
-  border: 1px solid #ccc;
-}
-
-.project-detail-image {
-  width: 90%;
-  border: 1px solid #ccc;
-  margin: 30px 0px -15px 30px;
-}
-
-.project-details-row,
-.project-details-row > .project-details-col {
-  padding: 0px;
-}
-
-.project-details-col {
-  float: left;
-  width: 50%;
-}
-
-@media screen and (max-width: 1200px) {
-  .gallery-column {
-    width: 50%;
-  }
-  .project-content {
-    height: calc(80vw / 2.3);
-  }
-}
-
-@media screen and (max-width: 1100px) {
-  .gallery-column {
-    width: 50%;
-  }
-  .project-content {
-    height: calc(80vw / 2.2);
-  }
-}
-
-@media screen and (max-width: 1000px) {
-  .gallery-column {
-    width: 50%;
-  }
-  .project-content {
-    height: calc(80vw / 2.1);
-  }
-}
-
-@media screen and (max-width: 800px) {
-  .gallery-column {
-    width: 100%;
-  }
-  .project-content {
-    height: auto;
-  }
-  .project-details-col {
-    width: 100%;
-  }
-  .project-detail-image {
-    width: 100%;
-    margin: 15px 0px 0px;
   }
 }
 /*# sourceMappingURL=styles.css.map */
