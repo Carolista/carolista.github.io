@@ -2,7 +2,7 @@
     {
         "id": 0,
         "title": "Quick\u2022Est",
-        "subtitle": "a home renovation project estimator",
+        "subtitle": "<em>Liftoff Capstone Project, LaunchCode</em></p> <p>a home renovation project estimator",
         "desc": "This browser-based app allows homeowners to define and customize a renovation project for multiple rooms and get a detailed estimate of the potential cost for each one. The project details form displays different categories and choices depending on the room type, and provides the user with updated estimates for each line item with every single change made on the form. Once finished with selections and adjustments, the user can save the estimate to revisit or modify later as desired.</p> <p>This capstone project was completed in collaboration with two other LC101 graduates at LaunchCode. While initially I was heavily involved in the overall architecture of the data, my primary contribution was designing and building the front end.",
         "tech": "Front End: HTML, CSS, Bootstrap, TypeScript, & Angular <br />Back End: Java, Gradle, Spring Boot, Hibernate, & SQL",
         "noteworthy": ["Constructed nested, indexed *ngFor loops with nuanced JS algorithms, two-way binding, and event handling to provide a robust, dynamic UX in the project details form.", "Provided custom graphic design for UI and integrated custom CSS with Bootstrap.", "Utilized a RESTful API for full stack connectivity."],
@@ -51,7 +51,7 @@
         "id": 5,
         "title": "Trivia Time",
         "subtitle": "randomized, customizable trivia quizzes",
-        "desc": "Originally created as a supplemental prep exercise for LaunchCode students just before a large graded assignment was due, this was a fun way to demonstrate how to fetch JSON from an API and also write some more advanced JavaScript to enhance the dynamicity of the page for a great UX.",
+        "desc": "Originally created as a supplemental prep exercise for LaunchCode students just before a large graded assignment was due, this was a fun way to demonstrate how to fetch JSON from an API and also write some more advanced JavaScript to enhance the dynamicity of the page for a great UX. The Open Trivia Database API contains thousands of questions. This app took me less than 24 hours from conception to completion.",
         "tech": "DOM - HTML, CSS, & JavaScript",
         "noteworthy": ["Multiple properties of the JSON returned from the Open Trivia Database API are used to generate custom dropdown menus, allowing user to choose from a wide range of categories, type of question, and difficulty when creating a trivia quiz.", "Upon submitting the form to generate a quiz, to facilitate data binding, variable id numbers are assigned to each of the questions displayed on the page and also to the choices for possible answers.", "As the user chooses their answer, immediate feedback is given as to whether it is correct or not."],
         "demo": { "type": "Try it now!", "url": "https://carolista.github.io/LC-A5-prep-2/"},
@@ -62,8 +62,8 @@
     {
         "id": 6,
         "title": "This Week",
-        "subtitle": "a simple tool to plan out the week",
-        "desc": "This app was created as a practice exercise for LaunchCode students, to demonstrate how a simple form can be created in the DOM and generate content on the page dynamically. The user chooses the day of the week, the category, and a description of the item to put on the planner.</p> <p>As this was just a practice exercise for students to demonstrate front end technology, there is no persistent back end to save a user's information.",
+        "subtitle": "a simple, colorful tool to plan out the week",
+        "desc": "This app was created in a single sitting as a practice exercise for LaunchCode students, to demonstrate how a simple form can be created in the DOM and generate content on the page dynamically. The user chooses the day of the week, the category, and a description of the item to put on the planner.</p> <p>As this was just a practice exercise for students to demonstrate front end technology, there is no persistent back end to save a user's information.",
         "tech": "DOM - HTML, CSS, & JavaScript",
         "noteworthy": ["Buttons toggle the form's visibility.", "Event delegation is used to detect buttons and trigger actions accordingly", "Entries are organized by day of the week on the page, and each entry receives a color-coded label representing the category."],
         "demo": { "type": "Try it now!", "url": "https://carolista.github.io/LC-Form-Basics/"},

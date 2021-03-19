@@ -213,28 +213,39 @@ ul {
 
 /** PROJECT GALLERY PAGE **/
 .view-details {
-  margin-top: 10px;
+  width: 100%;
+  padding-top: 10px;
+  margin-bottom: 0px;
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
 }
 
-.gallery-row,
-.gallery-row > .gallery-column {
-  padding: 8px;
+.gallery-container {
+  -webkit-columns: 3;
+          columns: 3;
+  -webkit-column-gap: 15px;
+          column-gap: 15px;
 }
 
-.gallery-column {
-  float: left;
-  width: 33%;
+.gallery-item {
+  display: inline-block;
+  vertical-align: top;
+  margin-bottom: 15px;
+  width: 100%;
+  -webkit-filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.3));
+          filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.3));
+  -webkit-transition: -webkit-filter .2s ease-in-out;
+  transition: -webkit-filter .2s ease-in-out;
+  transition: filter .2s ease-in-out;
+  transition: filter .2s ease-in-out, -webkit-filter .2s ease-in-out;
 }
 
-.gallery-row:after {
-  content: "";
-  display: table;
-  clear: both;
+.gallery-item:hover {
+  -webkit-filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, 0.6));
+          filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, 0.6));
 }
 
 .project-content {
   background-color: white;
-  height: calc(80vw / 3.2);
   padding: 15px;
 }
 
@@ -278,41 +289,22 @@ ul {
 
 /**** MEDIA QUERIES FOR MAIN CONTENT ****/
 @media screen and (max-width: 1200px) {
-  .gallery-column {
-    width: 50%;
-  }
-  .project-content {
-    height: calc(80vw / 2.3);
-  }
-}
-
-@media screen and (max-width: 1100px) {
-  .gallery-column {
-    width: 50%;
-  }
-  .project-content {
-    height: calc(80vw / 2.2);
+  .gallery-container {
+    -webkit-columns: 2;
+            columns: 2;
   }
 }
 
 @media screen and (max-width: 1000px) {
-  .gallery-column {
-    width: 50%;
-  }
-  .project-content {
-    height: calc(80vw / 2.1);
-  }
   .skills-column {
     width: 33%;
   }
 }
 
 @media screen and (max-width: 800px) {
-  .gallery-column {
-    width: 100%;
-  }
-  .project-content {
-    height: auto;
+  .gallery-container {
+    -webkit-columns: 1;
+            columns: 1;
   }
   .project-details-col {
     width: 100%;

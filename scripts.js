@@ -173,7 +173,7 @@ function init() {
                 // TODO: create responsive gallery of all projects not in progress
                 if (! projectData[i].inProgress) {
                     projectArea.innerHTML += `
-                            <div class="gallery-column">
+                            <div class="gallery-item">
                                 <div class="project-content">
                                     <a href="project-details.html?id=${projectData[i].id}"><img class="project-image" src="images/${projectData[i].images[0]}"></a>
                                     <h3>${projectData[i].title}</h3>
@@ -241,6 +241,8 @@ function init() {
                     <h4 class="project-section">Noteworthy</h4>
                     <ul>${bullets}</ul>
                     <p class="project-links">${links}</p>
+                    <hr>
+                    <p><a href='projects.html'>&lt; Back to Projects Gallery</a></p>
                 </div>
                 <div class="project-details-col">
                     ${images}
