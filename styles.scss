@@ -252,13 +252,6 @@ ul {
     filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, .6));
 }
 
-// clear floats
-// .gallery-container:after {
-//   content: "";
-//   display: table;
-//   clear: both;
-// }
-
 // container for each project in gallery
 .project-content {
   background-color: white;
@@ -295,7 +288,6 @@ ul {
     border: 1px solid $muted-color;
     margin: 30px 0px -15px 30px;
 }
-// TODO: crop images in the GIMP to be the same proportions (and smaller)
 
 // space between project details and images when side-by-side
 .project-details-row, 
