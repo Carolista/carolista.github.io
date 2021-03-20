@@ -339,7 +339,7 @@ ul {
 
 /**** NAV BAR ****/
 #navbar {
-  background-color: #333;
+  background-color: #56830e;
   height: 80px;
   left: 0;
   right: 0;
@@ -381,9 +381,9 @@ ul {
           justify-content: center;
   width: 100%;
   padding: 0.4em 0.8em;
-  border-radius: 5px;
-  -webkit-transition: background-color 0.8s ease-in-out, color 0.8s ease-in-out;
-  transition: background-color 0.8s ease-in-out, color 0.8s ease-in-out;
+  border-radius: 4px;
+  -webkit-transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
 }
 
 .nav-link:focus,
@@ -418,10 +418,10 @@ ul {
   width: 25px;
   height: 2px;
   margin: 3px;
-  -webkit-transition: background-color 0.5s ease-in-out, opacity 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
-  transition: background-color 0.5s ease-in-out, opacity 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
-  transition: background-color 0.5s ease-in-out, transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
-  transition: background-color 0.5s ease-in-out, transform 0.5s ease-in-out, opacity 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+  -webkit-transition: background-color 0.4s ease-in-out, opacity 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
+  transition: background-color 0.4s ease-in-out, opacity 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
+  transition: background-color 0.4s ease-in-out, transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+  transition: background-color 0.4s ease-in-out, transform 0.4s ease-in-out, opacity 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
   background-color: #eee;
 }
 
@@ -474,7 +474,7 @@ ul {
   max-height: 0;
   overflow: hidden;
   position: absolute;
-  background-color: #333;
+  background-color: #56830e;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

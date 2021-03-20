@@ -355,7 +355,7 @@ ul {
 /**** NAV BAR ****/
 
 #navbar {
-    background-color: $primary-color;
+    background-color: $accent-color;
     height: $navbar-height;
     left: 0;
     right: 0;
@@ -384,9 +384,8 @@ ul {
     justify-content: center;
     width: 100%;
     padding: 0.4em 0.8em;
-    border-radius: 5px;
-    transition: background-color 0.8s ease-in-out,
-                color 0.8s ease-in-out;
+    border-radius: 4px;
+    transition: background-color 0.3s ease-in-out;
 }
 
 .nav-link:focus,
@@ -413,9 +412,9 @@ ul {
     width: 25px;
     height: 2px;
     margin: 3px;
-    transition: background-color 0.5s ease-in-out,
-                transform 0.5s ease-in-out,
-                opacity 0.5s ease-in-out;
+    transition: background-color 0.4s ease-in-out,
+                transform 0.4s ease-in-out,
+                opacity 0.4s ease-in-out;
     background-color: $contrast-color;
 }
 
@@ -466,7 +465,7 @@ ul {
     max-height: 0;
     overflow: hidden;
     position: absolute;
-    background-color: $primary-color;
+    background-color: $accent-color;
     display: flex;
     flex-direction: column;
     align-items: center;
