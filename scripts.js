@@ -14,7 +14,7 @@ function init() {
     /** TAB TITLE **/
 
     // Tack on to end of <title> content specified in html doc
-    document.title += "Caroline Jones | Web Developer";
+    document.title += "Caroline Jones | Front End Developer";
 
 
     /** STYLE SHEETS & FONTS **/
@@ -27,70 +27,88 @@ function init() {
     `
 
 
-    /** HEADER **/
+    /** HEADER & FOOTER **/
 
-    const header = document.querySelector("header");
-    header.innerHTML = `
-        <nav class="nav-container">
-            <p id="my-name"><a class="inverted" href="/">Caroline R. Jones</a></p>
-            <button type="button" class="nav-button" aria-label="Open dropdown nav">
-                <span class="tri-bar"></span>
-                <span class="tri-bar"></span>
-                <span class="tri-bar"></span>
-            </button>
-            <div class="nav-menu">
-                <ul class="nav-links">
-                    <li class="nav-item"><a class="nav-link" id="projects" href="/projects.html">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link" id="experience" href="/experience.html">Experience</a></li>
-                    <li class="nav-item"><a class="nav-link" id="education" href="/education.html">Education</a></li>
-                    <li class="nav-item"><a class="nav-link" id="skills" href="/skills.html">Skills</a></li>
-                    <li class="nav-item"><a class="nav-link" id="recommendations" href="/recommendations.html">Recommendations</a></li>
-                    <li class="nav-item"><a class="nav-link" id="contact" href="/contact.html">Contact</a></li>
-                </ul>
-            </div>
-        </nav>
-    `;
+    let page = location.href.split('\\').pop().split('/').pop();
+    if (page.length > 1) { // if anything other than index.html
+        const header = document.querySelector("header");
+        header.innerHTML = `
+            <nav class="nav-container">
+                <p id="my-name"><a class="inverted" href="/">Caroline R. Jones</a></p>
+                <button type="button" class="nav-button" aria-label="Open dropdown nav">
+                    <span class="tri-bar"></span>
+                    <span class="tri-bar"></span>
+                    <span class="tri-bar"></span>
+                </button>
+                <div class="nav-menu">
+                    <ul class="nav-links">
+                        <li class="nav-item"><a class="nav-link" id="projects" href="/projects.html">Projects</a></li>
+                        <li class="nav-item"><a class="nav-link" id="experience" href="/experience.html">Experience</a></li>
+                        <li class="nav-item"><a class="nav-link" id="education" href="/education.html">Education</a></li>
+                        <li class="nav-item"><a class="nav-link" id="skills" href="/skills.html">Skills</a></li>
+                        <li class="nav-item"><a class="nav-link" id="recommendations" href="/recommendations.html">Recommendations</a></li>
+                        <li class="nav-item"><a class="nav-link" id="contact" href="/contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </nav>
+        `;
 
+        const footer = document.querySelector("footer");
+        footer.innerHTML = `
+            <span class="off-white-text text-center">
+                <p>&copy; 2021&nbsp; Caroline R. Jones &nbsp;&bull;&nbsp;
+                    St. Louis, MO</p>
+                <p><a class="inverted" href="https://www.linkedin.com/in/carolinerjones/" target="_blank">LinkedIn</a> &nbsp;|&nbsp; 
+                    <a class="inverted" href="https://www.hackerrank.com/Carolina49a" target="_blank">HackerRank</a> &nbsp;|&nbsp; 
+                    <a class="inverted" href="https://github.com/Carolista" target="_blank">GitHub</a></p>
+            </span>
+        `;  
 
+        /** NAV BAR **/
 
-    /** NAV BAR **/
+        // TODO: Add event listeners to highlight current page on navbar
 
-    // TODO: Add event listeners to highlight current page on navbar
-    // TODO: Consider adding dropdown for projects
-    // FIXME: remove fade-in upon page loading
-    // FIXME: change up colors
+        const navbar = document.getElementById("navbar");
+        const navButton = navbar.querySelector(".nav-button");
+        const allNavLinks = document.getElementsByClassName("nav-link");
 
-    const navbar = document.getElementById("navbar");
-    const navButton = navbar.querySelector(".nav-button");
-
-    function openDropdown() {
-        navbar.classList.add("opened");
-        navButton.setAttribute("aria-label", "Close dropdown nav");
-    }
-
-    function closeDropdown() {
-        navbar.classList.remove("opened");
-        navButton.setAttribute("aria-label", "Open dropdown nav");
-    }
-
-    navButton.addEventListener("click", () => {
-        if (navbar.classList.contains("opened")) {
-            closeDropdown();
-        } else {
-            openDropdown();
+        function openDropdown() {
+            navbar.classList.add("opened");
+            navButton.setAttribute("aria-label", "Close dropdown nav");
         }
-    });
 
-    const navMenu = navbar.querySelector(".nav-menu");
-    const navLinksContainer = navbar.querySelector(".nav-links");
+        function closeDropdown() {
+            navbar.classList.remove("opened");
+            navButton.setAttribute("aria-label", "Open dropdown nav");
+        }
 
-    navLinksContainer.addEventListener("click", (clickEvent) => {
-        clickEvent.stopPropagation();
-    });
+        navButton.addEventListener("click", () => {
+            if (navbar.classList.contains("opened")) {
+                closeDropdown();
+            } else {
+                openDropdown();
+            }
+        });
 
-    navMenu.addEventListener("click", closeDropdown);
+        const navMenu = navbar.querySelector(".nav-menu");
+        const navLinksContainer = navbar.querySelector(".nav-links");
 
+        navLinksContainer.addEventListener("click", (clickEvent) => {
+            clickEvent.stopPropagation();
+        });
 
+        navMenu.addEventListener("click", closeDropdown);
+
+        // set background for nav link of current page
+        for (let i=0; i < allNavLinks.length; i++) {
+            if (page.includes(allNavLinks[i].id)) {
+                console.log(allNavLinks[i].id);
+                allNavLinks[i].style.backgroundColor = "#822110";
+            } else {
+                allNavLinks[i].style.backgroundColor = "transparent";
+            }
+        }
+    }   
 
     /** MAIN **/
 
@@ -114,13 +132,13 @@ function init() {
     let recommendationData = [];
     
     // DOM elements for each page where content should be displayed
-    let projectArea = document.querySelector("#project-area");
-    let detailArea = document.querySelector("#detail-area");
-    let expArea = document.querySelector("#exp-area");
-    let edArea = document.querySelector("#ed-area");
-    let techSkillsArea = document.querySelector("#tech-skills-area");
-    let generalSkillsArea = document.querySelector("#general-skills-area");
-    let recArea = document.querySelector("#rec-area");
+    const projectArea = document.querySelector("#project-area");
+    const detailArea = document.querySelector("#detail-area");
+    const expArea = document.querySelector("#exp-area");
+    const edArea = document.querySelector("#ed-area");
+    const techSkillsArea = document.querySelector("#tech-skills-area");
+    const generalSkillsArea = document.querySelector("#general-skills-area");
+    const recArea = document.querySelector("#rec-area");
 
     // Determine which data should be loaded, if any
     function loadAndDisplayData() {
@@ -235,6 +253,7 @@ function init() {
             detailArea.innerHTML = `
                 <div class="project-details-col">
                     <h1 class="project-title" class="page-title">${currentProject.title}</h1>
+                    <hr class="muted-line">
                     <h3 class="project-subtitle">${currentProject.subtitle}</h3>
                     <p>${currentProject.desc}</p>
                     <h4 class="project-section">Tech Stack</h4>
@@ -475,17 +494,5 @@ function init() {
     loadAndDisplayData();
     
 
-    /** FOOTER **/ 
-
-    const footer = document.querySelector("footer");
-    footer.innerHTML = `
-        <span class="off-white-text text-center">
-            <p>&copy; 2021&nbsp; Caroline R. Jones &nbsp;&nbsp;&nbsp;&nbsp;
-                St. Louis, MO</p>
-            <p><a class="inverted" href="https://www.linkedin.com/in/carolinerjones/" target="_blank">LinkedIn</a> &nbsp;|&nbsp; 
-                <a class="inverted" href="https://www.hackerrank.com/Carolina49a" target="_blank">HackerRank</a> &nbsp;|&nbsp; 
-                <a class="inverted" href="https://github.com/Carolista" target="_blank">GitHub</a></p>
-        </span>
-    `;
 
 }

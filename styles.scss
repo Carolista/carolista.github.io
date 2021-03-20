@@ -1,8 +1,11 @@
 $primary-color: #333;
-$contrast-color: #eee;
-$muted-color: #ccc;
-$accent-color: #56830e;
-$light-accent-color: #6ca314;
+$contrast-color: #dedede;
+$muted-color: #adadad;
+$dark-accent-color: #2b0b1c;
+$muted-accent-color: #5e1828;
+$accent-color: #762121;
+$bright-accent-color: #822110;
+$light-accent-color: #c77162;
 $highlight-color: white;
 $primary-font: "Barlow", sans-serif;
 $header-font: "Barlow", sans-serif;
@@ -43,12 +46,15 @@ header {
 }
 
 main {
+    background-image: url("images/white-geo-bkg.png");
+    background-repeat: repeat;
+    background-size: 1000px;
     display: flex;
     flex-direction: column;
     flex: 1;
     width: 100vw;
     margin: 0px;
-    padding: 30px 10vw;
+    padding: 30px 10vw 60px;
 }
 
 footer {
@@ -57,7 +63,7 @@ footer {
     background-color: $accent-color;
     width: 100vw;
     height: 80px;
-    margin: 30px 0px 0px;
+    // margin: 30px 0px 0px;
     padding: 20px;
 }
 
@@ -135,6 +141,7 @@ ul {
 // for h1 titles on each page
 .page-title {
     font-family: $header-font;
+    font-size: 48px;
     font-weight: 600;
     text-transform: uppercase; 
     margin: 20px 0px 30px;
@@ -146,6 +153,12 @@ ul {
 
 .text-center {
     text-align: center;
+}
+
+// Muted line under some subheaders or titles
+.muted-line {
+    border: 4px solid $bright-accent-color;
+    margin: 0px;
 }
 
 // use for italicized notes/footnotes
@@ -161,8 +174,9 @@ ul {
 // used as basic container for non-responsive (100% wide) content
 .content-block {
     margin: 0px 0px 50px;
-    border-left: 8px $accent-color solid;
-    padding-left: 15px;
+    border-left: 8px $light-accent-color solid;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.65);
 }
 
 
@@ -186,10 +200,7 @@ ul {
     margin-bottom: 5px;
 }
 
-.skills-line {
-    border: 4px solid $muted-color;
-    margin: 0px;
-}
+
 
 .skills-name {
     margin: 0px 0px 5px;
@@ -204,7 +215,7 @@ ul {
 // tech and general containers
 .skills-subsection {
     vertical-align: top;
-    margin: 0px 30px 40px 0px;
+    margin: 0px 50px 40px 0px;
     width: 100%;
 }
 
@@ -258,12 +269,12 @@ ul {
     vertical-align: top;
     margin-bottom: 15px;
     width: 100%;
-    filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, .3));
+    filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, .2));
     transition: filter .2s ease-in-out;
 }
 
 .gallery-item:hover {
-    filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, .6));
+    filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, .4));
 }
 
 // container for each project in gallery
@@ -319,16 +330,19 @@ ul {
 
 /**** MEDIA QUERIES FOR RESPONSIVE CONTENT ****/
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1100px) {
     .gallery-container {
         columns: 2;
+    }
+    .skills-group {
+        columns: 1;
     }
 }
 
 @media screen and (max-width: 1000px) {
-    .skills-group {
-        columns: 1;
-    }
+    .page-title {
+        font-size: 5vw;
+    } 
 }
 
 @media screen and (max-width: 800px) {
@@ -346,6 +360,9 @@ ul {
 }
 
 @media screen and (max-width: 600px) {
+    .page-title {
+        font-size: 28px;
+    }
     .skills-container {
         flex-direction: column;
     }
@@ -355,12 +372,13 @@ ul {
 /**** NAV BAR ****/
 
 #navbar {
-    background-color: $primary-color;
-    height: $navbar-height;
+    background-color: $dark-accent-color;
+    height: calc($navbar-height-6px);
     left: 0;
     right: 0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
-    z-index: 2;
+    border-bottom: 10px solid $muted-accent-color;
+    z-index: 2; // needed to stay above masonry layout on project gallery
 }
 
 .nav-container {
@@ -371,8 +389,8 @@ ul {
 }
 
 .nav-item {
-    margin: 0.4em;
-    width: 100%;
+    margin: 0.2em;
+    width: auto;
 }
 
 .nav-link {
@@ -384,15 +402,14 @@ ul {
     justify-content: center;
     width: 100%;
     padding: 0.4em 0.8em;
-    border-radius: 5px;
-    transition: background-color 0.8s ease-in-out,
-                color 0.8s ease-in-out;
+    background-color: transparent;
+    transition: background-color 0.3s ease-in-out;
 }
 
 .nav-link:focus,
 .nav-link:hover {
     color: $highlight-color;
-    background-color: $accent-color;
+    background-color: $bright-accent-color;
 }
 
 .nav-button {
@@ -413,9 +430,9 @@ ul {
     width: 25px;
     height: 2px;
     margin: 3px;
-    transition: background-color 0.5s ease-in-out,
-                transform 0.5s ease-in-out,
-                opacity 0.5s ease-in-out;
+    transition: background-color 0.4s ease-in-out,
+                transform 0.4s ease-in-out,
+                opacity 0.4s ease-in-out;
     background-color: $contrast-color;
 }
 
@@ -466,14 +483,12 @@ ul {
     max-height: 0;
     overflow: hidden;
     position: absolute;
-    background-color: $primary-color;
+    background-color: $dark-accent-color;
     display: flex;
     flex-direction: column;
     align-items: center;
-    left: 0;
     right: 0;
     margin: 1.4rem;
-    border-radius: 5px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
 
