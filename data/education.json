@@ -10,6 +10,15 @@
     },
     {
         "id": 1,
+        "institution": "Udemy",
+        "gradDate": "2021",
+        "degree": "Angular Course",
+        "desc": "Say something about it here",
+        "image": "",
+        "website": ""
+    },
+    {
+        "id": 2,
         "institution": "Washington University in St. Louis",
         "gradDate": "May 2000",
         "degree": "BSCE, Civil Engineering, Architecture",

@@ -102,12 +102,28 @@ function init() {
         // set background for nav link of current page
         for (let i=0; i < allNavLinks.length; i++) {
             if (page.includes(allNavLinks[i].id)) {
-                console.log(allNavLinks[i].id);
-                allNavLinks[i].style.backgroundColor = "#822110";
+                allNavLinks[i].style.backgroundColor = "#762121";
             } else {
-                allNavLinks[i].style.backgroundColor = "transparent";
+                allNavLinks[i].style.backgroundColor = "#2b0b1c";
             }
         }
+
+        // temporarily change bkg of nav links when hovered over
+        document.addEventListener("mouseover", function(event) {
+            if (event.target.matches(".nav-link")) {
+                event.target.style.backgroundColor = "#822110";
+            } 
+        });
+        document.addEventListener("mouseout", function(event) {
+            if (event.target.matches(".nav-link")) {
+                if (page.includes(event.target.id)) {
+                    event.target.style.backgroundColor = "#762121";
+                } else {
+                    event.target.style.backgroundColor = "#2b0b1c";
+                }
+                
+            } 
+        });
     }   
 
     /** MAIN **/
@@ -124,6 +140,7 @@ function init() {
         generalKnowledge: [],
         generalStrengths: [],
         generalTools: [],
+        generalValues: [],
         techFrameworks: [],
         techKnowledge: [],
         techLanguages: [],
@@ -296,11 +313,13 @@ function init() {
         setTimeout(function() {
             for (let i=0; i < experienceData.length; i++) {
                 expArea.innerHTML += `
-                    <div class="content-block">                        
-                        <p><span class="employer">${experienceData[i].employer}</span><br />
-                        ${experienceData[i].type} &nbsp;&bull;&nbsp; ${experienceData[i].location} &nbsp;&bull;&nbsp; ${experienceData[i].period}</p>
-                        <p class="job-title">${experienceData[i].title}</p>
-                        <p>${experienceData[i].desc}</p>
+                    <div class="content-item">
+                        <div class="content-block">                        
+                            <p><span class="employer">${experienceData[i].employer}</span><br />
+                            ${experienceData[i].type} &nbsp;&bull;&nbsp; ${experienceData[i].location} &nbsp;&bull;&nbsp; ${experienceData[i].period}</p>
+                            <p class="job-title">${experienceData[i].title}</p>
+                            <p>${experienceData[i].desc}</p>
+                        </div>
                     </div>
                 `;
             }
@@ -331,14 +350,16 @@ function init() {
         setTimeout(function() {
             for (let i=0; i < educationData.length; i++) {
                 // FIXME: move link to institution website to a property and redo HTML below
-                // TODO: decide if using logos or not
+                // TODO: gather images of certificates/degrees
                 edArea.innerHTML += `
-                <div class="content-block">                        
-                    <p><span class="institution">${educationData[i].institution}</span><br />
-                    ${educationData[i].gradDate}</p>
-                    <p class="degree">${educationData[i].degree}</p>
-                <p>${educationData[i].desc}</p>
-            </div>
+                <div class="content-item">
+                    <div class="content-block">                        
+                        <p><span class="institution">${educationData[i].institution}</span><br />
+                        ${educationData[i].gradDate}</p>
+                        <p class="degree">${educationData[i].degree}</p>
+                        <p>${educationData[i].desc}</p>
+                    </div>
+                </div>
                 `;
             }
         }, 200); // only needs a slight delay
@@ -363,6 +384,8 @@ function init() {
                             skillsData.generalStrengths.push(skill);
                         } else if (skill.category === "Tools") {
                             skillsData.generalTools.push(skill);
+                        } else if (skill.category === "Values") {
+                            skillsData.generalValues.push(skill);
                         }
                     } else { // Tech
                         if (skill.category === "Frameworks") {
@@ -383,15 +406,16 @@ function init() {
 
     // Data structures to hold everything needed to display lists on Skills page
     let techSkillsCategories = {
-        languages: { category: "Languages", list: "", count: 0 },
-        frameworks: { category: "Frameworks", list: "", count: 0 },
         tools: { category: "Tools", list: "", count: 0 },
+        frameworks: { category: "Frameworks", list: "", count: 0 },
+        languages: { category: "Languages", list: "", count: 0 },
         knowledge: { category: "Knowledge", list: "", count: 0 }
     }
     let generalSkillsCategories = {
         tools: { category: "Tools", list: "", count: 0 },
+        strengths: { category: "Strengths", list: "", count: 0 },
         knowledge: { category: "Knowledge", list: "", count: 0 },
-        strengths: { category: "Strengths", list: "", count: 0 }
+        values: { category: "Values", list: "", count: 0 }
     }
 
     function buildSkillsHTML() {
@@ -423,6 +447,9 @@ function init() {
                         } else if (skillsData[group][i].category === "Knowledge") {
                             generalSkillsCategories.knowledge.list += `<p class='skill-name'>${skillsData[group][i].skillName}</p>`;
                             generalSkillsCategories.knowledge.count += 1;
+                        } else if (skillsData[group][i].category === "Values") {
+                            generalSkillsCategories.values.list += `<p class='skill-name'>${skillsData[group][i].skillName}</p>`;
+                            generalSkillsCategories.values.count += 1;
                         }
                     }
                 }
@@ -480,10 +507,12 @@ function init() {
         setTimeout(function() {
             for (let i=0; i < recommendationData.length; i++) {
                 recArea.innerHTML += `
-                    <div class="content-block">
-                        <p>${recommendationData[i].recText}</p>
-                        <p class="text-right"><span class="rec-name">${recommendationData[i].author}</span><br />
-                        <span class="rec-role">${recommendationData[i].relationship}</span></p>
+                    <div class="content-item">
+                        <div class="content-block">
+                            <p>${recommendationData[i].recText}</p>
+                            <p class="text-right"><span class="rec-name">${recommendationData[i].author}</span><br />
+                            <span class="rec-role">${recommendationData[i].relationship}</span></p>
+                        </div>
                     </div>
                 `;
             }
