@@ -352,5 +352,59 @@
         "skillName": "Web Development",
         "category": "Knowledge",
         "type": "Tech"
+    },
+    {
+        "id": 61,
+        "skillName": "Excellence",
+        "category": "Values",
+        "type": "General"
+    },
+    {
+        "id": 62,
+        "skillName": "Servant Leadership",
+        "category": "Values",
+        "type": "General"
+    },
+    {
+        "id": 62,
+        "skillName": "Optimism",
+        "category": "Values",
+        "type": "General"
+    },
+    {
+        "id": 63,
+        "skillName": "Kindness",
+        "category": "Values",
+        "type": "General"
+    },
+    {
+        "id": 64,
+        "skillName": "Integrity",
+        "category": "Values",
+        "type": "General"
+    },
+    {
+        "id": 65,
+        "skillName": "Dependability",
+        "category": "Values",
+        "type": "General"
+    },
+    {
+        "id": 66,
+        "skillName": "Passion for Learning",
+        "category": "Values",
+        "type": "General"
+    },
+    {
+        "id": 67,
+        "skillName": "Confidence",
+        "category": "Values",
+        "type": "General"
+    },
+    {
+        "id": 68,
+        "skillName": "Collaboration",
+        "category": "Values",
+        "type": "General"
     }
 ]

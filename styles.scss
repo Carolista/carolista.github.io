@@ -42,7 +42,7 @@ header {
     height: $navbar-height;
     width: 100vw;
     margin: 0px;
-    padding: 20px;
+    padding: 0px 20px;
 }
 
 main {
@@ -62,9 +62,8 @@ footer {
     flex-direction: column;
     background-color: $accent-color;
     width: 100vw;
-    height: 80px;
-    // margin: 30px 0px 0px;
     padding: 20px;
+    border-top: 10px solid $light-accent-color;
 }
 
 h1 {
@@ -126,9 +125,9 @@ ul {
 
 #my-name {
     font-family: $title-font;
-    font-size: 2rem;
+    font-size: 3rem;
     color: $contrast-color;
-    margin: 25px 0px 30px;
+    margin: 30px 0px 0px;
 }
 
 
@@ -137,6 +136,8 @@ ul {
 
 
 /** GENERAL USE **/
+
+// TODO: consider creating sticky for pages with longer content that appears only when single-column content is shown on narrow widths
 
 // for h1 titles on each page
 .page-title {
@@ -156,6 +157,7 @@ ul {
 }
 
 // Muted line under some subheaders or titles
+// TODO: apply this to bottom of pages with extra info at bottom
 .muted-line {
     border: 4px solid $bright-accent-color;
     margin: 0px;
@@ -193,14 +195,24 @@ ul {
     color: $accent-color;
 }
 
+.content-container {
+    columns: 2;
+    column-gap: 40px;
+}
+
+.content-item {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0px 0px 0px;
+    width: 100%;
+}
+
 
 /** SKILLS PAGE **/
 
 .skills-subheader {
     margin-bottom: 5px;
 }
-
-
 
 .skills-name {
     margin: 0px 0px 5px;
@@ -343,6 +355,9 @@ ul {
     .page-title {
         font-size: 5vw;
     } 
+    .content-container {
+        columns: 1;
+    }
 }
 
 @media screen and (max-width: 800px) {
@@ -360,6 +375,9 @@ ul {
 }
 
 @media screen and (max-width: 600px) {
+    #my-name {
+        font-size: 8vw;
+    }
     .page-title {
         font-size: 28px;
     }
@@ -373,7 +391,7 @@ ul {
 
 #navbar {
     background-color: $dark-accent-color;
-    height: calc($navbar-height-6px);
+    height: calc($navbar-height-10px);
     left: 0;
     right: 0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
@@ -401,15 +419,17 @@ ul {
     align-items: center;
     justify-content: center;
     width: 100%;
-    padding: 0.4em 0.8em;
-    background-color: transparent;
+    height: 100%;
+    padding: 0.4em 0.8em 0.8em;
+    background-color: $dark-accent-color;
+    border-bottom: 20px solid $dark-accent-color;
     transition: background-color 0.3s ease-in-out;
 }
 
 .nav-link:focus,
 .nav-link:hover {
     color: $highlight-color;
-    background-color: $bright-accent-color;
+    // background-color is handled in JS
 }
 
 .nav-button {
