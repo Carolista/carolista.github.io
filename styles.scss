@@ -12,6 +12,7 @@ $navbar-height: 80px;
 /**** DO NOT EDIT CSS FILE - JUST SCSS ****/
 
 
+
 /**** ELEMENTS ****/
 
 * {
@@ -114,6 +115,7 @@ ul {
 }
 
 
+
 /**** IDs ****/
 
 #my-name {
@@ -124,7 +126,9 @@ ul {
 }
 
 
+
 /**** CLASSES ****/
+
 
 /** GENERAL USE **/
 
@@ -161,6 +165,7 @@ ul {
     padding-left: 15px;
 }
 
+
 /** EXPERIENCE & EDUCATION PAGES **/
 
 .employer, .institution {
@@ -173,6 +178,7 @@ ul {
     font-size: 1rem;
     color: $accent-color;
 }
+
 
 /** SKILLS PAGE **/
 
@@ -191,19 +197,18 @@ ul {
 
 // container for all skills
 .skills-container {
-    // columns: 2;
-    // column-gap: 20px;
-    max-width: 700px;
+    display: flex;
+    flex-direction: row;
 }
 
 // tech and general containers
 .skills-subsection {
-    display: inline-block;
     vertical-align: top;
-    margin-bottom: 40px;
+    margin: 0px 30px 40px 0px;
     width: 100%;
 }
 
+// holds all lists in a subsection
 .skills-group {
     columns: 2;
     column-gap: 20px;
@@ -217,25 +222,6 @@ ul {
     width: 100%;
 }
 
-// space between project blocks
-// .skills-row,
-// .skills-row > .skills-column {
-//   padding: 8px;
-// }
-
-// default for wide layout - create four columns 
-// .skills-column {
-//   float: left;
-//   width: 25%;
-//   height: auto;
-// }
-
-// clear floats
-// .skills-row:after {
-//   content: "";
-//   display: table;
-//   clear: both;
-// }
 
 /** RECOMMENDATION PAGE **/
 
@@ -248,6 +234,7 @@ ul {
     font-weight: 200;
     font-size: 0.9rem;
 }
+
 
 /** PROJECT GALLERY PAGE **/
 
@@ -290,6 +277,7 @@ ul {
     border: 1px solid $muted-color;
 }
 
+
 /** PROJECT DETAILS PAGE **/
 
 // used for Tech Stack and Noteworthy subheaders in project details page
@@ -331,26 +319,16 @@ ul {
 
 /**** MEDIA QUERIES FOR RESPONSIVE CONTENT ****/
 
-// responsive to width - create 2 columns 
 @media screen and (max-width: 1200px) {
     .gallery-container {
         columns: 2;
     }
-    // .skills-container {
-    //     columns: 2;
-    // }
-    // .skills-group {
-    //     columns: 1;
-    // }
 }
 
 @media screen and (max-width: 1000px) {
-    // .skills-container {
-    //     columns: 1;
-    // }
-    // .skills-group {
-    //     columns: 2;
-    // }
+    .skills-group {
+        columns: 1;
+    }
 }
 
 @media screen and (max-width: 800px) {
@@ -364,14 +342,12 @@ ul {
         width: 100%;
         margin: 15px 0px 0px;
     }   
+    
 }
 
-@media screen and (max-width: 700px) {
-    // .skills-container {
-    //     columns: 1;
-    // }
-    .skills-group {
-        columns: 1;
+@media screen and (max-width: 600px) {
+    .skills-container {
+        flex-direction: column;
     }
 }
 

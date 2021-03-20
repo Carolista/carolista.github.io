@@ -414,33 +414,23 @@ function init() {
     function displaySkills() {
         setTimeout(function() {
             // Tech subsection
-            let techArray = [];
-            for (techCategory in techSkillsCategories) {
-                techArray.push(techSkillsCategories[techCategory]);
-            }
-            // techArray.sort((a, b) => a.count > b.count ? 1 : -1);
             let allTechSkills = "";
-            for (let i=0; i < techArray.length; i++) {
+            for (techCategory in techSkillsCategories) {
                 allTechSkills += `
                     <div class="content-block skills-list">
-                        <h3>${techArray[i].category}</h3>
-                        <div>${techArray[i].list}</div> 
+                        <h3>${techSkillsCategories[techCategory].category}</h3>
+                        <div>${techSkillsCategories[techCategory].list}</div> 
                     </div>
                 `
             }
             techSkillsArea.innerHTML = allTechSkills;
             // General subsection
-            let generalArray = [];
-            for (generalCategory in generalSkillsCategories) {
-                generalArray.push(generalSkillsCategories[generalCategory]);
-            }
-            generalArray.sort((a, b) => a.count > b.count ? 1: -1);
             let allGeneralSkills = "";
-            for (let i=0; i < generalArray.length; i++) {
+            for (generalCategory in generalSkillsCategories) {
                 allGeneralSkills += `
                     <div class="content-block skills-list">
-                        <h3>${generalArray[i].category}</h3>
-                        <div>${generalArray[i].list}</div> 
+                        <h3>${generalSkillsCategories[generalCategory].category}</h3>
+                        <div>${generalSkillsCategories[generalCategory].list}</div> 
                     </div>
                 `
             }
