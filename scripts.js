@@ -30,8 +30,6 @@ function init() {
     /** HEADER & FOOTER **/
 
     let page = location.href.split('\\').pop().split('/').pop();
-    console.log("File name:" + page + "!");
-
     if (page.length > 1) { // if anything other than index.html
         const header = document.querySelector("header");
         header.innerHTML = `
@@ -69,10 +67,10 @@ function init() {
         /** NAV BAR **/
 
         // TODO: Add event listeners to highlight current page on navbar
-        // FIXME: change up colors
 
         const navbar = document.getElementById("navbar");
         const navButton = navbar.querySelector(".nav-button");
+        const allNavLinks = document.getElementsByClassName("nav-link");
 
         function openDropdown() {
             navbar.classList.add("opened");
@@ -100,9 +98,17 @@ function init() {
         });
 
         navMenu.addEventListener("click", closeDropdown);
+
+        // set background for nav link of current page
+        for (let i=0; i < allNavLinks.length; i++) {
+            if (page.includes(allNavLinks[i].id)) {
+                console.log(allNavLinks[i].id);
+                allNavLinks[i].style.backgroundColor = "#822110";
+            } else {
+                allNavLinks[i].style.backgroundColor = "transparent";
+            }
+        }
     }   
-
-
 
     /** MAIN **/
 
@@ -247,6 +253,7 @@ function init() {
             detailArea.innerHTML = `
                 <div class="project-details-col">
                     <h1 class="project-title" class="page-title">${currentProject.title}</h1>
+                    <hr class="muted-line">
                     <h3 class="project-subtitle">${currentProject.subtitle}</h3>
                     <p>${currentProject.desc}</p>
                     <h4 class="project-section">Tech Stack</h4>
