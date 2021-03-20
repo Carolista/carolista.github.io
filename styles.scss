@@ -12,6 +12,7 @@ $navbar-height: 80px;
 /**** DO NOT EDIT CSS FILE - JUST SCSS ****/
 
 
+
 /**** ELEMENTS ****/
 
 * {
@@ -114,6 +115,7 @@ ul {
 }
 
 
+
 /**** IDs ****/
 
 #my-name {
@@ -124,7 +126,9 @@ ul {
 }
 
 
+
 /**** CLASSES ****/
+
 
 /** GENERAL USE **/
 
@@ -132,7 +136,6 @@ ul {
 .page-title {
     font-family: $header-font;
     font-weight: 600;
-    font-size: 1.6rem;
     text-transform: uppercase; 
     margin: 20px 0px 30px;
 }
@@ -162,6 +165,7 @@ ul {
     padding-left: 15px;
 }
 
+
 /** EXPERIENCE & EDUCATION PAGES **/
 
 .employer, .institution {
@@ -175,9 +179,10 @@ ul {
     color: $accent-color;
 }
 
+
 /** SKILLS PAGE **/
 
-.skills-subsection {
+.skills-subheader {
     margin-bottom: 5px;
 }
 
@@ -190,25 +195,33 @@ ul {
     margin: 0px 0px 5px;
 }
 
-// space between project blocks
-.skills-row,
-.skills-row > .skills-column {
-  padding: 8px;
+// container for all skills
+.skills-container {
+    display: flex;
+    flex-direction: row;
 }
 
-// default for wide layout - create four columns 
-.skills-column {
-  float: left;
-  width: 25%;
-  height: 400px;
+// tech and general containers
+.skills-subsection {
+    vertical-align: top;
+    margin: 0px 30px 40px 0px;
+    width: 100%;
 }
 
-// clear floats
-.skills-row:after {
-  content: "";
-  display: table;
-  clear: both;
+// holds all lists in a subsection
+.skills-group {
+    columns: 2;
+    column-gap: 20px;
 }
+
+// container for individual lists by subcategory
+.skills-list {
+    display: inline-block;
+    vertical-align: top;
+    margin: 30px 0px 0px;
+    width: 100%;
+}
+
 
 /** RECOMMENDATION PAGE **/
 
@@ -221,6 +234,7 @@ ul {
     font-weight: 200;
     font-size: 0.9rem;
 }
+
 
 /** PROJECT GALLERY PAGE **/
 
@@ -263,6 +277,7 @@ ul {
     border: 1px solid $muted-color;
 }
 
+
 /** PROJECT DETAILS PAGE **/
 
 // used for Tech Stack and Noteworthy subheaders in project details page
@@ -302,9 +317,8 @@ ul {
 }
 
 
-/**** MEDIA QUERIES FOR MAIN CONTENT ****/
+/**** MEDIA QUERIES FOR RESPONSIVE CONTENT ****/
 
-// responsive to width - create 2 columns 
 @media screen and (max-width: 1200px) {
     .gallery-container {
         columns: 2;
@@ -312,8 +326,8 @@ ul {
 }
 
 @media screen and (max-width: 1000px) {
-    .skills-column {
-        width: 33%;
+    .skills-group {
+        columns: 1;
     }
 }
 
@@ -328,14 +342,12 @@ ul {
         width: 100%;
         margin: 15px 0px 0px;
     }   
-    .skills-column {
-        width: 50%
-    }
+    
 }
 
-@media screen and (max-width: 500px) {
-    .skills-column {
-        width: 100%
+@media screen and (max-width: 600px) {
+    .skills-container {
+        flex-direction: column;
     }
 }
 
@@ -348,6 +360,7 @@ ul {
     left: 0;
     right: 0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    z-index: 2;
 }
 
 .nav-container {
