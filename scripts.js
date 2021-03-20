@@ -58,7 +58,7 @@ function init() {
         const footer = document.querySelector("footer");
         footer.innerHTML = `
             <span class="off-white-text text-center">
-                <p>&copy; 2021&nbsp; Caroline R. Jones &nbsp;&nbsp;&nbsp;&nbsp;
+                <p>&copy; 2021&nbsp; Caroline R. Jones &nbsp;&bull;&nbsp;
                     St. Louis, MO</p>
                 <p><a class="inverted" href="https://www.linkedin.com/in/carolinerjones/" target="_blank">LinkedIn</a> &nbsp;|&nbsp; 
                     <a class="inverted" href="https://www.hackerrank.com/Carolina49a" target="_blank">HackerRank</a> &nbsp;|&nbsp; 
