@@ -132,7 +132,6 @@ ul {
 .page-title {
     font-family: $header-font;
     font-weight: 600;
-    font-size: 1.6rem;
     text-transform: uppercase; 
     margin: 20px 0px 30px;
 }
@@ -177,7 +176,7 @@ ul {
 
 /** SKILLS PAGE **/
 
-.skills-subsection {
+.skills-subheader {
     margin-bottom: 5px;
 }
 
@@ -190,25 +189,53 @@ ul {
     margin: 0px 0px 5px;
 }
 
-// space between project blocks
-.skills-row,
-.skills-row > .skills-column {
-  padding: 8px;
+// container for all skills
+.skills-container {
+    // columns: 2;
+    // column-gap: 20px;
+    max-width: 700px;
 }
+
+// tech and general containers
+.skills-subsection {
+    display: inline-block;
+    vertical-align: top;
+    margin-bottom: 40px;
+    width: 100%;
+}
+
+.skills-group {
+    columns: 2;
+    column-gap: 20px;
+}
+
+// container for individual lists by subcategory
+.skills-list {
+    display: inline-block;
+    vertical-align: top;
+    margin: 30px 0px 0px;
+    width: 100%;
+}
+
+// space between project blocks
+// .skills-row,
+// .skills-row > .skills-column {
+//   padding: 8px;
+// }
 
 // default for wide layout - create four columns 
-.skills-column {
-  float: left;
-  width: 25%;
-  height: 400px;
-}
+// .skills-column {
+//   float: left;
+//   width: 25%;
+//   height: auto;
+// }
 
 // clear floats
-.skills-row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
+// .skills-row:after {
+//   content: "";
+//   display: table;
+//   clear: both;
+// }
 
 /** RECOMMENDATION PAGE **/
 
@@ -302,19 +329,28 @@ ul {
 }
 
 
-/**** MEDIA QUERIES FOR MAIN CONTENT ****/
+/**** MEDIA QUERIES FOR RESPONSIVE CONTENT ****/
 
 // responsive to width - create 2 columns 
 @media screen and (max-width: 1200px) {
     .gallery-container {
         columns: 2;
     }
+    // .skills-container {
+    //     columns: 2;
+    // }
+    // .skills-group {
+    //     columns: 1;
+    // }
 }
 
 @media screen and (max-width: 1000px) {
-    .skills-column {
-        width: 33%;
-    }
+    // .skills-container {
+    //     columns: 1;
+    // }
+    // .skills-group {
+    //     columns: 2;
+    // }
 }
 
 @media screen and (max-width: 800px) {
@@ -328,14 +364,14 @@ ul {
         width: 100%;
         margin: 15px 0px 0px;
     }   
-    .skills-column {
-        width: 50%
-    }
 }
 
-@media screen and (max-width: 500px) {
-    .skills-column {
-        width: 100%
+@media screen and (max-width: 700px) {
+    // .skills-container {
+    //     columns: 1;
+    // }
+    .skills-group {
+        columns: 1;
     }
 }
 
@@ -348,6 +384,7 @@ ul {
     left: 0;
     right: 0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    z-index: 2;
 }
 
 .nav-container {

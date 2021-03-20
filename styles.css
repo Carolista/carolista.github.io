@@ -130,7 +130,6 @@ ul {
 .page-title {
   font-family: "Barlow", sans-serif;
   font-weight: 600;
-  font-size: 1.6rem;
   text-transform: uppercase;
   margin: 20px 0px 30px;
 }
@@ -170,7 +169,7 @@ ul {
 }
 
 /** SKILLS PAGE **/
-.skills-subsection {
+.skills-subheader {
   margin-bottom: 5px;
 }
 
@@ -183,21 +182,29 @@ ul {
   margin: 0px 0px 5px;
 }
 
-.skills-row,
-.skills-row > .skills-column {
-  padding: 8px;
+.skills-container {
+  max-width: 700px;
 }
 
-.skills-column {
-  float: left;
-  width: 25%;
-  height: 400px;
+.skills-subsection {
+  display: inline-block;
+  vertical-align: top;
+  margin-bottom: 40px;
+  width: 100%;
 }
 
-.skills-row:after {
-  content: "";
-  display: table;
-  clear: both;
+.skills-group {
+  -webkit-columns: 2;
+          columns: 2;
+  -webkit-column-gap: 20px;
+          column-gap: 20px;
+}
+
+.skills-list {
+  display: inline-block;
+  vertical-align: top;
+  margin: 30px 0px 0px;
+  width: 100%;
 }
 
 /** RECOMMENDATION PAGE **/
@@ -287,17 +294,11 @@ ul {
   width: 50%;
 }
 
-/**** MEDIA QUERIES FOR MAIN CONTENT ****/
+/**** MEDIA QUERIES FOR RESPONSIVE CONTENT ****/
 @media screen and (max-width: 1200px) {
   .gallery-container {
     -webkit-columns: 2;
             columns: 2;
-  }
-}
-
-@media screen and (max-width: 1000px) {
-  .skills-column {
-    width: 33%;
   }
 }
 
@@ -313,14 +314,12 @@ ul {
     width: 100%;
     margin: 15px 0px 0px;
   }
-  .skills-column {
-    width: 50%;
-  }
 }
 
-@media screen and (max-width: 500px) {
-  .skills-column {
-    width: 100%;
+@media screen and (max-width: 700px) {
+  .skills-group {
+    -webkit-columns: 1;
+            columns: 1;
   }
 }
 
@@ -332,6 +331,7 @@ ul {
   right: 0;
   -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  z-index: 2;
 }
 
 .nav-container {

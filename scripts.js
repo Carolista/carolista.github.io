@@ -226,8 +226,9 @@ function init() {
             // Create images
             let images = "";
             for (let i=0; i<currentProject.images.length; i++) {
+                // TODO: add CSS for hover behavior and try to have popup instead of leaving page
                 images += `
-                    <img class="project-detail-image" src="images/${currentProject.images[i]}" />
+                    <a href="images/${currentProject.images[i]}"><img class="project-detail-image" src="images/${currentProject.images[i]}" /></a>
                 `
             }
             // Assemble all HTML for project details
@@ -417,15 +418,13 @@ function init() {
             for (techCategory in techSkillsCategories) {
                 techArray.push(techSkillsCategories[techCategory]);
             }
-            techArray.sort((a, b) => a.count < b.count ? 1 : -1);
+            // techArray.sort((a, b) => a.count > b.count ? 1 : -1);
             let allTechSkills = "";
             for (let i=0; i < techArray.length; i++) {
                 allTechSkills += `
-                    <div class="skills-column">
-                        <div class="content-block">
-                            <h3>${techArray[i].category}</h3>
-                            <div>${techArray[i].list}</div> 
-                        </div>
+                    <div class="content-block skills-list">
+                        <h3>${techArray[i].category}</h3>
+                        <div>${techArray[i].list}</div> 
                     </div>
                 `
             }
@@ -435,15 +434,13 @@ function init() {
             for (generalCategory in generalSkillsCategories) {
                 generalArray.push(generalSkillsCategories[generalCategory]);
             }
-            generalArray.sort((a, b) => a.count < b.count ? 1: -1);
+            generalArray.sort((a, b) => a.count > b.count ? 1: -1);
             let allGeneralSkills = "";
             for (let i=0; i < generalArray.length; i++) {
                 allGeneralSkills += `
-                    <div class="skills-column">
-                        <div class="content-block">
-                            <h3>${generalArray[i].category}</h3>
-                            <div>${generalArray[i].list}</div> 
-                        </div>
+                    <div class="content-block skills-list">
+                        <h3>${generalArray[i].category}</h3>
+                        <div>${generalArray[i].list}</div> 
                     </div>
                 `
             }
