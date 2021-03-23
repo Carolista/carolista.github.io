@@ -11,6 +11,7 @@ $primary-font: "Barlow", sans-serif;
 $header-font: "Barlow", sans-serif;
 $title-font: "Oleo Script Swash Caps", cursive;
 $navbar-height: 80px;
+$triangle: 120px; 
 
 /**** DO NOT EDIT CSS FILE - JUST SCSS ****/
 
@@ -134,9 +135,33 @@ td {
     padding: 0px;
 }
 
+#triangle-down {
+    width: 0;
+    height: 0;
+    border-left: $triangle solid transparent;
+    border-right: $triangle solid transparent;
+    border-top: $triangle solid $bright-accent-color;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 1
+}
+
+#triangle-right {
+    width: 0;
+    height: 0;
+    border-top: $triangle solid transparent;
+    border-left: $triangle solid $accent-color;
+    border-bottom: $triangle solid transparent;
+    position: absolute;
+    top: 10px;
+    left: -10px;
+    z-index: 1;
+}
+
 #landing-name {
     font-family: $title-font;
-    font-size: 3.5vw;
+    font-size: 30px; 
     color: $contrast-color;
     margin: 0px 0px 20px;
 }
@@ -187,8 +212,9 @@ td {
 
 // use for italicized notes/footnotes
 .more-info {
+    font-size: 1.2em;
     font-style: italic;
-    // margin-top: 3px;
+    margin-top: 15px;
 }
 
 // for use on darker backgrounds, such as footer
@@ -213,7 +239,7 @@ td {
     margin: 0px 0px 50px;
     border-left: 8px $light-accent-color solid;
     padding: 15px 10px 15px 20px;
-    background-color: rgba(255, 255, 255, 0.75);
+    background-color: rgba(255, 255, 255, 0.65);
 }
 
 
@@ -224,26 +250,35 @@ td {
     flex-direction: row;
 }
 
-.welcome-area {
+.left-container {
     color: $contrast-color;
     background-color: $dark-accent-color;
-    width: 30%;
+    width: 300px;
     padding: 25px;
     border-right: 10px solid $muted-accent-color;
 }
 
+// .welcome-area {
+    
+// }
+
+.welcome-content {
+    position: relative;
+    z-index: 4;
+}
+
 .headshot {
     width: 100%;
-    // border: 4px $accent-color solid;
+    border: 3px $muted-accent-color solid;
 }
 
-.synopsis {
-    margin: 10px 0px;
-}
+// .synopsis {
+//     margin: 10px 0px;
+// }
 
 .right-container {
-    width: 70%;
-    margin: 30px;
+    margin: 40px;
+    width: 100%;
 }
 
 .menu-area {
@@ -254,8 +289,8 @@ td {
 }
 
 .menu-links {
-    width: 50%;
-    padding: 0px 15px 0px 0px;
+    width: 100%;
+    margin-top: 20px;
 }
 
 .menu-link {
@@ -268,23 +303,28 @@ td {
 }
 
 .menu-button {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
+    font-weight: 400;
     text-transform: uppercase;
     background-color: $accent-color; 
-    text-align: center;
-    margin-bottom: 10px;
-    padding: 6px 10px;
+    border: 4px solid $accent-color;
+    border-left: 25px solid $accent-color;
+    text-align: right;
+    margin-bottom: 15px;
+    padding: 8px 15px 8px 35px;
 }
 
 .menu-button:hover {
-    background-color: $bright-accent-color;
+    border: 4px solid $bright-accent-color;
+    border-left: 25px solid $bright-accent-color;
 }
 
 .history-area {
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.75);
+    background-color: rgba(255, 255, 255, 0.65);
     padding: 25px;
     border-top: 10px solid $light-accent-color;
+    margin: 0px;
 }
 
 .history-subheader {
@@ -296,12 +336,13 @@ td {
 
 .history-pic {
     float: right;
-    width: 50%;
+    max-width: 350px;
     border: 5px solid $dark-accent-color;
     margin: 0px 0px 10px 15px;
 }
 
 td.year {
+    font-size: 1.1em;
     font-weight: 600;
     width: 50px;
 }
@@ -372,6 +413,22 @@ td.year {
 }
 
 
+/** CONTACT PAGE **/
+
+.contact-subheader {
+    margin-bottom: 15px;
+}
+
+.contact-logo {
+    width: 50px;
+    float: left;
+    margin-right: 15px;
+}
+
+.profile-blurb {
+    margin-bottom: 20px;
+}
+
 /** PROJECT GALLERY PAGE **/
 
 // Link at bottom of each project block on gallery page
@@ -431,6 +488,7 @@ td.year {
 
 // for links to code and demo
 .project-links {
+    font-size: 1.3em;
     margin: 20px 0px;
 }
 
@@ -443,7 +501,7 @@ td.year {
 // space between project details and images when side-by-side
 .project-details-row, 
     .project-details-row > .project-details-col {
-    padding: 0px;
+    padding: 10px;
 }
 
 // columns for project details page
@@ -462,7 +520,9 @@ td.year {
     .skills-group {
         columns: 1;
     }
-    
+    .history-pic {
+        width: 50%;
+    }
 }
 
 @media screen and (max-width: 1000px) {
@@ -477,7 +537,8 @@ td.year {
 @media screen and (max-width: 800px) {
     .history-pic {
         width: 100%;
-        margin: 0px 0px 15px;
+        float: none;
+        margin: 0px 0px 15px 0px;
     }
     .gallery-container {
         columns: 1;
@@ -493,8 +554,28 @@ td.year {
 }
 
 @media screen and (max-width: 600px) {
-    #my-name {
-        font-size: 8vw;
+    .all-content {
+        flex-direction: column;
+    }
+    .left-container {
+        width: 100%;
+    }
+    .right-container {
+        width: 100%;
+        margin: 0px;
+        padding: 25px;
+    }
+    .history-area {
+        width: 100; // not sure why this is necessary
+    }
+    .history-pic {
+        max-width: 100%;
+    }
+    #landing-name {
+        font-size: 12vw;
+    }
+    #navbar-name {
+        font-size: 8.5vw;
     }
     .page-title {
         font-size: 28px;
@@ -503,6 +584,7 @@ td.year {
         flex-direction: column;
     }
 }
+
 
 
 /**** NAV BAR ****/
