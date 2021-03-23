@@ -353,7 +353,8 @@ function init() {
                 // TODO: gather images of certificates/degrees
                 edArea.innerHTML += `
                 <div class="content-item">
-                    <div class="content-block">                        
+                    <div class="content-block">
+                        <a href="${educationData[i].website}" target="_blank"><img class="ed-logo" src="images/${educationData[i].image}" /></a>                      
                         <p><span class="institution">${educationData[i].institution}</span><br />
                         ${educationData[i].gradDate}</p>
                         <p class="degree">${educationData[i].degree}</p>
