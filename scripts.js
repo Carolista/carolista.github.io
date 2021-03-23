@@ -34,7 +34,7 @@ function init() {
         const header = document.querySelector("header");
         header.innerHTML = `
             <nav class="nav-container">
-                <p id="my-name"><a class="inverted" href="/">Caroline R. Jones</a></p>
+                <p id="navbar-name"><a class="inverted" href="/">Caroline R. Jones</a></p>
                 <button type="button" class="nav-button" aria-label="Open dropdown nav">
                     <span class="tri-bar"></span>
                     <span class="tri-bar"></span>
@@ -102,24 +102,24 @@ function init() {
         // set background for nav link of current page
         for (let i=0; i < allNavLinks.length; i++) {
             if (page.includes(allNavLinks[i].id)) {
-                allNavLinks[i].style.backgroundColor = "#762121";
+                allNavLinks[i].style.backgroundColor = "#671414";
             } else {
-                allNavLinks[i].style.backgroundColor = "#2b0b1c";
+                allNavLinks[i].style.backgroundColor = "#320d21";
             }
         }
 
         // temporarily change bkg of nav links when hovered over
         document.addEventListener("mouseover", function(event) {
             if (event.target.matches(".nav-link")) {
-                event.target.style.backgroundColor = "#822110";
+                event.target.style.backgroundColor = "#a42d19";
             } 
         });
         document.addEventListener("mouseout", function(event) {
             if (event.target.matches(".nav-link")) {
                 if (page.includes(event.target.id)) {
-                    event.target.style.backgroundColor = "#762121";
+                    event.target.style.backgroundColor = "#671414";
                 } else {
-                    event.target.style.backgroundColor = "#2b0b1c";
+                    event.target.style.backgroundColor = "#320d21";
                 }
                 
             } 

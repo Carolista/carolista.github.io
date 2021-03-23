@@ -1,16 +1,17 @@
 $primary-color: #333;
 $contrast-color: #dedede;
 $muted-color: #adadad;
-$dark-accent-color: #2b0b1c;
-$muted-accent-color: #5e1828;
-$accent-color: #762121;
-$bright-accent-color: #822110;
-$light-accent-color: #c77162;
+$dark-accent-color: #320d21;
+$muted-accent-color: #682232;
+$accent-color: #671414;
+$bright-accent-color: #a42d19;
+$light-accent-color: #d88171;
 $highlight-color: white;
 $primary-font: "Barlow", sans-serif;
 $header-font: "Barlow", sans-serif;
 $title-font: "Oleo Script Swash Caps", cursive;
 $navbar-height: 80px;
+$triangle: 120px; 
 
 /**** DO NOT EDIT CSS FILE - JUST SCSS ****/
 
@@ -48,7 +49,7 @@ header {
 main {
     background-image: url("images/white-geo-bkg.png");
     background-repeat: repeat;
-    background-size: 1000px;
+    background-size: 1600px;
     display: flex;
     flex-direction: column;
     flex: 1;
@@ -63,17 +64,18 @@ footer {
     background-color: $accent-color;
     width: 100vw;
     padding: 20px;
-    border-top: 10px solid $light-accent-color;
+    border-top: 10px solid $bright-accent-color;
 }
 
 h1 {
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: 600;
     color: $accent-color;
     margin: 25px 0px 30px;
 }
 
 h2 {
+    font-size: 1.8rem;
     font-weight: 600;
     margin: 10px 0px 30px;
 }
@@ -119,17 +121,63 @@ ul {
     margin-left: 35px;
 }
 
+td {
+    padding: 5px 5px 5px 0px;
+    vertical-align: top;
+}
+
 
 
 /**** IDs ****/
 
-#my-name {
+// modification to <main>
+#landing-page {
+    padding: 0px;
+}
+
+#triangle-down {
+    width: 0;
+    height: 0;
+    border-left: $triangle solid transparent;
+    border-right: $triangle solid transparent;
+    border-top: $triangle solid $bright-accent-color;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 1
+}
+
+#triangle-right {
+    width: 0;
+    height: 0;
+    border-top: $triangle solid transparent;
+    border-left: $triangle solid $accent-color;
+    border-bottom: $triangle solid transparent;
+    position: absolute;
+    top: 10px;
+    left: -10px;
+    z-index: 1;
+}
+
+#landing-name {
+    font-family: $title-font;
+    font-size: 30px; 
+    color: $contrast-color;
+    margin: 0px 0px 20px;
+}
+
+#welcome {
+    font-family: $title-font;
+    font-size: 32px;
+    margin: 20px 0px 5px;
+}
+
+#navbar-name {
     font-family: $title-font;
     font-size: 3rem;
     color: $contrast-color;
     margin: 30px 0px 0px;
 }
-
 
 
 /**** CLASSES ****/
@@ -156,16 +204,17 @@ ul {
     text-align: center;
 }
 
-// Muted line under some subheaders or titles
-// TODO: apply this to bottom of pages with extra info at bottom
+// line under some subheaders or titles
 .muted-line {
-    border: 4px solid $bright-accent-color;
+    border: 6px solid $bright-accent-color;
     margin: 0px;
 }
 
 // use for italicized notes/footnotes
 .more-info {
+    font-size: 1.2em;
     font-style: italic;
+    margin-top: 15px;
 }
 
 // for use on darker backgrounds, such as footer
@@ -173,12 +222,129 @@ ul {
     color: $contrast-color;
 }
 
-// used as basic container for non-responsive (100% wide) content
+.content-container {
+    columns: 2;
+    column-gap: 40px;
+}
+
+.content-item {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0px 0px 0px;
+    width: 100%;
+}
+
+// used as basic container for misc content with translucent bkg and line on left
 .content-block {
     margin: 0px 0px 50px;
     border-left: 8px $light-accent-color solid;
-    padding: 15px;
+    padding: 15px 10px 15px 20px;
     background-color: rgba(255, 255, 255, 0.65);
+}
+
+
+/** LANDING PAGE **/
+
+.all-content {
+    display: flex;
+    flex-direction: row;
+}
+
+.left-container {
+    color: $contrast-color;
+    background-color: $dark-accent-color;
+    width: 300px;
+    padding: 25px;
+    border-right: 10px solid $muted-accent-color;
+}
+
+// .welcome-area {
+    
+// }
+
+.welcome-content {
+    position: relative;
+    z-index: 4;
+}
+
+.headshot {
+    width: 100%;
+    border: 3px $muted-accent-color solid;
+}
+
+// .synopsis {
+//     margin: 10px 0px;
+// }
+
+.right-container {
+    margin: 40px;
+    width: 100%;
+}
+
+.menu-area {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.menu-links {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.menu-link {
+    color: $contrast-color;
+    text-decoration: none;
+}
+
+.menu-link:hover {
+    color: $highlight-color;
+}
+
+.menu-button {
+    font-size: 1.1rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    background-color: $accent-color; 
+    border: 4px solid $accent-color;
+    border-left: 25px solid $accent-color;
+    text-align: right;
+    margin-bottom: 15px;
+    padding: 8px 15px 8px 35px;
+}
+
+.menu-button:hover {
+    border: 4px solid $bright-accent-color;
+    border-left: 25px solid $bright-accent-color;
+}
+
+.history-area {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.65);
+    padding: 25px;
+    border-top: 10px solid $light-accent-color;
+    margin: 0px;
+}
+
+.history-subheader {
+    color: $muted-accent-color;
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.history-pic {
+    float: right;
+    max-width: 350px;
+    border: 5px solid $dark-accent-color;
+    margin: 0px 0px 10px 15px;
+}
+
+td.year {
+    font-size: 1.1em;
+    font-weight: 600;
+    width: 50px;
 }
 
 
@@ -193,18 +359,6 @@ ul {
     font-weight: 600;
     font-size: 1rem;
     color: $accent-color;
-}
-
-.content-container {
-    columns: 2;
-    column-gap: 40px;
-}
-
-.content-item {
-    display: inline-block;
-    vertical-align: top;
-    margin: 0px 0px 0px;
-    width: 100%;
 }
 
 
@@ -259,6 +413,22 @@ ul {
 }
 
 
+/** CONTACT PAGE **/
+
+.contact-subheader {
+    margin-bottom: 15px;
+}
+
+.contact-logo {
+    width: 50px;
+    float: left;
+    margin-right: 15px;
+}
+
+.profile-blurb {
+    margin-bottom: 20px;
+}
+
 /** PROJECT GALLERY PAGE **/
 
 // Link at bottom of each project block on gallery page
@@ -281,12 +451,12 @@ ul {
     vertical-align: top;
     margin-bottom: 15px;
     width: 100%;
-    filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, .2));
+    filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, .3));
     transition: filter .2s ease-in-out;
 }
 
 .gallery-item:hover {
-    filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, .4));
+    filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, .6));
 }
 
 // container for each project in gallery
@@ -318,6 +488,7 @@ ul {
 
 // for links to code and demo
 .project-links {
+    font-size: 1.3em;
     margin: 20px 0px;
 }
 
@@ -330,7 +501,7 @@ ul {
 // space between project details and images when side-by-side
 .project-details-row, 
     .project-details-row > .project-details-col {
-    padding: 0px;
+    padding: 10px;
 }
 
 // columns for project details page
@@ -349,6 +520,9 @@ ul {
     .skills-group {
         columns: 1;
     }
+    .history-pic {
+        width: 50%;
+    }
 }
 
 @media screen and (max-width: 1000px) {
@@ -361,6 +535,11 @@ ul {
 }
 
 @media screen and (max-width: 800px) {
+    .history-pic {
+        width: 100%;
+        float: none;
+        margin: 0px 0px 15px 0px;
+    }
     .gallery-container {
         columns: 1;
     }
@@ -375,8 +554,28 @@ ul {
 }
 
 @media screen and (max-width: 600px) {
-    #my-name {
-        font-size: 8vw;
+    .all-content {
+        flex-direction: column;
+    }
+    .left-container {
+        width: 100%;
+    }
+    .right-container {
+        width: 100%;
+        margin: 0px;
+        padding: 25px;
+    }
+    .history-area {
+        width: 100; // not sure why this is necessary
+    }
+    .history-pic {
+        max-width: 100%;
+    }
+    #landing-name {
+        font-size: 12vw;
+    }
+    #navbar-name {
+        font-size: 8.5vw;
     }
     .page-title {
         font-size: 28px;
@@ -387,6 +586,7 @@ ul {
 }
 
 
+
 /**** NAV BAR ****/
 
 #navbar {
@@ -395,7 +595,7 @@ ul {
     left: 0;
     right: 0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
-    border-bottom: 10px solid $muted-accent-color;
+    border-bottom: 20px solid $muted-accent-color;
     z-index: 2; // needed to stay above masonry layout on project gallery
 }
 
@@ -547,4 +747,5 @@ ul {
     #navbar .nav-link:last-child {
         margin-right: 0;
     }
+
 }
