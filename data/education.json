@@ -5,17 +5,17 @@
         "gradDate": "February 2020",
         "degree": "LC101 Web Development Certification",
         "desc": "Completed intensive course covering JavaScript, Java, TypeScript, HTML, CSS, Angular, Spring Boot, Thymeleaf, Bootstrap, SQL, and more. Undertook various assignments and projects to demonstrate front end, back end, and full stack development. Implemented test-driven development, Git workflow, MVC design, model binding, object-relational mapping, data validation, and authentication.",
-        "image": "lc-logo-square.jpg",
+        "image": "lc-logo.png",
         "website": "http://launchcode.org"
     },
     {
         "id": 1,
         "institution": "Udemy",
         "gradDate": "2021",
-        "degree": "Angular Course",
-        "desc": "Say something about it here",
-        "image": "",
-        "website": ""
+        "degree": "Angular - The Complete Guide",
+        "desc": "Have nearly completed this comprehensive course covering data binding, directives, services, dependency injection, routing, observables, form handling, pipes, http requests, authentication, modules, and more.",
+        "image": "udemy-logo.png",
+        "website": "https://www.udemy.com"
     },
     {
         "id": 2,

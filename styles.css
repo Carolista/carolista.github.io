@@ -345,6 +345,12 @@ td.year {
   color: #671414;
 }
 
+.ed-logo {
+  float: left;
+  width: 75px;
+  margin-right: 15px;
+}
+
 /** SKILLS PAGE **/
 .skills-subheader {
   margin-bottom: 5px;
