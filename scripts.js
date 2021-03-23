@@ -14,7 +14,7 @@ function init() {
     /** TAB TITLE **/
 
     // Tack on to end of <title> content specified in html doc
-    document.title += "Caroline Jones | Front End Developer";
+    document.title += " Caroline Jones | Front End Developer";
 
 
     /** STYLE SHEETS & FONTS **/
@@ -65,8 +65,6 @@ function init() {
         `;  
 
         /** NAV BAR **/
-
-        // TODO: Add event listeners to highlight current page on navbar
 
         const navbar = document.getElementById("navbar");
         const navButton = navbar.querySelector(".nav-button");
@@ -261,12 +259,14 @@ function init() {
             // Create images
             let images = "";
             for (let i=0; i<currentProject.images.length; i++) {
-                // TODO: add CSS for hover behavior and try to have popup instead of leaving page
+                // TODO: add CSS for hover behavior
+                // TODO: create popup slideshow of images
                 images += `
                     <a href="images/${currentProject.images[i]}"><img class="project-detail-image" src="images/${currentProject.images[i]}" /></a>
                 `
             }
             // Assemble all HTML for project details
+            // TODO: add translucent white block behind this content similar to other pages
             detailArea.innerHTML = `
                 <div class="project-details-col">
                     <h1 class="project-title" class="page-title">${currentProject.title}</h1>
@@ -301,7 +301,9 @@ function init() {
                         title: obj.title,
                         type: obj.type,
                         location: obj.location,
-                        desc: obj.desc
+                        desc: obj.desc,
+                        image: obj.image,
+                        website: obj.website
                     }
                     experienceData.push(job);
                 });     
@@ -314,9 +316,12 @@ function init() {
             for (let i=0; i < experienceData.length; i++) {
                 expArea.innerHTML += `
                     <div class="content-item">
-                        <div class="content-block">                        
-                            <p><span class="employer">${experienceData[i].employer}</span><br />
-                            ${experienceData[i].type} &nbsp;&bull;&nbsp; ${experienceData[i].location} &nbsp;&bull;&nbsp; ${experienceData[i].period}</p>
+                        <div class="content-block"> 
+                            <div>  
+                                <a href="${experienceData[i].website}" target="_blank"><img class="job-ed-logo" src="images/${experienceData[i].image}" /></a>                      
+                                <p><span class="employer">${experienceData[i].employer}</span><br />
+                                ${experienceData[i].type} &nbsp;&bull;&nbsp; ${experienceData[i].location} &nbsp;&bull;&nbsp; ${experienceData[i].period}</p>
+                            </div>
                             <p class="job-title">${experienceData[i].title}</p>
                             <p>${experienceData[i].desc}</p>
                         </div>
@@ -338,7 +343,8 @@ function init() {
                         gradDate: obj.gradDate,
                         degree: obj.degree,
                         desc: obj.desc,
-                        image: obj.image
+                        image: obj.image,
+                        website: obj.website
                     }
                     educationData.push(ed);
                 });     
@@ -354,9 +360,11 @@ function init() {
                 edArea.innerHTML += `
                 <div class="content-item">
                     <div class="content-block">
-                        <a href="${educationData[i].website}" target="_blank"><img class="ed-logo" src="images/${educationData[i].image}" /></a>                      
-                        <p><span class="institution">${educationData[i].institution}</span><br />
-                        ${educationData[i].gradDate}</p>
+                        <div>
+                            <a href="${educationData[i].website}" target="_blank"><img class="job-ed-logo" src="images/${educationData[i].image}" /></a>                      
+                            <p><span class="institution">${educationData[i].institution}</span><br />
+                            ${educationData[i].gradDate}</p>    
+                        </div>
                         <p class="degree">${educationData[i].degree}</p>
                         <p>${educationData[i].desc}</p>
                     </div>

@@ -6,7 +6,7 @@
         "degree": "LC101 Web Development Certification",
         "desc": "Completed intensive course covering JavaScript, Java, TypeScript, HTML, CSS, Angular, Spring Boot, Thymeleaf, Bootstrap, SQL, and more. Undertook various assignments and projects to demonstrate front end, back end, and full stack development. Implemented test-driven development, Git workflow, MVC design, model binding, object-relational mapping, data validation, and authentication.",
         "image": "lc-logo.png",
-        "website": "http://launchcode.org"
+        "website": "https://launchcode.org"
     },
     {
         "id": 1,
@@ -21,9 +21,9 @@
         "id": 2,
         "institution": "Washington University in St. Louis",
         "gradDate": "May 2000",
-        "degree": "BSCE, Civil Engineering, Architecture",
+        "degree": "B.S. Civil Engineering, Architecture",
         "desc": "I was originally accepted into a 7-year dual degree program to achieve both a Master of Architecture degree and a BS in Civil Engineering. However, after completing all the undergraduate architecture course requirements and starting on my graduate courses, I made the decision to focus solely on structural engineering. The education I received in both schools was top-notch, and I am grateful to have had the opportunity to learn so much in just 5 years.",
         "image": "washu-logo.png",
-        "website": "http://www.wustl.edu"
+        "website": "https://www.wustl.edu"
     }
 ]
