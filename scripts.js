@@ -129,6 +129,7 @@ function init() {
         });
     }   
 
+
     /** MAIN **/
 
     /*
@@ -152,6 +153,7 @@ function init() {
     let recommendationData = [];
     
     // DOM elements for each page where content should be displayed
+    const mainContent = document.querySelector("main");
     const projectArea = document.querySelector("#project-area");
     const detailArea = document.querySelector("#detail-area");
     const expArea = document.querySelector("#exp-area");
@@ -159,21 +161,6 @@ function init() {
     const techSkillsArea = document.querySelector("#tech-skills-area");
     const generalSkillsArea = document.querySelector("#general-skills-area");
     const recArea = document.querySelector("#rec-area");
-
-    // Determine which data should be loaded, if any
-    function loadAndDisplayData() {
-        if (document.title.toLowerCase().includes("project")) { // for both gallery & detail pages
-            loadProjects();
-        } else if (document.title.toLowerCase().includes("experience")) {
-            loadExperience();
-        } else if (document.title.toLowerCase().includes("education")) {
-            loadEducation();
-        } else if (document.title.toLowerCase().includes("skills")) {
-            loadSkills();
-        } else if (document.title.toLowerCase().includes("recommendations")) {
-            loadRecommendations();
-        }
-    }
 
     // For Projects page
     function loadProjects() {
@@ -533,9 +520,30 @@ function init() {
         }, 50); // only needs a slight delay
     }
 
+    // Delay visibility of content until everything is loaded
+    function makeContentVisible() {
+        setTimeout(function() {
+            mainContent.style.visibility = "visible";
+        }, 100); // only needs a slight delay
+    }
+
+    // Determine which data should be loaded, if any
+    function loadAndDisplayData() {
+        if (document.title.toLowerCase().includes("project")) { // for both gallery & detail pages
+            loadProjects();
+        } else if (document.title.toLowerCase().includes("experience")) {
+            loadExperience();
+        } else if (document.title.toLowerCase().includes("education")) {
+            loadEducation();
+        } else if (document.title.toLowerCase().includes("skills")) {
+            loadSkills();
+        } else if (document.title.toLowerCase().includes("recommendations")) {
+            loadRecommendations();
+        }
+        makeContentVisible();
+    }
+
     // Call function to utilize any required code above
     loadAndDisplayData();
-    
-
 
 }
