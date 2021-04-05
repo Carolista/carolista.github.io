@@ -161,7 +161,7 @@ td {
 
 #landing-name {
     font-family: $title-font;
-    font-size: 30px; 
+    font-size: 36px; 
     color: $contrast-color;
     margin: 0px 0px 20px;
 }
@@ -260,10 +260,6 @@ td {
     border-right: 10px solid $muted-accent-color;
 }
 
-// .welcome-area {
-    
-// }
-
 .welcome-content {
     position: relative;
     z-index: 4;
@@ -273,10 +269,6 @@ td {
     width: 100%;
     border: 3px $muted-accent-color solid;
 }
-
-// .synopsis {
-//     margin: 10px 0px;
-// }
 
 .right-container {
     margin: 40px;
@@ -582,7 +574,7 @@ td.year {
         max-width: 100%;
     }
     #landing-name {
-        font-size: 12vw;
+        font-size: 13vw;
     }
     #navbar-name {
         font-size: 8.5vw;

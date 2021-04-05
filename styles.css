@@ -156,7 +156,7 @@ td {
 
 #landing-name {
   font-family: "Oleo Script Swash Caps", cursive;
-  font-size: 30px;
+  font-size: 36px;
   color: #dedede;
   margin: 0px 0px 20px;
 }
@@ -567,7 +567,7 @@ td.year {
     max-width: 100%;
   }
   #landing-name {
-    font-size: 12vw;
+    font-size: 13vw;
   }
   #navbar-name {
     font-size: 8.5vw;
