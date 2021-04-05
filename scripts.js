@@ -137,6 +137,7 @@ function init() {
     */
 
     // Arrays to hold any data loaded
+    let timelineData = [];
     let projectData = [];
     let experienceData = [];
     let educationData = [];
@@ -154,6 +155,9 @@ function init() {
     
     // DOM elements for each page where content should be displayed
     const mainContent = document.querySelector("main");
+    const timelineTable = document.querySelector("#timeline-table");
+    const gradientBlock = document.querySelector("#gradient-block");
+    const timelineButton = document.querySelector("#timeline-button");
     const projectArea = document.querySelector("#project-area");
     const detailArea = document.querySelector("#detail-area");
     const expArea = document.querySelector("#exp-area");
@@ -161,6 +165,47 @@ function init() {
     const techSkillsArea = document.querySelector("#tech-skills-area");
     const generalSkillsArea = document.querySelector("#general-skills-area");
     const recArea = document.querySelector("#rec-area");
+
+    // For landing page
+    function loadTimeline() {
+        fetch('/data/timeline.json')
+            .then(response => response.json())
+            .then(data => {
+                data.forEach(obj => {
+                    let row = {
+                        year: obj.year,
+                        desc: obj.desc
+                    }
+                    timelineData.push(row);
+                });     
+        });
+        displayTimeline(3);
+    }
+
+    function displayTimeline(num) {
+        timelineTable.innerHTML = ''; // reset
+        setTimeout(function() {
+            for (let i=0; i < num; i++) {
+                timelineTable.innerHTML += `
+                <tr>
+                    <td class="year">${timelineData[i].year}</td>
+                    <td>${timelineData[i].desc}</td>
+                </tr>
+                `;
+            }
+        }, 50); // only needs a slight delay
+    }
+
+    function toggleTimeline() {
+        if (gradientBlock.style.visibility === "hidden") {
+            displayTimeline(timelineData.length); // display all
+            gradientBlock.style.visibility = "visible";
+            timelineButton.innerHTML = "&uarr; COLLAPSE &uarr;";
+        } else {
+            gradientBlock.style.visibility = "hidden";
+            timelineButton.innerHTML = "&darr; READ MORE &darr;";
+        }
+    }
 
     // For Projects page
     function loadProjects() {
@@ -539,6 +584,8 @@ function init() {
             loadSkills();
         } else if (document.title.toLowerCase().includes("recommendations")) {
             loadRecommendations();
+        } else if (document.title === "Caroline Jones | Front End Developer") {
+            loadTimeline();
         }
         makeContentVisible();
     }
