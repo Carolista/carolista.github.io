@@ -10,6 +10,11 @@ window.addEventListener("load", function() {
 // DOM code for page elements
 function init() {
 
+    // For dynamic nav buttons - must be updated to match SCSS variables
+    let navButtonBaseColor = "#034045"; // $muted-accent-color
+    let navButtonCurrentColor = "#064d52"; // $accent-color
+    let navButtonHoverColor = "#0a656c"; // $bright-accent-color
+
 
     /** TAB TITLE **/
 
@@ -100,24 +105,24 @@ function init() {
         // set background for nav link of current page
         for (let i=0; i < allNavLinks.length; i++) {
             if (page.includes(allNavLinks[i].id)) {
-                allNavLinks[i].style.backgroundColor = "#671414";
+                allNavLinks[i].style.backgroundColor = navButtonCurrentColor;
             } else {
-                allNavLinks[i].style.backgroundColor = "#320d21";
+                allNavLinks[i].style.backgroundColor = navButtonBaseColor;
             }
         }
 
         // temporarily change bkg of nav links when hovered over
         document.addEventListener("mouseover", function(event) {
             if (event.target.matches(".nav-link")) {
-                event.target.style.backgroundColor = "#a42d19";
+                event.target.style.backgroundColor = navButtonHoverColor;
             } 
         });
         document.addEventListener("mouseout", function(event) {
             if (event.target.matches(".nav-link")) {
                 if (page.includes(event.target.id)) {
-                    event.target.style.backgroundColor = "#671414";
+                    event.target.style.backgroundColor = navButtonCurrentColor;
                 } else {
-                    event.target.style.backgroundColor = "#320d21";
+                    event.target.style.backgroundColor = navButtonBaseColor;
                 }
                 
             } 
@@ -217,7 +222,7 @@ function init() {
                     `;
                 }
             }
-        }, 200); // only needs a slight delay
+        }, 50); // only needs a slight delay
     }
 
     function displayProjectDetail() {
@@ -285,7 +290,7 @@ function init() {
                     ${images}
                 </div>
             `
-        }, 200); // only needs a slight delay
+        }, 50); // only needs a slight delay
     }
 
     // For Experience page
@@ -328,7 +333,7 @@ function init() {
                     </div>
                 `;
             }
-        }, 200); // only needs a slight delay
+        }, 50); // only needs a slight delay
     }
 
     // For Education page
@@ -371,7 +376,7 @@ function init() {
                 </div>
                 `;
             }
-        }, 200); // only needs a slight delay
+        }, 50); // only needs a slight delay
     }
 
     // For Skills page
@@ -463,7 +468,7 @@ function init() {
                     }
                 }
             }
-        }, 200); // only needs a slight delay
+        }, 50); // only needs a slight delay
     }
 
     function displaySkills() {
@@ -491,7 +496,7 @@ function init() {
             }
             generalSkillsArea.innerHTML = allGeneralSkills;
 
-        }, 200); // only needs a slight delay
+        }, 50); // only needs a slight delay
     }
 
     // For Recommendations page
@@ -525,7 +530,7 @@ function init() {
                     </div>
                 `;
             }
-        }, 200); // only needs a slight delay
+        }, 50); // only needs a slight delay
     }
 
     // Call function to utilize any required code above
