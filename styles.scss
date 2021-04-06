@@ -5,7 +5,7 @@ $dark-accent-color: #022f34;
 $muted-accent-color: #034045;
 $accent-color: #064d52;
 $bright-accent-color: #0a656c;
-$light-accent-color: #5cb8bf;
+$light-accent-color: #3ea5ac;
 $highlight-color: white;
 $primary-font: "Barlow", sans-serif;
 $header-font: "Barlow", sans-serif;
@@ -208,6 +208,11 @@ td {
 // line under some subheaders or titles
 .muted-line {
     border: 6px solid $bright-accent-color;
+    margin: 0px;
+}
+
+.muted-line-thin {
+    border: 3px solid $bright-accent-color;
     margin: 0px;
 }
 
@@ -454,7 +459,7 @@ td.year {
 }
 
 .contact-logo {
-    width: 50px;
+    max-height: 50px;
     float: left;
     margin-right: 15px;
 }
@@ -543,6 +548,13 @@ td.year {
 .project-details-col {
     float: left;
     width: 50%;
+}
+
+.project-details-bkg {
+    background-color: rgba(255, 255, 255, 0.65);
+    padding: 0px 25px 25px;
+    border-top: 10px solid $light-accent-color;
+    margin: 30px 0px;
 }
 
 

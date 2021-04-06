@@ -327,17 +327,19 @@ function init() {
             // TODO: add translucent white block behind this content similar to other pages
             detailArea.innerHTML = `
                 <div class="project-details-col">
-                    <h1 class="project-title" class="page-title">${currentProject.title}</h1>
-                    <hr class="muted-line">
-                    <h3 class="project-subtitle">${currentProject.subtitle}</h3>
-                    <p>${currentProject.desc}</p>
-                    <h4 class="project-section">Tech Stack</h4>
-                    <p>${currentProject.tech}</p>
-                    <h4 class="project-section">Noteworthy</h4>
-                    <ul>${bullets}</ul>
-                    <p class="project-links">${links}</p>
-                    <hr>
-                    <p><a href='projects.html'>&lt; Back to Projects Gallery</a></p>
+                    <div class="project-details-bkg">
+                        <h1 class="project-title" class="page-title">${currentProject.title}</h1>
+                        <hr>
+                        <h3 class="project-subtitle">${currentProject.subtitle}</h3>
+                        <p>${currentProject.desc}</p>
+                        <h4 class="project-section">Tech Stack</h4>
+                        <p>${currentProject.tech}</p>
+                        <h4 class="project-section">Noteworthy</h4>
+                        <ul>${bullets}</ul>
+                        <p class="project-links">${links}</p>
+                        <hr>
+                        <p><a href='projects.html'>&lt; Back to Projects Gallery</a></p>
+                    </div>
                 </div>
                 <div class="project-details-col">
                     ${images}
@@ -376,7 +378,7 @@ function init() {
                     <div class="content-item">
                         <div class="content-block"> 
                             <div>  
-                                <a href="${experienceData[i].website}" target="_blank"><img class="job-ed-logo" src="images/${experienceData[i].image}" /></a>                      
+                                <a href="${experienceData[i].website}" target="_blank"><img class="job-ed-logo" src="images/${experienceData[i].image}" width="60px" /></a>                      
                                 <p><span class="employer">${experienceData[i].employer}</span><br />
                                 ${experienceData[i].type} &nbsp;&bull;&nbsp; ${experienceData[i].location} &nbsp;&bull;&nbsp; ${experienceData[i].period}</p>
                             </div>
@@ -413,13 +415,12 @@ function init() {
     function displayEducation() {
         setTimeout(function() {
             for (let i=0; i < educationData.length; i++) {
-                // FIXME: move link to institution website to a property and redo HTML below
                 // TODO: gather images of certificates/degrees
                 edArea.innerHTML += `
                 <div class="content-item">
                     <div class="content-block">
                         <div>
-                            <a href="${educationData[i].website}" target="_blank"><img class="job-ed-logo" src="images/${educationData[i].image}" /></a>                      
+                            <a href="${educationData[i].website}" target="_blank"><img class="job-ed-logo" src="images/${educationData[i].image}" width="60px" /></a>                      
                             <p><span class="institution">${educationData[i].institution}</span><br />
                             ${educationData[i].gradDate}</p>    
                         </div>
@@ -586,11 +587,11 @@ function init() {
         }, 150); // only needs a slight delay
     }
 
-    // Delay visibility of content until everything is loaded
+    // Delay visibility of content until everything is loaded 
     function makeContentVisible() {
         setTimeout(function() {
             mainContent.style.visibility = "visible";
-        }, 180); // only needs a slight delay
+        }, 200); // only needs a slight delay
     }
 
     // Determine which data should be loaded, if any
@@ -607,7 +608,7 @@ function init() {
             loadRecommendations();
         } else if (document.title === titleEnd.slice(1)) {
             loadTimeline();
-        }
+        } 
         makeContentVisible();
     }
 
