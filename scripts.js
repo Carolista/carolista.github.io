@@ -177,7 +177,7 @@ function init() {
         function displayTimeline(num) {
             setTimeout(function() {
                 generateTimeline(num);
-            }, 50); // only needs a slight delay
+            }, 150); // only needs a slight delay
         }
     
         function toggleTimeline() {
@@ -275,7 +275,7 @@ function init() {
                     `;
                 }
             }
-        }, 50); // only needs a slight delay
+        }, 150); // only needs a slight delay
     }
 
     function displayProjectDetail() {
@@ -343,7 +343,7 @@ function init() {
                     ${images}
                 </div>
             `
-        }, 50); // only needs a slight delay
+        }, 150); // only needs a slight delay
     }
 
     // For Experience page
@@ -386,7 +386,7 @@ function init() {
                     </div>
                 `;
             }
-        }, 50); // only needs a slight delay
+        }, 150); // only needs a slight delay
     }
 
     // For Education page
@@ -429,7 +429,7 @@ function init() {
                 </div>
                 `;
             }
-        }, 50); // only needs a slight delay
+        }, 150); // only needs a slight delay
     }
 
     // For Skills page
@@ -521,7 +521,7 @@ function init() {
                     }
                 }
             }
-        }, 50); // only needs a slight delay
+        }, 150); // only needs a slight delay
     }
 
     function displaySkills() {
@@ -549,7 +549,7 @@ function init() {
             }
             generalSkillsArea.innerHTML = allGeneralSkills;
 
-        }, 50); // only needs a slight delay
+        }, 150); // only needs a slight delay
     }
 
     // For Recommendations page
@@ -583,14 +583,14 @@ function init() {
                     </div>
                 `;
             }
-        }, 50); // only needs a slight delay
+        }, 150); // only needs a slight delay
     }
 
     // Delay visibility of content until everything is loaded
     function makeContentVisible() {
         setTimeout(function() {
             mainContent.style.visibility = "visible";
-        }, 100); // only needs a slight delay
+        }, 180); // only needs a slight delay
     }
 
     // Determine which data should be loaded, if any
