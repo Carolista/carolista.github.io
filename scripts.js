@@ -156,7 +156,6 @@ function init() {
     // DOM elements for each page where content should be displayed
     const mainContent = document.querySelector("main");
     const timelineTable = document.querySelector("#timeline-table");
-    const gradientBlock = document.querySelector("#gradient-block");
     const timelineButton = document.querySelector("#timeline-button");
     const projectArea = document.querySelector("#project-area");
     const detailArea = document.querySelector("#detail-area");
@@ -166,7 +165,12 @@ function init() {
     const generalSkillsArea = document.querySelector("#general-skills-area");
     const recArea = document.querySelector("#rec-area");
 
+
     // For landing page
+
+    // Initial state
+    let isCollapsed = true;
+
     function loadTimeline() {
         fetch('/data/timeline.json')
             .then(response => response.json())
@@ -182,30 +186,42 @@ function init() {
         displayTimeline(3);
     }
 
-    function displayTimeline(num) {
+    function generateTimeline(num) {
         timelineTable.innerHTML = ''; // reset
+        for (let i=0; i < num; i++) {
+            timelineTable.innerHTML += `
+            <tr>
+                <td class="year">${timelineData[i].year}</td>
+                <td>${timelineData[i].desc}</td>
+            </tr>
+            `;
+        }
+    }
+
+    function displayTimeline(num) {
         setTimeout(function() {
-            for (let i=0; i < num; i++) {
-                timelineTable.innerHTML += `
-                <tr>
-                    <td class="year">${timelineData[i].year}</td>
-                    <td>${timelineData[i].desc}</td>
-                </tr>
-                `;
-            }
+            generateTimeline(num);
         }, 50); // only needs a slight delay
     }
 
     function toggleTimeline() {
-        if (gradientBlock.style.visibility === "hidden") {
-            displayTimeline(timelineData.length); // display all
-            gradientBlock.style.visibility = "visible";
+        if (isCollapsed) {
+            generateTimeline(timelineData.length); // get all
+            timelineTable.classList.remove("gradient-text");
             timelineButton.innerHTML = "&uarr; COLLAPSE &uarr;";
+            timelineButton.style.margin = "0px 0px 40px";
         } else {
-            gradientBlock.style.visibility = "hidden";
+            generateTimeline(3);
+            timelineTable.classList.add("gradient-text");
             timelineButton.innerHTML = "&darr; READ MORE &darr;";
+            timelineButton.style.margin = "-60px 0px 60px";
         }
     }
+
+    timelineButton.addEventListener("click", function() {
+        toggleTimeline();
+        isCollapsed = !isCollapsed;
+    });
 
     // For Projects page
     function loadProjects() {

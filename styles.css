@@ -251,6 +251,7 @@ td {
   color: #dedede;
   background-color: #022f34;
   width: 300px;
+  height: 100%;
   padding: 25px;
   border-right: 10px solid #034045;
 }
@@ -339,6 +340,41 @@ td.year {
   font-size: 1.1em;
   font-weight: 600;
   width: 50px;
+}
+
+.gradient-text {
+  color: transparent;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#333333), to(rgba(51, 51, 51, 0)));
+  background-image: linear-gradient(#333333, rgba(51, 51, 51, 0));
+  background-size: 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+
+.timeline-button-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#timeline-button {
+  color: #dedede;
+  font-weight: 600;
+  font-size: .9rem;
+  text-transform: uppercase;
+  background-color: #064d52;
+  width: auto;
+  border-radius: 10px;
+  padding: 10px 15px;
+  margin: -60px 0px 60px;
+  cursor: pointer;
 }
 
 /** EXPERIENCE & EDUCATION PAGES **/
