@@ -15,11 +15,41 @@ function init() {
     let navButtonCurrentColor = "#064d52"; // $accent-color
     let navButtonHoverColor = "#0a656c"; // $bright-accent-color
 
+    // Arrays to hold any data loaded
+    let timelineData = [];
+    let projectData = [];
+    let experienceData = [];
+    let educationData = [];
+    let skillsData = {
+        generalKnowledge: [],
+        generalStrengths: [],
+        generalTools: [],
+        generalValues: [],
+        techFrameworks: [],
+        techKnowledge: [],
+        techLanguages: [],
+        techTools: []
+    };
+    let recommendationData = [];
+    
+    // DOM elements for each page where content should be displayed
+    const mainContent = document.querySelector("main");
+    const timelineTable = document.querySelector("#timeline-table");
+    const timelineButton = document.querySelector("#timeline-button");
+    const projectArea = document.querySelector("#project-area");
+    const detailArea = document.querySelector("#detail-area");
+    const expArea = document.querySelector("#exp-area");
+    const edArea = document.querySelector("#ed-area");
+    const techSkillsArea = document.querySelector("#tech-skills-area");
+    const generalSkillsArea = document.querySelector("#general-skills-area");
+    const recArea = document.querySelector("#rec-area");
+
 
     /** TAB TITLE **/
 
     // Tack on to end of <title> content specified in html doc
-    document.title += " Caroline Jones | Front End Developer";
+    let titleEnd = " Caroline Jones | Front End Developer";
+    document.title += titleEnd;
 
 
     /** STYLE SHEETS & FONTS **/
@@ -127,7 +157,49 @@ function init() {
                 
             } 
         });
-    }   
+    } else {
+
+         // Initial state of timeline content
+        let isCollapsed = true;
+
+        function generateTimeline(num) {
+            timelineTable.innerHTML = ''; // reset
+            for (let i=0; i < num; i++) {
+                timelineTable.innerHTML += `
+                <tr>
+                    <td class="year">${timelineData[i].year}</td>
+                    <td>${timelineData[i].desc}</td>
+                </tr>
+                `;
+            }
+        }
+    
+        function displayTimeline(num) {
+            setTimeout(function() {
+                generateTimeline(num);
+            }, 50); // only needs a slight delay
+        }
+    
+        function toggleTimeline() {
+            if (isCollapsed) {
+                generateTimeline(timelineData.length); // get all
+                timelineTable.classList.remove("gradient-text");
+                timelineButton.innerHTML = "&uarr; COLLAPSE &uarr;";
+                timelineButton.style.margin = "-40px 0px 40px";
+            } else {
+                generateTimeline(3);
+                timelineTable.classList.add("gradient-text");
+                timelineButton.innerHTML = "&darr; READ MORE &darr;";
+                timelineButton.style.margin = "-90px 0px 90px";
+            }
+        }
+    
+        timelineButton.addEventListener("click", function() {
+            toggleTimeline();
+            isCollapsed = !isCollapsed;
+        });
+    }
+
 
     /** MAIN **/
 
@@ -135,45 +207,26 @@ function init() {
         Everything below controls the contents with the <main> element of each page, but data from JSON will only load for the matching page.
     */
 
-    // Arrays to hold any data loaded
-    let projectData = [];
-    let experienceData = [];
-    let educationData = [];
-    let skillsData = {
-        generalKnowledge: [],
-        generalStrengths: [],
-        generalTools: [],
-        generalValues: [],
-        techFrameworks: [],
-        techKnowledge: [],
-        techLanguages: [],
-        techTools: []
-    };
-    let recommendationData = [];
     
-    // DOM elements for each page where content should be displayed
-    const projectArea = document.querySelector("#project-area");
-    const detailArea = document.querySelector("#detail-area");
-    const expArea = document.querySelector("#exp-area");
-    const edArea = document.querySelector("#ed-area");
-    const techSkillsArea = document.querySelector("#tech-skills-area");
-    const generalSkillsArea = document.querySelector("#general-skills-area");
-    const recArea = document.querySelector("#rec-area");
 
-    // Determine which data should be loaded, if any
-    function loadAndDisplayData() {
-        if (document.title.toLowerCase().includes("project")) { // for both gallery & detail pages
-            loadProjects();
-        } else if (document.title.toLowerCase().includes("experience")) {
-            loadExperience();
-        } else if (document.title.toLowerCase().includes("education")) {
-            loadEducation();
-        } else if (document.title.toLowerCase().includes("skills")) {
-            loadSkills();
-        } else if (document.title.toLowerCase().includes("recommendations")) {
-            loadRecommendations();
-        }
+
+    // For landing page
+    function loadTimeline() {
+        fetch('/data/timeline.json')
+            .then(response => response.json())
+            .then(data => {
+                data.forEach(obj => {
+                    let row = {
+                        year: obj.year,
+                        desc: obj.desc
+                    }
+                    timelineData.push(row);
+                });     
+        });
+        displayTimeline(3);
     }
+
+    
 
     // For Projects page
     function loadProjects() {
@@ -208,7 +261,7 @@ function init() {
     function displayProjects() {
         setTimeout(function() {
             for (let i=0; i < projectData.length; i++) {
-                // TODO: create responsive gallery of all projects not in progress
+                // TODO: create responsive gallery of all projects in progress
                 if (! projectData[i].inProgress) {
                     projectArea.innerHTML += `
                             <div class="gallery-item">
@@ -241,7 +294,7 @@ function init() {
             let currentProject = projectData[projectIndex];
             
             // Update browser tab with specific project name
-            document.title = currentProject.title + " - " + document.title;
+            document.title = currentProject.title + " - " + titleEnd;
 
             // Create bullet points from noteworthy array
             let bullets = "";
@@ -533,9 +586,32 @@ function init() {
         }, 50); // only needs a slight delay
     }
 
+    // Delay visibility of content until everything is loaded
+    function makeContentVisible() {
+        setTimeout(function() {
+            mainContent.style.visibility = "visible";
+        }, 100); // only needs a slight delay
+    }
+
+    // Determine which data should be loaded, if any
+    function loadAndDisplayData() {
+        if (document.title.toLowerCase().includes("project")) { // for both gallery & detail pages
+            loadProjects();
+        } else if (document.title.toLowerCase().includes("experience")) {
+            loadExperience();
+        } else if (document.title.toLowerCase().includes("education")) {
+            loadEducation();
+        } else if (document.title.toLowerCase().includes("skills")) {
+            loadSkills();
+        } else if (document.title.toLowerCase().includes("recommendations")) {
+            loadRecommendations();
+        } else if (document.title === titleEnd.slice(1)) {
+            loadTimeline();
+        }
+        makeContentVisible();
+    }
+
     // Call function to utilize any required code above
     loadAndDisplayData();
-    
-
 
 }
