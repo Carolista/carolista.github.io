@@ -5,7 +5,7 @@ $dark-accent-color: #022f34;
 $muted-accent-color: #034045;
 $accent-color: #064d52;
 $bright-accent-color: #0a656c;
-$light-accent-color: #5cb8bf;
+$light-accent-color: #3ea5ac;
 $highlight-color: white;
 $primary-font: "Barlow", sans-serif;
 $header-font: "Barlow", sans-serif;
@@ -454,7 +454,7 @@ td.year {
 }
 
 .contact-logo {
-    width: 50px;
+    max-height: 50px;
     float: left;
     margin-right: 15px;
 }

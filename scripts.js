@@ -376,7 +376,7 @@ function init() {
                     <div class="content-item">
                         <div class="content-block"> 
                             <div>  
-                                <a href="${experienceData[i].website}" target="_blank"><img class="job-ed-logo" src="images/${experienceData[i].image}" /></a>                      
+                                <a href="${experienceData[i].website}" target="_blank"><img class="job-ed-logo" src="images/${experienceData[i].image}" width="60px" /></a>                      
                                 <p><span class="employer">${experienceData[i].employer}</span><br />
                                 ${experienceData[i].type} &nbsp;&bull;&nbsp; ${experienceData[i].location} &nbsp;&bull;&nbsp; ${experienceData[i].period}</p>
                             </div>
@@ -419,7 +419,7 @@ function init() {
                 <div class="content-item">
                     <div class="content-block">
                         <div>
-                            <a href="${educationData[i].website}" target="_blank"><img class="job-ed-logo" src="images/${educationData[i].image}" /></a>                      
+                            <a href="${educationData[i].website}" target="_blank"><img class="job-ed-logo" src="images/${educationData[i].image}" width="60px" /></a>                      
                             <p><span class="institution">${educationData[i].institution}</span><br />
                             ${educationData[i].gradDate}</p>    
                         </div>
@@ -586,11 +586,11 @@ function init() {
         }, 150); // only needs a slight delay
     }
 
-    // Delay visibility of content until everything is loaded
+    // Delay visibility of content until everything is loaded 
     function makeContentVisible() {
         setTimeout(function() {
             mainContent.style.visibility = "visible";
-        }, 180); // only needs a slight delay
+        }, 200); // only needs a slight delay
     }
 
     // Determine which data should be loaded, if any
@@ -607,7 +607,7 @@ function init() {
             loadRecommendations();
         } else if (document.title === titleEnd.slice(1)) {
             loadTimeline();
-        }
+        } 
         makeContentVisible();
     }
 
