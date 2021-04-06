@@ -317,14 +317,12 @@ function init() {
             // Create images
             let images = "";
             for (let i=0; i<currentProject.images.length; i++) {
-                // TODO: add CSS for hover behavior
                 // TODO: create popup slideshow of images
                 images += `
                     <a href="images/${currentProject.images[i]}"><img class="project-detail-image" src="images/${currentProject.images[i]}" /></a>
                 `
             }
             // Assemble all HTML for project details
-            // TODO: add translucent white block behind this content similar to other pages
             detailArea.innerHTML = `
                 <div class="project-details-col">
                     <div class="project-details-bkg">
