@@ -17,7 +17,7 @@
         "title": "MuleSoft Developer",
         "type": "Contract",
         "location": "St. Louis, MO",
-        "desc": "Currently participating in an apprenticeship through LaunchCode to build middleware solutions for businesses. Earned the Level 1 Developer certification from MuleSoft after intensive training in Mule 4 ESB. Gained knowledge in writing detailed RAML specifications; built Mule applications with API interfacing, DataWeave transformations, data validation, encapsulation of global elements, property placeholders, logging, and error handling. Utilized a wide range of Core, Database, File, HTTP, JMS, Salesforce, and VM connectors to develop flows and subflows, consuming multiple types of web services. Became familiar with AnyPoint Platform, publishing APIs, creating API proxies, implementing SLA policies and client ID enforcement, and deploying applications to CloudHub.",
+        "desc": "Participated in an apprenticeship through LaunchCode to build middleware solutions for businesses. Earned the Level 1 Developer certification from MuleSoft after intensive training in Mule 4 ESB. Gained knowledge in writing detailed RAML specifications; built Mule applications with API interfacing, DataWeave transformations, data validation, encapsulation of global elements, property placeholders, logging, and error handling. Utilized a wide range of Core, Database, File, HTTP, JMS, Salesforce, and VM connectors to develop flows and subflows, consuming multiple types of web services. Became familiar with AnyPoint Platform, publishing APIs, creating API proxies, implementing SLA policies and client ID enforcement, and deploying applications to CloudHub.",
         "image": "cognizant-logo.png",
         "website": "https://www.cognizant.com"
     },
