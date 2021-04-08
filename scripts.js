@@ -1,19 +1,20 @@
 
 
-
 // Event listener for page load
 window.addEventListener("load", function() {
-    console.log('Page loaded.');
     init();
 });
 
-// DOM code for page elements
 function init() {
 
     // For dynamic nav buttons - must be updated to match SCSS variables
     let navButtonBaseColor = "#034045"; // $muted-accent-color
     let navButtonCurrentColor = "#064d52"; // $accent-color
     let navButtonHoverColor = "#0a656c"; // $bright-accent-color
+
+    // Other universal stuff
+    let page = location.href.split('\\').pop().split('/').pop();
+    let titleEnd = " Caroline Jones | Front End Developer";
 
     // Arrays to hold any data loaded
     let timelineData = [];
@@ -31,11 +32,32 @@ function init() {
         techTools: []
     };
     let recommendationData = [];
+
+    // Data structures to hold everything needed to display lists on Skills page
+    let techSkillsCategories = {
+        tools: { category: "Tools", list: "", count: 0 },
+        frameworks: { category: "Frameworks", list: "", count: 0 },
+        languages: { category: "Languages", list: "", count: 0 },
+        knowledge: { category: "Knowledge", list: "", count: 0 }
+    }
+    let generalSkillsCategories = {
+        tools: { category: "Tools", list: "", count: 0 },
+        strengths: { category: "Strengths", list: "", count: 0 },
+        knowledge: { category: "Knowledge", list: "", count: 0 },
+        values: { category: "Values", list: "", count: 0 }
+    }
+
+    // DOM elements for all pages
+    const head = document.querySelector("head");
+    const main = document.querySelector("main");
     
-    // DOM elements for each page where content should be displayed
-    const mainContent = document.querySelector("main");
+    // DOM elements for index page only
     const timelineTable = document.querySelector("#timeline-table");
     const timelineButton = document.querySelector("#timeline-button");
+
+    // DOM elements for pages other than index
+    
+    
     const projectArea = document.querySelector("#project-area");
     const detailArea = document.querySelector("#detail-area");
     const expArea = document.querySelector("#exp-area");
@@ -44,28 +66,21 @@ function init() {
     const generalSkillsArea = document.querySelector("#general-skills-area");
     const recArea = document.querySelector("#rec-area");
 
-
-    /** TAB TITLE **/
-
-    // Tack on to end of <title> content specified in html doc
-    let titleEnd = " Caroline Jones | Front End Developer";
-    document.title += titleEnd;
-
-
-    /** STYLE SHEETS & FONTS **/
-
-    const head = document.querySelector("head");
+    // Link stylesheets/fonts to all pages  
     head.innerHTML += `
         <link rel="stylesheet" type="text/css" href="styles.css">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps&family=Barlow:wght@200;400;600;800&display=swap" rel="stylesheet">
     `
+    // Tack on to end of <title> content specified in html doc
+    document.title += titleEnd;
 
+    loadAndDisplayData();
 
-    /** HEADER & FOOTER **/
+    // Handle elements and events only on certain pages
+    if (page.length > 1) { 
 
-    let page = location.href.split('\\').pop().split('/').pop();
-    if (page.length > 1) { // if anything other than index.html
+        // HEADER
         const header = document.querySelector("header");
         header.innerHTML = `
             <nav class="nav-container">
@@ -88,6 +103,7 @@ function init() {
             </nav>
         `;
 
+        // FOOTER
         const footer = document.querySelector("footer");
         footer.innerHTML = `
             <span class="off-white-text text-center">
@@ -97,19 +113,20 @@ function init() {
                     <a class="inverted" href="https://www.hackerrank.com/Carolina49a" target="_blank">HackerRank</a> &nbsp;|&nbsp; 
                     <a class="inverted" href="https://github.com/Carolista" target="_blank">GitHub</a></p>
             </span>
-        `;  
-
-        /** NAV BAR **/
-
+        `; 
+        
+        // NAV BAR
         const navbar = document.getElementById("navbar");
-        const navButton = navbar.querySelector(".nav-button");
+        const navButton = document.querySelector(".nav-button");
         const allNavLinks = document.getElementsByClassName("nav-link");
+        const navMenu = document.querySelector(".nav-menu");
+        const navLinksContainer = document.querySelector(".nav-links");
 
         function openDropdown() {
             navbar.classList.add("opened");
             navButton.setAttribute("aria-label", "Close dropdown nav");
         }
-
+    
         function closeDropdown() {
             navbar.classList.remove("opened");
             navButton.setAttribute("aria-label", "Open dropdown nav");
@@ -122,17 +139,14 @@ function init() {
                 openDropdown();
             }
         });
-
-        const navMenu = navbar.querySelector(".nav-menu");
-        const navLinksContainer = navbar.querySelector(".nav-links");
-
+    
         navLinksContainer.addEventListener("click", (clickEvent) => {
             clickEvent.stopPropagation();
         });
-
+    
         navMenu.addEventListener("click", closeDropdown);
-
-        // set background for nav link of current page
+    
+        // Set static background for nav link of current page
         for (let i=0; i < allNavLinks.length; i++) {
             if (page.includes(allNavLinks[i].id)) {
                 allNavLinks[i].style.backgroundColor = navButtonCurrentColor;
@@ -140,8 +154,8 @@ function init() {
                 allNavLinks[i].style.backgroundColor = navButtonBaseColor;
             }
         }
-
-        // temporarily change bkg of nav links when hovered over
+    
+        // Highlight nav links when hovered over
         document.addEventListener("mouseover", function(event) {
             if (event.target.matches(".nav-link")) {
                 event.target.style.backgroundColor = navButtonHoverColor;
@@ -157,10 +171,52 @@ function init() {
                 
             } 
         });
+
+        // MODAL FOR PROJECT DETAILS IMAGES
+        if (page.includes("project-details")) {
+
+            // Modal elements
+            const modal = document.getElementById("modal");
+            const modalImage = document.getElementById("modal-image");
+
+            // Available images
+            const projectImages = document.getElementsByClassName("project-details-image");
+            
+            document.addEventListener("click", function(event) {
+                // If an image is clicked
+                for (let i=0; i < projectImages.length; i++) {
+                    let id = projectImages[i].id;
+                    if (event.target.matches(`#${id}`)) {
+                        modalImage.src = event.target.src;
+                        modal.style.display = "block";
+                    }
+                }
+                // If the close button is clicked
+                if (event.target.matches(".close")) {
+                    modal.style.display = "none";
+                }       
+            });
+        }
+
     } else {
 
-         // Initial state of timeline content
+        // TIMELINE
         let isCollapsed = true;
+
+        function loadTimeline() {
+            fetch('/data/timeline.json')
+                .then(response => response.json())
+                .then(data => {
+                    data.forEach(obj => {
+                        let row = {
+                            year: obj.year,
+                            desc: obj.desc
+                        }
+                        timelineData.push(row);
+                    });     
+            });
+            displayTimeline(3);
+        }
 
         function generateTimeline(num) {
             timelineTable.innerHTML = ''; // reset
@@ -193,40 +249,37 @@ function init() {
                 timelineButton.style.margin = "-90px 0px 90px";
             }
         }
-    
+        
+        loadTimeline();
+
         timelineButton.addEventListener("click", function() {
             toggleTimeline();
             isCollapsed = !isCollapsed;
         });
     }
-
-
-    /** MAIN **/
-
-    /*
-        Everything below controls the contents with the <main> element of each page, but data from JSON will only load for the matching page.
-    */
-
-    
-
-
-    // For landing page
-    function loadTimeline() {
-        fetch('/data/timeline.json')
-            .then(response => response.json())
-            .then(data => {
-                data.forEach(obj => {
-                    let row = {
-                        year: obj.year,
-                        desc: obj.desc
-                    }
-                    timelineData.push(row);
-                });     
-        });
-        displayTimeline(3);
+        
+    // Determine which data should be loaded, if any
+    function loadAndDisplayData() {
+        if (document.title.toLowerCase().includes("project")) { // for both gallery & detail pages
+            loadProjects();
+        } else if (document.title.toLowerCase().includes("experience")) {
+            loadExperience();
+        } else if (document.title.toLowerCase().includes("education")) {
+            loadEducation();
+        } else if (document.title.toLowerCase().includes("skills")) {
+            loadSkills();
+        } else if (document.title.toLowerCase().includes("recommendations")) {
+            loadRecommendations();
+        } 
+        makeContentVisible();
     }
 
-    
+    // Delay visibility of content until everything is loaded 
+    function makeContentVisible() {
+        setTimeout(function() {
+            main.style.visibility = "visible";
+        }, 200); // only needs a slight delay
+    }
 
     // For Projects page
     function loadProjects() {
@@ -255,7 +308,6 @@ function init() {
         } else {
             displayProjectDetail();
         }
-        
     }
 
     function displayProjects() {
@@ -317,9 +369,9 @@ function init() {
             // Create images
             let images = "";
             for (let i=0; i<currentProject.images.length; i++) {
-                // TODO: create popup slideshow of images
+                // TODO: create slideshow version of modal
                 images += `
-                    <a href="images/${currentProject.images[i]}"><img class="project-detail-image" src="images/${currentProject.images[i]}" /></a>
+                    <img id="image-${i}" class="project-details-image" src="images/${currentProject.images[i]}" />
                 `
             }
             // Assemble all HTML for project details
@@ -470,19 +522,7 @@ function init() {
         displaySkills();
     }
 
-    // Data structures to hold everything needed to display lists on Skills page
-    let techSkillsCategories = {
-        tools: { category: "Tools", list: "", count: 0 },
-        frameworks: { category: "Frameworks", list: "", count: 0 },
-        languages: { category: "Languages", list: "", count: 0 },
-        knowledge: { category: "Knowledge", list: "", count: 0 }
-    }
-    let generalSkillsCategories = {
-        tools: { category: "Tools", list: "", count: 0 },
-        strengths: { category: "Strengths", list: "", count: 0 },
-        knowledge: { category: "Knowledge", list: "", count: 0 },
-        values: { category: "Values", list: "", count: 0 }
-    }
+    
 
     function buildSkillsHTML() {
         setTimeout(function() {
@@ -585,32 +625,6 @@ function init() {
         }, 150); // only needs a slight delay
     }
 
-    // Delay visibility of content until everything is loaded 
-    function makeContentVisible() {
-        setTimeout(function() {
-            mainContent.style.visibility = "visible";
-        }, 200); // only needs a slight delay
-    }
-
-    // Determine which data should be loaded, if any
-    function loadAndDisplayData() {
-        if (document.title.toLowerCase().includes("project")) { // for both gallery & detail pages
-            loadProjects();
-        } else if (document.title.toLowerCase().includes("experience")) {
-            loadExperience();
-        } else if (document.title.toLowerCase().includes("education")) {
-            loadEducation();
-        } else if (document.title.toLowerCase().includes("skills")) {
-            loadSkills();
-        } else if (document.title.toLowerCase().includes("recommendations")) {
-            loadRecommendations();
-        } else if (document.title === titleEnd.slice(1)) {
-            loadTimeline();
-        } 
-        makeContentVisible();
-    }
-
-    // Call function to utilize any required code above
-    loadAndDisplayData();
+    
 
 }
