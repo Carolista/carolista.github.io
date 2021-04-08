@@ -1,7 +1,7 @@
 [
     {
         "year": "1983",
-        "desc": "My dad brought home a TRS-80 from Radio Shack, and I picked up DOS quickly so I could play on it. My favorite thing was making pictures out of characters, line by line, to be printed out on the dot matrix printer. In a way, I think this was my first introduction to coding concepts."
+        "desc": "My dad brought home a TRS-80 from Radio Shack, and I picked up DOS quickly so I could play on it. My favorite thing was making pictures out of characters, line by line, and then seeing them come off of the dot matrix printer. In a way, I think this was my first introduction to coding concepts."
     },
     {
         "year": "1985",
@@ -37,7 +37,7 @@
     },
     {
         "year": "2020",
-        "desc": "Upon graduating from LC101 and completing a capstone project in the Liftoff program, I began an apprenticeship where I continued to learn new technologies. I also began working as a mentor for students in the CoderGirl program at LaunchCode. I have created over 50 supplemental practice exercises/projects for students and held several live tutorials to help them prepare for larger graded assignments."
+        "desc": "Upon graduating from LC101 and completing a capstone project in the Liftoff program, I began an apprenticeship where I continued to learn new technologies. I also began working as a mentor for students in the CoderGirl program at LaunchCode. I have created over 50 supplemental practice exercises/projects for students and held several <a href='https://www.youtube.com/channel/UCn_hsW3O-8uPCdr9_gQ5d4g' target='_blank'>live tutorials</a> to help them prepare for larger graded assignments."
     },
     {
         "year": "2021",
