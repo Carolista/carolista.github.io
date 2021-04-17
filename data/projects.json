@@ -36,10 +36,34 @@
         "inProgress": false
     },
     {
+        "id": 8,
+        "title": "Portfolio Website",
+        "subtitle": "this is a bit meta, hey?",
+        "desc": "I wanted to build a website to showcase some of my projects and also present some of the more relevant items from my resume and recommendations pursuant to a career in tech. I chose the DOM instead of Angular so that I could get it up and running quickly on GitHub, though I took the time to learn a few new things in the process. I also decided to code everything from scratch without using Bootstrap for this particular project.",
+        "tech": "DOM - HTML, CSS, & JavaScript",
+        "noteworthy": ["Implemented media queries so that I could make each page responsive for any size screen.", "Learned how to code a masonry layout for the projects gallery so that I could have flexible heights on each card (but still maintain a smooth responsive functionality.", "Created a modal on the project details page for displaying the screenshots at full page size without requiring navigation away from the page.", "Experimented with background clipping and gradient text for the timeline on the index page."],
+        "demo": { "type": "Try it now!", "url": ""},
+        "code": { "type": "GitHub", "url": "https://github.com/Carolista/carolista.github.io"},
+        "images": ["portfolio-meta.png", "portfolio-01.png", "portfolio-02.png", "portfolio-03.png"],
+        "inProgress": false
+    },
+    {
+        "id": 6,
+        "title": "This Week",
+        "subtitle": "a simple, colorful tool to plan out the week",
+        "desc": "This app was created in a single sitting as a practice exercise for LaunchCode students, to demonstrate how a simple form can be created in the DOM and generate content on the page dynamically. The user chooses the day of the week, the category, and a description of the item to put on the planner.</p> <p>As this was just a practice exercise for students to demonstrate front end technology, there is no persistent back end to save a user's information.",
+        "tech": "DOM - HTML, CSS, & JavaScript",
+        "noteworthy": ["Buttons toggle the form's visibility.", "Event delegation is used to detect buttons and trigger actions accordingly", "Entries are organized by day of the week on the page, and each entry receives a color-coded label representing the category."],
+        "demo": { "type": "Try it now!", "url": "https://carolista.github.io/LC-Form-Basics/"},
+        "code": { "type": "GitHub", "url": "https://github.com/Carolista/LC-Form-Basics"},
+        "images": ["this-week.png"],
+        "inProgress": false
+    },
+    {
         "id": 4,
         "title": "Lights Out!",
         "subtitle": "an animated version of the classic game",
-        "desc": "I built this app to experiment with basic randomization and animation. The goal is to turn all the lights off. Each click will toggle the light clicked and all four adjacent lights. Upon success, the user gets a report on how many moves they made and is asked if they wish to play again.",
+        "desc": "I built this app to experiment with basic randomization and animation. The goal is to turn all the lights off. Each click will toggle both the light clicked and any adjacent lights. Upon success, the user finds out how many moves they made and is asked if they wish to play again.",
         "tech": "DOM - HTML, CSS, & JavaScript",
         "noteworthy": ["Each game begins with a randomized board and the tiles are given different colors.", "Implemented &quot;Glow Mode&quot; with subtle animation, each light having a variable pulse rate, with the color of the highlight matching the randomly assigned color of the light.", "Added ability to toggle &quot;Glow Mode&quot; on and off as desired mid-game."],
         "demo": { "type": "Try it now!", "url": "https://carolista.github.io/LC-DOM-Lights-Out/"},
@@ -56,19 +80,7 @@
         "noteworthy": ["Multiple properties of the JSON returned from the Open Trivia Database API are used to generate custom dropdown menus, allowing user to choose from a wide range of categories, type of question, and difficulty when creating a trivia quiz.", "Upon submitting the form to generate a quiz, to facilitate data binding, variable id numbers are assigned to each of the questions displayed on the page and also to the choices for possible answers.", "As the user chooses their answer, immediate feedback is given as to whether it is correct or not."],
         "demo": { "type": "Try it now!", "url": "https://carolista.github.io/LC-A5-prep-2/"},
         "code": { "type": "GitHub", "url": "https://github.com/Carolista/LC-A5-prep-2"},
-        "images": ["trivia-time.png"],
-        "inProgress": false
-    },
-    {
-        "id": 6,
-        "title": "This Week",
-        "subtitle": "a simple, colorful tool to plan out the week",
-        "desc": "This app was created in a single sitting as a practice exercise for LaunchCode students, to demonstrate how a simple form can be created in the DOM and generate content on the page dynamically. The user chooses the day of the week, the category, and a description of the item to put on the planner.</p> <p>As this was just a practice exercise for students to demonstrate front end technology, there is no persistent back end to save a user's information.",
-        "tech": "DOM - HTML, CSS, & JavaScript",
-        "noteworthy": ["Buttons toggle the form's visibility.", "Event delegation is used to detect buttons and trigger actions accordingly", "Entries are organized by day of the week on the page, and each entry receives a color-coded label representing the category."],
-        "demo": { "type": "Try it now!", "url": "https://carolista.github.io/LC-Form-Basics/"},
-        "code": { "type": "GitHub", "url": "https://github.com/Carolista/LC-Form-Basics"},
-        "images": ["this-week.png"],
+        "images": ["trivia-time-01.png", "trivia-time-02.png"],
         "inProgress": false
     },
     {

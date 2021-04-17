@@ -56,8 +56,6 @@ function init() {
     const timelineButton = document.querySelector("#timeline-button");
 
     // DOM elements for pages other than index
-    
-    
     const projectArea = document.querySelector("#project-area");
     const detailArea = document.querySelector("#detail-area");
     const expArea = document.querySelector("#exp-area");
@@ -78,7 +76,7 @@ function init() {
     loadAndDisplayData();
 
     // Handle elements and events only on certain pages
-    if (page.length > 1) { 
+    if (page !== "" && page !== "index.html") { 
 
         // HEADER
         const header = document.querySelector("header");
@@ -198,7 +196,7 @@ function init() {
             });
         }
 
-    } else {
+    } else { // if index.html
 
         // TIMELINE
         let isCollapsed = true;
@@ -233,7 +231,7 @@ function init() {
         function displayTimeline(num) {
             setTimeout(function() {
                 generateTimeline(num);
-            }, 150); // only needs a slight delay
+            }, 300); // only needs a slight delay
         }
     
         function toggleTimeline() {
@@ -313,7 +311,7 @@ function init() {
     function displayProjects() {
         setTimeout(function() {
             for (let i=0; i < projectData.length; i++) {
-                // TODO: create responsive gallery of all projects in progress
+                // TODO: create responsive gallery of projects in progress, not just completed
                 if (! projectData[i].inProgress) {
                     projectArea.innerHTML += `
                             <div class="gallery-item">
@@ -321,13 +319,13 @@ function init() {
                                     <a href="project-details.html?id=${projectData[i].id}"><img class="project-image" src="images/${projectData[i].images[0]}"></a>
                                     <h3>${projectData[i].title}</h3>
                                     <p>${projectData[i].subtitle}</p>
-                                    <p class="text-right view-details"><a href="project-details.html?id=${projectData[i].id}" target="_blank">View Details &gt;</a></p>
+                                    <p class="text-right view-details"><a href="project-details.html?id=${projectData[i].id}">View Details &gt;</a></p>
                                 </div>
                             </div>
                     `;
                 }
             }
-        }, 150); // only needs a slight delay
+        }, 200); // only needs a slight delay
     }
 
     function displayProjectDetail() {
@@ -395,7 +393,7 @@ function init() {
                     ${images}
                 </div>
             `
-        }, 150); // only needs a slight delay
+        }, 200); // only needs a slight delay
     }
 
     // For Experience page
@@ -438,7 +436,7 @@ function init() {
                     </div>
                 `;
             }
-        }, 150); // only needs a slight delay
+        }, 200); // only needs a slight delay
     }
 
     // For Education page
@@ -480,7 +478,7 @@ function init() {
                 </div>
                 `;
             }
-        }, 150); // only needs a slight delay
+        }, 200); // only needs a slight delay
     }
 
     // For Skills page
@@ -560,7 +558,7 @@ function init() {
                     }
                 }
             }
-        }, 150); // only needs a slight delay
+        }, 200); // only needs a slight delay
     }
 
     function displaySkills() {
@@ -588,7 +586,7 @@ function init() {
             }
             generalSkillsArea.innerHTML = allGeneralSkills;
 
-        }, 150); // only needs a slight delay
+        }, 200); // only needs a slight delay
     }
 
     // For Recommendations page
@@ -622,7 +620,7 @@ function init() {
                     </div>
                 `;
             }
-        }, 150); // only needs a slight delay
+        }, 200); // only needs a slight delay
     }
 
     
