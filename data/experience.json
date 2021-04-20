@@ -3,7 +3,7 @@
         "id": 4,
         "employer": "Lumen Technologies (via Apex Systems)",
         "period": "April 2021 - Present",
-        "title": "Software Engineer",
+        "title": "Full Stack Engineer",
         "type": "Contract",
         "location": "St. Louis, MO",
         "desc": "Re-engineering key platforms and applications to bring one-stop-shopping to customers through cloud application management and a microservices architecture. Projects include ServiceNow integration, reworking UIs, API development for a BaaS solution, and Morpheus integration -- utilizing Python, Node.js, Java, Vue.js, React, TypeScript, Spring Boot, and more.",
@@ -17,7 +17,7 @@
         "title": "Tech Leadership Fellow",
         "type": "Freelance",
         "location": "St. Louis, MO",
-        "desc": "Mentoring students in the intensive CoderGirl program (WebDev/FrontEnd track). Unit 1 covered JavaScript, HTML, CSS, consuming APIs, the DOM, TypeScript, and Angular, including skills in unit testing, git workflow, and more. Unit 2 takes students on a deep dive into Angular and introduces Bootstrap. In Liftoff, the course focuses on career prep with resume-building, behavioral and technical interview skills, and a capstone project using Agile methodology.</p> <p>Designed 45+ practice problems/projects for students (see linked document) to complement the Unit 1 LaunchCode curriculum and help students prepare for more difficult graded assignments. These exercises are also now in use by students in LaunchCode's LC101 and CodeCamp programs. More exercises are being added regularly.</p> <p class='more-info'>Related: <a href='https://tinyurl.com/y3bn6st4' target='_blank'>WebDev Unit 1 Practice for LaunchCoders</a>",
+        "desc": "Mentoring students in the intensive CoderGirl program (WebDev/FrontEnd track). Unit 1 covered JavaScript, HTML, CSS, consuming APIs, the DOM, TypeScript, and Angular, including skills in unit testing, git workflow, and more. Unit 2 takes students on a deep dive into Angular and introduces Bootstrap. In Liftoff, the course focuses on career prep with resume-building, behavioral and technical interview skills, and a capstone project using Agile methodology.</p> <p>Designed 50+ practice problems/projects for students (see linked document) to complement the Unit 1 LaunchCode curriculum and help students prepare for more difficult graded assignments. These exercises are also now in use by students in LaunchCode's LC101 and CodeCamp programs. More exercises are being added regularly.</p> <p class='more-info'>Related: <a href='https://tinyurl.com/y3bn6st4' target='_blank'>WebDev Unit 1 Practice for LaunchCoders</a>",
         "image": "lc-logo.png",
         "website": "https://www.launchcode.org"
     },
