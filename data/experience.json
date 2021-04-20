@@ -1,5 +1,16 @@
 [
     {
+        "id": 4,
+        "employer": "Lumen Technologies (via Apex Systems)",
+        "period": "April 2021 - Present",
+        "title": "Software Engineer",
+        "type": "Contract",
+        "location": "St. Louis, MO",
+        "desc": "Re-engineering key platforms and applications to bring one-stop-shopping to customers through cloud application management and a microservices architecture. Projects include ServiceNow integration, reworking UIs, API development for a BaaS solution, and Morpheus integration -- utilizing Python, Node.js, Java, Vue.js, React, TypeScript, Spring Boot, and more.",
+        "image": "lumen-logo.png",
+        "website": "https://www.lumen.com"
+    },
+    {
         "id": 0,
         "employer": "LaunchCode",
         "period": "August 2020 - Present",
@@ -12,7 +23,7 @@
     },
     {
         "id": 1,
-        "employer": "Cognizant",
+        "employer": "Cognizant (via LaunchCode)",
         "period": "July 2020 - March 2021",
         "title": "MuleSoft Developer",
         "type": "Contract",
