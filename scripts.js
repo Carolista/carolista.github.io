@@ -292,6 +292,7 @@ function init() {
                         desc: obj.desc,
                         tech: obj.tech,
                         noteworthy: obj.noteworthy,
+                        devices: obj.devices,
                         demo: { type: obj.demo.type, url: obj.demo.url},
                         code: { type: obj.code.type, url: obj.code.url},
                         images: obj.images,
@@ -384,6 +385,7 @@ function init() {
                         <p>${currentProject.tech}</p>
                         <h4 class="project-section">Noteworthy</h4>
                         <ul>${bullets}</ul>
+                        <h4 class="project-section">Displays well on ${currentProject.devices}</h4>
                         <p class="project-links">${links}</p>
                         <hr>
                         <p><a href='projects.html'>&lt; Back to Projects Gallery</a></p>
