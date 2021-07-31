@@ -91,6 +91,32 @@
         "inProgress": false
     },
     {
+        "id": 9,
+        "title": "Chattanooga Airport Flight Status",
+        "subtitle": "search for arrivals and departures",
+        "desc": "I created this as a prep exercise for LaunchCode students leading up to their final graded assignment of the WebDev course. With a quick foray into Angular and TypeScript, this app allows the user to view arrival and departure boards and filter results by airline, flight number, and origin/destination city.",
+        "tech": "Angular, TypeScript, CSS, and HTML",
+        "noteworthy": ["Structural directives are used to generate lists and display elements conditionally.", "Attribute directives in combination with ternary expressions make it easy to include visual cues with data."],
+        "devices": "desktop browsers and tablets",
+        "demo": { "type": "Try it now!", "url": ""},
+        "code": { "type": "GitHub", "url": "https://github.com/Carolista/A6-Prep-Chattanooga-Airport"},
+        "images": ["flight-status-01.png", "flight-status-02.png"],
+        "inProgress": false
+    },
+    {
+        "id": 11,
+        "title": "Pour Me Another",
+        "subtitle": "find delicious drink recipes",
+        "desc": "This is another project that was created as a prep exercise for LaunchCode students just before a large graded assignment was due. The purpose is to practice fetching JSON from an API and get user input through a form to return search results in the form of colorful recipe cards. The app utilizes TheCocktailDB, a public API with more than 400 drink recipes to draw from.",
+        "tech": "DOM - HTML, CSS, & JavaScript",
+        "noteworthy": ["The search results can be narrowed through a combination of a radio button selection, a dropdown selection, and a keyword.", "As a bonus, I included a bit of animation using CSS and keyframes."],
+        "devices": "desktop browsers and tablets",
+        "demo": { "type": "Try it now!", "url": "https://carolista.github.io/LC-A5-prep-3/"},
+        "code": { "type": "GitHub", "url": "https://github.com/Carolista/LC-A5-prep-3"},
+        "images": ["pour-me-another-01.png", "pour-me-another-02.png"],
+        "inProgress": false
+    },
+    {
         "id": 5,
         "title": "Trivia Time",
         "subtitle": "randomized, customizable trivia quizzes",
@@ -102,5 +128,18 @@
         "code": { "type": "GitHub", "url": "https://github.com/Carolista/LC-A5-prep-2"},
         "images": ["trivia-time-01.png", "trivia-time-02.png"],
         "inProgress": false
+    },
+    {
+        "id": 10,
+        "title": "All the Lists",
+        "subtitle": "create multiple categorized lists",
+        "desc": "This prep exercise for LaunchCode students is built with Angular and TypeScript. It allows a user to create, edit, and delete lists by category and check off items as they are completed.",
+        "tech": "Angular, TypeScript, CSS, and HTML",
+        "noteworthy": ["Structural directives are used to display one list at a time and toggle the form to add a new list."],
+        "devices": "desktop browsers and tablets",
+        "demo": { "type": "Try it now!", "url": ""},
+        "code": { "type": "GitHub", "url": "https://github.com/Carolista/LC-A6-Prep"},
+        "images": ["all-the-lists-01.png", "all-the-lists-02.png"],
+        "inProgress": true
     }
 ]

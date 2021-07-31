@@ -1,9 +1,7 @@
 
 
 // Event listener for page load
-window.addEventListener("load", function() {
-    init();
-});
+window.addEventListener("load", () => init() );
 
 function init() {
 
@@ -120,53 +118,32 @@ function init() {
         const navMenu = document.querySelector(".nav-menu");
         const navLinksContainer = document.querySelector(".nav-links");
 
-        function openDropdown() {
-            navbar.classList.add("opened");
-            navButton.setAttribute("aria-label", "Close dropdown nav");
-        }
-    
-        function closeDropdown() {
-            navbar.classList.remove("opened");
-            navButton.setAttribute("aria-label", "Open dropdown nav");
-        }
-
+        const toggleDropdown = (shouldOpen) => {
+            shouldOpen ? navbar.classList.add("opened") : navbar.classList.remove("opened");
+            navButton.setAttribute("aria-label", (shouldOpen ? "Open nav" : "Close nav"));
+        };
         navButton.addEventListener("click", () => {
-            if (navbar.classList.contains("opened")) {
-                closeDropdown();
-            } else {
-                openDropdown();
-            }
-        });
-    
-        navLinksContainer.addEventListener("click", (clickEvent) => {
-            clickEvent.stopPropagation();
-        });
-    
-        navMenu.addEventListener("click", closeDropdown);
+            navbar.classList.contains("opened") ? toggleDropdown(false) : toggleDropdown(true);
+        });   
+        navLinksContainer.addEventListener("click", (e) => e.stopPropagation());   
+        navMenu.addEventListener("click", toggleDropdown(false));
     
         // Set static background for nav link of current page
-        for (let i=0; i < allNavLinks.length; i++) {
-            if (page.includes(allNavLinks[i].id)) {
-                allNavLinks[i].style.backgroundColor = navButtonCurrentColor;
-            } else {
-                allNavLinks[i].style.backgroundColor = navButtonBaseColor;
-            }
-        }
+        [...allNavLinks].forEach((link) => {
+            let color = page.includes(link.id) ? navButtonCurrentColor : navButtonBaseColor;
+            link.style.backgroundColor = color;
+        });
     
         // Highlight nav links when hovered over
-        document.addEventListener("mouseover", function(event) {
+        document.addEventListener("mouseover", event => {
             if (event.target.matches(".nav-link")) {
                 event.target.style.backgroundColor = navButtonHoverColor;
             } 
         });
-        document.addEventListener("mouseout", function(event) {
+        document.addEventListener("mouseout", event => {
             if (event.target.matches(".nav-link")) {
-                if (page.includes(event.target.id)) {
-                    event.target.style.backgroundColor = navButtonCurrentColor;
-                } else {
-                    event.target.style.backgroundColor = navButtonBaseColor;
-                }
-                
+                let color = page.includes(event.target.id) ? navButtonCurrentColor : navButtonBaseColor;
+                event.target.style.backgroundColor = color;    
             } 
         });
 
@@ -180,19 +157,17 @@ function init() {
             // Available images
             const projectImages = document.getElementsByClassName("project-details-image");
             
-            document.addEventListener("click", function(event) {
+            document.addEventListener("click", event => {
                 // If an image is clicked
-                for (let i=0; i < projectImages.length; i++) {
-                    let id = projectImages[i].id;
+                [...projectImages].forEach( image => {
+                    let id = image.id;
                     if (event.target.matches(`#${id}`)) {
                         modalImage.src = event.target.src;
                         modal.style.display = "block";
                     }
-                }
+                });
                 // If the close button is clicked
-                if (event.target.matches(".close")) {
-                    modal.style.display = "none";
-                }       
+                if (event.target.matches(".close")) modal.style.display = "none";      
             });
         }
 
@@ -205,12 +180,11 @@ function init() {
             fetch('/data/timeline.json')
                 .then(response => response.json())
                 .then(data => {
-                    data.forEach(obj => {
-                        let row = {
+                    timelineData = data.map(obj => {
+                        return {
                             year: obj.year,
                             desc: obj.desc
                         }
-                        timelineData.push(row);
                     });     
             });
             displayTimeline(3);
@@ -218,18 +192,18 @@ function init() {
 
         function generateTimeline(num) {
             timelineTable.innerHTML = ''; // reset
-            for (let i=0; i < num; i++) {
+            timelineData.forEach(data => {
                 timelineTable.innerHTML += `
                 <tr>
-                    <td class="year">${timelineData[i].year}</td>
-                    <td>${timelineData[i].desc}</td>
+                    <td class="year">${data.year}</td>
+                    <td>${data.desc}</td>
                 </tr>
                 `;
-            }
+            });
         }
     
         function displayTimeline(num) {
-            setTimeout(function() {
+            setTimeout(() => {
                 generateTimeline(num);
             }, 300); // only needs a slight delay
         }
@@ -250,7 +224,7 @@ function init() {
         
         loadTimeline();
 
-        timelineButton.addEventListener("click", function() {
+        timelineButton.addEventListener("click", () => {
             toggleTimeline();
             isCollapsed = !isCollapsed;
         });
@@ -258,23 +232,18 @@ function init() {
         
     // Determine which data should be loaded, if any
     function loadAndDisplayData() {
-        if (document.title.toLowerCase().includes("project")) { // for both gallery & detail pages
-            loadProjects();
-        } else if (document.title.toLowerCase().includes("experience")) {
-            loadExperience();
-        } else if (document.title.toLowerCase().includes("education")) {
-            loadEducation();
-        } else if (document.title.toLowerCase().includes("skills")) {
-            loadSkills();
-        } else if (document.title.toLowerCase().includes("recommendations")) {
-            loadRecommendations();
-        } 
+        let docTitle = document.title.toLowerCase();
+        if (docTitle.includes("project")) loadProjects();
+        if (docTitle.includes("experience")) loadExperience();
+        if (docTitle.includes("education")) loadEducation();
+        if (docTitle.includes("skills")) loadSkills();
+        if (docTitle.includes("recommendations")) loadRecommendations();
         makeContentVisible();
     }
 
     // Delay visibility of content until everything is loaded 
     function makeContentVisible() {
-        setTimeout(function() {
+        setTimeout(() =>  {
             main.style.visibility = "visible";
         }, 200); // only needs a slight delay
     }
@@ -284,8 +253,8 @@ function init() {
         fetch('/data/projects.json')
             .then(response => response.json())
             .then(data => {
-                data.forEach(obj => {
-                    let project = {
+                projectData = data.map(obj => {
+                    return {
                         id: obj.id,
                         title: obj.title,
                         subtitle: obj.subtitle,
@@ -293,55 +262,47 @@ function init() {
                         tech: obj.tech,
                         noteworthy: obj.noteworthy,
                         devices: obj.devices,
-                        demo: { type: obj.demo.type, url: obj.demo.url},
-                        code: { type: obj.code.type, url: obj.code.url},
+                        demo: { type: obj.demo.type, url: obj.demo.url },
+                        code: { type: obj.code.type, url: obj.code.url },
                         images: obj.images,
                         inProgress: obj.inProgress
                     }
-                    projectData.push(project);
                 });     
         });
         // Determine which information to display (full gallery or detail)
-        if (document.title.toLowerCase().includes("projects")) {
-            displayProjects();
-        } else {
-            displayProjectDetail();
-        }
+        document.title.toLowerCase().includes("projects") ? displayProjects() : displayProjectDetail();
     }
 
     function displayProjects() {
-        setTimeout(function() {
-            for (let i=0; i < projectData.length; i++) {
+        setTimeout(() =>  {
+            projectData.forEach(data => {
                 // TODO: create responsive gallery of projects in progress, not just completed
-                if (! projectData[i].inProgress) {
+                if (! data.inProgress) {
                     projectArea.innerHTML += `
                             <div class="gallery-item">
                                 <div class="project-content">
-                                    <a href="project-details.html?id=${projectData[i].id}"><img class="project-image" src="images/${projectData[i].images[0]}"></a>
-                                    <h3>${projectData[i].title}</h3>
-                                    <p>${projectData[i].subtitle}</p>
-                                    <p class="text-right view-details"><a href="project-details.html?id=${projectData[i].id}">View Details &gt;</a></p>
+                                    <a href="project-details.html?id=${data.id}"><img class="project-image" src="images/${data.images[0]}"></a>
+                                    <h3>${data.title}</h3>
+                                    <p>${data.subtitle}</p>
+                                    <p class="text-right view-details"><a href="project-details.html?id=${data.id}">View Details &gt;</a></p>
                                 </div>
                             </div>
                     `;
                 }
-            }
+            });
         }, 200); // only needs a slight delay
     }
 
     function displayProjectDetail() {
-        setTimeout(function() {
+        setTimeout(() =>  {
             // Get query parameter to get id number (index)
             let param = new URLSearchParams(window.location.search);
             let projectId = param.get('id');
             let projectIndex;
             //Get index from array based on project id
-            for (let j=0; j < projectData.length; j++) {
-                if (projectData[j].id === Number(projectId)) {
-                    projectIndex = j;
-                }
-            }
-
+            projectData.forEach((data, index) => {
+                if (data.id === Number(projectId)) projectIndex = index;
+            });
             let currentProject = projectData[projectIndex];
             
             // Update browser tab with specific project name
@@ -349,30 +310,28 @@ function init() {
 
             // Create bullet points from noteworthy array
             let bullets = "";
-            for (let i=0; i<currentProject.noteworthy.length; i++) {
+            currentProject.noteworthy.forEach(note => {
                 bullets += `
-                    <li>${currentProject.noteworthy[i]}</li>
+                    <li>${note}</li>
                 `
-            }
+            });
             // Create links
             let links = "";
-            if (currentProject.demo.url !== "") {
-                links += `<b>Demo:</b> <a href="${currentProject.demo.url}" target="_blank">${currentProject.demo.type}</a>`;
-            }
-            if (currentProject.demo.url !== "" && currentProject.code.url !== "") {
-                links += ` &nbsp;&#124;&nbsp; `;
-            }
-            if (currentProject.code.url !== "") {
-                links += `<b>Code:</b> <a href="${currentProject.code.url}" target="_blank">${currentProject.code.type}</a>`;
-            }
+            let demoUrl = currentProject.demo.url;
+            let demoType = currentProject.demo.type;
+            let codeUrl = currentProject.code.url;
+            let codeType = currentProject.code.type;
+            if (demoUrl !== "") links += `<b>Demo:</b> <a href="${demoUrl}" target="_blank">${demoType}</a>`;
+            if (demoUrl !== "" && codeUrl !== "") links += ` &nbsp;&#124;&nbsp; `;
+            if (codeUrl !== "") links += `<b>Code:</b> <a href="${codeUrl}" target="_blank">${codeType}</a>`;
             // Create images
             let images = "";
-            for (let i=0; i<currentProject.images.length; i++) {
+            currentProject.images.forEach((image, index) => {
                 // TODO: create slideshow version of modal
                 images += `
-                    <img id="image-${i}" class="project-details-image" src="images/${currentProject.images[i]}" />
+                    <img id="image-${index}" class="project-details-image" src="images/${image}" />
                 `
-            }
+            });
             // Assemble all HTML for project details
             detailArea.innerHTML = `
                 <div class="project-details-col">
@@ -403,8 +362,8 @@ function init() {
         fetch('/data/experience.json')
             .then(response => response.json())
             .then(data => {
-                data.forEach(obj => {
-                    let job = {
+                experienceData = data.map(obj => {
+                    return {
                         id: obj.id,
                         employer: obj.employer,
                         period: obj.period,
@@ -415,29 +374,28 @@ function init() {
                         image: obj.image,
                         website: obj.website
                     }
-                    experienceData.push(job);
                 });     
         });
         displayExperience();
     }
 
     function displayExperience() {
-        setTimeout(function() {
-            for (let i=0; i < experienceData.length; i++) {
+        setTimeout(() => {
+            experienceData.forEach(data => {
                 expArea.innerHTML += `
                     <div class="content-item">
                         <div class="content-block"> 
                             <div>  
-                                <a href="${experienceData[i].website}" target="_blank"><img class="job-ed-logo" src="images/${experienceData[i].image}" width="60px" /></a>                      
-                                <p><span class="employer">${experienceData[i].employer}</span><br />
-                                ${experienceData[i].type} &nbsp;&bull;&nbsp; ${experienceData[i].location} &nbsp;&bull;&nbsp; ${experienceData[i].period}</p>
+                                <a href="${data.website}" target="_blank"><img class="job-ed-logo" src="images/${data.image}" width="60px" /></a>                      
+                                <p><span class="employer">${data.employer}</span><br />
+                                ${data.type} &nbsp;&bull;&nbsp; ${data.location} &nbsp;&bull;&nbsp; ${data.period}</p>
                             </div>
-                            <p class="job-title">${experienceData[i].title}</p>
-                            <p>${experienceData[i].desc}</p>
+                            <p class="job-title">${data.title}</p>
+                            <p>${data.desc}</p>
                         </div>
                     </div>
                 `;
-            }
+            });
         }, 200); // only needs a slight delay
     }
 
@@ -446,8 +404,8 @@ function init() {
         fetch('/data/education.json')
             .then(response => response.json())
             .then(data => {
-                data.forEach(obj => {
-                    let ed = {
+                educationData = data.map(obj => {
+                    return {
                         id: obj.id,
                         institution: obj.institution,
                         gradDate: obj.gradDate,
@@ -456,30 +414,29 @@ function init() {
                         image: obj.image,
                         website: obj.website
                     }
-                    educationData.push(ed);
                 });     
         });
         displayEducation();
     }
 
     function displayEducation() {
-        setTimeout(function() {
-            for (let i=0; i < educationData.length; i++) {
+        setTimeout(() => {
+            educationData.forEach(data => {
                 // TODO: gather images of certificates/degrees
                 edArea.innerHTML += `
                 <div class="content-item">
                     <div class="content-block">
                         <div>
-                            <a href="${educationData[i].website}" target="_blank"><img class="job-ed-logo" src="images/${educationData[i].image}" width="60px" /></a>                      
-                            <p><span class="institution">${educationData[i].institution}</span><br />
-                            ${educationData[i].gradDate}</p>    
+                            <a href="${data.website}" target="_blank"><img class="job-ed-logo" src="images/${data.image}" width="60px" /></a>                      
+                            <p><span class="institution">${data.institution}</span><br />
+                            ${data.gradDate}</p>    
                         </div>
-                        <p class="degree">${educationData[i].degree}</p>
-                        <p>${educationData[i].desc}</p>
+                        <p class="degree">${data.degree}</p>
+                        <p>${data.desc}</p>
                     </div>
                 </div>
                 `;
-            }
+            });
         }, 200); // only needs a slight delay
     }
 
@@ -525,46 +482,46 @@ function init() {
     
 
     function buildSkillsHTML() {
-        setTimeout(function() {
+        setTimeout(() => {
             for (group in skillsData) {
                 skillsData[group].sort((a, b) => a.skillName > b.skillName ? 1 : -1);
-                for (let i=0; i < skillsData[group].length; i++) {
-                    if (skillsData[group][i].type === "Tech") {
-                        if (skillsData[group][i].category === "Frameworks") {
-                            techSkillsCategories.frameworks.list += `<p class='skill-name'>${skillsData[group][i].skillName}</p>`;
+                skillsData[group].forEach(data => {
+                    if (data.type === "Tech") {
+                        if (data.category === "Frameworks") {
+                            techSkillsCategories.frameworks.list += `<p class='skill-name'>${data.skillName}</p>`;
                             techSkillsCategories.frameworks.count += 1;
-                        } else if (skillsData[group][i].category === "Languages") {
-                            techSkillsCategories.languages.list += `<p class='skill-name'>${skillsData[group][i].skillName}</p>`;
+                        } else if (data.category === "Languages") {
+                            techSkillsCategories.languages.list += `<p class='skill-name'>${data.skillName}</p>`;
                             techSkillsCategories.languages.count += 1;
-                        } else if (skillsData[group][i].category === "Tools") {
-                            techSkillsCategories.tools.list += `<p class='skill-name'>${skillsData[group][i].skillName}</p>`;
+                        } else if (data.category === "Tools") {
+                            techSkillsCategories.tools.list += `<p class='skill-name'>${data.skillName}</p>`;
                             techSkillsCategories.tools.count += 1;
-                        } else if (skillsData[group][i].category === "Knowledge") {
-                            techSkillsCategories.knowledge.list += `<p class='skill-name'>${skillsData[group][i].skillName}</p>`;
+                        } else if (data.category === "Knowledge") {
+                            techSkillsCategories.knowledge.list += `<p class='skill-name'>${data.skillName}</p>`;
                             techSkillsCategories.knowledge.count += 1;
                         }
-                    } else if (skillsData[group][i].type === "General") {
-                        if (skillsData[group][i].category === "Tools") {
-                            generalSkillsCategories.tools.list += `<p class='skill-name'>${skillsData[group][i].skillName}</p>`;
+                    } else if (data.type === "General") {
+                        if (data.category === "Tools") {
+                            generalSkillsCategories.tools.list += `<p class='skill-name'>${data.skillName}</p>`;
                             generalSkillsCategories.tools.count += 1;
-                        } else if (skillsData[group][i].category === "Strengths") {
-                            generalSkillsCategories.strengths.list += `<p class='skill-name'>${skillsData[group][i].skillName}</p>`;
+                        } else if (data.category === "Strengths") {
+                            generalSkillsCategories.strengths.list += `<p class='skill-name'>${data.skillName}</p>`;
                             generalSkillsCategories.strengths.count += 1;
-                        } else if (skillsData[group][i].category === "Knowledge") {
-                            generalSkillsCategories.knowledge.list += `<p class='skill-name'>${skillsData[group][i].skillName}</p>`;
+                        } else if (data.category === "Knowledge") {
+                            generalSkillsCategories.knowledge.list += `<p class='skill-name'>${data.skillName}</p>`;
                             generalSkillsCategories.knowledge.count += 1;
-                        } else if (skillsData[group][i].category === "Values") {
-                            generalSkillsCategories.values.list += `<p class='skill-name'>${skillsData[group][i].skillName}</p>`;
+                        } else if (data.category === "Values") {
+                            generalSkillsCategories.values.list += `<p class='skill-name'>${data.skillName}</p>`;
                             generalSkillsCategories.values.count += 1;
                         }
                     }
-                }
+                });
             }
         }, 200); // only needs a slight delay
     }
 
     function displaySkills() {
-        setTimeout(function() {
+        setTimeout(() => {
             // Tech subsection
             let allTechSkills = "";
             for (techCategory in techSkillsCategories) {
@@ -596,35 +553,31 @@ function init() {
         fetch('/data/recommendations.json')
             .then(response => response.json())
             .then(data => {
-                data.forEach(obj => {
-                    let rec = {
+                recommendationData = data.map(obj => {
+                    return {
                         id: obj.id,
                         author: obj.author,
                         relationship: obj.relationship,
                         recText: obj.recText
                     }
-                    recommendationData.push(rec);
                 });     
         });
         displayRecommendations();
     }
 
     function displayRecommendations() {
-        setTimeout(function() {
-            for (let i=0; i < recommendationData.length; i++) {
+        setTimeout(() => {
+            recommendationData.forEach(data => {
                 recArea.innerHTML += `
                     <div class="content-item">
                         <div class="content-block">
-                            <p>${recommendationData[i].recText}</p>
-                            <p class="text-right"><span class="rec-name">${recommendationData[i].author}</span><br />
-                            <span class="rec-role">${recommendationData[i].relationship}</span></p>
+                            <p>${data.recText}</p>
+                            <p class="text-right"><span class="rec-name">${data.author}</span><br />
+                            <span class="rec-role">${data.relationship}</span></p>
                         </div>
                     </div>
                 `;
-            }
+            });
         }, 200); // only needs a slight delay
     }
-
-    
-
 }
