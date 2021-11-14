@@ -44,10 +44,6 @@ function init() {
         knowledge: { category: "Knowledge", list: "", count: 0 },
         values: { category: "Values", list: "", count: 0 }
     }
-
-    // DOM elements for all pages
-    const head = document.querySelector("head");
-    const main = document.querySelector("main");
     
     // DOM elements for index page only
     const timelineTable = document.querySelector("#timeline-table");
@@ -62,12 +58,6 @@ function init() {
     const generalSkillsArea = document.querySelector("#general-skills-area");
     const recArea = document.querySelector("#rec-area");
 
-    // Link stylesheets/fonts to all pages, but place before script
-    // head.innerHTML = `
-    //     <link rel="stylesheet" type="text/css" href="styles.css">
-    //     <link rel="preconnect" href="https://fonts.gstatic.com">
-    //     <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100;300;600&family=Oleo+Script+Swash+Caps&family=Barlow:wght@200;400;600;800&display=swap" rel="stylesheet">
-    // ` + head.innerHTML; 
     // Tack on to end of <title> content specified in html doc
     document.title += titleEnd;
 
@@ -245,7 +235,9 @@ function init() {
     // Delay visibility of content until everything is loaded 
     function makeContentVisible() {
         setTimeout(() =>  {
-            main.style.visibility = "visible";
+            if (document.title !== titleEnd.trim()) {
+                document.querySelector("main").style.visibility = "visible";
+            }
         }, 200); // only needs a slight delay
     }
 
