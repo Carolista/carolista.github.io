@@ -12,7 +12,7 @@ function init() {
 
     // Other universal stuff
     let page = location.href.split('\\').pop().split('/').pop();
-    let titleEnd = " Caroline Jones | Front End Developer";
+    let titleEnd = " Caroline Jones | Full Stack Developer";
 
     // Arrays to hold any data loaded
     let timelineData = [];
@@ -62,19 +62,19 @@ function init() {
     const generalSkillsArea = document.querySelector("#general-skills-area");
     const recArea = document.querySelector("#rec-area");
 
-    // Link stylesheets/fonts to all pages  
-    head.innerHTML += `
-        <link rel="stylesheet" type="text/css" href="styles.css">
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps&family=Barlow:wght@200;400;600;800&display=swap" rel="stylesheet">
-    `
+    // Link stylesheets/fonts to all pages, but place before script
+    // head.innerHTML = `
+    //     <link rel="stylesheet" type="text/css" href="styles.css">
+    //     <link rel="preconnect" href="https://fonts.gstatic.com">
+    //     <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100;300;600&family=Oleo+Script+Swash+Caps&family=Barlow:wght@200;400;600;800&display=swap" rel="stylesheet">
+    // ` + head.innerHTML; 
     // Tack on to end of <title> content specified in html doc
     document.title += titleEnd;
 
     loadAndDisplayData();
 
     // Handle elements and events only on certain pages
-    if (page !== "" && page !== "index.html") { 
+    if (page !== "" && page !== "index.html" && page !== "home.html") { 
 
         // HEADER
         const header = document.querySelector("header");
@@ -88,6 +88,7 @@ function init() {
                 </button>
                 <div class="nav-menu">
                     <ul class="nav-links">
+                        <li class="nav-item"><a class="nav-link" id="home" href="/home.html">Home</a></li>
                         <li class="nav-item"><a class="nav-link" id="projects" href="/projects.html">Projects</a></li>
                         <li class="nav-item"><a class="nav-link" id="experience" href="/experience.html">Experience</a></li>
                         <li class="nav-item"><a class="nav-link" id="education" href="/education.html">Education</a></li>
@@ -171,7 +172,7 @@ function init() {
             });
         }
 
-    } else { // if index.html
+    } else if (page === "home.html") {
 
         // TIMELINE
         let isCollapsed = true;

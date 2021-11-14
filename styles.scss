@@ -12,6 +12,8 @@ $header-font: "Barlow", sans-serif;
 $title-font: "Oleo Script Swash Caps", cursive;
 $navbar-height: 80px;
 $triangle: 120px; 
+$logo-font: "Lexend Deca", sans-serif;
+$logo-transition: 1.8s;
 
 /**** DO NOT EDIT CSS FILE - JUST SCSS ****/
 
@@ -843,4 +845,137 @@ td.year {
         margin-right: 0;
     }
 
+}
+
+// NEW INDEX
+  
+#logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+#hover-anchor {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 120px;
+    margin-right: 0px;
+    border-radius: 50%;
+    z-index: 10;
+    transition: $logo-transition;
+}
+
+.text-container {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    z-index: 15;
+    width: 120px;
+    height: 120px;
+    padding-left: 22px;
+    overflow: hidden;
+    transition: transform $logo-transition, width $logo-transition;
+}
+
+.text {
+    font-family: $logo-font;
+    color: white;
+    font-size: 60px;
+    text-transform: uppercase;
+}
+
+#fn, #ln {
+    color: #333333;
+    opacity: 0;
+    transition: opacity $logo-transition;
+}
+
+#cee {
+    font-weight: 100;
+    transition: $logo-transition;
+}
+#jay {
+    font-weight: 600;
+    transition: $logo-transition;
+    padding-left: 40px;
+}
+
+#circle-mask {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.square {
+    width: 300px;
+    height: 300px;
+    position: absolute;
+}
+
+.circle {
+    width: 120px;
+    height: 120px;
+    position: absolute;
+    border-radius: 50%;
+}
+
+#shape1 {
+    background-color: #333;
+    transition: $logo-transition;
+}
+#shape2 {
+    background-color: #bbb;
+    transition: $logo-transition;
+}
+#shape3 {
+    background-color: #555;
+    transition: $logo-transition;
+}
+#shape4 {
+    background-color: #888;
+    transition: $logo-transition;
+}
+
+#hover-anchor:hover {
+    margin-right: 300px;
+    cursor: pointer;
+}
+
+#hover-anchor:hover .text-container {
+    transform: translate(150px, 0);
+    width: 440px;
+}
+#hover-anchor:hover #cee {
+    transform: translate(110px, -30px);
+    color: #333;
+}
+#hover-anchor:hover #jay {
+    transform: translate(70px, 30px);
+    color: #333;
+}
+#hover-anchor:hover #fn {
+    opacity: 1;
+}
+#hover-anchor:hover #ln {
+    opacity: 1;
+}
+
+#hover-anchor:hover #shape1 {
+    transform: translate(55px, 0) rotate(-80deg);
+}
+#hover-anchor:hover #shape2 {
+    transform: translate(30px, 0) rotate(-70deg);
+}
+#hover-anchor:hover #shape3 {
+    transform: translate(15px, 0) rotate(-80deg);
+}
+#hover-anchor:hover #shape4 {
+    transform: translate(40px, -20) rotate(-62deg);
 }
