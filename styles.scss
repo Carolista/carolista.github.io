@@ -13,180 +13,174 @@ $primary-font: "Barlow", sans-serif;
 $header-font: "Barlow", sans-serif;
 $title-font: "Oleo Script Swash Caps", cursive;
 $navbar-height: 80px;
-$triangle: 120px; 
+$triangle: 120px;
 $logo-font: "Lexend Deca", sans-serif;
 $logo-transition: 1.8s;
 
 /**** DO NOT EDIT CSS FILE - JUST SCSS ****/
 
-
-
 /**** ELEMENTS ****/
 
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
 }
 
 body {
-    display: flex;
-    flex-direction: column;
-    color: $primary-color;
-    font-family: $primary-font;
-    font-size: 11pt;
-    font-weight: 400;
-    background-color: $highlight-color;
-    height: 100vh;
-    margin: 0px;
-    padding: 0px;
-    overflow-x: hidden;
+	display: flex;
+	flex-direction: column;
+	color: $primary-color;
+	font-family: $primary-font;
+	font-size: 11pt;
+	font-weight: 400;
+	background-color: $highlight-color;
+	height: 100vh;
+	margin: 0px;
+	padding: 0px;
+	overflow-x: hidden;
 }
 
 header {
-    height: $navbar-height;
-    width: 100vw;
-    margin: 0px;
-    padding: 0px 20px;
+	height: $navbar-height;
+	width: 100vw;
+	margin: 0px;
+	padding: 0px 20px;
 }
 
 main {
-    background-image: url("images/white-geo-bkg.png");
-    background-repeat: repeat;
-    background-size: 1600px;
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    width: 100vw;
-    margin: 0px;
-    padding: 30px 10vw 60px;
-    visibility: hidden; // until content loaded
+	background-image: url("images/white-geo-bkg.png");
+	background-repeat: repeat;
+	background-size: 1600px;
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	width: 100vw;
+	margin: 0px;
+	padding: 30px 10vw 60px;
+	visibility: hidden; // until content loaded
 }
 
 footer {
-    display: flex;
-    flex-direction: column;
-    background-color: $accent-color;
-    width: 100vw;
-    padding: 20px;
-    border-top: 10px solid $bright-accent-color;
+	display: flex;
+	flex-direction: column;
+	background-color: $accent-color;
+	width: 100vw;
+	padding: 20px;
+	border-top: 10px solid $bright-accent-color;
 }
 
 h1 {
-    font-size: 2.5rem;
-    font-weight: 600;
-    color: $accent-color;
-    margin: 25px 0px 30px;
+	font-size: 2.5rem;
+	font-weight: 600;
+	color: $accent-color;
+	margin: 25px 0px 30px;
 }
 
 h2 {
-    font-size: 1.8rem;
-    font-weight: 600;
-    margin: 10px 0px 30px;
+	font-size: 1.8rem;
+	font-weight: 600;
+	margin: 10px 0px 30px;
 }
 
 h3 {
-    margin: 10px 0px 8px;
+	margin: 10px 0px 8px;
 }
 
 h4 {
-    font-weight: 600;
-    margin: 10px 0px 10px;
+	font-weight: 600;
+	margin: 10px 0px 10px;
 }
 
 hr {
-    height: 2px;
-    margin: 10px 0px;
+	height: 2px;
+	margin: 10px 0px;
 }
 
 p {
-    font-size: 0.95rem;
-    margin: 0px 15px 10px 0px;
+	font-size: 0.95rem;
+	margin: 0px 15px 10px 0px;
 }
 
 a {
-    color: $accent-color;
-    font-weight: 600;
-    text-decoration: none;
+	color: $accent-color;
+	font-weight: 600;
+	text-decoration: none;
 }
 
 a:hover {
-    color: $light-accent-color;
+	color: $light-accent-color;
 }
 
 a.inverted {
-    color: $contrast-color;
+	color: $contrast-color;
 }
 
 a.inverted:hover {
-    color: $highlight-color;
+	color: $highlight-color;
 }
 
 ul {
-    margin-left: 35px;
+	margin-left: 35px;
 }
 
 td {
-    padding: 5px 5px 5px 0px;
-    vertical-align: top;
+	padding: 5px 5px 5px 0px;
+	vertical-align: top;
 }
-
-
 
 /**** IDs ****/
 
 // modification to <main>
 #landing-page {
-    padding: 0px;
+	padding: 0px;
 }
 
 #triangle-down {
-    width: 0;
-    height: 0;
-    border-left: $triangle solid transparent;
-    border-right: $triangle solid transparent;
-    border-top: $triangle solid $bright-accent-color;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    z-index: 1
+	width: 0;
+	height: 0;
+	border-left: $triangle solid transparent;
+	border-right: $triangle solid transparent;
+	border-top: $triangle solid $bright-accent-color;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 1;
 }
 
 #triangle-right {
-    width: 0;
-    height: 0;
-    border-top: $triangle solid transparent;
-    border-left: $triangle solid $accent-color;
-    border-bottom: $triangle solid transparent;
-    position: absolute;
-    top: 10px;
-    left: -10px;
-    z-index: 1;
+	width: 0;
+	height: 0;
+	border-top: $triangle solid transparent;
+	border-left: $triangle solid $accent-color;
+	border-bottom: $triangle solid transparent;
+	position: absolute;
+	top: 10px;
+	left: -10px;
+	z-index: 1;
 }
 
 #landing-name {
-    font-family: $title-font;
-    font-size: 36px; 
-    color: $contrast-color;
-    margin: 0px 0px 20px;
+	font-family: $title-font;
+	font-size: 36px;
+	color: $contrast-color;
+	margin: 0px 0px 20px;
 }
 
 #welcome {
-    font-family: $title-font;
-    font-size: 32px;
-    margin: 20px 0px 5px;
+	font-family: $title-font;
+	font-size: 32px;
+	margin: 20px 0px 5px;
 }
 
 #navbar-name {
-    font-family: $title-font;
-    font-size: 3rem;
-    color: $contrast-color;
-    margin: 30px 0px 0px;
+	font-family: $title-font;
+	font-size: 3rem;
+	color: $contrast-color;
+	margin: 30px 0px 0px;
 }
 
-
 /**** CLASSES ****/
-
 
 /** GENERAL USE **/
 
@@ -194,790 +188,780 @@ td {
 
 // for h1 titles on each page
 .page-title {
-    font-family: $header-font;
-    font-size: 48px;
-    font-weight: 600;
-    text-transform: uppercase; 
-    margin: 20px 0px 30px;
+	font-family: $header-font;
+	font-size: 48px;
+	font-weight: 600;
+	text-transform: uppercase;
+	margin: 20px 0px 30px;
 }
 
 .text-right {
-    text-align: right;
+	text-align: right;
 }
 
 .text-center {
-    text-align: center;
+	text-align: center;
 }
 
 // line under some subheaders or titles
 .muted-line {
-    border: 6px solid $bright-accent-color;
-    margin: 0px;
+	border: 6px solid $bright-accent-color;
+	margin: 0px;
 }
 
 .muted-line-thin {
-    border: 3px solid $bright-accent-color;
-    margin: 0px;
+	border: 3px solid $bright-accent-color;
+	margin: 0px;
 }
 
 // use for italicized notes/footnotes
 .more-info {
-    font-size: 1.2em;
-    font-style: italic;
-    margin-top: 15px;
+	font-size: 1.2em;
+	font-style: italic;
+	margin-top: 15px;
 }
 
 // for use on darker backgrounds, such as footer
 .off-white-text {
-    color: $contrast-color;
+	color: $contrast-color;
 }
 
 .content-container {
-    columns: 2;
-    column-gap: 40px;
+	columns: 2;
+	column-gap: 40px;
 }
 
 .content-item {
-    display: inline-block;
-    vertical-align: top;
-    margin: 0px 0px 0px;
-    width: 100%;
+	display: inline-block;
+	vertical-align: top;
+	margin: 0px 0px 0px;
+	width: 100%;
 }
 
 // used as basic container for misc content with translucent bkg and line on left
 .content-block {
-    display: flex;
-    flex-direction: column;
-    margin: 0px 0px 50px;
-    border-left: 8px $light-accent-color solid;
-    padding: 15px 10px 15px 20px;
-    background-color: rgba(255, 255, 255, 0.65);
+	display: flex;
+	flex-direction: column;
+	margin: 0px 0px 50px;
+	border-left: 8px $light-accent-color solid;
+	padding: 15px 10px 15px 20px;
+	background-color: rgba(255, 255, 255, 0.65);
 }
-
 
 /** LANDING PAGE **/
 
 .all-content {
-    display: flex;
-    flex-direction: row;
-    height: 100%;
+	display: flex;
+	flex-direction: row;
+	height: 100%;
 }
 
 .left-container {
-    color: $contrast-color;
-    background-color: $dark-accent-color;
-    width: 300px;
-    height: 100%;
-    padding: 25px;
-    border-right: 10px solid $muted-accent-color;
+	color: $contrast-color;
+	background-color: $dark-accent-color;
+	width: 300px;
+	height: 100%;
+	padding: 25px;
+	border-right: 10px solid $muted-accent-color;
 }
 
 .welcome-content {
-    position: relative;
-    z-index: 4;
+	position: relative;
+	z-index: 4;
 }
 
 .headshot {
-    width: 100%;
-    border: 3px $muted-accent-color solid;
+	width: 100%;
+	border: 3px $muted-accent-color solid;
 }
 
 .right-container {
-    margin: 40px;
-    width: 100%;
+	margin: 40px;
+	width: 100%;
 }
 
 .menu-area {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    margin-bottom: 40px;
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	margin-bottom: 40px;
 }
 
 .menu-links {
-    width: 100%;
-    margin-top: 20px;
+	width: 100%;
+	margin-top: 20px;
 }
 
 .menu-link {
-    color: $contrast-color;
-    text-decoration: none;
+	color: $contrast-color;
+	text-decoration: none;
 }
 
 .menu-link:hover {
-    color: $highlight-color;
+	color: $highlight-color;
 }
 
 .menu-button {
-    font-size: 1.1rem;
-    font-weight: 400;
-    text-transform: uppercase;
-    background-color: $accent-color; 
-    border: 4px solid $accent-color;
-    border-left: 25px solid $accent-color;
-    text-align: right;
-    margin-bottom: 15px;
-    padding: 8px 15px 8px 35px;
+	font-size: 1.1rem;
+	font-weight: 400;
+	text-transform: uppercase;
+	background-color: $accent-color;
+	border: 4px solid $accent-color;
+	border-left: 25px solid $accent-color;
+	text-align: right;
+	margin-bottom: 15px;
+	padding: 8px 15px 8px 35px;
 }
 
 .menu-button:hover {
-    border: 4px solid $bright-accent-color;
-    border-left: 25px solid $bright-accent-color;
+	border: 4px solid $bright-accent-color;
+	border-left: 25px solid $bright-accent-color;
 }
 
 .content-area {
-    width: 100%;
-    background-color: rgba(255, 255, 255, 0.65);
-    padding: 25px;
-    border-top: 10px solid $light-accent-color;
-    margin: 0px 0px 30px;
+	width: 100%;
+	background-color: rgba(255, 255, 255, 0.65);
+	padding: 25px;
+	border-top: 10px solid $light-accent-color;
+	margin: 0px 0px 30px;
 }
 
 .content-subheader {
-    color: $muted-accent-color;
-    font-size: 1.4rem;
-    font-weight: 600;
-    margin-bottom: 5px;
+	color: $muted-accent-color;
+	font-size: 1.4rem;
+	font-weight: 600;
+	margin-bottom: 5px;
 }
 
 .history-pic {
-    float: right;
-    max-width: 350px;
-    border: 5px solid $dark-accent-color;
-    margin: 0px 0px 10px 15px;
+	float: right;
+	max-width: 350px;
+	border: 5px solid $dark-accent-color;
+	margin: 0px 0px 10px 15px;
 }
 
 td.year {
-    font-size: 1.1em;
-    font-weight: 600;
-    width: 50px;
+	font-size: 1.1em;
+	font-weight: 600;
+	width: 50px;
 }
 
 .gradient-text {
-    color: transparent;
-    background-image: linear-gradient( rgba(51,51,51,1), rgba(51,51,51,0));
-    background-size: 100%;
-    background-clip: text;
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
-    text-fill-color: transparent;
-    -webkit-text-fill-color: transparent;
-    -moz-text-fill-color: transparent;
+	color: transparent;
+	background-image: linear-gradient(rgba(51, 51, 51, 1), rgba(51, 51, 51, 0));
+	background-size: 100%;
+	background-clip: text;
+	-webkit-background-clip: text;
+	-moz-background-clip: text;
+	text-fill-color: transparent;
+	-webkit-text-fill-color: transparent;
+	-moz-text-fill-color: transparent;
 }
 
 .timeline-button-container {
-    display: flex;
-    justify-content: center;
+	display: flex;
+	justify-content: center;
 }
 
 #timeline-button {
-    color: $contrast-color;
-    font-weight: 600;
-    font-size: .9rem;
-    text-transform: uppercase;
-    background-color: $accent-color;
-    width: auto;
-    border-radius: 10px;
-    padding: 10px 15px;
-    margin: -90px 0px 90px;
-    cursor: pointer;
+	color: $contrast-color;
+	font-weight: 600;
+	font-size: 0.9rem;
+	text-transform: uppercase;
+	background-color: $accent-color;
+	width: auto;
+	border-radius: 10px;
+	padding: 10px 15px;
+	margin: -90px 0px 90px;
+	cursor: pointer;
 }
-
 
 /** EXPERIENCE & EDUCATION PAGES **/
 
-.employer, .institution {
-    font-weight: 600;
-    font-size: 1.3rem;
+.employer,
+.institution {
+	font-weight: 600;
+	font-size: 1.3rem;
 }
 
-.job-title, .degree {
-    font-weight: 600;
-    font-size: 1rem;
-    color: $accent-color;
-    margin-top: 10px;
+.job-title,
+.degree {
+	font-weight: 600;
+	font-size: 1rem;
+	color: $accent-color;
+	margin-top: 10px;
 }
 
 .job-ed-logo {
-    float: left;
-    width: 60px;
-    margin-right: 15px;
+	float: left;
+	width: 60px;
+	margin-right: 15px;
 }
-
 
 /** SKILLS PAGE **/
 
 .skills-subheader {
-    margin-bottom: 5px;
+	margin-bottom: 5px;
 }
 
 .skills-name {
-    margin: 0px 0px 5px;
+	margin: 0px 0px 5px;
 }
 
 // container for all skills
 .skills-container {
-    display: flex;
-    flex-direction: row;
+	display: flex;
+	flex-direction: row;
 }
 
 // tech and general containers
 .skills-subsection {
-    vertical-align: top;
-    margin: 0px 50px 40px 0px;
-    width: 100%;
+	vertical-align: top;
+	margin: 0px 50px 40px 0px;
+	width: 100%;
 }
 
 // holds all lists in a subsection
 .skills-group {
-    columns: 2;
-    column-gap: 20px;
+	columns: 2;
+	column-gap: 20px;
 }
 
 // container for individual lists by subcategory
 .skills-list {
-    display: inline-block;
-    vertical-align: top;
-    margin: 30px 0px 0px;
-    width: 100%;
+	display: inline-block;
+	vertical-align: top;
+	margin: 30px 0px 0px;
+	width: 100%;
 }
-
 
 /** RECOMMENDATION PAGE **/
 
 .rec-name {
-    font-weight: 600;
-    font-size: 1rem;
+	font-weight: 600;
+	font-size: 1rem;
 }
 
 .rec-role {
-    font-weight: 200;
-    font-size: 0.9rem;
+	font-weight: 200;
+	font-size: 0.9rem;
 }
-
 
 /** CONTACT PAGE **/
 
 .contact-subheader {
-    margin-bottom: 15px;
+	margin-bottom: 15px;
 }
 
 .contact-logo {
-    max-height: 50px;
-    float: left;
-    margin-right: 15px;
+	max-height: 50px;
+	float: left;
+	margin-right: 15px;
 }
 
 .profile-blurb {
-    margin-bottom: 15px;
+	margin-bottom: 15px;
 }
-
 
 /** PROJECT GALLERY PAGE **/
 
 // Link at bottom of each project block on gallery page
 .view-details {
-    width: 100%;
-    padding-top: 10px;
-    margin-bottom: 0px;
-    border-top: 1px solid rgba(0, 0, 0, .15);
+	width: 100%;
+	padding-top: 10px;
+	margin-bottom: 0px;
+	border-top: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 // space between project blocks
 .gallery-container {
-    columns: 3;
-    column-gap: 15px;
+	columns: 3;
+	column-gap: 15px;
 }
 
-// default for wide layout - create three columns 
+// default for wide layout - create three columns
 .gallery-item {
-    display: inline-block;
-    vertical-align: top;
-    margin-bottom: 15px;
-    width: 100%;
-    filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, .3));
-    transition: filter .2s ease-in-out;
+	display: inline-block;
+	vertical-align: top;
+	margin-bottom: 15px;
+	width: 100%;
+	filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.3));
+	transition: filter 0.2s ease-in-out;
 }
 
 .gallery-item:hover {
-    filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, .6));
+	filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, 0.6));
 }
 
 // container for each project in gallery
 .project-content {
-  background-color: white;
-  padding: 15px;
+	background-color: white;
+	padding: 15px;
 }
 
 .project-image {
-    width: 100%;
-    border: 1px solid $muted-color;
+	width: 100%;
+	border: 1px solid $muted-color;
 }
-
 
 /** PROJECT DETAILS PAGE **/
 
 // used for Tech Stack and Noteworthy subheaders in project details page
 .project-section {
-    margin: 20px 0px 5px;
+	margin: 20px 0px 5px;
 }
 
 .project-title {
-    margin-bottom: 5px;
+	margin-bottom: 5px;
 }
 
 .project-subtitle {
-    margin-bottom: 15px;
+	margin-bottom: 15px;
 }
 
 // for links to code and demo
 .project-links {
-    font-size: 1.3em;
-    margin: 20px 0px;
+	font-size: 1.3em;
+	margin: 20px 0px;
 }
 
 .project-details-image {
-    width: 90%;
-    border: 1px solid $muted-color;
-    margin: 30px 0px -15px 30px;
-    filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, .3));
-    transition: filter .2s ease-in-out;
+	width: 90%;
+	border: 1px solid $muted-color;
+	margin: 30px 0px -15px 30px;
+	filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.3));
+	transition: filter 0.2s ease-in-out;
 }
 
 .project-details-image:hover {
-    filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, .6));
+	filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, 0.6));
 }
 
 // space between project details and images when side-by-side
-.project-details-row, 
-    .project-details-row > .project-details-col {
-    padding: 10px;
+.project-details-row,
+.project-details-row > .project-details-col {
+	padding: 10px;
 }
 
 // columns for project details page
 .project-details-col {
-    float: left;
-    width: 50%;
+	float: left;
+	width: 50%;
 }
 
 .project-details-bkg {
-    background-color: rgba(255, 255, 255, 0.65);
-    padding: 0px 25px 25px;
-    border-top: 10px solid $light-accent-color;
-    margin: 30px 0px;
+	background-color: rgba(255, 255, 255, 0.65);
+	padding: 0px 25px 25px;
+	border-top: 10px solid $light-accent-color;
+	margin: 30px 0px;
 }
 
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 6; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 6; /* Sit on top */
+	padding-top: 100px; /* Location of the box */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0, 0, 0); /* Fallback color */
+	background-color: rgba(0, 0, 0, 0.9); /* Black w/ opacity */
 }
 
 .modal-content {
-    margin: auto;
-    display: block;
-    width: 80%;
-    max-width: 700px;
-    animation-name: zoom;
-    animation-duration: 0.6s;
+	margin: auto;
+	display: block;
+	width: 80%;
+	max-width: 700px;
+	animation-name: zoom;
+	animation-duration: 0.6s;
 }
 
 .close {
-    position: absolute;
-    top: 15px;
-    right: 35px;
-    color: #f1f1f1;
-    font-size: 40px;
-    font-weight: bold;
-    transition: 0.3s;
-  }
-  
-.close:hover, .close:focus {
-    color: #bbb;
-    text-decoration: none;
-    cursor: pointer;
+	position: absolute;
+	top: 15px;
+	right: 35px;
+	color: #f1f1f1;
+	font-size: 40px;
+	font-weight: bold;
+	transition: 0.3s;
 }
 
+.close:hover,
+.close:focus {
+	color: #bbb;
+	text-decoration: none;
+	cursor: pointer;
+}
 
 /**** MEDIA QUERIES FOR RESPONSIVE CONTENT ****/
 
 @media screen and (max-width: 1100px) {
-    .gallery-container {
-        columns: 2;
-    }
-    .skills-group {
-        columns: 1;
-    }
-    .history-pic {
-        width: 50%;
-    }
+	.gallery-container {
+		columns: 2;
+	}
+	.skills-group {
+		columns: 1;
+	}
+	.history-pic {
+		width: 50%;
+	}
 }
 
 @media screen and (max-width: 1000px) {
-    .page-title {
-        font-size: 5vw;
-    } 
-    .content-container {
-        columns: 1;
-    }
+	.page-title {
+		font-size: 5vw;
+	}
+	.content-container {
+		columns: 1;
+	}
 }
 
 @media screen and (max-width: 800px) {
-    .history-pic {
-        width: 100%;
-        float: none;
-        margin: 0px 0px 15px 0px;
-    }
-    .gallery-container {
-        columns: 1;
-    }
-    .project-details-col {
-        width: 100%;
-    }
-    .project-detail-image {
-        width: 100%;
-        margin: 15px 0px 0px;
-    }   
-    
+	.history-pic {
+		width: 100%;
+		float: none;
+		margin: 0px 0px 15px 0px;
+	}
+	.gallery-container {
+		columns: 1;
+	}
+	.project-details-col {
+		width: 100%;
+	}
+	.project-detail-image {
+		width: 100%;
+		margin: 15px 0px 0px;
+	}
 }
 
 @media screen and (max-width: 600px) {
-    .all-content {
-        flex-direction: column;
-    }
-    .left-container {
-        width: 100%;
-    }
-    .right-container {
-        width: 100%;
-        margin: 0px;
-        padding: 25px;
-    }
-    .history-area {
-        width: 100; // not sure why this is necessary
-    }
-    .history-pic {
-        max-width: 100%;
-    }
-    #landing-name {
-        font-size: 13vw;
-    }
-    #navbar-name {
-        font-size: 8.5vw;
-    }
-    .page-title {
-        font-size: 28px;
-    }
-    .skills-container {
-        flex-direction: column;
-    }
-    .modal-content {
-        width: 100%;
-    }
+	.all-content {
+		flex-direction: column;
+	}
+	.left-container {
+		width: 100%;
+	}
+	.right-container {
+		width: 100%;
+		margin: 0px;
+		padding: 25px;
+	}
+	.history-area {
+		width: 100; // not sure why this is necessary
+	}
+	.history-pic {
+		max-width: 100%;
+	}
+	#landing-name {
+		font-size: 13vw;
+	}
+	#navbar-name {
+		font-size: 8.5vw;
+	}
+	.page-title {
+		font-size: 28px;
+	}
+	.skills-container {
+		flex-direction: column;
+	}
+	.modal-content {
+		width: 100%;
+	}
 }
-
-
 
 /**** NAV BAR ****/
 
 #navbar {
-    background-color: $dark-accent-color;
-    height: calc($navbar-height-10px);
-    left: 0;
-    right: 0;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
-    border-bottom: 20px solid $muted-accent-color;
-    z-index: 2; // needed to stay above masonry layout on project gallery
+	background-color: $dark-accent-color;
+	height: calc($navbar-height-10px);
+	left: 0;
+	right: 0;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+	border-bottom: 20px solid $muted-accent-color;
+	z-index: 2; // needed to stay above masonry layout on project gallery
 }
 
 .nav-container {
-    display: flex;
-    justify-content: space-between;
-    height: 100%;
-    align-items: center;
+	display: flex;
+	justify-content: space-between;
+	height: 100%;
+	align-items: center;
 }
 
 .nav-item {
-    margin: 0.2em;
-    width: auto;
+	margin: 0.2em;
+	width: auto;
 }
 
 .nav-link {
-    display: flex;
-    color: $contrast-color;
-    text-decoration: none;
-    font-weight: 400;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    padding: 0.4em 0.8em 0.8em;
-    background-color: $muted-accent-color;
-    border-bottom: 20px solid $dark-accent-color;
-    transition: background-color 0.3s ease-in-out;
+	display: flex;
+	color: $contrast-color;
+	text-decoration: none;
+	font-weight: 400;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+	padding: 0.4em 0.8em 0.8em;
+	background-color: $muted-accent-color;
+	border-bottom: 20px solid $dark-accent-color;
+	transition: background-color 0.3s ease-in-out;
 }
 
 .nav-link:focus,
 .nav-link:hover {
-    color: $highlight-color;
-    // background-color is handled in JS
+	color: $highlight-color;
+	// background-color is handled in JS
 }
 
 .nav-button {
-    cursor: pointer;
-    border: none;
-    background-color: transparent;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+	cursor: pointer;
+	border: none;
+	background-color: transparent;
+	width: 40px;
+	height: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
 }
 
 // for hamburger menu
 .tri-bar {
-    display: block;
-    width: 25px;
-    height: 2px;
-    margin: 3px;
-    transition: background-color 0.4s ease-in-out,
-                transform 0.4s ease-in-out,
-                opacity 0.4s ease-in-out;
-    background-color: $contrast-color;
+	display: block;
+	width: 25px;
+	height: 2px;
+	margin: 3px;
+	transition: background-color 0.4s ease-in-out, transform 0.4s ease-in-out,
+		opacity 0.4s ease-in-out;
+	background-color: $contrast-color;
 }
 
 .nav-button:focus .tri-bar,
 .nav-button:hover .tri-bar {
-    background-color: $highlight-color;
+	background-color: $highlight-color;
 }
 
 #navbar.opened .nav-button .tri-bar:first-child,
 #navbar.opened .nav-button .tri-bar:last-child {
-    position: absolute;
-    margin: 0;
-    width: 30px;
+	position: absolute;
+	margin: 0;
+	width: 30px;
 }
 
 #navbar.opened .nav-button .tri-bar:first-child {
-    transform: rotate(45deg);
+	transform: rotate(45deg);
 }
 
 #navbar.opened .nav-button .tri-bar:nth-child(2) {
-    opacity: 0;
+	opacity: 0;
 }
 
 #navbar.opened .nav-button .tri-bar:last-child {
-    transform: rotate(-45deg);
+	transform: rotate(-45deg);
 }
 
 .nav-menu {
-    position: fixed;
-    top: $navbar-height;
-    bottom: 0;
-    transition: opacity 0.2s ease-in-out,
-                visibility 0.2s ease-in-out;
-    opacity: 0;
-    visibility: hidden;
-    left: 0;
-    right: 0;
+	position: fixed;
+	top: $navbar-height;
+	bottom: 0;
+	transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
+	opacity: 0;
+	visibility: hidden;
+	left: 0;
+	right: 0;
 }
 
 #navbar.opened .nav-menu {
-    background-color: rgba(0, 0, 0, 0.4);
-    opacity: 1;
-    visibility: visible;
+	background-color: rgba(0, 0, 0, 0.4);
+	opacity: 1;
+	visibility: visible;
 }
 
 .nav-links {
-    list-style-type: none;
-    max-height: 0;
-    overflow: hidden;
-    position: absolute;
-    background-color: $dark-accent-color;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    right: 0;
-    margin: 1.4rem;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+	list-style-type: none;
+	max-height: 0;
+	overflow: hidden;
+	position: absolute;
+	background-color: $dark-accent-color;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	right: 0;
+	margin: 1.4rem;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
 
 #navbar.opened .nav-links {
-    padding: 1em;
-    max-height: none;
+	padding: 1em;
+	max-height: none;
 }
 
 @media screen and (min-width: 950px) {
-    .nav-button {
-        display: none;
-    }
-    
-    #navbar .nav-menu,
-    #navbar.opened .nav-menu {
-        visibility: visible;
-        opacity: 1;
-        position: static;
-        display: block;
-        height: 100%;
-    }
+	.nav-button {
+		display: none;
+	}
 
-    #navbar .nav-links,
-    #navbar.opened .nav-links {
-        margin: 0;
-        padding: 0;
-        box-shadow: none;
-        position: static;
-        flex-direction: row;
-        list-style-type: none;
-        max-height: max-content;
-        width: 100%;
-        height: 100%;
-    }
+	#navbar .nav-menu,
+	#navbar.opened .nav-menu {
+		visibility: visible;
+		opacity: 1;
+		position: static;
+		display: block;
+		height: 100%;
+	}
 
-    #navbar .nav-link:last-child {
-        margin-right: 0;
-    }
+	#navbar .nav-links,
+	#navbar.opened .nav-links {
+		margin: 0;
+		padding: 0;
+		box-shadow: none;
+		position: static;
+		flex-direction: row;
+		list-style-type: none;
+		max-height: max-content;
+		width: 100%;
+		height: 100%;
+	}
 
+	#navbar .nav-link:last-child {
+		margin-right: 0;
+	}
 }
 
 // NEW INDEX
-  
+
 #logo-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+	position: relative;
 }
 
 #hover-anchor {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    width: 120px;
-    margin-right: 0px;
-    border-radius: 50%;
-    z-index: 10;
-    transition: $logo-transition;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	width: 120px;
+	margin-right: 0px;
+	border-radius: 50%;
+	z-index: 10;
+	transition: $logo-transition;
 }
 
 .text-container {
-    display: flex;
-    align-items: center;
-    position: absolute;
-    z-index: 15;
-    width: 120px;
-    height: 120px;
-    padding-left: 22px;
-    overflow: hidden;
-    transition: transform $logo-transition, width $logo-transition;
+	display: flex;
+	align-items: center;
+	position: absolute;
+	z-index: 15;
+	width: 120px;
+	height: 120px;
+	padding-left: 22px;
+	overflow: hidden;
+	transition: transform $logo-transition, width $logo-transition;
 }
 
 .text {
-    font-family: $logo-font;
-    color: white;
-    font-size: 60px;
-    text-transform: uppercase;
+	font-family: $logo-font;
+	color: white;
+	font-size: 60px;
+	text-transform: uppercase;
 }
 
-#fn, #ln {
-    color: #333333;
-    opacity: 0;
-    transition: opacity $logo-transition;
+#fn,
+#ln {
+	color: #333333;
+	opacity: 0;
+	transition: opacity $logo-transition;
 }
 
 #cee {
-    font-weight: 100;
-    transition: $logo-transition;
+	font-weight: 100;
+	transition: $logo-transition;
 }
 #jay {
-    font-weight: 600;
-    transition: $logo-transition;
-    padding-left: 40px;
+	font-weight: 600;
+	transition: $logo-transition;
+	padding-left: 40px;
 }
 
 #circle-mask {
-    position: relative;
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    overflow: hidden;
+	position: relative;
+	width: 120px;
+	height: 120px;
+	border-radius: 50%;
+	overflow: hidden;
 }
 
 .square {
-    width: 300px;
-    height: 300px;
-    position: absolute;
+	width: 300px;
+	height: 300px;
+	position: absolute;
 }
 
 .circle {
-    width: 120px;
-    height: 120px;
-    position: absolute;
-    border-radius: 50%;
+	width: 120px;
+	height: 120px;
+	position: absolute;
+	border-radius: 50%;
 }
 
 #shape1 {
-    background-color: #333;
-    transition: $logo-transition;
+	background-color: #333;
+	transition: $logo-transition;
 }
 #shape2 {
-    background-color: #bbb;
-    transition: $logo-transition;
+	background-color: #bbb;
+	transition: $logo-transition;
 }
 #shape3 {
-    background-color: #555;
-    transition: $logo-transition;
+	background-color: #555;
+	transition: $logo-transition;
 }
 #shape4 {
-    background-color: #888;
-    transition: $logo-transition;
+	background-color: #888;
+	transition: $logo-transition;
 }
 
 #hover-anchor:hover {
-    margin-right: 300px;
-    cursor: pointer;
+	margin-right: 300px;
+	cursor: pointer;
 }
 
 #hover-anchor:hover .text-container {
-    transform: translate(160px, 0);
-    width: 440px;
+	transform: translate(160px, 0);
+	width: 440px;
 }
 #hover-anchor:hover #cee {
-    transform: translate(110px, -30px);
-    color: #333;
+	transform: translate(110px, -30px);
+	color: #333;
 }
 #hover-anchor:hover #jay {
-    transform: translate(70px, 30px);
-    color: #333;
+	transform: translate(70px, 30px);
+	color: #333;
 }
 #hover-anchor:hover #fn {
-    opacity: 1;
+	opacity: 1;
 }
 #hover-anchor:hover #ln {
-    opacity: 1;
+	opacity: 1;
 }
 
 #hover-anchor:hover #shape1 {
-    transform: translate(55px, 0) rotate(-80deg);
+	transform: translate(55px, 0) rotate(-80deg);
 }
 #hover-anchor:hover #shape2 {
-    transform: translate(30px, 0) rotate(-70deg);
+	transform: translate(30px, 0) rotate(-70deg);
 }
 #hover-anchor:hover #shape3 {
-    transform: translate(15px, 0) rotate(-80deg);
+	transform: translate(15px, 0) rotate(-80deg);
 }
 #hover-anchor:hover #shape4 {
-    transform: translate(40px, -20) rotate(-62deg);
+	transform: translate(40px, -20) rotate(-62deg);
 }
