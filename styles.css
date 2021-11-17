@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100;300;600&family=Oleo+Script+Swash+Caps&family=Barlow:wght@200;400;600;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100;400;600&family=Oleo+Script+Swash+Caps&family=Barlow:wght@200;400;600;800&display=swap");
 /**** DO NOT EDIT CSS FILE - JUST SCSS ****/
 /**** ELEMENTS ****/
 * {
@@ -49,7 +49,7 @@ main {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  width: calc(100vw - 470px);
+  width: calc(100vw - 300px);
   padding: 0px 50px 60px 0px;
   visibility: hidden;
   z-index: 10;
@@ -217,7 +217,7 @@ td {
 .content-item {
   display: inline-block;
   vertical-align: top;
-  margin: 0px 0px 0px;
+  margin: 0px 0px 40px;
   width: 100%;
 }
 
@@ -229,8 +229,8 @@ td {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin: 0px 0px 50px;
-  background-color: rgba(255, 255, 255, 0.65);
+  margin: 0;
+  background-color: white;
   overflow: hidden;
 }
 
@@ -385,9 +385,9 @@ td.year {
 
 .job-title,
 .degree {
-  font-weight: 600;
+  font-weight: 400;
   font-size: 1rem;
-  color: #333;
+  color: white;
   margin-top: 10px;
 }
 
@@ -1205,6 +1205,11 @@ td.year {
           transform: translate(-40px, 0);
 }
 
+#nav-arrow-icon {
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+}
+
 .nav-choice {
   -webkit-transition: 0.3s;
   transition: 0.3s;
@@ -1212,8 +1217,8 @@ td.year {
 }
 
 #nav-box:hover {
-  -webkit-transform: translate(200px, 0) scale(1.15);
-          transform: translate(200px, 0) scale(1.15);
+  -webkit-transform: translate(200px, 18px) scale(1.15);
+          transform: translate(200px, 18px) scale(1.15);
   height: 245px;
 }
 
@@ -1229,12 +1234,12 @@ td.year {
 
 .highlighted {
   color: #333;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .highlighted:hover {
   color: #333;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .highlight {
@@ -1243,8 +1248,8 @@ td.year {
           flex: 1;
   line-height: 1;
   text-decoration: none;
-  background-image: -webkit-gradient(linear, left top, right top, color-stop(0, #eee), to(#ccc));
-  background-image: linear-gradient(to right, #eee 0, #ccc 100%);
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(0, #b5d89d), to(#61a136));
+  background-image: linear-gradient(to right, #b5d89d 0, #61a136 100%);
   background-position: 0 1.2em;
   background-size: 0 100%;
   background-repeat: no-repeat;
@@ -1273,8 +1278,8 @@ td.year {
 
 .highlight--gradient {
   background-position: 0 -0.1em;
-  background-image: -webkit-gradient(linear, left top, right top, color-stop(0, yellow), to(lightgreen));
-  background-image: linear-gradient(to right, yellow 0, lightgreen 100%);
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(0, #96cc72), to(#5ead29));
+  background-image: linear-gradient(to right, #96cc72 0, #5ead29 100%);
 }
 
 .highlight--reverse {
@@ -1299,7 +1304,7 @@ td.year {
   background-color: #eee;
   color: #333;
   font-family: "Lexend Deca", sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   text-transform: uppercase;
   font-size: 2rem;
   height: 50px;
@@ -1313,7 +1318,82 @@ td.year {
   display: absolute;
   top: 0;
   left: 0;
+  padding: 15px 10px 15px 15px;
+  margin: 0;
   z-index: 11;
+}
+
+.content-animated-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 0;
+  padding: 0;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.content-hover-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 5px;
+  background-color: #61a136;
+  color: white;
+  height: 50px;
+  width: 100%;
+  padding: 30px 15px;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  z-index: 9;
+}
+
+.content-animated-box:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+#content-arrow {
+  font-size: 1.2em;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.content-animated-box:hover #content-arrow {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.content-secondary {
+  display: relative;
+  background-color: white;
+  max-height: 0px;
+  overflow: hidden;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.content-description {
   margin: 15px 10px 15px 20px;
+}
+
+.content-animated-box:hover .content-secondary {
+  max-height: 1000px;
+  -webkit-transition: 1.2s;
+  transition: 1.2s;
 }
 /*# sourceMappingURL=styles.css.map */

@@ -431,22 +431,28 @@ function init() {
 				edArea.innerHTML += `
                 <div class="content-item">
                   <div class="content-block">
-                    <div class="content-underlay"></div>
                     <div class="content-primary">
-                      <div>
-                        <a href="${data.website}" target="_blank"><img class="job-ed-logo" src="images/${data.image}" width="60px" /></a>                     
-                        <p><span class="institution">${data.institution}</span><br />
-                        ${data.gradDate}</p>     
-                      </div>
+                      <a href="${data.website}" target="_blank"><img class="job-ed-logo" src="images/${data.image}" width="60px" /></a>                     
+                      <p><span class="institution">${data.institution}</span><br />
+                      ${data.gradDate}</p>     
+                    </div>                    
+                  </div>
+                  <div class="content-animated-box">
+                    <div class="content-hover-bar">
                       <p class="degree">${data.degree}</p>
-                      <p>${data.desc}</p>
+                      <i id="content-arrow" class="fas fa-chevron-circle-down"></i>
+                      </div>
+                    <div class="content-secondary">
+                      <div class="content-description">${data.desc}</div>
                     </div>
                   </div>
                 </div>
-                `;
+              `;
 			});
 		}, 200); // only needs a slight delay
 	}
+
+  
 
 	// For Skills page
 	function loadSkills() {
