@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>Education</title>
+  <link rel="stylesheet" type="text/css" href="styles.css" />
+  <script src="https://kit.fontawesome.com/679a59d672.js" crossorigin="anonymous"></script>
+  <script src="scripts.js"></script>
+</head>
+
+<html>
+  <body>
+    <div id="backdrop-container">
+      <div id="backdrop-right"></div>
+      <div id="backdrop-center"></div>
+      <div id="backdrop-left"></div>
+    </div>
+    <div id="name-box">
+      <span class="text-light">Caroline&nbsp;</span><span class="text-heavy">Jones</span>
+    </div>
+    <div id="nav-box">
+      <div id="new-navbar">
+        <p class="nav-choice highlighted"><a class="highlight highlight--offset">Projects</a></p>
+        <p class="nav-choice highlighted"><a class="highlight highlight--offset">Experience</a></p>
+        <p class="nav-choice highlighted"><a class="highlight highlight--offset">Education</a></p>
+        <p class="nav-choice highlighted"><a class="highlight highlight--offset">Skills</a></p>
+        <p class="nav-choice highlighted"><a class="highlight highlight--offset">Recommendations</a></p>
+        <p class="nav-choice highlighted"><a class="highlight highlight--offset">Contact</a></p>
+      </div>
+      <div id="nav-arrow">
+        <i id="nav-arrow-icon" class="fas fa-chevron-circle-right"></i>
+      </div>
+    </div>
+    <main>
+			<div id="page-title-box">Education</div>
+			<div id="ed-area" class="content-container"></div>
+		</main>
+  </body>
+</html>
+
+<!-- 
+  z-index hierarchy
+  40    
+  30    
+  20    modal
+  15    
+  10    main (index: text-container)
+  5     header, footer, navbar, name box (index: hover-anchor)
+  1-3   backdrop
+  0     body
+ -->

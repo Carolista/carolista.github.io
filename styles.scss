@@ -1,17 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100;300;600&family=Oleo+Script+Swash+Caps&family=Barlow:wght@200;400;600;800&display=swap");
 
 $primary-color: #333;
-$contrast-color: #dedede;
-$muted-color: #adadad;
-$dark-accent-color: #022f34;
-$muted-accent-color: #034045;
-$accent-color: #064d52;
-$bright-accent-color: #0a656c;
-$light-accent-color: #3ea5ac;
+$contrast-color: #fff;
+$muted-color: #888;
+$dark-accent-color: #222;
+$muted-accent-color: #555;
+$accent-color: #bbb;
+$bright-accent-color: #ccc;
+$light-accent-color: #eee;
 $highlight-color: white;
 $primary-font: "Barlow", sans-serif;
 $header-font: "Barlow", sans-serif;
-$title-font: "Oleo Script Swash Caps", cursive;
+$title-font: "Lexend Deca", sans-serif;
 $navbar-height: 80px;
 $triangle: 120px;
 $logo-font: "Lexend Deca", sans-serif;
@@ -46,19 +46,33 @@ header {
 	width: 100vw;
 	margin: 0px;
 	padding: 0px 20px;
+  z-index: 5;
 }
 
+// main {
+// 	background-image: url("images/white-geo-bkg.png");
+// 	background-repeat: repeat;
+// 	background-size: 1600px;
+// 	display: flex;
+// 	flex-direction: column;
+// 	flex: 1;
+// 	width: 100vw;
+// 	margin: 0px;
+// 	padding: 30px 10vw 60px;
+// 	visibility: hidden; // until content loaded
+//   z-index: 10;
+// }
 main {
-	background-image: url("images/white-geo-bkg.png");
-	background-repeat: repeat;
-	background-size: 1600px;
+  position: fixed;
+  top: 120px;
+  right: 0px;
 	display: flex;
 	flex-direction: column;
 	flex: 1;
-	width: 100vw;
-	margin: 0px;
-	padding: 30px 10vw 60px;
+	width: calc(100vw - 470px);
+	padding: 0px 50px 60px 0px;
 	visibility: hidden; // until content loaded
+  z-index: 10;
 }
 
 footer {
@@ -68,6 +82,7 @@ footer {
 	width: 100vw;
 	padding: 20px;
 	border-top: 10px solid $bright-accent-color;
+  z-index: 5;
 }
 
 h1 {
@@ -102,23 +117,23 @@ p {
 	margin: 0px 15px 10px 0px;
 }
 
-a {
-	color: $accent-color;
-	font-weight: 600;
-	text-decoration: none;
-}
+// a {
+// 	color: $accent-color;
+// 	font-weight: 600;
+// 	text-decoration: none;
+// }
 
-a:hover {
-	color: $light-accent-color;
-}
+// a:hover {
+// 	color: $light-accent-color;
+// }
 
-a.inverted {
-	color: $contrast-color;
-}
+// a.inverted {
+// 	color: $contrast-color;
+// }
 
-a.inverted:hover {
-	color: $highlight-color;
-}
+// a.inverted:hover {
+// 	color: $highlight-color;
+// }
 
 ul {
 	margin-left: 35px;
@@ -175,10 +190,13 @@ td {
 
 #navbar-name {
 	font-family: $title-font;
+  text-transform: uppercase;
 	font-size: 3rem;
 	color: $contrast-color;
 	margin: 30px 0px 0px;
 }
+
+
 
 /**** CLASSES ****/
 
@@ -201,6 +219,14 @@ td {
 
 .text-center {
 	text-align: center;
+}
+
+.text-light {
+  font-weight: 200;
+}
+
+.text-heavy {
+  font-weight: 600;
 }
 
 // line under some subheaders or titles
@@ -229,6 +255,7 @@ td {
 .content-container {
 	columns: 2;
 	column-gap: 40px;
+  
 }
 
 .content-item {
@@ -243,9 +270,10 @@ td {
 	display: flex;
 	flex-direction: column;
 	margin: 0px 0px 50px;
-	border-left: 8px $light-accent-color solid;
-	padding: 15px 10px 15px 20px;
+	// border-left: 8px $light-accent-color solid;
+	// padding: 15px 10px 15px 20px;
 	background-color: rgba(255, 255, 255, 0.65);
+  overflow: hidden;
 }
 
 /** LANDING PAGE **/
@@ -388,7 +416,7 @@ td.year {
 .degree {
 	font-weight: 600;
 	font-size: 1rem;
-	color: $accent-color;
+	color: $primary-color;
 	margin-top: 10px;
 }
 
@@ -559,7 +587,7 @@ td.year {
 .modal {
 	display: none; /* Hidden by default */
 	position: fixed; /* Stay in place */
-	z-index: 6; /* Sit on top */
+	z-index: 20; /* Sit on top */
 	padding-top: 100px; /* Location of the box */
 	left: 0;
 	top: 0;
@@ -708,13 +736,13 @@ td.year {
 	padding: 0.4em 0.8em 0.8em;
 	background-color: $muted-accent-color;
 	border-bottom: 20px solid $dark-accent-color;
-	transition: background-color 0.3s ease-in-out;
+	transition: 1.0s;
 }
 
 .nav-link:focus,
 .nav-link:hover {
 	color: $highlight-color;
-	// background-color is handled in JS
+	transition: 1.0s;
 }
 
 .nav-button {
@@ -729,7 +757,7 @@ td.year {
 	flex-direction: column;
 }
 
-// for hamburger menu
+// for hamburger menu FIXME: seamlessly change back from X
 .tri-bar {
 	display: block;
 	width: 25px;
@@ -913,19 +941,19 @@ td.year {
 }
 
 #shape1 {
-	background-color: #333;
+	background-color: $primary-color;
 	transition: $logo-transition;
 }
 #shape2 {
-	background-color: #bbb;
+	background-color: $accent-color;
 	transition: $logo-transition;
 }
 #shape3 {
-	background-color: #555;
+	background-color: $muted-accent-color;
 	transition: $logo-transition;
 }
 #shape4 {
-	background-color: #888;
+	background-color: $muted-color;
 	transition: $logo-transition;
 }
 
@@ -964,4 +992,215 @@ td.year {
 }
 #hover-anchor:hover #shape4 {
 	transform: translate(40px, -20) rotate(-62deg);
+}
+
+
+// NEW BACKDROP
+
+#backdrop-container {
+  display: block;
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  background-color: $dark-accent-color;
+}
+
+#backdrop-left {
+  background-color: $muted-color;
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  width: 320px;
+  height: 100vh;
+  transform: skewX(-12deg) translate(-200px, 0);
+}
+
+#backdrop-center {
+  background-color: $muted-accent-color;
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 240px;
+  height: 100vh;
+  transform: skewX(-20deg);
+}
+
+#backdrop-right {
+  background-color: $accent-color;
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 360px;
+  height: 100vh;
+  transform: skewX(-10deg);
+}
+
+#name-box {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  top: 20px;
+  left: 0px;
+  padding: 0px 18px;
+  background-color: $primary-color;
+  color: $contrast-color;
+  font-family: $title-font;
+  text-transform: uppercase;
+	font-size: 2rem;
+  transition: 0.6s;
+  z-index: 5;
+}
+
+#name-box:hover {
+  transform: scale(1.1) translateX(14px)
+}
+
+#nav-box {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  width: 260px;
+  height: 40px;
+  top: 120px;
+  left: -180px;
+  color: $primary-color;
+  font-family: $title-font;
+  text-transform: uppercase;
+  transition: transform 0.6s, height 0.6s;
+  z-index: 5;
+  overflow: hidden;
+}
+
+#new-navbar {
+  width: 220px;
+  background-color: $contrast-color;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 20px 20px 10px;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+#nav-arrow {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $contrast-color;
+  font-size: 1.5rem;
+  margin: 0;
+  transform: translate(-40px, 0);
+}
+
+.nav-choice {
+  transition: 0.3s;
+  cursor: pointer; // TODO: not needed once it's a link
+} // TODO: make these divs with no gap
+
+#nav-box:hover {
+  transform: translate(200px, 0) scale(1.15);
+  height: 245px;
+}
+
+#nav-box:hover #nav-arrow-icon {
+  // transition: 0.2s;
+  transform: rotate(-180deg);
+}
+
+.nav-choice:hover {
+  transform: scale(1.1) translateX(8px);
+}
+
+.highlighted {
+  color: $primary-color;
+  font-weight: 300;
+}
+
+.highlighted:hover {
+  color: $primary-color;
+  font-weight: 300;
+}
+
+.highlight {
+  // color: black;
+  flex: 1;
+  // font-size: 2em;
+  line-height: 1;
+  text-decoration: none;
+  background-image: linear-gradient(to right, $light-accent-color 0, $bright-accent-color 100%);
+  background-position: 0 1.2em;
+  background-size: 0 100%;
+  background-repeat: no-repeat;
+  transition: background .5s;
+  &:hover {
+    background-size: 100% 100%;
+  }
+  &--thin {
+    background-image: linear-gradient(to right, black 0, black 100%);
+  }
+  &--thick {
+    background-position: 0 -0.1em;
+  }
+  &--offset {
+    background-position: 0 0.2em;
+    //didn't find another solution than mask the underline shape by a box shadow with the same color than the bg
+    box-shadow: inset 0 -.5em 0 0 white;
+  }
+  &--gradient {
+    background-position: 0 -0.1em;
+    background-image: linear-gradient(to right, yellow 0, lightgreen 100%);
+  }
+  &--reverse {
+    background-position: 100% -0.1em;
+    transition: background 1s; //yep, that's a long link
+    background-image: linear-gradient(to right, yellow 0, yellow 100%);
+  }
+}
+
+#page-title-box {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $light-accent-color;
+  color: $primary-color;
+  font-family: $title-font;
+  font-weight: 300;
+  text-transform: uppercase;
+	font-size: 2rem;
+  height: 50px;
+  top: 20px;
+  right: 0px;
+  padding: 0px 18px;
+  z-index: 5;
+}
+
+// .content-underlay {
+//   height: 500px;
+//   width: 100px;
+//   transform: skewX(-10deg) translateX(-50px);
+//   display: absolute;
+//   top: 0;
+//   left: 0;
+//   background-color: white;
+// }
+
+.content-primary {
+  display: absolute;
+  top: 0;
+  left: 0;
+  // height: 100%;
+  // width: 100%;
+  z-index: 11;
+  margin: 15px 10px 15px 20px;
 }

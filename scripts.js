@@ -66,7 +66,7 @@ function init() {
 		const header = document.querySelector("header");
 		header.innerHTML = `
             <nav class="nav-container">
-                <p id="navbar-name"><a class="inverted" href="/home.html">Caroline R. Jones</a></p>
+                <p id="navbar-name"><a class="inverted" href="/home.html"><span class="text-light">Caroline</span> <span class="text-heavy">Jones</span></a></p>
                 <button type="button" class="nav-button" aria-label="Open dropdown nav">
                     <span class="tri-bar"></span>
                     <span class="tri-bar"></span>
@@ -134,6 +134,7 @@ function init() {
 		document.addEventListener("mouseover", (event) => {
 			if (event.target.matches(".nav-link")) {
 				event.target.style.backgroundColor = navButtonHoverColor;
+        event.target.style.height = "150%";
 			}
 		});
 		document.addEventListener("mouseout", (event) => {
@@ -142,6 +143,7 @@ function init() {
 					? navButtonCurrentColor
 					: navButtonBaseColor;
 				event.target.style.backgroundColor = color;
+        event.target.style.height = "100%";
 			}
 		});
 
@@ -428,15 +430,18 @@ function init() {
 				// TODO: gather images of certificates/degrees
 				edArea.innerHTML += `
                 <div class="content-item">
-                    <div class="content-block">
-                        <div>
-                            <a href="${data.website}" target="_blank"><img class="job-ed-logo" src="images/${data.image}" width="60px" /></a>                      
-                            <p><span class="institution">${data.institution}</span><br />
-                            ${data.gradDate}</p>    
-                        </div>
-                        <p class="degree">${data.degree}</p>
-                        <p>${data.desc}</p>
+                  <div class="content-block">
+                    <div class="content-underlay"></div>
+                    <div class="content-primary">
+                      <div>
+                        <a href="${data.website}" target="_blank"><img class="job-ed-logo" src="images/${data.image}" width="60px" /></a>                     
+                        <p><span class="institution">${data.institution}</span><br />
+                        ${data.gradDate}</p>     
+                      </div>
+                      <p class="degree">${data.degree}</p>
+                      <p>${data.desc}</p>
                     </div>
+                  </div>
                 </div>
                 `;
 			});
