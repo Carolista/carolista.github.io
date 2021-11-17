@@ -1333,8 +1333,8 @@ td.year {
           flex-direction: column;
   margin: 0;
   padding: 0;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
 }
 
 .content-hover-bar {
@@ -1356,9 +1356,9 @@ td.year {
   color: white;
   height: 50px;
   width: 100%;
-  padding: 30px 15px;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
+  padding: 0px 15px;
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
   z-index: 9;
 }
 
@@ -1383,17 +1383,17 @@ td.year {
   background-color: white;
   max-height: 0px;
   overflow: hidden;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
 }
 
 .content-description {
-  margin: 15px 10px 15px 20px;
+  margin: 15px 15px 15px 25px;
 }
 
 .content-animated-box:hover .content-secondary {
   max-height: 1000px;
-  -webkit-transition: 1.2s;
-  transition: 1.2s;
+  -webkit-transition: 1.5s;
+  transition: 1.5s;
 }
 /*# sourceMappingURL=styles.css.map */
