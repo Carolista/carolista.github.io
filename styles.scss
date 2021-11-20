@@ -41,6 +41,8 @@ body {
 	overflow-x: hidden;
 }
 
+// FIXME: the page isn't scrolling vertically
+
 header {
 	height: $navbar-height;
 	width: 100vw;
@@ -70,6 +72,8 @@ main {
 	flex-direction: column;
 	flex: 1;
 	width: calc(100vw - 300px);
+  min-width: 600px;
+  max-width: 1000px;
 	padding: 0px 50px 60px 0px;
 	visibility: hidden; // until content loaded
   z-index: 10;
@@ -121,19 +125,19 @@ p {
 // 	color: $accent-color;
 // 	font-weight: 600;
 // 	text-decoration: none;
+  // &:hover {
+  // 	color: $light-accent-color;
+  // }
 // }
 
-// a:hover {
-// 	color: $light-accent-color;
-// }
 
 // a.inverted {
 // 	color: $contrast-color;
+  // &:hover {
+  // 	color: $highlight-color;
+  // }
 // }
 
-// a.inverted:hover {
-// 	color: $highlight-color;
-// }
 
 ul {
 	margin-left: 35px;
@@ -253,8 +257,9 @@ td {
 }
 
 .content-container {
-	columns: 2;
-	column-gap: 40px;
+	// columns: 2;
+	// column-gap: 40px;
+  columns: 1
 }
 
 .content-item {
@@ -272,7 +277,7 @@ td {
 	// border-left: 8px $light-accent-color solid;
 	// padding: 15px 10px 15px 20px;
 	background-color: $highlight-color;
-  overflow: hidden;
+  // overflow: hidden;
 }
 
 /** LANDING PAGE **/
@@ -322,11 +327,11 @@ td {
 .menu-link {
 	color: $contrast-color;
 	text-decoration: none;
+  &:hover {
+    color: $highlight-color;
+  }
 }
 
-.menu-link:hover {
-	color: $highlight-color;
-}
 
 .menu-button {
 	font-size: 1.1rem;
@@ -338,12 +343,12 @@ td {
 	text-align: right;
 	margin-bottom: 15px;
 	padding: 8px 15px 8px 35px;
+  &:hover {
+    border: 4px solid $bright-accent-color;
+    border-left: 25px solid $bright-accent-color;
+  }
 }
 
-.menu-button:hover {
-	border: 4px solid $bright-accent-color;
-	border-left: 25px solid $bright-accent-color;
-}
 
 .content-area {
 	width: 100%;
@@ -514,11 +519,11 @@ td.year {
 	width: 100%;
 	filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.3));
 	transition: filter 0.2s ease-in-out;
+  &:hover {
+    filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, 0.6));
+  }
 }
 
-.gallery-item:hover {
-	filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, 0.6));
-}
 
 // container for each project in gallery
 .project-content {
@@ -558,11 +563,11 @@ td.year {
 	margin: 30px 0px -15px 30px;
 	filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.3));
 	transition: filter 0.2s ease-in-out;
+  &:hover {
+    filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, 0.6));
+  }
 }
 
-.project-details-image:hover {
-	filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, 0.6));
-}
 
 // space between project details and images when side-by-side
 .project-details-row,
@@ -614,14 +619,13 @@ td.year {
 	font-size: 40px;
 	font-weight: bold;
 	transition: 0.3s;
+  &:hover, &:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+  }
 }
 
-.close:hover,
-.close:focus {
-	color: #bbb;
-	text-decoration: none;
-	cursor: pointer;
-}
 
 /**** MEDIA QUERIES FOR RESPONSIVE CONTENT ****/
 
@@ -641,9 +645,9 @@ td.year {
 	.page-title {
 		font-size: 5vw;
 	}
-	.content-container {
-		columns: 1;
-	}
+	// .content-container {
+	// 	columns: 1;
+	// }
 }
 
 @media screen and (max-width: 800px) {
@@ -736,13 +740,12 @@ td.year {
 	background-color: $muted-accent-color;
 	border-bottom: 20px solid $dark-accent-color;
 	transition: 1.0s;
+  &:focus, &:hover {
+    color: $highlight-color;
+    transition: 1.0s;
+  }
 }
 
-.nav-link:focus,
-.nav-link:hover {
-	color: $highlight-color;
-	transition: 1.0s;
-}
 
 .nav-button {
 	cursor: pointer;
@@ -880,6 +883,10 @@ td.year {
 	border-radius: 50%;
 	z-index: 10;
 	transition: $logo-transition;
+  &:hover {
+    margin-right: 300px;
+    cursor: pointer;
+  }
 }
 
 .text-container {
@@ -892,6 +899,10 @@ td.year {
 	padding-left: 22px;
 	overflow: hidden;
 	transition: transform $logo-transition, width $logo-transition;
+}
+#hover-anchor:hover .text-container {
+  transform: translate(160px, 0);
+  width: 440px;
 }
 
 .text {
@@ -907,15 +918,27 @@ td.year {
 	opacity: 0;
 	transition: opacity $logo-transition;
 }
+#hover-anchor:hover #fn, #hover-anchor:hover #ln {
+  opacity: 1;
+}
 
 #cee {
-	font-weight: 100;
+  font-weight: 100;
 	transition: $logo-transition;
 }
+#hover-anchor:hover #cee {
+  transform: translate(110px, -30px);
+  color: #333;
+}
+
 #jay {
 	font-weight: 600;
 	transition: $logo-transition;
 	padding-left: 40px;
+}
+#hover-anchor:hover #jay {
+	transform: translate(70px, 30px);
+	color: #333;
 }
 
 #circle-mask {
@@ -932,67 +955,37 @@ td.year {
 	position: absolute;
 }
 
-.circle {
-	width: 120px;
-	height: 120px;
-	position: absolute;
-	border-radius: 50%;
-}
-
 #shape1 {
 	background-color: $primary-color;
 	transition: $logo-transition;
 }
+#hover-anchor:hover #shape1 {
+  transform: translate(55px, 0) rotate(-80deg);
+}
+
 #shape2 {
 	background-color: $accent-color;
 	transition: $logo-transition;
 }
+#hover-anchor:hover #shape2 {
+  transform: translate(30px, 0) rotate(-70deg);
+}
+
 #shape3 {
 	background-color: $muted-accent-color;
 	transition: $logo-transition;
 }
+#hover-anchor:hover #shape3 {
+  transform: translate(15px, 0) rotate(-80deg);
+}
+
 #shape4 {
 	background-color: $muted-color;
 	transition: $logo-transition;
 }
-
-#hover-anchor:hover {
-	margin-right: 300px;
-	cursor: pointer;
-}
-
-#hover-anchor:hover .text-container {
-	transform: translate(160px, 0);
-	width: 440px;
-}
-#hover-anchor:hover #cee {
-	transform: translate(110px, -30px);
-	color: #333;
-}
-#hover-anchor:hover #jay {
-	transform: translate(70px, 30px);
-	color: #333;
-}
-#hover-anchor:hover #fn {
-	opacity: 1;
-}
-#hover-anchor:hover #ln {
-	opacity: 1;
-}
-
-#hover-anchor:hover #shape1 {
-	transform: translate(55px, 0) rotate(-80deg);
-}
-#hover-anchor:hover #shape2 {
-	transform: translate(30px, 0) rotate(-70deg);
-}
-#hover-anchor:hover #shape3 {
-	transform: translate(15px, 0) rotate(-80deg);
-}
 #hover-anchor:hover #shape4 {
 	transform: translate(40px, -20) rotate(-62deg);
 }
-
 
 // NEW BACKDROP
 
@@ -1056,10 +1049,9 @@ td.year {
 	font-size: 2rem;
   transition: 0.6s;
   z-index: 5;
-}
-
-#name-box:hover {
-  transform: scale(1.1) translateX(14px)
+  &:hover {
+    transform: scale(1.1) translateX(14px)
+  }
 }
 
 #nav-box {
@@ -1076,6 +1068,10 @@ td.year {
   transition: transform 0.6s, height 0.6s;
   z-index: 5;
   overflow: hidden;
+  &:hover {
+    transform: translate(200px, 18px) scale(1.15);
+    height: 245px;
+  }
 }
 
 #new-navbar {
@@ -1104,70 +1100,33 @@ td.year {
 #nav-arrow-icon {
   transition: 0.6s
 }
-
-.nav-choice {
-  transition: 0.3s;
-  cursor: pointer; // TODO: not needed once it's a link
-} // TODO: make these divs with no gap
-
-#nav-box:hover {
-  transform: translate(200px, 18px) scale(1.15);
-  height: 245px;
-}
-
 #nav-box:hover #nav-arrow-icon {
   transform: rotate(-180deg);
-}
-
-.nav-choice:hover {
-  transform: scale(1.1) translateX(8px);
 }
 
 .highlighted {
   color: $primary-color;
   font-weight: 400;
-}
-
-.highlighted:hover {
-  color: $primary-color;
-  font-weight: 400;
+  transition: 0.8s;
+  &:hover {
+    cursor: pointer;
+    transform: translateX(12px) scale(1.15);
+  }
 }
 
 // TODO: make sure current page is indicated in nav box
 
 .highlight {
-  // color: black;
   flex: 1;
-  // font-size: 2em;
   line-height: 1;
   text-decoration: none;
   background-image: linear-gradient(to right, #b5d89d 0, #61a136 100%);
-  background-position: 0 1.2em;
+  background-position: 0 -0.1em;
   background-size: 0 100%;
   background-repeat: no-repeat;
-  transition: background .5s;
+  transition: background 0.8s;
   &:hover {
     background-size: 100% 100%;
-  }
-  &--thin {
-    background-image: linear-gradient(to right, black 0, black 100%);
-  }
-  &--thick {
-    background-position: 0 -0.1em;
-  }
-  &--offset {
-    background-position: 0 0.2em;
-    //didn't find another solution than mask the underline shape by a box shadow with the same color than the bg
-    box-shadow: inset 0 -.5em 0 0 white;
-  }
-  &--gradient {
-    background-position: 0 -0.1em;
-    background-image: linear-gradient(to right, #96cc72 0, #5ead29 100%);
-  }
-  &--reverse {
-    background-position: 100% -0.1em;
-    transition: background 1s; //yep, that's a long link
-    background-image: linear-gradient(to right, yellow 0, yellow 100%);
   }
 }
 
@@ -1176,7 +1135,7 @@ td.year {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: $light-accent-color;
+  background-color: $highlight-color;
   color: $primary-color;
   font-family: $title-font;
   font-weight: 400;
@@ -1188,16 +1147,6 @@ td.year {
   padding: 0px 18px;
   z-index: 5;
 }
-
-// .content-underlay {
-//   height: 500px;
-//   width: 100px;
-//   transform: skewX(-10deg) translateX(-50px);
-//   display: absolute;
-//   top: 0;
-//   left: 0;
-//   background-color: white;
-// }
 
 .content-primary {
   display: absolute;
@@ -1213,7 +1162,7 @@ td.year {
   flex-direction: column;
   margin: 0;
   padding: 0;
-  transition: 0.6s;
+  transition: 1.2s;
 }
 
 .content-hover-bar {
@@ -1221,25 +1170,23 @@ td.year {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  gap: 5px;
-  background-color: #61a136;
+  background-image: linear-gradient(to bottom, $primary-color 0, $muted-accent-color 3%, $muted-color 18%, $muted-color 100%);
   color: $highlight-color;
-  height: 50px;
+  height: 40px;
   width: 100%;
   padding: 0px 15px;
-  transition: 0.6s;
+  transition: background-image 1.2s; // FIXME: this is not working
   z-index: 9;
 }
-
-.content-animated-box:hover {
-  transform: scale(1.1);
+.content-animated-box:hover .content-hover-bar {
+  background-image: linear-gradient(to bottom, #193a03 0, #35720c 3%, #61a136 18%, #61a136 100%);
+  transition: background-image 1.2s; // FIXME: this is not working
 }
 
 #content-arrow {
   font-size: 1.2em;
-  transition: 0.4s
+  transition: 1.2s
 }
-
 .content-animated-box:hover #content-arrow {
   transform: rotate(180deg);
 }
@@ -1249,14 +1196,13 @@ td.year {
   background-color: $highlight-color;
   max-height: 0px;
   overflow: hidden;
-  transition: 0.6s;
+  transition: max-height 0.8s ease-out;
+}
+.content-animated-box:hover .content-secondary {
+  max-height: 300px;
+  transition: max-height 1.0s ease-out;
 }
 
 .content-description {
   margin: 15px 15px 15px 25px;
-}
-
-.content-animated-box:hover .content-secondary {
-  max-height: 1000px;
-  transition: 1.5s;
 }

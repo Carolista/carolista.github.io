@@ -42,7 +42,7 @@
         "id": 7,
         "title": "Dazzle Words",
         "subtitle": "turn your words into sparkling disco lights",
-        "desc": "This little app started as a hard-coded birthday card for my mom in 2020, but I circled back around to it because I wanted to take the concept further. I created a full character bank with both alphanumeric and special characters, created a form for user input, and added multiple color schemes. There is also a dark mode and light mode. The animation with randomized rotation rates makes for a really fun effect.",
+        "desc": "This little app started as a hard-coded birthday card for my mom in 2020, but I circled back around to it because I wanted to take the concept further. I created a full character bank with both alphanumeric and special characters, implemented a form for user input, and added multiple color schemes. There is also a dark mode and light mode. The animation with randomized rotation rates makes for a really fun effect.",
         "tech": "DOM - HTML, SCSS, & JavaScript",
         "noteworthy": ["Upgraded CSS to SCSS.", "Used keyframes to rotate between 10 colors in each scheme.", "Implemented media queries and flexbox wrapping to make app responsive for all devices.", "Added validation at certain screen widths to warn about long words not being ideal."],
         "devices": "most devices",

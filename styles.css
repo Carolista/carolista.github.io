@@ -50,6 +50,8 @@ main {
       -ms-flex: 1;
           flex: 1;
   width: calc(100vw - 300px);
+  min-width: 600px;
+  max-width: 1000px;
   padding: 0px 50px 60px 0px;
   visibility: hidden;
   z-index: 10;
@@ -208,10 +210,8 @@ td {
 }
 
 .content-container {
-  -webkit-columns: 2;
-          columns: 2;
-  -webkit-column-gap: 40px;
-          column-gap: 40px;
+  -webkit-columns: 1;
+          columns: 1;
 }
 
 .content-item {
@@ -231,7 +231,6 @@ td {
           flex-direction: column;
   margin: 0;
   background-color: white;
-  overflow: hidden;
 }
 
 /** LANDING PAGE **/
@@ -602,8 +601,7 @@ td.year {
   transition: 0.3s;
 }
 
-.close:hover,
-.close:focus {
+.close:hover, .close:focus {
   color: #bbb;
   text-decoration: none;
   cursor: pointer;
@@ -627,10 +625,6 @@ td.year {
 @media screen and (max-width: 1000px) {
   .page-title {
     font-size: 5vw;
-  }
-  .content-container {
-    -webkit-columns: 1;
-            columns: 1;
   }
 }
 
@@ -746,8 +740,7 @@ td.year {
   transition: 1.0s;
 }
 
-.nav-link:focus,
-.nav-link:hover {
+.nav-link:focus, .nav-link:hover {
   color: white;
   -webkit-transition: 1.0s;
   transition: 1.0s;
@@ -926,6 +919,11 @@ td.year {
   transition: 1.8s;
 }
 
+#hover-anchor:hover {
+  margin-right: 300px;
+  cursor: pointer;
+}
+
 .text-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -945,6 +943,12 @@ td.year {
   transition: transform 1.8s, width 1.8s, -webkit-transform 1.8s;
 }
 
+#hover-anchor:hover .text-container {
+  -webkit-transform: translate(160px, 0);
+          transform: translate(160px, 0);
+  width: 440px;
+}
+
 .text {
   font-family: "Lexend Deca", sans-serif;
   color: white;
@@ -960,10 +964,20 @@ td.year {
   transition: opacity 1.8s;
 }
 
+#hover-anchor:hover #fn, #hover-anchor:hover #ln {
+  opacity: 1;
+}
+
 #cee {
   font-weight: 100;
   -webkit-transition: 1.8s;
   transition: 1.8s;
+}
+
+#hover-anchor:hover #cee {
+  -webkit-transform: translate(110px, -30px);
+          transform: translate(110px, -30px);
+  color: #333;
 }
 
 #jay {
@@ -971,6 +985,12 @@ td.year {
   -webkit-transition: 1.8s;
   transition: 1.8s;
   padding-left: 40px;
+}
+
+#hover-anchor:hover #jay {
+  -webkit-transform: translate(70px, 30px);
+          transform: translate(70px, 30px);
+  color: #333;
 }
 
 #circle-mask {
@@ -987,17 +1007,15 @@ td.year {
   position: absolute;
 }
 
-.circle {
-  width: 120px;
-  height: 120px;
-  position: absolute;
-  border-radius: 50%;
-}
-
 #shape1 {
   background-color: #333;
   -webkit-transition: 1.8s;
   transition: 1.8s;
+}
+
+#hover-anchor:hover #shape1 {
+  -webkit-transform: translate(55px, 0) rotate(-80deg);
+          transform: translate(55px, 0) rotate(-80deg);
 }
 
 #shape2 {
@@ -1006,62 +1024,26 @@ td.year {
   transition: 1.8s;
 }
 
+#hover-anchor:hover #shape2 {
+  -webkit-transform: translate(30px, 0) rotate(-70deg);
+          transform: translate(30px, 0) rotate(-70deg);
+}
+
 #shape3 {
   background-color: #555;
   -webkit-transition: 1.8s;
   transition: 1.8s;
 }
 
+#hover-anchor:hover #shape3 {
+  -webkit-transform: translate(15px, 0) rotate(-80deg);
+          transform: translate(15px, 0) rotate(-80deg);
+}
+
 #shape4 {
   background-color: #888;
   -webkit-transition: 1.8s;
   transition: 1.8s;
-}
-
-#hover-anchor:hover {
-  margin-right: 300px;
-  cursor: pointer;
-}
-
-#hover-anchor:hover .text-container {
-  -webkit-transform: translate(160px, 0);
-          transform: translate(160px, 0);
-  width: 440px;
-}
-
-#hover-anchor:hover #cee {
-  -webkit-transform: translate(110px, -30px);
-          transform: translate(110px, -30px);
-  color: #333;
-}
-
-#hover-anchor:hover #jay {
-  -webkit-transform: translate(70px, 30px);
-          transform: translate(70px, 30px);
-  color: #333;
-}
-
-#hover-anchor:hover #fn {
-  opacity: 1;
-}
-
-#hover-anchor:hover #ln {
-  opacity: 1;
-}
-
-#hover-anchor:hover #shape1 {
-  -webkit-transform: translate(55px, 0) rotate(-80deg);
-          transform: translate(55px, 0) rotate(-80deg);
-}
-
-#hover-anchor:hover #shape2 {
-  -webkit-transform: translate(30px, 0) rotate(-70deg);
-          transform: translate(30px, 0) rotate(-70deg);
-}
-
-#hover-anchor:hover #shape3 {
-  -webkit-transform: translate(15px, 0) rotate(-80deg);
-          transform: translate(15px, 0) rotate(-80deg);
 }
 
 #hover-anchor:hover #shape4 {
@@ -1170,6 +1152,12 @@ td.year {
   overflow: hidden;
 }
 
+#nav-box:hover {
+  -webkit-transform: translate(200px, 18px) scale(1.15);
+          transform: translate(200px, 18px) scale(1.15);
+  height: 245px;
+}
+
 #new-navbar {
   width: 220px;
   background-color: #fff;
@@ -1210,36 +1198,22 @@ td.year {
   transition: 0.6s;
 }
 
-.nav-choice {
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-  cursor: pointer;
-}
-
-#nav-box:hover {
-  -webkit-transform: translate(200px, 18px) scale(1.15);
-          transform: translate(200px, 18px) scale(1.15);
-  height: 245px;
-}
-
 #nav-box:hover #nav-arrow-icon {
   -webkit-transform: rotate(-180deg);
           transform: rotate(-180deg);
 }
 
-.nav-choice:hover {
-  -webkit-transform: scale(1.1) translateX(8px);
-          transform: scale(1.1) translateX(8px);
-}
-
 .highlighted {
   color: #333;
   font-weight: 400;
+  -webkit-transition: 0.8s;
+  transition: 0.8s;
 }
 
 .highlighted:hover {
-  color: #333;
-  font-weight: 400;
+  cursor: pointer;
+  -webkit-transform: translateX(12px) scale(1.15);
+          transform: translateX(12px) scale(1.15);
 }
 
 .highlight {
@@ -1250,44 +1224,15 @@ td.year {
   text-decoration: none;
   background-image: -webkit-gradient(linear, left top, right top, color-stop(0, #b5d89d), to(#61a136));
   background-image: linear-gradient(to right, #b5d89d 0, #61a136 100%);
-  background-position: 0 1.2em;
+  background-position: 0 -0.1em;
   background-size: 0 100%;
   background-repeat: no-repeat;
-  -webkit-transition: background .5s;
-  transition: background .5s;
+  -webkit-transition: background 0.8s;
+  transition: background 0.8s;
 }
 
 .highlight:hover {
   background-size: 100% 100%;
-}
-
-.highlight--thin {
-  background-image: -webkit-gradient(linear, left top, right top, color-stop(0, black), to(black));
-  background-image: linear-gradient(to right, black 0, black 100%);
-}
-
-.highlight--thick {
-  background-position: 0 -0.1em;
-}
-
-.highlight--offset {
-  background-position: 0 0.2em;
-  -webkit-box-shadow: inset 0 -.5em 0 0 white;
-          box-shadow: inset 0 -.5em 0 0 white;
-}
-
-.highlight--gradient {
-  background-position: 0 -0.1em;
-  background-image: -webkit-gradient(linear, left top, right top, color-stop(0, #96cc72), to(#5ead29));
-  background-image: linear-gradient(to right, #96cc72 0, #5ead29 100%);
-}
-
-.highlight--reverse {
-  background-position: 100% -0.1em;
-  -webkit-transition: background 1s;
-  transition: background 1s;
-  background-image: -webkit-gradient(linear, left top, right top, color-stop(0, yellow), to(yellow));
-  background-image: linear-gradient(to right, yellow 0, yellow 100%);
 }
 
 #page-title-box {
@@ -1301,7 +1246,7 @@ td.year {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: #eee;
+  background-color: white;
   color: #333;
   font-family: "Lexend Deca", sans-serif;
   font-weight: 400;
@@ -1333,8 +1278,8 @@ td.year {
           flex-direction: column;
   margin: 0;
   padding: 0;
-  -webkit-transition: 0.6s;
-  transition: 0.6s;
+  -webkit-transition: 1.2s;
+  transition: 1.2s;
 }
 
 .content-hover-bar {
@@ -1351,26 +1296,28 @@ td.year {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 5px;
-  background-color: #61a136;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #333), color-stop(3%, #555), color-stop(18%, #888), to(#888));
+  background-image: linear-gradient(to bottom, #333 0, #555 3%, #888 18%, #888 100%);
   color: white;
-  height: 50px;
+  height: 40px;
   width: 100%;
   padding: 0px 15px;
-  -webkit-transition: 0.6s;
-  transition: 0.6s;
+  -webkit-transition: background-image 1.2s;
+  transition: background-image 1.2s;
   z-index: 9;
 }
 
-.content-animated-box:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
+.content-animated-box:hover .content-hover-bar {
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #193a03), color-stop(3%, #35720c), color-stop(18%, #61a136), to(#61a136));
+  background-image: linear-gradient(to bottom, #193a03 0, #35720c 3%, #61a136 18%, #61a136 100%);
+  -webkit-transition: background-image 1.2s;
+  transition: background-image 1.2s;
 }
 
 #content-arrow {
   font-size: 1.2em;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
+  -webkit-transition: 1.2s;
+  transition: 1.2s;
 }
 
 .content-animated-box:hover #content-arrow {
@@ -1383,17 +1330,17 @@ td.year {
   background-color: white;
   max-height: 0px;
   overflow: hidden;
-  -webkit-transition: 0.6s;
-  transition: 0.6s;
+  -webkit-transition: max-height 0.8s ease-out;
+  transition: max-height 0.8s ease-out;
+}
+
+.content-animated-box:hover .content-secondary {
+  max-height: 300px;
+  -webkit-transition: max-height 1.0s ease-out;
+  transition: max-height 1.0s ease-out;
 }
 
 .content-description {
   margin: 15px 15px 15px 25px;
-}
-
-.content-animated-box:hover .content-secondary {
-  max-height: 1000px;
-  -webkit-transition: 1.5s;
-  transition: 1.5s;
 }
 /*# sourceMappingURL=styles.css.map */
