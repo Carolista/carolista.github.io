@@ -30,7 +30,7 @@ window.addEventListener("load", () => {
         <div class="content-item">
           <div class="content-block"> 
             <div class="content-primary">  
-              <a href="${data.website}" target="_blank"><img class="content-logo" src="images/${data.image}" width="60px" /></a>                      
+              <a href="${data.website}" target="_blank"><img class="content-logo" src="images/${data.image}" width="50px" /></a>                      
               <p><span class="content-header">${data.employer}</span><br />
               ${data.type} &nbsp;&bull;&nbsp; ${data.location} &nbsp;&bull;&nbsp; ${data.period}</p>
             </div>

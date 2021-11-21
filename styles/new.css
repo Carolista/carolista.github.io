@@ -330,8 +330,8 @@ td {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: white;
-  color: #333;
+  color: white;
+  background-color: #61a136;
   font-family: "Lexend Deca", sans-serif;
   font-weight: 400;
   text-transform: uppercase;
@@ -377,7 +377,7 @@ td {
   display: absolute;
   top: 0;
   left: 0;
-  padding: 15px 10px 15px 15px;
+  padding: 15px 10px 10px 15px;
   margin: 0;
   z-index: 11;
 }
@@ -410,22 +410,28 @@ td {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #333), color-stop(3%, #555), color-stop(18%, #888), to(#888));
-  background-image: linear-gradient(to bottom, #333 0, #555 3%, #888 18%, #888 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #193a03), color-stop(3%, #35720c), color-stop(18%, #61a136), to(#61a136));
+  background-image: linear-gradient(to bottom, #193a03 0, #35720c 3%, #61a136 18%, #61a136 100%);
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
   color: white;
   height: 40px;
   width: 100%;
   padding: 0px 15px;
-  -webkit-transition: background-image 1.2s;
-  transition: background-image 1.2s;
   z-index: 9;
+  -webkit-transition: -webkit-filter 1.3s;
+  transition: -webkit-filter 1.3s;
+  transition: filter 1.3s;
+  transition: filter 1.3s, -webkit-filter 1.3s;
 }
 
 .content-animated-box:hover .content-hover-bar {
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #193a03), color-stop(3%, #35720c), color-stop(18%, #61a136), to(#61a136));
-  background-image: linear-gradient(to bottom, #193a03 0, #35720c 3%, #61a136 18%, #61a136 100%);
-  -webkit-transition: background-image 1.2s;
-  transition: background-image 1.2s;
+  -webkit-filter: grayscale(0%);
+          filter: grayscale(0%);
+  -webkit-transition: -webkit-filter 0.4s;
+  transition: -webkit-filter 0.4s;
+  transition: filter 0.4s;
+  transition: filter 0.4s, -webkit-filter 0.4s;
 }
 
 #content-arrow {
@@ -461,7 +467,7 @@ td {
 /** EXPERIENCE & EDUCATION PAGES **/
 .content-header {
   font-weight: 600;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
 }
 
 .content-subheader {
@@ -473,7 +479,7 @@ td {
 
 .content-logo {
   float: left;
-  width: 60px;
+  width: 50px;
   margin-right: 15px;
 }
 /*# sourceMappingURL=new.css.map */

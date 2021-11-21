@@ -286,8 +286,10 @@ td {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: $highlight-color;
-  color: $primary-color;
+  color: $highlight-color;
+  background-color: #61a136;
+  // background-color: $highlight-color;
+  // color: $primary-color;
   font-family: $title-font;
   font-weight: 400;
   text-transform: uppercase;
