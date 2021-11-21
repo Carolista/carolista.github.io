@@ -1,0 +1,104 @@
+@import "shared-styles.scss";
+
+// TODO: maybe make this obsolete if not creating multiple columns anymore
+.content-container {
+  columns: 1
+}
+
+.content-item {
+	display: inline-block;
+	vertical-align: top;
+	margin: 0px 0px 40px;
+	width: 100%;
+}
+
+.content-block {
+	display: flex;
+	flex-direction: column;
+	margin: 0;
+	background-color: $highlight-color;
+}
+
+.content-primary {
+  display: absolute;
+  top: 0;
+  left: 0;
+  padding: 15px 10px 15px 15px;
+  margin: 0;
+  z-index: 11;
+}
+
+.content-animated-box {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  transition: 1.2s;
+}
+
+.content-hover-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-image: linear-gradient(to bottom, $primary-color 0, $muted-accent-color 3%, $muted-color 18%, $muted-color 100%);
+  color: $highlight-color;
+  height: 40px;
+  width: 100%;
+  padding: 0px 15px;
+  transition: background-image 1.2s; // FIXME: this is not working
+  z-index: 9;
+}
+.content-animated-box:hover .content-hover-bar {
+  background-image: linear-gradient(to bottom, #193a03 0, #35720c 3%, #61a136 18%, #61a136 100%);
+  transition: background-image 1.2s; // FIXME: this is not working
+}
+
+#content-arrow {
+  font-size: 1.2em;
+  transition: 1.2s
+}
+.content-animated-box:hover #content-arrow {
+  transform: rotate(180deg);
+}
+
+.content-secondary {
+  display: relative;
+  background-color: $highlight-color;
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height 0.8s ease-out;
+}
+.content-animated-box:hover .content-secondary {
+  max-height: 300px;
+  transition: max-height 1.0s ease-out;
+}
+
+.content-description {
+  margin: 15px 15px 15px 25px;
+}
+
+
+
+
+/** EXPERIENCE & EDUCATION PAGES **/
+
+.employer,
+.institution {
+	font-weight: 600;
+	font-size: 1.3rem;
+}
+
+.job-title,
+.degree {
+	font-weight: 400;
+	font-size: 1rem;
+	color: $highlight-color;
+	margin-top: 10px;
+}
+
+.job-ed-logo {
+	float: left;
+	width: 60px;
+	margin-right: 15px;
+}

@@ -1,6 +1,9 @@
 // Event listener for page load
 window.addEventListener("load", () => init());
 
+// TODO: Split file into shared content and per-page files; update HTML to pull in corresponding files
+// TODO: Edit data to add new projects, Udemy courses, etc
+
 function init() {
 	// For dynamic nav buttons - must be updated to match SCSS variables
 	let navButtonBaseColor = "#034045"; // $muted-accent-color
@@ -14,8 +17,8 @@ function init() {
 	// Arrays to hold any data loaded
 	let timelineData = [];
 	let projectData = [];
-	let experienceData = [];
-	let educationData = [];
+	
+	
 	let skillsData = {
 		generalKnowledge: [],
 		generalStrengths: [],
@@ -49,8 +52,8 @@ function init() {
 	// DOM elements for pages other than index
 	const projectArea = document.querySelector("#project-area");
 	const detailArea = document.querySelector("#detail-area");
-	const expArea = document.querySelector("#exp-area");
-	const edArea = document.querySelector("#ed-area");
+	
+	
 	const techSkillsArea = document.querySelector("#tech-skills-area");
 	const generalSkillsArea = document.querySelector("#general-skills-area");
 	const recArea = document.querySelector("#rec-area");
@@ -65,25 +68,27 @@ function init() {
 		// HEADER
 		const header = document.querySelector("header");
 		header.innerHTML = `
-            <nav class="nav-container">
-                <p id="navbar-name"><a class="inverted" href="/home.html"><span class="text-light">Caroline</span> <span class="text-heavy">Jones</span></a></p>
-                <button type="button" class="nav-button" aria-label="Open dropdown nav">
-                    <span class="tri-bar"></span>
-                    <span class="tri-bar"></span>
-                    <span class="tri-bar"></span>
-                </button>
-                <div class="nav-menu">
-                    <ul class="nav-links">
-                        <li class="nav-item"><a class="nav-link" id="home" href="/home.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" id="projects" href="/projects.html">Projects</a></li>
-                        <li class="nav-item"><a class="nav-link" id="experience" href="/experience.html">Experience</a></li>
-                        <li class="nav-item"><a class="nav-link" id="education" href="/education.html">Education</a></li>
-                        <li class="nav-item"><a class="nav-link" id="skills" href="/skills.html">Skills</a></li>
-                        <li class="nav-item"><a class="nav-link" id="recommendations" href="/recommendations.html">Recommendations</a></li>
-                        <li class="nav-item"><a class="nav-link" id="contact" href="/contact.html">Contact</a></li>
-                    </ul>
-                </div>
-            </nav>
+                    <div id="backdrop-container">
+                      <div id="backdrop-right"></div>
+                      <div id="backdrop-center"></div>
+                      <div id="backdrop-left"></div>
+                    </div>
+                    <div id="name-box">
+                      <span class="text-light">Caroline&nbsp;</span><span class="text-heavy">Jones</span>
+                    </div>
+                    <div id="nav-box">
+                      <div id="new-navbar">
+                        <p class="highlighted"><a class="highlight" href="projects.html">Projects</a></p>
+                        <p class="highlighted"><a class="highlight" href="experience.html">Experience</a></p>
+                        <p class="highlighted"><a class="highlight" href="education.html">Education</a></p>
+                        <p class="highlighted"><a class="highlight" href="skills.html">Skills</a></p>
+                        <p class="highlighted"><a class="highlight" href="recommendations.html">Recommendations</a></p>
+                        <p class="highlighted"><a class="highlight" href="contact.html">Contact</a></p>
+                      </div>
+                      <div id="nav-arrow">
+                        <i id="nav-arrow-icon" class="fas fa-chevron-circle-right"></i>
+                      </div>
+                    </div>
         `;
 
 		// FOOTER
@@ -98,54 +103,7 @@ function init() {
             </span>
         `;
 
-		// NAV BAR
-		const navbar = document.getElementById("navbar");
-		const navButton = document.querySelector(".nav-button");
-		const allNavLinks = document.getElementsByClassName("nav-link");
-		const navMenu = document.querySelector(".nav-menu");
-		const navLinksContainer = document.querySelector(".nav-links");
-
-		const toggleDropdown = (shouldOpen) => {
-			shouldOpen
-				? navbar.classList.add("opened")
-				: navbar.classList.remove("opened");
-			navButton.setAttribute(
-				"aria-label",
-				shouldOpen ? "Open nav" : "Close nav"
-			);
-		};
-		navButton.addEventListener("click", () => {
-			navbar.classList.contains("opened")
-				? toggleDropdown(false)
-				: toggleDropdown(true);
-		});
-		navLinksContainer.addEventListener("click", (e) => e.stopPropagation());
-		navMenu.addEventListener("click", toggleDropdown(false));
-
-		// Set static background for nav link of current page
-		[...allNavLinks].forEach((link) => {
-			let color = page.includes(link.id)
-				? navButtonCurrentColor
-				: navButtonBaseColor;
-			link.style.backgroundColor = color;
-		});
-
-		// Highlight nav links when hovered over
-		document.addEventListener("mouseover", (event) => {
-			if (event.target.matches(".nav-link")) {
-				event.target.style.backgroundColor = navButtonHoverColor;
-        event.target.style.height = "150%";
-			}
-		});
-		document.addEventListener("mouseout", (event) => {
-			if (event.target.matches(".nav-link")) {
-				let color = page.includes(event.target.id)
-					? navButtonCurrentColor
-					: navButtonBaseColor;
-				event.target.style.backgroundColor = color;
-        event.target.style.height = "100%";
-			}
-		});
+		
 
 		// MODAL FOR PROJECT DETAILS IMAGES
 		if (page.includes("project-details")) {
@@ -233,8 +191,8 @@ function init() {
 	function loadAndDisplayData() {
 		let docTitle = document.title.toLowerCase();
 		if (docTitle.includes("project")) loadProjects();
-		if (docTitle.includes("experience")) loadExperience();
-		if (docTitle.includes("education")) loadEducation();
+		// if (docTitle.includes("experience")) loadExperience();
+		// if (docTitle.includes("education")) loadEducation();
 		if (docTitle.includes("skills")) loadSkills();
 		if (docTitle.includes("recommendations")) loadRecommendations();
 		makeContentVisible();
@@ -362,102 +320,9 @@ function init() {
 		}, 200); // only needs a slight delay
 	}
 
-	// For Experience page
-	function loadExperience() {
-		fetch("/data/experience.json")
-			.then((response) => response.json())
-			.then((data) => {
-				experienceData = data.map((obj) => {
-					return {
-						id: obj.id,
-						employer: obj.employer,
-						period: obj.period,
-						title: obj.title,
-						type: obj.type,
-						location: obj.location,
-						desc: obj.desc,
-						image: obj.image,
-						website: obj.website,
-					};
-				});
-			});
-		displayExperience();
-	}
+	
 
-	function displayExperience() {
-		setTimeout(() => {
-			experienceData.forEach((data) => {
-				expArea.innerHTML += `
-                    <div class="content-item">
-                        <div class="content-block"> 
-                            <div class="content-primary">  
-                                <a href="${data.website}" target="_blank"><img class="job-ed-logo" src="images/${data.image}" width="60px" /></a>                      
-                                <p><span class="employer">${data.employer}</span><br />
-                                ${data.type} &nbsp;&bull;&nbsp; ${data.location} &nbsp;&bull;&nbsp; ${data.period}</p>
-                            </div>
-                        </div>
-                        <div class="content-animated-box">
-                          <div class="content-hover-bar">
-                            <p class="job-title">${data.title}</p>
-                            <i id="content-arrow" class="fas fa-chevron-circle-down"></i>
-                            </div>
-                          <div class="content-secondary">
-                            <div class="content-description">${data.desc}</div>
-                          </div>
-                        </div>
-                    </div>
-                `;
-			});
-		}, 200); // only needs a slight delay
-	}
-
-	// For Education page
-	function loadEducation() {
-		fetch("/data/education.json")
-			.then((response) => response.json())
-			.then((data) => {
-				educationData = data.map((obj) => {
-					return {
-						id: obj.id,
-						institution: obj.institution,
-						gradDate: obj.gradDate,
-						degree: obj.degree,
-						desc: obj.desc,
-						image: obj.image,
-						website: obj.website,
-					};
-				});
-			});
-		displayEducation();
-	}
-
-	function displayEducation() {
-		setTimeout(() => {
-			educationData.forEach((data) => {
-				// TODO: gather images of certificates/degrees
-				edArea.innerHTML += `
-                <div class="content-item">
-                  <div class="content-block">
-                    <div class="content-primary">
-                      <a href="${data.website}" target="_blank"><img class="job-ed-logo" src="images/${data.image}" width="60px" /></a>                     
-                      <p><span class="institution">${data.institution}</span><br />
-                      ${data.gradDate}</p>     
-                    </div>                    
-                  </div>
-                  <div class="content-animated-box">
-                    <div class="content-hover-bar">
-                      <p class="degree">${data.degree}</p>
-                      <i id="content-arrow" class="fas fa-chevron-circle-down"></i>
-                      </div>
-                    <div class="content-secondary">
-                      <div class="content-description">${data.desc}</div>
-                    </div>
-                  </div>
-                </div>
-              `;
-			});
-		}, 200); // only needs a slight delay
-	}
+	
 
   
 

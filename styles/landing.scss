@@ -1,0 +1,126 @@
+@import "shared-styles.scss";
+
+// NEW INDEX
+
+#logo-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+
+#hover-anchor {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	width: 120px;
+	margin-right: 0px;
+	border-radius: 50%;
+	z-index: 10;
+	transition: $logo-transition;
+  &:hover {
+    margin-right: 300px;
+    cursor: pointer;
+  }
+}
+
+.text-container {
+	display: flex;
+	align-items: center;
+	position: absolute;
+	z-index: 15;
+	width: 120px;
+	height: 120px;
+	padding-left: 22px;
+	overflow: hidden;
+	transition: transform $logo-transition, width $logo-transition;
+}
+#hover-anchor:hover .text-container {
+  transform: translate(160px, 0);
+  width: 440px;
+}
+
+.text {
+	font-family: $logo-font;
+	color: white;
+	font-size: 60px;
+	text-transform: uppercase;
+}
+
+#fn,
+#ln {
+	color: #333333;
+	opacity: 0;
+	transition: opacity $logo-transition;
+}
+#hover-anchor:hover #fn, #hover-anchor:hover #ln {
+  opacity: 1;
+}
+
+#cee {
+  font-weight: 100;
+	transition: $logo-transition;
+}
+#hover-anchor:hover #cee {
+  transform: translate(110px, -30px);
+  color: #333;
+}
+
+#jay {
+	font-weight: 600;
+	transition: $logo-transition;
+	padding-left: 40px;
+}
+#hover-anchor:hover #jay {
+	transform: translate(70px, 30px);
+	color: #333;
+}
+
+#circle-mask {
+	position: relative;
+	width: 120px;
+	height: 120px;
+	border-radius: 50%;
+	overflow: hidden;
+}
+
+.square {
+	width: 300px;
+	height: 300px;
+	position: absolute;
+}
+
+#shape1 {
+	background-color: $primary-color;
+	transition: $logo-transition;
+}
+#hover-anchor:hover #shape1 {
+  transform: translate(55px, 0) rotate(-80deg);
+}
+
+#shape2 {
+	background-color: $accent-color;
+	transition: $logo-transition;
+}
+#hover-anchor:hover #shape2 {
+  transform: translate(30px, 0) rotate(-70deg);
+}
+
+#shape3 {
+	background-color: $muted-accent-color;
+	transition: $logo-transition;
+}
+#hover-anchor:hover #shape3 {
+  transform: translate(15px, 0) rotate(-80deg);
+}
+
+#shape4 {
+	background-color: $muted-color;
+	transition: $logo-transition;
+}
+#hover-anchor:hover #shape4 {
+	transform: translate(40px, -20) rotate(-62deg);
+}
