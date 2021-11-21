@@ -29,7 +29,7 @@ function init() {
 		techLanguages: [],
 		techTools: [],
 	};
-	let recommendationData = [];
+	
 
 	// Data structures to hold everything needed to display lists on Skills page
 	let techSkillsCategories = {
@@ -56,7 +56,7 @@ function init() {
 	
 	const techSkillsArea = document.querySelector("#tech-skills-area");
 	const generalSkillsArea = document.querySelector("#general-skills-area");
-	const recArea = document.querySelector("#rec-area");
+	
 
 	// Tack on to end of <title> content specified in html doc
 	document.title += titleEnd;
@@ -194,7 +194,7 @@ function init() {
 		// if (docTitle.includes("experience")) loadExperience();
 		// if (docTitle.includes("education")) loadEducation();
 		if (docTitle.includes("skills")) loadSkills();
-		if (docTitle.includes("recommendations")) loadRecommendations();
+		// if (docTitle.includes("recommendations")) loadRecommendations();
 		makeContentVisible();
 	}
 
@@ -429,39 +429,6 @@ function init() {
                 `;
 			}
 			generalSkillsArea.innerHTML = allGeneralSkills;
-		}, 200); // only needs a slight delay
-	}
-
-	// For Recommendations page
-	function loadRecommendations() {
-		fetch("/data/recommendations.json")
-			.then((response) => response.json())
-			.then((data) => {
-				recommendationData = data.map((obj) => {
-					return {
-						id: obj.id,
-						author: obj.author,
-						relationship: obj.relationship,
-						recText: obj.recText,
-					};
-				});
-			});
-		displayRecommendations();
-	}
-
-	function displayRecommendations() {
-		setTimeout(() => {
-			recommendationData.forEach((data) => {
-				recArea.innerHTML += `
-                    <div class="content-item">
-                        <div class="content-block">
-                            <p>${data.recText}</p>
-                            <p class="text-right"><span class="rec-name">${data.author}</span><br />
-                            <span class="rec-role">${data.relationship}</span></p>
-                        </div>
-                    </div>
-                `;
-			});
 		}, 200); // only needs a slight delay
 	}
 }
