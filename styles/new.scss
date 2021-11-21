@@ -1,5 +1,12 @@
 @import "shared-styles.scss";
 
+.more-info {
+  color: $highlight-color;
+	font-size: 1.2em;
+	font-style: italic;
+	// margin-top: 15px;
+}
+
 // TODO: maybe make this obsolete if not creating multiple columns anymore
 .content-container {
   columns: 1
@@ -8,7 +15,7 @@
 .content-item {
 	display: inline-block;
 	vertical-align: top;
-	margin: 0px 0px 40px;
+	margin: 0px 0px 30px;
 	width: 100%;
 }
 
@@ -83,21 +90,19 @@
 
 /** EXPERIENCE & EDUCATION PAGES **/
 
-.employer,
-.institution {
+.content-header {
 	font-weight: 600;
 	font-size: 1.3rem;
 }
 
-.job-title,
-.degree {
+.content-subheader {
 	font-weight: 400;
 	font-size: 1rem;
 	color: $highlight-color;
 	margin-top: 10px;
 }
 
-.job-ed-logo {
+.content-logo {
 	float: left;
 	width: 60px;
 	margin-right: 15px;

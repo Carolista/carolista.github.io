@@ -28,14 +28,14 @@ window.addEventListener("load", () => {
               <div class="content-item">
                 <div class="content-block">
                   <div class="content-primary">
-                    <a href="${data.website}" target="_blank"><img class="job-ed-logo" src="images/${data.image}" width="60px" /></a>                     
-                    <p><span class="institution">${data.institution}</span><br />
+                    <a href="${data.website}" target="_blank"><img class="content-logo" src="images/${data.image}" width="60px" /></a>                     
+                    <p><span class="content-header">${data.institution}</span><br />
                     ${data.gradDate}</p>     
                   </div>                    
                 </div>
                 <div class="content-animated-box">
                   <div class="content-hover-bar">
-                    <p class="degree">${data.degree}</p>
+                    <p class="content-subheader">${data.degree}</p>
                     <i id="content-arrow" class="fas fa-chevron-circle-down"></i>
                     </div>
                   <div class="content-secondary">
