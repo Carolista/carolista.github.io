@@ -28,9 +28,13 @@ window.addEventListener("load", () => {
         <div class="content-item">
           <div class="content-block">
             <div class="content-primary">
-              <a href="${data.website}" target="_blank"><img class="content-logo" src="images/${data.image}" width="50px" /></a>                     
-              <p><span class="content-header">${data.institution}</span><br />
-              ${data.gradDate}</p>     
+              <div class="content-logo-container">
+                <a href="${data.website}" target="_blank"><img class="content-logo" src="images/${data.image}" width="60px" /></a>  
+              </div>
+              <div class="content-primary-text">
+                <p><span class="content-header">${data.institution}</span><br />
+                ${data.gradDate}</p>     
+              </div>                   
             </div>                    
           </div>
           <div class="content-animated-box">

@@ -75,9 +75,9 @@ function init() {
 		footer.innerHTML = `
             <span class="off-white-text text-center">
                 <p>&copy; 2021&nbsp; Caroline R. Jones &nbsp;&bull;&nbsp;
-                    St. Louis, MO &nbsp;&bull;&nbsp; <a class="inverted" href="https://www.linkedin.com/in/carolinerjones/" target="_blank">LinkedIn</a> &nbsp;|&nbsp; 
-                    <a class="inverted" href="https://www.hackerrank.com/Carolina49a" target="_blank">HackerRank</a> &nbsp;|&nbsp; 
-                    <a class="inverted" href="https://github.com/Carolista" target="_blank">GitHub</a></p>
+                    St. Louis, MO &nbsp;&bull;&nbsp; <a href="https://www.linkedin.com/in/carolinerjones/" target="_blank">LinkedIn</a> &nbsp;|&nbsp; 
+                    <a href="https://www.hackerrank.com/Carolina49a" target="_blank">HackerRank</a> &nbsp;|&nbsp; 
+                    <a href="https://github.com/Carolista" target="_blank">GitHub</a></p>
             </span>
         `;
 

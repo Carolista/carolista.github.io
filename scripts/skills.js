@@ -43,7 +43,6 @@ window.addEventListener("load", () => {
     for (cat in techSkillsCategories) {
       let data = techSkillsCategories[cat].data.sort((a, b) => (a.skillName > b.skillName ? 1 : -1));
       data.forEach((skill) => {
-        // console.log(skill.skillName);
         techSkillsCategories[cat].list += `<p class='skill-name'>${skill.skillName}</p>`;
       })
     }
