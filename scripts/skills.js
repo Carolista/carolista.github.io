@@ -56,7 +56,6 @@ window.addEventListener("load", () => {
 	}
 
 	function displaySkills() {
-
 			let allTechSkills = "";
 			for (techCategory in techSkillsCategories) {
 				allTechSkills += `

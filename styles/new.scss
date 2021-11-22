@@ -2,7 +2,7 @@
 
 .more-info {
   color: $highlight-color;
-	font-size: 1.2em;
+	font-size: 1.1em;
 	font-style: italic;
 	// margin-top: 15px;
 }
@@ -32,6 +32,7 @@
   left: 0;
   padding: 15px 10px 10px 15px;
   margin: 0;
+  // border-top: 5px solid $dark-green-color;
   z-index: 11;
 }
 
@@ -89,6 +90,7 @@
 .content-header {
 	font-weight: 600;
 	font-size: 1.2rem;
+  // color: $dark-green-color;
 }
 
 .content-subheader {

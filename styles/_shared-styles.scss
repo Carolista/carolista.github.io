@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100;300;400;600&family=Oleo+Script+Swash+Caps&family=Barlow:wght@200;400;600;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100;300;400;600&family=Quicksand:wght@300;400;600&display=swap");
 
 $primary-color: #333;
 $contrast-color: #fff;
@@ -13,8 +13,8 @@ $extra-light-green-color: #b5d89d;
 $light-green-color: #85c05d;
 $medium-green-color: #61a136;
 $dark-green-color: #437e1c;
-$primary-font: "Lexend Deca", sans-serif;
-$header-font: "Barlow", sans-serif;
+$primary-font: "Quicksand", sans-serif;
+$header-font: "Lexend Deca", sans-serif;
 $title-font: "Lexend Deca", sans-serif;
 $navbar-height: 80px;
 $triangle: 120px;
@@ -52,7 +52,7 @@ body {
 	color: $primary-color;
 	font-family: $primary-font;
 	font-size: 11pt;
-	font-weight: 300;
+	font-weight: 400;
 	background-color: $highlight-color;
 	min-height: 100vh;
 	overflow-x: hidden;
@@ -68,18 +68,6 @@ body {
   z-index: 5;
 }
 
-// FIXME: the page isn't scrolling vertically
-
-// header {
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-// 	// height: 100vh;
-// 	// width: 100vw;
-// 	margin: 0;
-// 	padding: 0;
-// }
-
 main {
   position: relative;
   top: 0px;
@@ -90,9 +78,8 @@ main {
   min-width: 600px;
   max-width: 1000px;
 	padding: 120px 50px 40px 0px;
-  margin-left: 300px;
+  margin: 0px 0px 0px auto;
 	visibility: hidden; // until content loaded
-  // z-index: 10;
 }
 
 footer {
@@ -103,11 +90,9 @@ footer {
 	flex-direction: column;
   align-items: flex-end;
   color: $light-accent-color;
-	// background-color: $accent-color;
   height: 50px;
 	width: 100vw;
 	padding-right: 40px;
-	// border-top: 10px solid $bright-accent-color;
   z-index: 5;
 }
 

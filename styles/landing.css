@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100;300;400;600&family=Oleo+Script+Swash+Caps&family=Barlow:wght@200;400;600;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100;300;400;600&family=Quicksand:wght@300;400;600&display=swap");
 /*
   Z-INDEX HEIRARCHY
   40    
@@ -30,9 +30,9 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   color: #333;
-  font-family: "Lexend Deca", sans-serif;
+  font-family: "Quicksand", sans-serif;
   font-size: 11pt;
-  font-weight: 300;
+  font-weight: 400;
   background-color: white;
   min-height: 100vh;
   overflow-x: hidden;
@@ -63,7 +63,7 @@ main {
   min-width: 600px;
   max-width: 1000px;
   padding: 120px 50px 40px 0px;
-  margin-left: 300px;
+  margin: 0px 0px 0px auto;
   visibility: hidden;
 }
 
@@ -342,7 +342,7 @@ td {
       -ms-flex-pack: center;
           justify-content: center;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   position: relative;
 }
 
