@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100;400;600&family=Oleo+Script+Swash+Caps&family=Barlow:wght@200;400;600;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100;300;400;600&family=Oleo+Script+Swash+Caps&family=Barlow:wght@200;400;600;800&display=swap");
 
 $primary-color: #333;
 $contrast-color: #fff;
@@ -9,7 +9,11 @@ $accent-color: #bbb;
 $bright-accent-color: #ccc;
 $light-accent-color: #eee;
 $highlight-color: white;
-$primary-font: "Barlow", sans-serif;
+$extra-light-green-color: #b5d89d;
+$light-green-color: #85c05d;
+$medium-green-color: #61a136;
+$dark-green-color: #437e1c;
+$primary-font: "Lexend Deca", sans-serif;
 $header-font: "Barlow", sans-serif;
 $title-font: "Lexend Deca", sans-serif;
 $navbar-height: 80px;
@@ -38,79 +42,73 @@ $logo-transition: 1.8s;
 	padding: 0;
 }
 
+html {
+  min-height: 100%;
+}
+
 body {
 	display: flex;
 	flex-direction: column;
 	color: $primary-color;
 	font-family: $primary-font;
 	font-size: 11pt;
-	font-weight: 400;
+	font-weight: 300;
 	background-color: $highlight-color;
-	height: 100vh;
-	margin: 0px;
-	padding: 0px;
+	min-height: 100vh;
 	overflow-x: hidden;
+}
+
+#page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+#page-content {
+  padding-bottom: 40px; // height of footer
+  z-index: 5;
 }
 
 // FIXME: the page isn't scrolling vertically
 
-header {
-	height: 100vh;
-	width: 100vw;
-	margin: 0;
-	padding: 0;
-}
+// header {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+// 	// height: 100vh;
+// 	// width: 100vw;
+// 	margin: 0;
+// 	padding: 0;
+// }
 
 main {
-  position: fixed;
-  top: 120px;
+  position: relative;
+  top: 0px;
   right: 0px;
 	display: flex;
 	flex-direction: column;
-	flex: 1;
 	width: calc(100vw - 300px);
   min-width: 600px;
   max-width: 1000px;
-	padding: 0px 50px 60px 0px;
+	padding: 120px 50px 40px 0px;
+  margin-left: 300px;
 	visibility: hidden; // until content loaded
-  z-index: 10;
+  // z-index: 10;
 }
 
 footer {
+  position: absolute;
+  bottom: 0;
+  margin-top: auto;
 	display: flex;
 	flex-direction: column;
-	background-color: $accent-color;
+  align-items: flex-end;
+  color: $light-accent-color;
+	// background-color: $accent-color;
+  height: 50px;
 	width: 100vw;
-	padding: 20px;
-	border-top: 10px solid $bright-accent-color;
+	padding-right: 40px;
+	// border-top: 10px solid $bright-accent-color;
   z-index: 5;
-}
-
-h1 {
-	font-size: 2.5rem;
-	font-weight: 600;
-	color: $accent-color;
-	margin: 25px 0px 30px;
-}
-
-h2 {
-	font-size: 1.8rem;
-	font-weight: 600;
-	margin: 10px 0px 30px;
-}
-
-h3 {
-	margin: 10px 0px 8px;
-}
-
-h4 {
-	font-weight: 600;
-	margin: 10px 0px 10px;
-}
-
-hr {
-	height: 2px;
-	margin: 10px 0px;
 }
 
 p {
@@ -119,10 +117,17 @@ p {
 }
 
 a {
-	color: $primary-color !important;
+	color: $primary-color;
 	text-decoration: none;
   &:hover, &:visited, &:active, &:link, &:focus {
-  	color: $primary-color !important;
+  	color: $primary-color;
+  }
+}
+
+a.inverted {
+  color: $medium-green-color;
+  &:hover {
+  	color: $light-green-color;
   }
 }
 
@@ -143,6 +148,7 @@ td {
   height: 100vh;
   width: 100vw;
   background-color: $dark-accent-color;
+  z-index: 0;
 }
 
 #backdrop-left {
@@ -196,7 +202,7 @@ td {
   text-transform: uppercase;
 	font-size: 2rem;
   transition: 0.6s;
-  z-index: 5;
+  // z-index: 5;
   &:hover {
     transform: scale(1.1) translateX(14px)
   }
@@ -214,7 +220,7 @@ td {
   font-family: $title-font;
   text-transform: uppercase;
   transition: transform 0.6s, max-height 0.6s;
-  z-index: 5;
+  // z-index: 5;
   overflow: hidden;
   &:hover {
     transform: translate(200px, 18px) scale(1.15);
@@ -267,7 +273,7 @@ td {
   color: $primary-color;
   flex: 1;
   line-height: 1;
-  background-image: linear-gradient(to right, #b5d89d 0, #61a136 100%);
+  background-image: linear-gradient(to right, $medium-green-color 0, $extra-light-green-color  100%);
   background-position: 0 -0.1em;
   background-size: 0 100%;
   background-repeat: no-repeat;
@@ -282,14 +288,12 @@ td {
 }
 
 #page-title-box {
-  position: fixed;
+  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
   color: $highlight-color;
-  background-color: #61a136;
-  // background-color: $highlight-color;
-  // color: $primary-color;
+  background-color: $dark-green-color;
   font-family: $title-font;
   font-weight: 400;
   text-transform: uppercase;

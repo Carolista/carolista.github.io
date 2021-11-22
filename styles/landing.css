@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100;400;600&family=Oleo+Script+Swash+Caps&family=Barlow:wght@200;400;600;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100;300;400;600&family=Oleo+Script+Swash+Caps&family=Barlow:wght@200;400;600;800&display=swap");
 /*
   Z-INDEX HEIRARCHY
   40    
@@ -17,6 +17,10 @@
   padding: 0;
 }
 
+html {
+  min-height: 100%;
+}
+
 body {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -26,26 +30,27 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   color: #333;
-  font-family: "Barlow", sans-serif;
+  font-family: "Lexend Deca", sans-serif;
   font-size: 11pt;
-  font-weight: 400;
+  font-weight: 300;
   background-color: white;
-  height: 100vh;
-  margin: 0px;
-  padding: 0px;
+  min-height: 100vh;
   overflow-x: hidden;
 }
 
-header {
-  height: 100vh;
-  width: 100vw;
-  margin: 0;
-  padding: 0;
+#page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+#page-content {
+  padding-bottom: 40px;
+  z-index: 5;
 }
 
 main {
-  position: fixed;
-  top: 120px;
+  position: relative;
+  top: 0px;
   right: 0px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -54,18 +59,18 @@ main {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
   width: calc(100vw - 300px);
   min-width: 600px;
   max-width: 1000px;
-  padding: 0px 50px 60px 0px;
+  padding: 120px 50px 40px 0px;
+  margin-left: 300px;
   visibility: hidden;
-  z-index: 10;
 }
 
 footer {
+  position: absolute;
+  bottom: 0;
+  margin-top: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -73,38 +78,14 @@ footer {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-color: #bbb;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  color: #eee;
+  height: 50px;
   width: 100vw;
-  padding: 20px;
-  border-top: 10px solid #ccc;
+  padding-right: 40px;
   z-index: 5;
-}
-
-h1 {
-  font-size: 2.5rem;
-  font-weight: 600;
-  color: #bbb;
-  margin: 25px 0px 30px;
-}
-
-h2 {
-  font-size: 1.8rem;
-  font-weight: 600;
-  margin: 10px 0px 30px;
-}
-
-h3 {
-  margin: 10px 0px 8px;
-}
-
-h4 {
-  font-weight: 600;
-  margin: 10px 0px 10px;
-}
-
-hr {
-  height: 2px;
-  margin: 10px 0px;
 }
 
 p {
@@ -113,12 +94,20 @@ p {
 }
 
 a {
-  color: #333 !important;
+  color: #333;
   text-decoration: none;
 }
 
 a:hover, a:visited, a:active, a:link, a:focus {
-  color: #333 !important;
+  color: #333;
+}
+
+a.inverted {
+  color: #61a136;
+}
+
+a.inverted:hover {
+  color: #85c05d;
 }
 
 ul {
@@ -137,6 +126,7 @@ td {
   height: 100vh;
   width: 100vw;
   background-color: #222;
+  z-index: 0;
 }
 
 #backdrop-left {
@@ -200,7 +190,6 @@ td {
   font-size: 2rem;
   -webkit-transition: 0.6s;
   transition: 0.6s;
-  z-index: 5;
 }
 
 #name-box:hover {
@@ -228,7 +217,6 @@ td {
   transition: max-height 0.6s, -webkit-transform 0.6s;
   transition: transform 0.6s, max-height 0.6s;
   transition: transform 0.6s, max-height 0.6s, -webkit-transform 0.6s;
-  z-index: 5;
   overflow: hidden;
 }
 
@@ -301,8 +289,8 @@ td {
       -ms-flex: 1;
           flex: 1;
   line-height: 1;
-  background-image: -webkit-gradient(linear, left top, right top, color-stop(0, #b5d89d), to(#61a136));
-  background-image: linear-gradient(to right, #b5d89d 0, #61a136 100%);
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(0, #61a136), to(#b5d89d));
+  background-image: linear-gradient(to right, #61a136 0, #b5d89d 100%);
   background-position: 0 -0.1em;
   background-size: 0 100%;
   background-repeat: no-repeat;
@@ -320,7 +308,7 @@ td {
 }
 
 #page-title-box {
-  position: fixed;
+  position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -331,7 +319,7 @@ td {
       -ms-flex-align: center;
           align-items: center;
   color: white;
-  background-color: #61a136;
+  background-color: #437e1c;
   font-family: "Lexend Deca", sans-serif;
   font-weight: 400;
   text-transform: uppercase;

@@ -14,36 +14,13 @@ function init() {
 	let page = location.href.split("\\").pop().split("/").pop();
 	let titleEnd = " Caroline Jones | Full Stack Developer";
 
+
 	// Arrays to hold any data loaded
 	let timelineData = [];
 	let projectData = [];
 	
 	
-	let skillsData = {
-		generalKnowledge: [],
-		generalStrengths: [],
-		generalTools: [],
-		generalValues: [],
-		techFrameworks: [],
-		techKnowledge: [],
-		techLanguages: [],
-		techTools: [],
-	};
 	
-
-	// Data structures to hold everything needed to display lists on Skills page
-	let techSkillsCategories = {
-		tools: { category: "Tools", list: "", count: 0 },
-		frameworks: { category: "Frameworks", list: "", count: 0 },
-		languages: { category: "Languages", list: "", count: 0 },
-		knowledge: { category: "Knowledge", list: "", count: 0 },
-	};
-	let generalSkillsCategories = {
-		tools: { category: "Tools", list: "", count: 0 },
-		strengths: { category: "Strengths", list: "", count: 0 },
-		knowledge: { category: "Knowledge", list: "", count: 0 },
-		values: { category: "Values", list: "", count: 0 },
-	};
 
 	// DOM elements for index page only
 	const timelineTable = document.querySelector("#timeline-table");
@@ -54,8 +31,7 @@ function init() {
 	const detailArea = document.querySelector("#detail-area");
 	
 	
-	const techSkillsArea = document.querySelector("#tech-skills-area");
-	const generalSkillsArea = document.querySelector("#general-skills-area");
+	
 	
 
 	// Tack on to end of <title> content specified in html doc
@@ -65,14 +41,17 @@ function init() {
 
 	// Handle elements and events only on certain pages
 	if (page !== "" && page !== "index.html" && page !== "home.html") {
+
+    // BACKDROP
+    const backdrop = document.querySelector("#backdrop-container");
+    backdrop.innerHTML = `
+      <div id="backdrop-right"></div>
+      <div id="backdrop-center"></div>
+      <div id="backdrop-left"></div>
+    `;
 		// HEADER
 		const header = document.querySelector("header");
 		header.innerHTML = `
-                    <div id="backdrop-container">
-                      <div id="backdrop-right"></div>
-                      <div id="backdrop-center"></div>
-                      <div id="backdrop-left"></div>
-                    </div>
                     <div id="name-box">
                       <span class="text-light">Caroline&nbsp;</span><span class="text-heavy">Jones</span>
                     </div>
@@ -96,8 +75,7 @@ function init() {
 		footer.innerHTML = `
             <span class="off-white-text text-center">
                 <p>&copy; 2021&nbsp; Caroline R. Jones &nbsp;&bull;&nbsp;
-                    St. Louis, MO</p>
-                <p><a class="inverted" href="https://www.linkedin.com/in/carolinerjones/" target="_blank">LinkedIn</a> &nbsp;|&nbsp; 
+                    St. Louis, MO &nbsp;&bull;&nbsp; <a class="inverted" href="https://www.linkedin.com/in/carolinerjones/" target="_blank">LinkedIn</a> &nbsp;|&nbsp; 
                     <a class="inverted" href="https://www.hackerrank.com/Carolina49a" target="_blank">HackerRank</a> &nbsp;|&nbsp; 
                     <a class="inverted" href="https://github.com/Carolista" target="_blank">GitHub</a></p>
             </span>
@@ -193,7 +171,7 @@ function init() {
 		if (docTitle.includes("project")) loadProjects();
 		// if (docTitle.includes("experience")) loadExperience();
 		// if (docTitle.includes("education")) loadEducation();
-		if (docTitle.includes("skills")) loadSkills();
+		// if (docTitle.includes("skills")) loadSkills();
 		// if (docTitle.includes("recommendations")) loadRecommendations();
 		makeContentVisible();
 	}
@@ -326,109 +304,5 @@ function init() {
 
   
 
-	// For Skills page
-	function loadSkills() {
-		fetch("/data/skills.json")
-			.then((response) => response.json())
-			.then((data) => {
-				data.forEach((obj) => {
-					let skill = {
-						id: obj.id,
-						skillName: obj.skillName,
-						category: obj.category,
-						type: obj.type,
-					};
-					if (skill.type === "General") {
-						if (skill.category === "Knowledge") {
-							skillsData.generalKnowledge.push(skill);
-						} else if (skill.category === "Strengths") {
-							skillsData.generalStrengths.push(skill);
-						} else if (skill.category === "Tools") {
-							skillsData.generalTools.push(skill);
-						} else if (skill.category === "Values") {
-							skillsData.generalValues.push(skill);
-						}
-					} else {
-						// Tech
-						if (skill.category === "Frameworks") {
-							skillsData.techFrameworks.push(skill);
-						} else if (skill.category === "Knowledge") {
-							skillsData.techKnowledge.push(skill);
-						} else if (skill.category === "Languages") {
-							skillsData.techLanguages.push(skill);
-						} else if (skill.category === "Tools") {
-							skillsData.techTools.push(skill);
-						}
-					}
-				});
-			});
-		buildSkillsHTML();
-		displaySkills();
-	}
-
-	function buildSkillsHTML() {
-		setTimeout(() => {
-			for (group in skillsData) {
-				skillsData[group].sort((a, b) => (a.skillName > b.skillName ? 1 : -1));
-				skillsData[group].forEach((data) => {
-					if (data.type === "Tech") {
-						if (data.category === "Frameworks") {
-							techSkillsCategories.frameworks.list += `<p class='skill-name'>${data.skillName}</p>`;
-							techSkillsCategories.frameworks.count += 1;
-						} else if (data.category === "Languages") {
-							techSkillsCategories.languages.list += `<p class='skill-name'>${data.skillName}</p>`;
-							techSkillsCategories.languages.count += 1;
-						} else if (data.category === "Tools") {
-							techSkillsCategories.tools.list += `<p class='skill-name'>${data.skillName}</p>`;
-							techSkillsCategories.tools.count += 1;
-						} else if (data.category === "Knowledge") {
-							techSkillsCategories.knowledge.list += `<p class='skill-name'>${data.skillName}</p>`;
-							techSkillsCategories.knowledge.count += 1;
-						}
-					} else if (data.type === "General") {
-						if (data.category === "Tools") {
-							generalSkillsCategories.tools.list += `<p class='skill-name'>${data.skillName}</p>`;
-							generalSkillsCategories.tools.count += 1;
-						} else if (data.category === "Strengths") {
-							generalSkillsCategories.strengths.list += `<p class='skill-name'>${data.skillName}</p>`;
-							generalSkillsCategories.strengths.count += 1;
-						} else if (data.category === "Knowledge") {
-							generalSkillsCategories.knowledge.list += `<p class='skill-name'>${data.skillName}</p>`;
-							generalSkillsCategories.knowledge.count += 1;
-						} else if (data.category === "Values") {
-							generalSkillsCategories.values.list += `<p class='skill-name'>${data.skillName}</p>`;
-							generalSkillsCategories.values.count += 1;
-						}
-					}
-				});
-			}
-		}, 200); // only needs a slight delay
-	}
-
-	function displaySkills() {
-		setTimeout(() => {
-			// Tech subsection
-			let allTechSkills = "";
-			for (techCategory in techSkillsCategories) {
-				allTechSkills += `
-                    <div class="content-block skills-list">
-                        <h3>${techSkillsCategories[techCategory].category}</h3>
-                        <div>${techSkillsCategories[techCategory].list}</div> 
-                    </div>
-                `;
-			}
-			techSkillsArea.innerHTML = allTechSkills;
-			// General subsection
-			let allGeneralSkills = "";
-			for (generalCategory in generalSkillsCategories) {
-				allGeneralSkills += `
-                    <div class="content-block skills-list">
-                        <h3>${generalSkillsCategories[generalCategory].category}</h3>
-                        <div>${generalSkillsCategories[generalCategory].list}</div> 
-                    </div>
-                `;
-			}
-			generalSkillsArea.innerHTML = allGeneralSkills;
-		}, 200); // only needs a slight delay
-	}
+	
 }

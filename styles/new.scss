@@ -48,7 +48,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background-image: linear-gradient(to bottom, #193a03 0, #35720c 3%, #61a136 18%, #61a136 100%);
+  background-image: linear-gradient(to bottom, #193a03 0, #376618 3%, $dark-green-color 18%, $dark-green-color 100%);
   filter: grayscale(100%);
   color: $highlight-color;
   height: 40px;
@@ -78,18 +78,13 @@
   transition: max-height 0.8s ease-out;
 }
 .content-animated-box:hover .content-secondary {
-  max-height: 300px;
+  max-height: 500px;
   transition: max-height 1.0s ease-out;
 }
 
 .content-description {
   margin: 15px 15px 15px 25px;
 }
-
-
-
-
-/** EXPERIENCE & EDUCATION PAGES **/
 
 .content-header {
 	font-weight: 600;
@@ -107,4 +102,42 @@
 	float: left;
 	width: 50px;
 	margin-right: 15px;
+}
+
+
+/** SKILLS PAGE **/
+
+.skills-subheader {
+	margin-bottom: 5px;
+}
+
+.skills-name {
+	margin: 0px 0px 5px;
+}
+
+// container for all skills
+.skills-container {
+	display: flex;
+	flex-direction: row;
+}
+
+// tech and general containers
+.skills-subsection {
+	vertical-align: top;
+	margin: 0px 50px 40px 0px;
+	width: 100%;
+}
+
+// holds all lists in a subsection
+.skills-group {
+	columns: 2;
+	column-gap: 20px;
+}
+
+// container for individual lists by subcategory
+.skills-list {
+	display: inline-block;
+	vertical-align: top;
+	margin: 30px 0px 0px;
+	width: 100%;
 }
