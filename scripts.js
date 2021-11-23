@@ -52,34 +52,34 @@ function init() {
 		// HEADER
 		const header = document.querySelector("header");
 		header.innerHTML = `
-                    <div id="name-box">
-                      <span class="text-light">Caroline&nbsp;</span><span class="text-heavy">Jones</span>
-                    </div>
-                    <div id="nav-box">
-                      <div id="new-navbar">
-                        <p class="highlighted"><a class="highlight" href="projects.html">Projects</a></p>
-                        <p class="highlighted"><a class="highlight" href="experience.html">Experience</a></p>
-                        <p class="highlighted"><a class="highlight" href="education.html">Education</a></p>
-                        <p class="highlighted"><a class="highlight" href="skills.html">Skills</a></p>
-                        <p class="highlighted"><a class="highlight" href="recommendations.html">Recommendations</a></p>
-                        <p class="highlighted"><a class="highlight" href="contact.html">Contact</a></p>
-                      </div>
-                      <div id="nav-arrow">
-                        <i id="nav-arrow-icon" class="fas fa-chevron-circle-right"></i>
-                      </div>
-                    </div>
-        `;
+      <div id="name-box">
+        <span class="text-light">Caroline&nbsp;</span><span class="text-heavy">Jones</span>
+      </div>
+      <div id="nav-box">
+        <div id="new-navbar">
+          <p class="highlighted"><a class="highlight" href="projects.html">Projects</a></p>
+          <p class="highlighted"><a class="highlight" href="experience.html">Experience</a></p>
+          <p class="highlighted"><a class="highlight" href="education.html">Education</a></p>
+          <p class="highlighted"><a class="highlight" href="skills.html">Skills</a></p>
+          <p class="highlighted"><a class="highlight" href="recommendations.html">Recommendations</a></p>
+          <p class="highlighted"><a class="highlight" href="contact.html">Contact</a></p>
+        </div>
+        <div id="nav-arrow">
+          <i id="nav-arrow-icon" class="fas fa-chevron-circle-right"></i>
+        </div>
+      </div>
+    `;
 
 		// FOOTER
 		const footer = document.querySelector("footer");
 		footer.innerHTML = `
-            <span class="off-white-text text-center">
-                <p>&copy; 2021&nbsp; Caroline R. Jones &nbsp;&bull;&nbsp;
-                    St. Louis, MO &nbsp;&bull;&nbsp; <a href="https://www.linkedin.com/in/carolinerjones/" target="_blank">LinkedIn</a> &nbsp;|&nbsp; 
-                    <a href="https://www.hackerrank.com/Carolina49a" target="_blank">HackerRank</a> &nbsp;|&nbsp; 
-                    <a href="https://github.com/Carolista" target="_blank">GitHub</a></p>
-            </span>
-        `;
+      <span class="off-white-text text-center">
+        <p>&copy; 2021&nbsp; Caroline R. Jones &nbsp;&bull;&nbsp;
+          St. Louis, MO &nbsp;&bull;&nbsp; <a href="https://www.linkedin.com/in/carolinerjones/" target="_blank">LinkedIn</a> &nbsp;|&nbsp; 
+          <a href="https://www.hackerrank.com/Carolina49a" target="_blank">HackerRank</a> &nbsp;|&nbsp; 
+          <a href="https://github.com/Carolista" target="_blank">GitHub</a></p>
+      </span>
+    `;
 
 		
 
@@ -218,15 +218,15 @@ function init() {
 				// TODO: create responsive gallery of projects in progress, not just completed
 				if (!data.inProgress) {
 					projectArea.innerHTML += `
-                            <div class="gallery-item">
-                                <div class="project-content">
-                                    <a href="project-details.html?id=${data.id}"><img class="project-image" src="images/${data.images[0]}"></a>
-                                    <h3>${data.title}</h3>
-                                    <p>${data.subtitle}</p>
-                                    <p class="text-right view-details"><a href="project-details.html?id=${data.id}">View Details &gt;</a></p>
-                                </div>
-                            </div>
-                    `;
+            <div class="gallery-item">
+              <div class="project-content">
+                <a href="project-details.html?id=${data.id}"><img class="project-image" src="images/${data.images[0]}"></a>
+                <h3>${data.title}</h3>
+                <p>${data.subtitle}</p>
+                <p class="text-right view-details"><a href="project-details.html?id=${data.id}">View Details &gt;</a></p>
+              </div>
+            </div>
+          `;
 				}
 			});
 		}, 200); // only needs a slight delay
@@ -275,26 +275,26 @@ function init() {
 			});
 			// Assemble all HTML for project details
 			detailArea.innerHTML = `
-                <div class="project-details-col">
-                    <div class="project-details-bkg">
-                        <h1 class="project-title" class="page-title">${currentProject.title}</h1>
-                        <hr>
-                        <h3 class="project-subtitle">${currentProject.subtitle}</h3>
-                        <p>${currentProject.desc}</p>
-                        <h4 class="project-section">Tech Stack</h4>
-                        <p>${currentProject.tech}</p>
-                        <h4 class="project-section">Noteworthy</h4>
-                        <ul>${bullets}</ul>
-                        <h4 class="project-section">Displays well on ${currentProject.devices}</h4>
-                        <p class="project-links">${links}</p>
-                        <hr>
-                        <p><a href='projects.html'>&lt; Back to Projects Gallery</a></p>
-                    </div>
-                </div>
-                <div class="project-details-col">
-                    ${images}
-                </div>
-            `;
+        <div class="project-details-col">
+          <div class="project-details-bkg">
+            <h1 class="project-title" class="page-title">${currentProject.title}</h1>
+            <hr>
+            <h3 class="project-subtitle">${currentProject.subtitle}</h3>
+            <p>${currentProject.desc}</p>
+            <h4 class="project-section">Tech Stack</h4>
+            <p>${currentProject.tech}</p>
+            <h4 class="project-section">Noteworthy</h4>
+            <ul>${bullets}</ul>
+            <h4 class="project-section">Displays well on ${currentProject.devices}</h4>
+            <p class="project-links">${links}</p>
+            <hr>
+            <p><a href='projects.html'>&lt; Back to Projects Gallery</a></p>
+          </div>
+        </div>
+        <div class="project-details-col">
+          ${images}
+        </div>
+      `;
 		}, 200); // only needs a slight delay
 	}
 
