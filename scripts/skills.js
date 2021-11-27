@@ -62,7 +62,7 @@ window.addEventListener("load", () => {
             <div class="content-block skills-subsection">
               <div class="content-primary">
                 <div class="content-primary-text skills-list">
-                  <p class="content-header">${techSkillsCategories[techCategory].category}</p>
+                  <p class="content-header skills-category">${techSkillsCategories[techCategory].category}</p>
                   <div>${techSkillsCategories[techCategory].list}</div> 
                 </div>
               </div>
@@ -79,7 +79,7 @@ window.addEventListener("load", () => {
             <div class="content-block skills-subsection">
               <div class="content-primary">
                 <div class="content-primary-text skills-list">
-                  <p class="content-header">${generalSkillsCategories[generalCategory].category}</p>
+                  <p class="content-header skills-category">${generalSkillsCategories[generalCategory].category}</p>
                   <div>${generalSkillsCategories[generalCategory].list}</div> 
                 </div>
               </div>

@@ -39,11 +39,15 @@
 }
 
 .skills-list {
-  margin: 0px;
+  margin-left: 5px !important;
 }
 
 .skills-name {
   margin: 0px;
+}
+
+.skills-category {
+  margin-bottom: 8px !important;
 }
 
 @media screen and (max-width: 800px) {

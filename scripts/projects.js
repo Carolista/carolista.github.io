@@ -95,8 +95,13 @@ window.addEventListener("load", () => {
           <ul>${bullets}</ul>
           <h4 class="project-section">Displays well on ${currentProject.devices}</h4>
           <p class="project-links">${links}</p>
-          <p><a href='projects.html'>&lt; Back to Projects Gallery</a></p>
-        </div>
+          </div>
+          <div class="project-back-bar">
+            <a class="project-back-link" href='projects.html'>
+              <i class="project-back-arrow fas fa-chevron-circle-left"></i>
+              Back to Projects Gallery
+            </a>
+          </div>
       </div>
       <div class="project-details-col">
         ${images}

@@ -195,28 +195,28 @@ td {
 .content-hover-bar {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   align-items: center;
   background-image: linear-gradient(to bottom, #193a03 0, #376618 3%, $dark-green-color 18%, $dark-green-color 100%);
-  filter: grayscale(100%);
+  // filter: grayscale(100%);
   color: $highlight-color;
   height: 40px;
   width: 100%;
-  padding: 0px 15px;
-  z-index: 9;
-  transition: filter 1.3s;
+  padding-top: 0px;
+  padding-left: 15px;
+  // transition: filter 1.3s;
 }
 .content-animated-box:hover .content-hover-bar {
-  filter: grayscale(0%);
-  transition: filter 0.4s;
+  // filter: grayscale(0%);
+  // transition: filter 0.4s;
 }
 
-#content-arrow {
+.content-arrow {
   font-size: 1.2em;
+  margin-right: 8px;
   transition: 1.2s
 }
-.content-animated-box:hover #content-arrow {
-  transform: rotate(180deg);
+.content-animated-box:hover .content-arrow {
+  transform: rotate(180deg) translateY(0px);
 }
 
 .content-secondary {
@@ -239,14 +239,15 @@ td {
   font-family: Lexend Deca;
 	font-weight: 500;
 	font-size: 1.2rem;
-  color: $dark-green-color;
+  margin: 0;
+  // color: $dark-green-color;
 }
 
 .content-subheader {
 	font-weight: 400;
 	font-size: 1rem;
 	color: $highlight-color;
-	margin-top: 10px;
+	margin-top: 6px;
 }
 
 .content-logo-container {

@@ -41,8 +41,8 @@ window.addEventListener("load", () => {
           </div>
           <div class="content-animated-box">
             <div class="content-hover-bar">
+              <i class="content-arrow fas fa-chevron-circle-down"></i>
               <p class="content-subheader">${data.title}</p>
-              <i id="content-arrow" class="fas fa-chevron-circle-down"></i>
               </div>
             <div class="content-secondary">
               <div class="content-description">${data.desc}</div>
