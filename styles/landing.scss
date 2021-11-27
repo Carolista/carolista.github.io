@@ -2,6 +2,28 @@
 
 // NEW INDEX
 
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+  min-height: 100%;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	color: $primary-color;
+	font-family: $primary-font;
+	font-size: 11pt;
+	font-weight: 400;
+	background-color: $highlight-color;
+	min-height: 100vh;
+	overflow-x: hidden;
+}
+
 #logo-container {
 	display: flex;
 	align-items: center;

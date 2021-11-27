@@ -58,11 +58,13 @@ window.addEventListener("load", () => {
 			let allTechSkills = "";
 			for (techCategory in techSkillsCategories) {
 				allTechSkills += `
-          <div class="content-block skills-subsection">
-            <div class="content-primary">
-              <div class="content-primary-text skills-list">
-                <p class="content-header">${techSkillsCategories[techCategory].category}</p>
-                <div>${techSkillsCategories[techCategory].list}</div> 
+          <div class="content-item">
+            <div class="content-block skills-subsection">
+              <div class="content-primary">
+                <div class="content-primary-text skills-list">
+                  <p class="content-header">${techSkillsCategories[techCategory].category}</p>
+                  <div>${techSkillsCategories[techCategory].list}</div> 
+                </div>
               </div>
             </div>
           </div>
@@ -73,11 +75,13 @@ window.addEventListener("load", () => {
 			let allGeneralSkills = "";
 			for (generalCategory in generalSkillsCategories) {
 				allGeneralSkills += `
-          <div class="content-block skills-subsection">
-            <div class="content-primary">
-              <div class="content-primary-text skills-list">
-                <p class="content-header">${generalSkillsCategories[generalCategory].category}</p>
-                <div>${generalSkillsCategories[generalCategory].list}</div> 
+          <div class="content-item">
+            <div class="content-block skills-subsection">
+              <div class="content-primary">
+                <div class="content-primary-text skills-list">
+                  <p class="content-header">${generalSkillsCategories[generalCategory].category}</p>
+                  <div>${generalSkillsCategories[generalCategory].list}</div> 
+                </div>
               </div>
             </div>
           </div>

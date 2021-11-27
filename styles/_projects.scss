@@ -1,0 +1,164 @@
+
+/** PROJECT GALLERY PAGE **/
+
+// TODO: Create both small & large shots of projects and use large for modal only
+
+.view-details {
+	width: 100%;
+	padding-top: 10px;
+	margin-bottom: 0px;
+	border-top: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.gallery-container {
+	columns: 3;
+	column-gap: 15px;
+}
+
+.gallery-item {
+	display: inline-block;
+	vertical-align: top;
+	margin-bottom: 15px;
+	width: 100%;
+	filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.3));
+	transition: filter 0.2s ease-in-out;
+  &:hover {
+    filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, 0.6));
+  }
+}
+
+.project-content {
+	background-color: white;
+	padding: 15px;
+}
+
+.project-image {
+	width: 100%;
+	border: 1px solid $muted-color;
+}
+
+.project-name {
+  font-family: $header-font;
+	font-weight: 500;
+	font-size: 1.1rem;
+  color: $dark-green-color;
+  margin-top: 8px;
+}
+
+.project-tagline {
+  font-size: 0.9rem;
+  margin-top: -3px;
+}
+
+
+/** PROJECT DETAILS PAGE **/
+
+.project-section {
+	margin: 20px 0px 5px;
+}
+
+.project-title {
+  font-family: $header-font;
+	margin-bottom: 5px;
+  color: $dark-green-color;
+}
+
+.project-subtitle {
+	margin-bottom: 15px;
+}
+
+// for links to code and demo
+.project-links {
+	font-size: 1.3em;
+	margin: 20px 0px;
+}
+
+.project-details-image {
+	width: 100%;
+	border: 1px solid $muted-color;
+	margin-bottom: 20px;
+  cursor: pointer;
+	filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.3));
+	transition: filter 0.2s ease-in-out;
+  &:hover {
+    filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, 0.6));
+  }
+}
+
+.project-details-row,
+.project-details-row > .project-details-col {
+	padding: 10px;
+}
+
+.project-details-col {
+	float: left;
+	width: 50%;
+}
+
+.project-details-bkg {
+	background-color: $highlight-color;
+	padding: 15px 20px;
+}
+
+.modal {
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 20; /* Sit on top */
+	padding-top: 100px; /* Location of the box */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0, 0, 0); /* Fallback color */
+	background-color: rgba(0, 0, 0, 0.9); /* Black w/ opacity */
+}
+
+.modal-content {
+	margin: auto;
+	display: block;
+	width: 80%;
+	max-width: 700px;
+	animation-name: zoom;
+	animation-duration: 0.6s;
+}
+
+.close {
+	position: absolute;
+	top: 15px;
+	right: 35px;
+	color: #f1f1f1;
+	font-size: 40px;
+	font-weight: bold;
+	transition: 0.3s;
+  &:hover, &:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+	.gallery-container {
+		columns: 2;
+	}
+  .project-details-col {
+		width: 100%;
+	}
+	.project-detail-image {
+		width: 100%;
+		margin: 15px 0px 0px;
+	}
+}
+
+@media screen and (max-width: 800px) {
+	.gallery-container {
+		columns: 1;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.modal-content {
+		width: 100%;
+	}
+}
