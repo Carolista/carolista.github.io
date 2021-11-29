@@ -1,16 +1,12 @@
 // Event listener for page load
 window.addEventListener("load", () => init());
 
-// TODO: Edit data to add new projects, Udemy courses, etc
-
 function init() {
 
 	let page = location.href.split("\\").pop().split("/").pop();
 	let titleEnd = " Caroline Jones | Full Stack Developer";
 	
 	document.title += titleEnd;
-
-  
 
 	// Handle elements and events only on certain pages
 	if (page !== "" && page !== "index.html") {
@@ -24,13 +20,14 @@ function init() {
     `;
 
 		// HEADER
+    // TODO: make sure current page is indicated in nav box
 		const header = document.querySelector("header");
 		header.innerHTML = `
       <a href="home.html"><div id="name-box">
         <span class="text-light">Caroline&nbsp;</span><span class="text-heavy">Jones</span>
       </div></a>
       <div id="nav-box">
-        <div id="new-navbar">
+        <div id="navbar">
           <p class="highlighted"><a class="highlight" href="projects.html">Projects</a></p>
           <p class="highlighted"><a class="highlight" href="experience.html">Experience</a></p>
           <p class="highlighted"><a class="highlight" href="education.html">Education</a></p>

@@ -1,68 +1,68 @@
 /*** BACKGROUND & NAV ***/
 
 #backdrop-container {
-  display: block;
   position: fixed;
+  display: block;
+  background-color: $dark-shadow-color;
   height: 100vh;
   width: 100vw;
-  background-color: $dark-accent-color;
   z-index: 0;
 }
 
 #backdrop-left {
-  background-color: $muted-color;
-  display: block;
   position: fixed;
+  display: block;
   top: 0;
   left: 0;
-  z-index: 3;
+  background-color: $muted-color;
   width: 320px;
   height: 100vh;
+  z-index: 3;
   transform: skewX(-12deg) translate(-200px, 0);
 }
 
 #backdrop-center {
-  background-color: $muted-accent-color;
-  display: block;
   position: fixed;
+  display: block;
   top: 0;
   left: 0;
-  z-index: 2;
+  background-color: $muted-shadow-color;
   width: 240px;
   height: 100vh;
+  z-index: 2;
   transform: skewX(-20deg);
 }
 
 #backdrop-right {
-  background-color: $accent-color;
-  display: block;
   position: fixed;
+  display: block;
   top: 0;
   left: 0;
-  z-index: 1;
+  background-color: $accent-color;
   width: 360px;
   height: 100vh;
+  z-index: 1;
   transform: skewX(-10deg);
 }
 
 #name-box {
   position: fixed;
+  top: 20px;
+  left: 0px;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 50px;
-  top: 20px;
-  left: 0px;
-  font-weight: 200;
-  padding: 0px 18px 0px 14px;
   background-color: $primary-color;
   color: $contrast-color;
+  font-weight: 200;
   font-family: $title-font;
   text-transform: uppercase;
 	font-size: 2rem;
-  transition: 0.6s;
+  height: 50px;
+  padding: 0px 18px 0px 14px;
   cursor: pointer;
   z-index: 15;
+  transition: $short-transition;
   &:hover {
     transform: scale(1.1) translateX(14px)
   }
@@ -70,49 +70,49 @@
 
 #nav-box {
   position: fixed;
-  display: flex;
-  flex-direction: row;
-  width: 260px;
-  max-height: 40px;
   top: 120px;
   left: -180px;
+  display: flex;
+  flex-direction: row;
   color: $primary-color;
   font-family: $title-font;
   text-transform: uppercase;
-  transition: transform 0.6s, max-height 0.6s;
+  width: 260px;
+  max-height: 40px;
   overflow: hidden;
   z-index: 15;
+  transition: transform $short-transition, max-height $short-transition;
   &:hover {
     transform: translate(200px, 18px) scale(1.15);
     max-height: 250px;
   }
 }
 
-#new-navbar {
-  width: 220px;
-  background-color: $contrast-color;
+#navbar {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  padding: 20px 20px 10px 17px;
+  background-color: $contrast-color;
   font-size: 1.1rem;
+  width: 220px;
   margin: 0;
+  padding: 20px 20px 10px 17px;
 }
 
 #nav-arrow {
-  width: 40px;
-  height: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: $contrast-color;
   font-size: 1.5rem;
+  width: 40px;
+  height: 40px;
   margin: 0;
   transform: translate(-40px, 0);
 }
 
 #nav-arrow-icon {
-  transition: 0.6s
+  transition: $short-transition;
 }
 #nav-box:hover #nav-arrow-icon {
   transform: rotate(180deg);
@@ -120,25 +120,23 @@
 
 .highlighted {
   font-weight: 400;
-  transition: 0.8s;
+  transition: $short-transition;
   &:hover {
     cursor: pointer;
     transform: translateX(8px) scale(1.1);
   }
 }
 
-// TODO: make sure current page is indicated in nav box
-
 .highlight {
-  color: $primary-color;
-  font-weight: 400;
   flex: 1;
-  line-height: 1;
-  background-image: linear-gradient(to right, $medium-green-color 0, $extra-light-green-color  100%);
+  background-image: linear-gradient(to right, $medium-accent-color 0, $extra-light-accent-color  100%);
   background-position: 0 -0.1em;
   background-size: 0 100%;
   background-repeat: no-repeat;
-  transition: background 0.6s;
+  color: $primary-color;
+  font-weight: 400;
+  line-height: 1;
+  transition: background $short-transition;
   &:hover {
     background-size: 100% 100%;
     color: $primary-color;

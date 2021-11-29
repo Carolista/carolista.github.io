@@ -2,19 +2,11 @@
 @import "variables.scss";
 @import "backdrop-nav.scss";
 @import "home.scss";
-@import "skills.scss";
 @import "projects.scss";
-
-
-// TODO: see if any scss variables are no longer in use
-// TODO: make green variable names not color-specific
-// TODO: go through css and make order of properties consistent
-// TODO: separate out sass variables into importable file so it can be used for landing.scss as well
+@import "skills.scss";
 
 /*
-  Z-INDEX HEIRARCHY
-  40    
-  30    
+  Z-INDEX HEIRARCHY   
   20    modal
   15    nav menu
   10    main (index: text-container)
@@ -24,9 +16,9 @@
 */
 
 * {
-	box-sizing: border-box;
-	margin: 0;
+  margin: 0;
 	padding: 0;
+  box-sizing: border-box;
 }
 
 html {
@@ -36,11 +28,11 @@ html {
 body {
 	display: flex;
 	flex-direction: column;
+	background-color: $dark-shadow-color;
 	color: $primary-color;
 	font-family: $primary-font;
 	font-size: 11pt;
 	font-weight: 400;
-	background-color: $dark-accent-color;
 	min-height: 100vh;
 	overflow-x: hidden;
 }
@@ -51,24 +43,24 @@ body {
 }
 
 #page-content {
-  padding-bottom: 40px; // height of footer
+  padding-bottom: 40px;
   z-index: 5;
 }
 
 #page-title-box {
   position: absolute;
+  top: 20px;
+  right: 0px;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: $highlight-color;
-  background-color: $dark-green-color;
+  background-color: $dark-accent-color;
+  color: $contrast-color;
   font-family: $title-font;
   font-weight: 300;
   text-transform: uppercase;
 	font-size: 2rem;
   min-height: 50px;
-  top: 20px;
-  right: 0px;
   padding: 0px 18px;
   z-index: 5;
 }
@@ -82,8 +74,8 @@ main {
 	width: calc(100vw - 340px);
   min-width: 600px;
   max-width: 1000px;
-	padding: 120px 50px 0px 0px;
   margin: 0px 0px 40px auto;
+	padding: 120px 50px 0px 0px;
 	visibility: hidden; // until content loaded
 }
 
@@ -104,7 +96,7 @@ footer {
 	display: flex;
 	flex-direction: column;
   align-items: flex-end;
-  color: $light-accent-color;
+  color: $light-color;
   height: 50px;
 	width: 100vw;
 	padding: 0px 40px;
@@ -118,14 +110,14 @@ p {
 }
 
 a {
-	color: $medium-green-color;
+	color: $medium-accent-color;
   font-weight: 600;
   text-decoration: none;
   &:hover, &:focus, &:active {
-    color: $light-green-color;
+    color: $light-accent-color;
   }
   &:visited {
-    color: $dark-green-color;
+    color: $dark-accent-color;
   }
 }
 
@@ -134,14 +126,14 @@ ul {
 }
 
 td {
-	padding: 5px 5px 5px 0px;
 	vertical-align: top;
+	padding: 5px 5px 5px 0px;
 }
 
 .more-info {
   position: relative;
   display: block;
-  color: $highlight-color;
+  color: $contrast-color;
 	font-size: 1.1em;
 	font-style: italic;
   margin-bottom: 30px;
@@ -155,10 +147,6 @@ td {
   font-weight: 600;
 }
 
-// .content-container {
-  
-// }
-
 .content-item {
 	display: inline-block;
 	vertical-align: top;
@@ -169,19 +157,19 @@ td {
 .content-block {
 	display: flex;
 	flex-direction: column;
+	background-color: $contrast-color;
 	margin: 0;
-	background-color: $highlight-color;
 }
 
 .content-primary {
+  top: 0;
+  left: 0;
   display: flex;
   flex-direction: row;
   align-content: center;
   justify-content: flex-start;
-  top: 0;
-  left: 0;
-  padding: 15px 15px 12px 15px;
   margin: 0;
+  padding: 15px 15px 12px 15px;
   z-index: 11;
 }
 
@@ -198,31 +186,25 @@ td {
   flex-direction: column;
   margin: 0;
   padding: 0;
-  transition: 1.2s;
+  transition: $long-transition;
 }
 
 .content-hover-bar {
   display: flex;
   flex-direction: row;
   align-items: center;
-  background-image: linear-gradient(to bottom, #193a03 0, #376618 3%, $dark-green-color 18%, $dark-green-color 100%);
-  // filter: grayscale(100%);
-  color: $highlight-color;
+  background-image: linear-gradient(to bottom, #193a03 0, #376618 3%, $dark-accent-color 18%, $dark-accent-color 100%);
+  color: $contrast-color;
   height: 40px;
   width: 100%;
   padding-top: 0px;
   padding-left: 15px;
-  // transition: filter 1.3s;
-}
-.content-animated-box:hover .content-hover-bar {
-  // filter: grayscale(0%);
-  // transition: filter 0.4s;
 }
 
 .content-arrow {
   font-size: 1.2em;
   margin-right: 8px;
-  transition: 1.2s
+  transition: $long-transition;
 }
 .content-animated-box:hover .content-arrow {
   transform: rotate(180deg) translateY(0px);
@@ -230,7 +212,7 @@ td {
 
 .content-secondary {
   display: relative;
-  background-color: $highlight-color;
+  background-color: $contrast-color;
   max-height: 0px;
   overflow: hidden;
   transition: max-height 1.6s ease-out;
@@ -249,13 +231,12 @@ td {
 	font-weight: 500;
 	font-size: 1.2rem;
   margin: 0;
-  // color: $dark-green-color;
 }
 
 .content-subheader {
+	color: $contrast-color;
 	font-weight: 400;
 	font-size: 1rem;
-	color: $highlight-color;
 	margin-top: 6px;
 }
 
@@ -268,9 +249,5 @@ td {
 	width: 60px;
   height: auto;
   filter: grayscale(0%);
-  transition: filter 0.8s ease-out;
+  transition: filter $short-transition ease-out;
 }
-// .content-animated-box:hover .content-logo {
-//   filter: grayscale(0%);
-//   transition: filter 0.8s ease-out; // FIXME: this is not working
-// }

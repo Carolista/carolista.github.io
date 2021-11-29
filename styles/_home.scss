@@ -1,59 +1,14 @@
 /** HOME PAGE **/
 
-.all-content {
-	display: flex;
-	flex-direction: row;
-	height: 100%;
-}
-
-.left-container {
-	color: $contrast-color;
-	background-color: $dark-accent-color;
-	width: 300px;
-	height: 100%;
-	padding: 25px;
-	border-right: 10px solid $muted-accent-color;
-}
-
-.welcome-content {
-	position: relative;
-	z-index: 4;
-}
-
-.headshot {
-	width: 100%;
-	border: 3px $muted-accent-color solid;
-}
-
-.right-container {
-	margin: 40px;
-	width: 100%;
-}
-
 .home-content {
-  border-left: 8px solid $dark-green-color;
-}
-
-.content-area {
-	width: 100%;
-	background-color: rgba(255, 255, 255, 0.65);
-	padding: 25px;
-	border-top: 10px solid $light-accent-color;
-	margin: 0px 0px 30px;
-}
-
-.content-subheader {
-	color: $muted-accent-color;
-	font-size: 1.4rem;
-	font-weight: 600;
-	margin-bottom: 5px;
+  border-left: 8px solid $dark-accent-color;
 }
 
 .history-pic {
 	float: right;
 	max-width: 350px;
-	border: 5px solid $dark-accent-color;
 	margin: 0px 0px 10px 15px;
+	border: 5px solid $dark-shadow-color;
 }
 
 td.year {
@@ -63,12 +18,12 @@ td.year {
 }
 
 .gradient-text {
-	color: transparent;
-	background-image: linear-gradient(rgba(51, 51, 51, 1), rgba(51, 51, 51, 0));
+  background-image: linear-gradient(rgba(51, 51, 51, 1), rgba(51, 51, 51, 0));
 	background-size: 100%;
 	background-clip: text;
 	-webkit-background-clip: text;
 	-moz-background-clip: text;
+	color: transparent;
 	text-fill-color: transparent;
 	-webkit-text-fill-color: transparent;
 	-moz-text-fill-color: transparent;
@@ -80,15 +35,15 @@ td.year {
 }
 
 #timeline-button {
+	background-color: $accent-color;
 	color: $contrast-color;
 	font-weight: 600;
 	font-size: 0.9rem;
 	text-transform: uppercase;
-	background-color: $accent-color;
 	width: auto;
-	border-radius: 10px;
-	padding: 10px 15px;
 	margin: -90px 0px 90px;
+	padding: 10px 15px;
+	border-radius: 10px;
 	cursor: pointer;
 }
 
@@ -100,32 +55,16 @@ td.year {
 
 @media screen and (max-width: 800px) {
 	.history-pic {
-		width: 100%;
 		float: none;
+		width: 100%;
 		margin: 0px 0px 15px 0px;
 	}
 }
 
 @media screen and (max-width: 600px) {
-	.all-content {
-		flex-direction: column;
-	}
-	.left-container {
-		width: 100%;
-	}
-	.right-container {
-		width: 100%;
-		margin: 0px;
-		padding: 25px;
-	}
-	.history-area {
-		width: 100; // not sure why this is necessary
-	}
+
 	.history-pic {
 		max-width: 100%;
-	}
-	#landing-name {
-		font-size: 13vw;
 	}
 
 }
