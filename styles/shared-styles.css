@@ -688,7 +688,7 @@ body {
   font-weight: 300;
   text-transform: uppercase;
   font-size: 2rem;
-  height: 50px;
+  min-height: 50px;
   top: 20px;
   right: 0px;
   padding: 0px 18px;
@@ -709,15 +709,25 @@ main {
   width: calc(100vw - 340px);
   min-width: 600px;
   max-width: 1000px;
-  padding: 120px 50px 40px 0px;
-  margin: 0px 0px 0px auto;
+  padding: 120px 50px 0px 0px;
+  margin: 0px 0px 40px auto;
   visibility: hidden;
+}
+
+@media screen and (max-width: 850px) {
+  main {
+    top: 100px;
+    right: -5%;
+    width: 90%;
+    min-width: 90%;
+    max-width: 90%;
+    margin: 0px 0px 120px 5%;
+  }
 }
 
 footer {
   position: absolute;
   bottom: 0;
-  margin-top: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -731,7 +741,8 @@ footer {
   color: #eee;
   height: 50px;
   width: 100vw;
-  padding-right: 40px;
+  padding: 0px 40px;
+  margin-top: auto;
   z-index: 5;
 }
 
@@ -764,9 +775,12 @@ td {
 }
 
 .more-info {
+  position: relative;
+  display: block;
   color: white;
   font-size: 1.1em;
   font-style: italic;
+  margin-bottom: 30px;
 }
 
 .text-light {
@@ -775,11 +789,6 @@ td {
 
 .text-heavy {
   font-weight: 600;
-}
-
-.content-container {
-  -webkit-columns: 1;
-          columns: 1;
 }
 
 .content-item {
