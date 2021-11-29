@@ -1,0 +1,70 @@
+/** HOME PAGE **/
+
+.home-content {
+  border-left: 8px solid $dark-accent-color;
+}
+
+.history-pic {
+	float: right;
+	max-width: 350px;
+	margin: 0px 0px 10px 15px;
+	border: 5px solid $dark-shadow-color;
+}
+
+td.year {
+	font-size: 1.1em;
+	font-weight: 600;
+	width: 50px;
+}
+
+.gradient-text {
+  background-image: linear-gradient(rgba(51, 51, 51, 1), rgba(51, 51, 51, 0));
+	background-size: 100%;
+	background-clip: text;
+	-webkit-background-clip: text;
+	-moz-background-clip: text;
+	color: transparent;
+	text-fill-color: transparent;
+	-webkit-text-fill-color: transparent;
+	-moz-text-fill-color: transparent;
+}
+
+.timeline-button-container {
+	display: flex;
+	justify-content: center;
+}
+
+#timeline-button {
+	background-color: $accent-color;
+	color: $contrast-color;
+	font-weight: 600;
+	font-size: 0.9rem;
+	text-transform: uppercase;
+	width: auto;
+	margin: -90px 0px 90px;
+	padding: 10px 15px;
+	border-radius: 10px;
+	cursor: pointer;
+}
+
+@media screen and (max-width: 1100px) {
+	.history-pic {
+		width: 50%;
+	}
+}
+
+@media screen and (max-width: 800px) {
+	.history-pic {
+		float: none;
+		width: 100%;
+		margin: 0px 0px 15px 0px;
+	}
+}
+
+@media screen and (max-width: 600px) {
+
+	.history-pic {
+		max-width: 100%;
+	}
+
+}

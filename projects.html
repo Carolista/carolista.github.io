@@ -1,18 +1,32 @@
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width">
-        <title>Projects - </title>
-        <script src = "scripts.js"></script>
-    </head>
-    <body>
-        <header id="navbar"></header> <!-- content in scripts.js -->
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<title>Projects -</title>
+		<link rel="stylesheet" type="text/css" href="styles/global.css" />
+    <script src="https://kit.fontawesome.com/679a59d672.js" crossorigin="anonymous"></script>
+		<script src="scripts/global.js"></script>
+		<script src="scripts/projects.js"></script>
+	</head>
+	<body>
+    <div id="backdrop-container"><!-- content from global.js --></div>
+    <div id="page-container">
+      <div id="page-content">
+        <header><!-- content from global.js --></header>
+
         <main>
-            <h1 class="page-title">Projects</h1>
-            <div id="project-area" class="gallery-container"></div> <!-- content created from JSON in scripts.js -->
-            <p class="more-info">Additional small projects and practice exercises I've created for students can be found <a href="https://tinyurl.com/y3bn6st4" target="_blank">here</a>.</p>
+          <div id="page-title-box">Projects</div>
+          <div id="project-area" class="gallery-container"></div>
+          <!-- content from projects.js -->
+          <p class="more-info">
+            Additional small projects and practice exercises I've created for
+            students can be found
+            <a href="https://tinyurl.com/y3bn6st4" target="_blank">here</a>.
+          </p>
         </main>
 
-        <footer></footer> <!-- content in scripts.js -->
-    </body>
+        <footer><!-- content from global.js --></footer>
+      </div>
+    </div>
+	</body>
 </html>

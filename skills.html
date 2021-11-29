@@ -1,28 +1,38 @@
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width">
-        <title>Skills - </title>
-        <script src = "scripts.js"></script>
-    </head>
-    <body>
-        <header id="navbar"></header> <!-- content in scripts.js -->
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<title>Skills -</title>
+		<link rel="stylesheet" type="text/css" href="styles/global.css" />
+    <script src="https://kit.fontawesome.com/679a59d672.js" crossorigin="anonymous"></script>
+		<script src="scripts/global.js"></script>
+		<script src="scripts/skills.js"></script>
+	</head>
+	<body>
+
+    <div id="backdrop-container"><!-- content from global.js --></div>
+    <div id="page-container">
+      <div id="page-content">
+        <header><!-- content from global.js --></header>
+
         <main>
-            <h1 class="page-title">Skills</h1>
-            <div class="skills-container"> <!-- content in each section created from JSON in scripts.js -->
-                <div class="skills-subsection">
-                    <h2 class="skills-subheader">Tech Skills</h2>
-                    <hr class="muted-line">
-                    <div id="tech-skills-area" class="skills-group"></div>
-                </div>
-                <div class="skills-subsection">
-                    <h2 class="skills-subheader">General Skills</h2>
-                    <hr class="muted-line">
-                    <div id="general-skills-area" class="skills-group"></div>
-                </div>
-            </div> 
+          <div id="page-title-box">Skills</div>
+          <div id="skills-container">
+            <div class="content-item">
+              <p class="skills-subheader">Tech Skills</p>
+              <!-- content from skills.js -->
+            </div>
+            <div id="tech-skills-area" class="content-item skills-group"></div>
+            <div class="content-item">
+              <p class="skills-subheader">General Skills</p>  
+              <!-- content from skills.js -->   
+            </div>
+            <div id="general-skills-area" class="content-item skills-group"></div>
+          </div>
         </main>
 
-        <footer></footer> <!-- content in scripts.js -->
-    </body>
+        <footer><!-- content from global.js --></footer>
+      </div>
+    </div>
+	</body>
 </html>

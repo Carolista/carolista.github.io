@@ -1,0 +1,60 @@
+/** SKILLS PAGE **/
+
+#skills-container {
+  max-width: 500px;
+  margin-left: auto;
+}
+
+.skills-subsection {
+  display: inline-block;
+	vertical-align: top;
+	width: 100%;
+	margin: 20px 0px 0px;
+  border-left: 8px solid $dark-accent-color;
+}
+
+.skills-subheader {
+  position: relative;
+  top: 20px;
+  right: 0px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: $contrast-color;
+  color: $dark-accent-color;
+  font-family: $title-font;
+  font-weight: 600;
+  text-transform: uppercase;
+	font-size: 1.8rem;
+  height: 50px;
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 0px 20px;
+  border-left: 8px solid $dark-accent-color;
+}
+
+.skills-group {
+  columns: 2;
+	column-gap: 20px;
+}
+
+.skills-list {
+  margin-left: 5px !important;
+}
+
+.skills-name {
+  margin: 0px;
+}
+
+.skills-category {
+  margin-bottom: 8px !important;
+}
+
+@media screen and (max-width: 800px) {
+  #skills-container {
+    max-width: 300px;
+  }
+  .skills-group {
+    columns: 1;
+  }
+}
