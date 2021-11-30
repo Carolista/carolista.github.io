@@ -88,6 +88,20 @@
   }
 }
 
+#nav-bkg {
+  position: fixed;
+  display: none;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  opacity: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 12;
+  overflow: auto;
+  transition: opacity $shorter-transition;
+}
+
 #navbar {
   display: flex;
   flex-direction: column;

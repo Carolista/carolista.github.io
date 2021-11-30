@@ -118,7 +118,6 @@ window.addEventListener("load", () => {
     );
 
     document.addEventListener("click", (event) => {
-      console.log("I clicked to open the modal");
       [...projectImages].forEach((image) => {
         let id = image.id;
         if (event.target.matches(`#${id}`)) {

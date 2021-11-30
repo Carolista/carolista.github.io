@@ -8,24 +8,13 @@ function init() {
 	
 	document.title += titleEnd;
 
-	// Handle elements and events only on certain pages
-	if (page !== "" && page !== "index.html") {
-
-    // BACKDROP
-    const backdrop = document.querySelector("#backdrop-container");
-    backdrop.innerHTML = `
-      <div id="backdrop-right"></div>
-      <div id="backdrop-center"></div>
-      <div id="backdrop-left"></div>
-    `;
-
-		// HEADER
-    // TODO: make sure current page is indicated in nav box
-		const header = document.querySelector("header");
-		header.innerHTML = `
-      <a href="home.html"><div id="name-box">
-        <span class="text-light">Caroline&nbsp;</span><span class="text-heavy">Jones</span>
-      </div></a>
+  headerElements = `
+      <a href="home.html">
+        <div id="name-box">
+          <span class="text-light">Caroline&nbsp;</span><span class="text-heavy">Jones</span>
+        </div>
+      </a>
+      <div id="nav-bkg"></div>
       <div id="nav-box">
         <div id="navbar">
           <p class="highlighted"><a class="highlight" href="projects.html">Projects</a></p>
@@ -40,6 +29,41 @@ function init() {
         </div>
       </div>
     `;
+
+	// Handle elements and events only on certain pages
+	if (page !== "" && page !== "index.html") {
+
+    // BACKDROP
+    const backdrop = document.querySelector("#backdrop-container");
+    backdrop.innerHTML = `
+      <div id="backdrop-right"></div>
+      <div id="backdrop-center"></div>
+      <div id="backdrop-left"></div>
+    `;
+
+		// HEADER
+    // TODO: make sure current page is indicated in nav box
+    // TODO: change all the hover dropdowns to click dropdowns?
+		const header = document.querySelector("header");
+		header.innerHTML = headerElements;
+
+    const navBox = document.getElementById("nav-box");
+    const navBkg = document.querySelector("#nav-bkg");
+
+    navBox.addEventListener("mouseenter", () => {
+      navBkg.style.display = "block";
+      setTimeout(() => {
+        navBkg.style.opacity = 0.8;
+      }, 100);
+      
+    });
+    navBox.addEventListener("mouseleave", () => {
+      navBkg.style.opacity = 0;
+      setTimeout(() => {
+        navBkg.style.display = "none"
+      }, 500);
+    });
+
 
 		// FOOTER
 		const footer = document.querySelector("footer");

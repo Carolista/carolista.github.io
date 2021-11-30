@@ -110,6 +110,21 @@
   max-height: 250px;
 }
 
+#nav-bkg {
+  position: fixed;
+  display: none;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  opacity: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 12;
+  overflow: auto;
+  -webkit-transition: opacity 0.4s;
+  transition: opacity 0.4s;
+}
+
 #navbar {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -425,12 +440,12 @@ td.year {
 
 .modal {
   position: fixed;
+  display: none;
   left: 0;
   top: 0;
-  display: none;
+  background-color: rgba(1, 1, 1, 0.8);
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.9);
   padding-top: 100px;
   z-index: 20;
   overflow: auto;
