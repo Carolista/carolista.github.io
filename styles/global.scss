@@ -77,7 +77,7 @@ main {
   max-width: 1000px;
   margin: 0px 0px 40px auto;
 	padding: 120px 50px 0px 0px;
-	visibility: hidden; // until content loaded
+	visibility: hidden;
 }
 
 @media screen and (max-width: 850px) {
@@ -190,7 +190,7 @@ td {
   transition: $moderate-transition;
 }
 
-.content-hover-bar {
+.content-click-bar {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -200,15 +200,13 @@ td {
   width: 100%;
   padding-top: 0px;
   padding-left: 15px;
+  cursor: pointer;
 }
 
 .content-arrow {
   font-size: 1.2em;
   margin-right: 8px;
-  transition: $moderate-transition;
-}
-.content-animated-box:hover .content-arrow {
-  transform: rotate(180deg) translateY(0px);
+  cursor: pointer;
 }
 
 .content-secondary {
@@ -216,11 +214,6 @@ td {
   background-color: $contrast-color;
   max-height: 0px;
   overflow: hidden;
-  transition: max-height $moderate-transition ease-out;
-}
-.content-animated-box:hover .content-secondary {
-  max-height: 1000px;
-  transition: max-height $moderate-transition ease-out;
 }
 
 .content-description {
@@ -239,6 +232,7 @@ td {
 	font-weight: 400;
 	font-size: 1rem;
 	margin-top: 10px;
+  cursor: pointer;
 }
 
 .content-logo-container {
