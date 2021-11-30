@@ -1,6 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100;300;400;500;600&family=Quicksand:wght@300;400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100;300;400;500;600&family=Quicksand:wght@300;400;500;600;700&display=swap");
 @import "variables.scss";
 @import "backdrop-nav.scss";
+@import "education.scss";
 @import "home.scss";
 @import "projects.scss";
 @import "skills.scss";
@@ -186,7 +187,7 @@ td {
   flex-direction: column;
   margin: 0;
   padding: 0;
-  transition: $long-transition;
+  transition: $moderate-transition;
 }
 
 .content-hover-bar {
@@ -204,7 +205,7 @@ td {
 .content-arrow {
   font-size: 1.2em;
   margin-right: 8px;
-  transition: $long-transition;
+  transition: $moderate-transition;
 }
 .content-animated-box:hover .content-arrow {
   transform: rotate(180deg) translateY(0px);
@@ -215,11 +216,11 @@ td {
   background-color: $contrast-color;
   max-height: 0px;
   overflow: hidden;
-  transition: max-height 1.6s ease-out;
+  transition: max-height $moderate-transition ease-out;
 }
 .content-animated-box:hover .content-secondary {
-  max-height: 500px;
-  transition: max-height 1.6s ease-out;
+  max-height: 1000px;
+  transition: max-height $moderate-transition ease-out;
 }
 
 .content-description {
@@ -237,7 +238,7 @@ td {
 	color: $contrast-color;
 	font-weight: 400;
 	font-size: 1rem;
-	margin-top: 6px;
+	margin-top: 10px;
 }
 
 .content-logo-container {
@@ -248,6 +249,4 @@ td {
 .content-logo {
 	width: 60px;
   height: auto;
-  filter: grayscale(0%);
-  transition: filter $short-transition ease-out;
 }

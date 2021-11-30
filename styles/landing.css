@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100;300;400;500;600&family=Quicksand:wght@300;400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100;300;400;500;600&family=Quicksand:wght@300;400;500;600;700&display=swap");
 /*** BACKGROUND & NAV ***/
 #backdrop-container {
   position: fixed;
@@ -190,6 +190,23 @@
 
 .highlight:visited, .highlight:active {
   color: #333;
+}
+
+.course-category {
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-top: 15px;
+}
+
+.course-title {
+  font-weight: 500;
+}
+
+.course-instructor {
+  font-size: 0.85rem;
+  font-weight: 300;
+  text-transform: uppercase;
 }
 
 /** HOME PAGE **/
@@ -771,8 +788,8 @@ td {
           flex-direction: column;
   margin: 0;
   padding: 0;
-  -webkit-transition: 1.2s;
-  transition: 1.2s;
+  -webkit-transition: 1s;
+  transition: 1s;
 }
 
 .content-hover-bar {
@@ -798,8 +815,8 @@ td {
 .content-arrow {
   font-size: 1.2em;
   margin-right: 8px;
-  -webkit-transition: 1.2s;
-  transition: 1.2s;
+  -webkit-transition: 1s;
+  transition: 1s;
 }
 
 .content-animated-box:hover .content-arrow {
@@ -812,14 +829,14 @@ td {
   background-color: #fff;
   max-height: 0px;
   overflow: hidden;
-  -webkit-transition: max-height 1.6s ease-out;
-  transition: max-height 1.6s ease-out;
+  -webkit-transition: max-height 1s ease-out;
+  transition: max-height 1s ease-out;
 }
 
 .content-animated-box:hover .content-secondary {
-  max-height: 500px;
-  -webkit-transition: max-height 1.6s ease-out;
-  transition: max-height 1.6s ease-out;
+  max-height: 1000px;
+  -webkit-transition: max-height 1s ease-out;
+  transition: max-height 1s ease-out;
 }
 
 .content-description {
@@ -848,12 +865,6 @@ td {
 .content-logo {
   width: 60px;
   height: auto;
-  -webkit-filter: grayscale(0%);
-          filter: grayscale(0%);
-  -webkit-transition: -webkit-filter 0.6s ease-out;
-  transition: -webkit-filter 0.6s ease-out;
-  transition: filter 0.6s ease-out;
-  transition: filter 0.6s ease-out, -webkit-filter 0.6s ease-out;
 }
 
 * {
