@@ -42,7 +42,7 @@
         "id": 7,
         "title": "Dazzle Words",
         "subtitle": "turn your words into sparkling disco lights",
-        "desc": "This little app started as a hard-coded birthday card for my mom in 2020, but I circled back around to it because I wanted to take the concept further. I created a full character bank with both alphanumeric and special characters, implemented a form for user input, and added multiple color schemes. There is also a dark mode and light mode. The animation with randomized rotation rates makes for a really fun effect.",
+        "desc": "This little app started as a hard-coded birthday card for my mom in 2020, but I circled back around to it because I wanted to take the concept further. I created a full character bank with both alphanumeric and special characters, implemented a form for user input, and added multiple color schemes. There is also a dark mode and light mode. The animation with randomized shapes and rotation rates makes for a really fun effect.",
         "tech": "DOM - HTML, SCSS, & JavaScript",
         "noteworthy": ["Upgraded CSS to SCSS.", "Used keyframes to rotate between 10 colors in each scheme.", "Implemented media queries and flexbox wrapping to make app responsive for all devices.", "Added validation at certain screen widths to warn about long words not being ideal."],
         "devices": "most devices",
@@ -62,7 +62,7 @@
         "demo": { "type": "Try it now!", "url": ""},
         "code": { "type": "GitHub", "url": "https://github.com/Carolista/carolista.github.io"},
         "images": ["portfolio-meta.png", "portfolio-01.png", "portfolio-02.png", "portfolio-03.png"],
-        "inProgress": false
+        "inProgress": true
     },
     {
         "id": 6,
@@ -111,7 +111,7 @@
         "tech": "DOM - HTML, CSS, & JavaScript",
         "noteworthy": ["The search results can be narrowed through a combination of a radio button selection, a dropdown selection, and a keyword.", "As a bonus, I included a bit of animation using CSS and keyframes."],
         "devices": "desktop browsers and tablets",
-        "demo": { "type": "Try it now!", "url": "https://carolista.github.io/LC-A5-prep-3/"},
+        "demo": { "type": "Try it now!", "url": "https://carolista.github.io/LC-A5-Prep-3/"},
         "code": { "type": "GitHub", "url": "https://github.com/Carolista/LC-A5-prep-3"},
         "images": ["pour-me-another-01.png", "pour-me-another-02.png"],
         "inProgress": false
@@ -141,5 +141,45 @@
         "code": { "type": "GitHub", "url": "https://github.com/Carolista/LC-A6-Prep"},
         "images": ["all-the-lists-01.png", "all-the-lists-02.png"],
         "inProgress": true
-    }
+    },
+    {
+      "id": 11,
+      "title": "Healthy Habits",
+      "subtitle": "track your food and exercise",
+      "desc": "This simple app was created as a practice exercise for LaunchCode students and is built with ReactJS. It allows a user to add water intake, track steps, and log food and exercise to get a net calorie count.",
+      "tech": "React, JavaScript, CSS, and JSX",
+      "noteworthy": ["Multiple components allow students to learn how to pass data through props and lift state with event handlers.", "Simple forms give students the opportunity to practice working with state variables to manage user input.", "The styled-components and prop-types libraries are used to expose students to common tools used in the professional setting."],
+      "devices": "most devices",
+      "demo": { "type": "Try it now!", "url": ""},
+      "code": { "type": "GitHub", "url": "https://github.com/Carolista/LC-React-Studio04"},
+      "images": ["healthy-habits-01.png", "healthy-habits-02.png"],
+      "inProgress": false
+    },
+    {
+      "id": 12,
+      "title": "Shear Perfection",
+      "subtitle": "get to know the stylists",
+      "desc": "This mock web page was created as a practice exercise for LaunchCode students and is built with ReactJS. It allows a user to interact with a grid of photos and learn the names and basic information about each stylist in a fictitious salon.",
+      "tech": "React, JavaScript, CSS, and JSX",
+      "noteworthy": ["The useRef hook binds together each paired instance of the modal and photo card components.", "Modals are placed into portals outside the parent-child tree of components.", "The styled-components and prop-types libraries are used to expose students to common tools used in the professional setting."],
+      "devices": "desktop browsers and tablets",
+      "demo": { "type": "Try it now!", "url": ""},
+      "code": { "type": "GitHub", "url": "https://github.com/Carolista/LC-React-Studio10"},
+      "images": ["shear-perfection-01.png", "shear-perfection-02.png"],
+      "inProgress": false
+  },
+  {
+    "id": 13,
+    "title": "Laguna Beach Yoga Retreat",
+    "subtitle": "book a relaxing stay now",
+    "desc": "This mock web page was created as a practice exercise for LaunchCode students and is built with ReactJS. It allows a user to fill out an extensive form for booking a stay at a fictitious yoga retreat.",
+    "tech": "React, JavaScript, CSS, and JSX",
+    "noteworthy": ["Multiple components used for reusable form inputs.", "Form validation implemented for multiple input types.", "Some parts of the form displayed conditionally.", "The Bootstrap and prop-types libraries are used to expose students to common tools used in the professional setting."],
+    "devices": "desktop browsers and tablets",
+    "demo": { "type": "Try it now!", "url": ""},
+    "code": { "type": "GitHub", "url": "https://github.com/Carolista/LC-React-Studio16"},
+    "images": ["laguna-beach-01.png", "laguna-beach-02.png"],
+    "inProgress": false
+}
+
 ]

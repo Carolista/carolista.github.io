@@ -4,9 +4,9 @@
         "employer": "Apex Systems (at Lumen Technologies)",
         "period": "April 2021 - Present",
         "title": "Full Stack Engineer",
-        "type": "Contract",
+        "type": "Full-time",
         "location": "St. Louis, MO",
-        "desc": "Re-engineering key platforms and applications at Lumen Technologies to bring one-stop-shopping to customers through cloud application management and a microservices architecture. Projects include ServiceNow integration, reworking UIs, API development for a BaaS solution, and Morpheus integration -- utilizing Python, Node.js, Java, Vue.js, React, TypeScript, Spring Boot, and more.",
+        "desc": "Re-engineering key platforms and applications for cloud application management and microservices with Morpheus integration at Lumen Technologies. Currently building a custom UI from the ground up with React and Redux, using Jest with Enzyme for unit testing and Cucumber/Puppeteer for end-to-end testing, improving UX. Contributing to development of APIs based in Ruby with Grape and ActiveRecord, utilizing RSpec for test-driven development. Improving CI/CD for multiple environments with automated Jenkins pipelines.",
         "image": "apex-logo.jpg",
         "website": "https://www.lumen.com"
     },
@@ -17,7 +17,7 @@
         "title": "Tech Leadership Fellow",
         "type": "Freelance",
         "location": "St. Louis, MO",
-        "desc": "Mentoring students in the intensive CoderGirl program (WebDev/FrontEnd track). Unit 1 covered JavaScript, HTML, CSS, consuming APIs, the DOM, TypeScript, and Angular, including skills in unit testing, git workflow, and more. Unit 2 takes students on a deep dive into Angular and introduces Bootstrap. In Liftoff, the course focuses on career prep with resume-building, behavioral and technical interview skills, and a capstone project using Agile methodology.</p> <p>Designed <a href='https://tinyurl.com/y3bn6st4' target='_blank'>50+ practice problems/projects for students</a> to complement the Unit 1 LaunchCode curriculum and help students prepare for more difficult graded assignments. These exercises are also now in use by students in LaunchCode's LC101 and CodeCamp programs. More exercises are being added regularly.</p>",
+        "desc": "Mentoring students in the intensive CoderGirl program (WebDev/FrontEnd track). Unit 1 covers JavaScript, HTML, CSS, consuming APIs, the DOM, TypeScript, and Angular, including skills in unit testing, git workflow, and more. Unit 2 takes students on a deep dive into React (Angular in previous cohorts). In Liftoff, the course focuses on career prep with resume-building, behavioral and technical interview skills, and a capstone project using Agile methodology.</p> <p>Designed <a href='https://tinyurl.com/y3bn6st4' target='_blank'>50+ practice problems/projects for students</a> to complement the Unit 1 LaunchCode curriculum and help students prepare for more difficult graded assignments. These exercises are also now in use by students in LaunchCode's LC101 and CodeCamp programs. More exercises are being added regularly.</p>",
         "image": "lc-logo.png",
         "website": "https://www.launchcode.org"
     },

@@ -1,0 +1,177 @@
+[
+  {
+    "id": 1,
+    "title": "Creative CSS and JavaScript Effects and Animation",
+    "instructor": "Md Irshad Ansari",
+    "category": "Front End",
+    "subject": "CSS"
+  },
+  {
+    "id": 2,
+    "title": "Regular Expressions for Beginners and Beyond",
+    "instructor": "Bonnie Schulkin",
+    "category": "Developer Skills",
+    "subject": "RegEx"
+  },
+  {
+    "id": 3,
+    "title": "Kubernetes for the Absolute Beginner",
+    "instructor": "Mumshad Mannambeth",
+    "category": "Back End",
+    "subject": "Kubernetes"
+  },
+  {
+    "id": 4,
+    "title": "Beginning Kubernetes: Practical Guide",
+    "instructor": "Dhiman Halder",
+    "category": "Back End",
+    "subject": "Kubernetes"
+  },
+  {
+    "id": 5,
+    "title": "Jenkins Beginner Tutorial",
+    "instructor": "Raghav Pal",
+    "category": "Back End",
+    "subject": "Jenkins"
+  },
+  {
+    "id": 6,
+    "title": "Groovy - Step by Step for Beginners",
+    "instructor": "Raghav Pal",
+    "category": "Back End",
+    "subject": "Groovy"
+  },
+  {
+    "id": 7,
+    "title": "DevOps Crash Course: CI/CD with Jenkins Pipelines",
+    "instructor": "TetraNoodle Team",
+    "category": "Back End",
+    "subject": "Jenkins"
+  },
+  {
+    "id": 8,
+    "title": "Docker Crash Course: Learn from Experience",
+    "instructor": "Cristovao Cordeiro",
+    "category": "Back End",
+    "subject": "Docker"
+  },
+  {
+    "id": 9,
+    "title": "Docker and Containers Essentials",
+    "instructor": "Nelson Jamal",
+    "category": "Back End",
+    "subject": "Docker"
+  },
+  {
+    "id": 10,
+    "title": "Vim Essentials",
+    "instructor": "Joseph Call",
+    "category": "Developer Skills",
+    "subject": "Vim"
+  },
+  {
+    "id": 11,
+    "title": "Bash Shell Scripting",
+    "instructor": "Koen Woortman",
+    "category": "Back End",
+    "subject": "Shell Script"
+  },
+  {
+    "id": 12,
+    "title": "Markdown Fundamentals",
+    "instructor": "8Cube Digital",
+    "category": "Developer Skills",
+    "subject": "Markdown"
+  },
+  {
+    "id": 13,
+    "title": "Shell Scripting: Discover How to Automate Command Line Tasks",
+    "instructor": "Jason Cannon",
+    "category": "Back End",
+    "subject": "Shell Script"
+  },
+  {
+    "id": 14,
+    "title": "The Complete Regular Expressions Course",
+    "instructor": "Sujith George",
+    "category": "Developer Skills",
+    "subject": "RegEx"
+  },
+  {
+    "id": 15,
+    "title": "RegEx Academy: An Introduction to Text Parsing",
+    "instructor": "Mike L",
+    "category": "Developer Skills",
+    "subject": "RegEx"
+  },
+  {
+    "id": 16,
+    "title": "Unlock VS Code",
+    "instructor": "Andrew Holloway",
+    "category": "Developer Skills",
+    "subject": "VS Code"
+  },
+  {
+    "id": 17,
+    "title": "Jenkins: Beginner to Pro",
+    "instructor": "Warp 9 Training",
+    "category": "Back End",
+    "subject": "Jenkins"
+  },
+  {
+    "id": 18,
+    "title": "Git for Geeks",
+    "instructor": "Jason Taylor",
+    "category": "Developer Skills",
+    "subject": "CLI"
+  },
+  {
+    "id": 19,
+    "title": "Testing Ruby with RSpec",
+    "instructor": "Boris Paskhaver",
+    "category": "Back End",
+    "subject": "Ruby"
+  },
+  {
+    "id": 20,
+    "title": "Ruby Programming for Beginners",
+    "instructor": "Huw Collingbourne",
+    "category": "Back End",
+    "subject": "Ruby"
+  },
+  {
+    "id": 21,
+    "title": "Unleashing the Mac OS X Terminal",
+    "instructor": "Jason Taylor",
+    "category": "Developer Skills",
+    "subject": "CLI"
+  },
+  {
+    "id": 22,
+    "title": "Learn the Mac Terminal Today",
+    "instructor": "Dustin Laverick",
+    "category": "Developer Skills",
+    "subject": "CLI"
+  },
+  {
+    "id": 23,
+    "title": "React, Redux, & Enzyme",
+    "instructor": "David Joseph Katz",
+    "category": "Front End",
+    "subject": "React"
+  },
+  {
+    "id": 24,
+    "title": "React - The Complete Guide",
+    "instructor": "Maximilian Schwartzmüller",
+    "category": "Front End",
+    "subject": "React"
+  },
+  {
+    "id": 25,
+    "title": "Angular - The Complete Guide",
+    "instructor": "Maximilian Schwartzmüller",
+    "category": "Front End",
+    "subject": "Angular"
+  }
+]

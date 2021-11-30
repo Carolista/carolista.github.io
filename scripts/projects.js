@@ -88,7 +88,7 @@ window.addEventListener("load", () => {
     detailArea.innerHTML = `
       <div class="project-details-col">
         <div class="project-details-bkg">
-          <h1 class="project-title" class="page-title">${currentProject.title}</h1>
+          <h1 class="project-title">${currentProject.title}</h1>
           <h3 class="project-subtitle">${currentProject.subtitle}</h3>
           <p>${currentProject.desc}</p>
           <h4 class="project-section">Tech Stack</h4>
@@ -111,24 +111,24 @@ window.addEventListener("load", () => {
     `;
 
     // MODAL FOR PROJECT DETAILS IMAGES
-    if (page.includes("project-details")) {
-      const modal = document.getElementById("modal");
-      const modalImage = document.getElementById("modal-image");
-      const projectImages = document.getElementsByClassName(
-        "project-details-image"
-      );
+    const modal = document.getElementById("modal");
+    const modalImage = document.getElementById("modal-image");
+    const projectImages = document.getElementsByClassName(
+      "project-details-image"
+    );
 
-      document.addEventListener("click", (event) => {
-        [...projectImages].forEach((image) => {
-          let id = image.id;
-          if (event.target.matches(`#${id}`)) {
-            modalImage.src = event.target.src;
-            modal.style.display = "block";
-          }
-        });
-        if (event.target.matches(".close")) modal.style.display = "none";
+    document.addEventListener("click", (event) => {
+      console.log("I clicked to open the modal");
+      [...projectImages].forEach((image) => {
+        let id = image.id;
+        if (event.target.matches(`#${id}`)) {
+          modalImage.src = event.target.src;
+          modal.style.display = "block";
+        }
       });
-    }
+      if (event.target.matches(".close")) modal.style.display = "none";
+    });
+
 	}
 
 });

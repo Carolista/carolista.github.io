@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100;300;400;500;600&family=Quicksand:wght@300;400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100;300;400;500;600&family=Quicksand:wght@300;400;500;600;700&display=swap");
 /*** BACKGROUND & NAV ***/
 #backdrop-container {
   position: fixed;
@@ -192,6 +192,23 @@
   color: #333;
 }
 
+.course-category {
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-top: 15px;
+}
+
+.course-title {
+  font-weight: 500;
+}
+
+.course-instructor {
+  font-size: 0.85rem;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
 /** HOME PAGE **/
 .home-content {
   border-left: 8px solid #437e1c;
@@ -328,6 +345,7 @@ td.year {
 
 .project-title {
   color: #437e1c;
+  font-size: 1.4rem;
   font-family: "Lexend Deca", sans-serif;
   margin-bottom: 5px;
 }
@@ -344,7 +362,7 @@ td.year {
 .project-details-image {
   width: 100%;
   margin-bottom: 20px;
-  border: 1px solid #888;
+  border: 1px solid #222;
   cursor: pointer;
   -webkit-filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.3));
           filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.3));
@@ -420,8 +438,7 @@ td.year {
 
 .modal-content {
   display: block;
-  width: 80%;
-  max-width: 700px;
+  max-height: 80vh;
   margin: auto;
   -webkit-animation: zoom 0.6s;
           animation: zoom 0.6s;
@@ -771,8 +788,8 @@ td {
           flex-direction: column;
   margin: 0;
   padding: 0;
-  -webkit-transition: 1.2s;
-  transition: 1.2s;
+  -webkit-transition: 1s;
+  transition: 1s;
 }
 
 .content-hover-bar {
@@ -798,8 +815,8 @@ td {
 .content-arrow {
   font-size: 1.2em;
   margin-right: 8px;
-  -webkit-transition: 1.2s;
-  transition: 1.2s;
+  -webkit-transition: 1s;
+  transition: 1s;
 }
 
 .content-animated-box:hover .content-arrow {
@@ -812,14 +829,14 @@ td {
   background-color: #fff;
   max-height: 0px;
   overflow: hidden;
-  -webkit-transition: max-height 1.6s ease-out;
-  transition: max-height 1.6s ease-out;
+  -webkit-transition: max-height 1s ease-out;
+  transition: max-height 1s ease-out;
 }
 
 .content-animated-box:hover .content-secondary {
-  max-height: 500px;
-  -webkit-transition: max-height 1.6s ease-out;
-  transition: max-height 1.6s ease-out;
+  max-height: 1000px;
+  -webkit-transition: max-height 1s ease-out;
+  transition: max-height 1s ease-out;
 }
 
 .content-description {
@@ -837,7 +854,7 @@ td {
   color: #fff;
   font-weight: 400;
   font-size: 1rem;
-  margin-top: 6px;
+  margin-top: 10px;
 }
 
 .content-logo-container {
@@ -848,11 +865,5 @@ td {
 .content-logo {
   width: 60px;
   height: auto;
-  -webkit-filter: grayscale(0%);
-          filter: grayscale(0%);
-  -webkit-transition: -webkit-filter 0.6s ease-out;
-  transition: -webkit-filter 0.6s ease-out;
-  transition: filter 0.6s ease-out;
-  transition: filter 0.6s ease-out, -webkit-filter 0.6s ease-out;
 }
 /*# sourceMappingURL=global.css.map */
