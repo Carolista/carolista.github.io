@@ -1,4 +1,3 @@
-// Event listener for page load
 window.addEventListener("load", () => init());
 
 function init() {
@@ -37,7 +36,6 @@ function init() {
       </div>
     `;
 
-	// Handle elements and events only on certain pages
 	if (page !== "" && page !== "index.html") {
 
     // BACKDROP
@@ -49,7 +47,6 @@ function init() {
     `;
 
 		// HEADER
-    // TODO: make sure current page is indicated in nav box
 		const header = document.querySelector("header");
 		header.innerHTML = headerElements;
 
@@ -85,7 +82,7 @@ function init() {
     if (document.title !== titleEnd.trim()) {
       document.querySelector("main").style.visibility = "visible"; // FIXME: main is not outermost container on most pages
     }
-  }, 200); // only needs a slight delay
+  }, 200);
 
   document.addEventListener("click", (e) => {
     if (e.target.classList.contains("content-click-bar") || e.target.classList.contains("content-subheader") || e.target.classList.contains("content-arrow")) {

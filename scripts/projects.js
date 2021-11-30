@@ -1,6 +1,4 @@
 window.addEventListener("load", () => {
-
-  // TODO: fix Pour Me Another demo link
   
   let titleEnd = " Caroline Jones | Full Stack Developer";
   let projectData = [];

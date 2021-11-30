@@ -22,7 +22,7 @@ window.addEventListener("load", () => {
   }
 
   function generateTimeline(num) {
-    timelineTable.innerHTML = ""; // reset
+    timelineTable.innerHTML = "";
     timelineData.forEach((data) => {
       timelineTable.innerHTML += `
         <tr>
@@ -36,12 +36,12 @@ window.addEventListener("load", () => {
   function displayTimeline(num) {
     setTimeout(() => {
       generateTimeline(num);
-    }, 300); // only needs a slight delay
+    }, 300); 
   }
 
   function toggleTimeline() {
     if (isCollapsed) {
-      generateTimeline(timelineData.length); // get all
+      generateTimeline(timelineData.length);
       timelineTable.classList.remove("gradient-text");
       timelineButton.innerHTML = "&uarr; COLLAPSE &uarr;";
       timelineButton.style.margin = "-40px 0px 40px";
