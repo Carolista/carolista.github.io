@@ -406,5 +406,83 @@
         "skillName": "Collaboration",
         "category": "Values",
         "type": "General"
+    },
+    {
+        "id": 69,
+        "skillName": "React",
+        "category": "Frameworks",
+        "type": "Tech"
+    },
+    {
+        "id": 70,
+        "skillName": "Redux",
+        "category": "Frameworks",
+        "type": "Tech"
+    },
+    {
+        "id": 71,
+        "skillName": "Jest",
+        "category": "Tools",
+        "type": "Tech"
+    },
+    {
+        "id": 72,
+        "skillName": "Enzyme",
+        "category": "Tools",
+        "type": "Tech"
+    },
+    {
+        "id": 73,
+        "skillName": "Cucumber",
+        "category": "Tools",
+        "type": "Tech"
+    },
+    {
+        "id": 74,
+        "skillName": "Puppeteer",
+        "category": "Tools",
+        "type": "Tech"
+    },
+    {
+        "id": 75,
+        "skillName": "Ruby",
+        "category": "Languages",
+        "type": "Tech"
+    },
+    {
+        "id": 76,
+        "skillName": "RSpec",
+        "category": "Tools",
+        "type": "Tech"
+    },
+    {
+        "id": 77,
+        "skillName": "Groovy",
+        "category": "Languages",
+        "type": "Tech"
+    },
+    {
+        "id": 78,
+        "skillName": "Jenkins",
+        "category": "Tools",
+        "type": "Tech"
+    },
+    {
+        "id": 79,
+        "skillName": "Docker",
+        "category": "Frameworks",
+        "type": "Tech"
+    },
+    {
+        "id": 80,
+        "skillName": "Kubernetes",
+        "category": "Frameworks",
+        "type": "Tech"
+    },
+    {
+        "id": 81,
+        "skillName": "RegEx",
+        "category": "Tools",
+        "type": "Tech"
     }
 ]
