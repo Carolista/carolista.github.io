@@ -80,8 +80,8 @@ function init() {
 
   setTimeout(() => {
     if (document.title !== titleEnd.trim()) {
-      document.querySelector("main").style.visibility = "visible"; // FIXME: main is not outermost container on most pages
-    }
+      document.querySelector("main").style.visibility = "visible";
+    } 
   }, 200);
 
   document.addEventListener("click", (e) => {
