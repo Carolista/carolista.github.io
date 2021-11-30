@@ -93,7 +93,7 @@ function init() {
       let desc = document.getElementById(`${id}-desc`);
       let maxHeight = Math.round(desc.innerHTML.length / 3); // TODO: finesse this formula
       let transition = maxHeight/300 > 1 ? 1 : Math.round(maxHeight/300 * 10)/10;
-      arrowIcon.style.transition = `max-height ${transition + 's'}`;
+      arrowIcon.style.transition = `transform ${transition + 's'}`;
       secondary.style.transition = `max-height ${transition + 's'}`;
       secondary.style.maxHeight === maxHeight + 'px' ? secondary.style.maxHeight = "0px" : secondary.style.maxHeight = maxHeight + 'px';
     }
