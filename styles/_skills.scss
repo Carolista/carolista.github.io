@@ -1,7 +1,8 @@
 /** SKILLS PAGE **/
 
-#skills-container {
-  max-width: 500px;
+.skills-container {
+  columns: 2;
+  max-width: 1000px;
   margin-left: auto;
 }
 
@@ -50,11 +51,17 @@
   margin-bottom: 8px !important;
 }
 
-@media screen and (max-width: 800px) {
-  #skills-container {
+@media screen and (max-width: 850px) {
+  .skills-container {
     max-width: 300px;
   }
   .skills-group {
+    columns: 1;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .skills-container {
     columns: 1;
   }
 }

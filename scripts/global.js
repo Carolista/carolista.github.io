@@ -88,7 +88,7 @@ function init() {
   }, 200); // only needs a slight delay
 
   document.addEventListener("click", (e) => {
-    if (e.target.classList.contains("content-hover-bar") || e.target.classList.contains("content-subheader") || e.target.classList.contains("content-arrow")) {
+    if (e.target.classList.contains("content-click-bar") || e.target.classList.contains("content-subheader") || e.target.classList.contains("content-arrow")) {
       let id = e.target.id.slice(0,e.target.id.indexOf("-"));
       let arrowIcon = document.getElementById(`${id}-arrow-icon`);
       arrowIcon.style.transform === "rotate(180deg)" ? arrowIcon.style.transform = "rotate(0deg)" : arrowIcon.style.transform = "rotate(180deg)"; 

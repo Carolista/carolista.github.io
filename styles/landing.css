@@ -510,8 +510,10 @@ td.year {
 }
 
 /** SKILLS PAGE **/
-#skills-container {
-  max-width: 500px;
+.skills-container {
+  -webkit-columns: 2;
+          columns: 2;
+  max-width: 1000px;
   margin-left: auto;
 }
 
@@ -568,8 +570,8 @@ td.year {
   margin-bottom: 8px !important;
 }
 
-@media screen and (max-width: 800px) {
-  #skills-container {
+@media screen and (max-width: 850px) {
+  .skills-container {
     max-width: 300px;
   }
   .skills-group {
@@ -579,9 +581,9 @@ td.year {
 }
 
 @media screen and (max-width: 1200px) {
-  .skills-group {
-    -webkit-columns: 2;
-            columns: 2;
+  .skills-container {
+    -webkit-columns: 1;
+            columns: 1;
   }
 }
 
@@ -820,7 +822,7 @@ td {
   transition: 1s;
 }
 
-.content-hover-bar {
+.content-click-bar {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
