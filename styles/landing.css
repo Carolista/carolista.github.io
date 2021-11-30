@@ -170,6 +170,12 @@
           transform: rotate(180deg);
 }
 
+.current-page {
+  color: #437e1c;
+  font-weight: 600;
+  cursor: default;
+}
+
 .highlighted {
   font-weight: 400;
   -webkit-transition: 0.6s;
@@ -572,6 +578,13 @@ td.year {
   }
 }
 
+@media screen and (max-width: 1200px) {
+  .skills-group {
+    -webkit-columns: 2;
+            columns: 2;
+  }
+}
+
 /*
   Z-INDEX HEIRARCHY   
   20    modal
@@ -830,13 +843,6 @@ td {
 .content-arrow {
   font-size: 1.2em;
   margin-right: 8px;
-  -webkit-transition: 1s;
-  transition: 1s;
-}
-
-.content-animated-box:hover .content-arrow {
-  -webkit-transform: rotate(180deg) translateY(0px);
-          transform: rotate(180deg) translateY(0px);
 }
 
 .content-secondary {
@@ -844,14 +850,6 @@ td {
   background-color: #fff;
   max-height: 0px;
   overflow: hidden;
-  -webkit-transition: max-height 1s ease-out;
-  transition: max-height 1s ease-out;
-}
-
-.content-animated-box:hover .content-secondary {
-  max-height: 1000px;
-  -webkit-transition: max-height 1s ease-out;
-  transition: max-height 1s ease-out;
 }
 
 .content-description {

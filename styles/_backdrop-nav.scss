@@ -132,6 +132,12 @@
   transform: rotate(180deg);
 }
 
+.current-page {
+  color: $dark-accent-color;
+  font-weight: 600;
+  cursor: default;
+}
+
 .highlighted {
   font-weight: 400;
   transition: $short-transition;

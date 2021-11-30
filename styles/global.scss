@@ -205,10 +205,6 @@ td {
 .content-arrow {
   font-size: 1.2em;
   margin-right: 8px;
-  transition: $moderate-transition;
-}
-.content-animated-box:hover .content-arrow {
-  transform: rotate(180deg) translateY(0px);
 }
 
 .content-secondary {
@@ -216,11 +212,6 @@ td {
   background-color: $contrast-color;
   max-height: 0px;
   overflow: hidden;
-  transition: max-height $moderate-transition ease-out;
-}
-.content-animated-box:hover .content-secondary {
-  max-height: 1000px;
-  transition: max-height $moderate-transition ease-out;
 }
 
 .content-description {

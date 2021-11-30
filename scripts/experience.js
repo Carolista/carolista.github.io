@@ -39,13 +39,13 @@ window.addEventListener("load", () => {
               </div>                     
             </div>
           </div>
-          <div class="content-animated-box">
-            <div class="content-hover-bar">
-              <i class="content-arrow fas fa-chevron-circle-down"></i>
-              <p class="content-subheader">${data.title}</p>
+          <div id="${data.id}-animated-box" class="content-animated-box">
+            <div id="${data.id}-hover-bar" class="content-hover-bar">
+              <i id="${data.id}-arrow-icon" class="content-arrow fas fa-chevron-circle-down"></i>
+              <p  id="${data.id}-subheader" class="content-subheader">${data.title}</p>
               </div>
-            <div class="content-secondary">
-              <div class="content-description">${data.desc}</div>
+            <div id="${data.id}-secondary" class="content-secondary">
+              <div id="${data.id}-desc" class="content-description">${data.desc}</div>
             </div>
           </div>
         </div>
