@@ -516,7 +516,7 @@ td.year {
 .skills-container {
   -webkit-columns: 2;
           columns: 2;
-  max-width: 1000px;
+  width: 850px;
   margin-left: auto;
 }
 
@@ -575,6 +575,7 @@ td.year {
 
 @media screen and (max-width: 850px) {
   .skills-container {
+    width: 100%;
     max-width: 300px;
   }
   .skills-group {
@@ -587,6 +588,7 @@ td.year {
   .skills-container {
     -webkit-columns: 1;
             columns: 1;
+    width: 500px;
   }
 }
 
@@ -678,8 +680,6 @@ main {
   margin: 0px 0px 40px auto;
   padding: 120px 50px 0px 0px;
   visibility: hidden;
-  -webkit-transition: visibility 1s;
-  transition: visibility 1s;
 }
 
 @media screen and (max-width: 850px) {
@@ -916,6 +916,11 @@ body {
   font-weight: 400;
   min-height: 100vh;
   overflow-x: hidden;
+}
+
+.preload {
+  -webkit-transition: none !important;
+  transition: none !important;
 }
 
 #logo-container {

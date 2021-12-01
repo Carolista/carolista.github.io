@@ -2,7 +2,7 @@
 
 .skills-container {
   columns: 2;
-  max-width: 1000px;
+  width: 850px;
   margin-left: auto;
 }
 
@@ -53,6 +53,7 @@
 
 @media screen and (max-width: 850px) {
   .skills-container {
+    width: 100%;
     max-width: 300px;
   }
   .skills-group {
@@ -63,5 +64,6 @@
 @media screen and (max-width: 1200px) {
   .skills-container {
     columns: 1;
+    width: 500px;
   }
 }
