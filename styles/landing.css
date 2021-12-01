@@ -919,6 +919,14 @@ body {
   overflow-x: hidden;
 }
 
+#hidden-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  visibility: hidden;
+}
+
 .preload {
   -webkit-transition: none !important;
   transition: none !important;
