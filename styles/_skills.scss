@@ -2,6 +2,7 @@
 
 .skills-container {
   columns: 2;
+  column-gap: 40px;
   width: 850px;
   margin-left: auto;
 }
@@ -10,7 +11,7 @@
   display: inline-block;
 	vertical-align: top;
 	width: 100%;
-	margin: 20px 0px 0px;
+  margin-bottom: -10px !important;
   border-left: 8px solid $dark-accent-color;
 }
 
@@ -29,7 +30,6 @@
 	font-size: 1.8rem;
   height: 50px;
   width: 100%;
-  margin-bottom: 20px;
   padding: 0px 20px;
   border-left: 8px solid $dark-accent-color;
 }
