@@ -516,6 +516,8 @@ td.year {
 .skills-container {
   -webkit-columns: 2;
           columns: 2;
+  -webkit-column-gap: 40px;
+          column-gap: 40px;
   width: 850px;
   margin-left: auto;
 }
@@ -524,7 +526,7 @@ td.year {
   display: inline-block;
   vertical-align: top;
   width: 100%;
-  margin: 20px 0px 0px;
+  margin-bottom: -10px !important;
   border-left: 8px solid #437e1c;
 }
 
@@ -549,7 +551,6 @@ td.year {
   font-size: 1.8rem;
   height: 50px;
   width: 100%;
-  margin-bottom: 20px;
   padding: 0px 20px;
   border-left: 8px solid #437e1c;
 }
@@ -916,6 +917,14 @@ body {
   font-weight: 400;
   min-height: 100vh;
   overflow-x: hidden;
+}
+
+#hidden-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  visibility: hidden;
 }
 
 .preload {
