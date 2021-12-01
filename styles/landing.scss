@@ -22,6 +22,10 @@ body {
 	overflow-x: hidden;
 }
 
+.preload {
+  transition: none !important;
+}
+
 #logo-container {
 	position: relative;
 	display: flex;
