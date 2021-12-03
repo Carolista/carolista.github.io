@@ -35,21 +35,21 @@
       "devices": "desktop browsers",
       "demo": { "type": "Try it now!", "url": "https://carolista.github.io/LC-DOM-Kaleidoscope/"},
       "code": { "type": "GitHub", "url": "https://github.com/Carolista/LC-DOM-Kaleidoscope"},
-      "images": ["kaleidoscope-01.png", "kaleidoscope-02.png", "kaleidoscope-03.png", "kaleidoscope-04.png", "kaleidoscope-05.png", "kaleidoscope-06.png"],
+      "images": ["kaleidoscope-06.png", "kaleidoscope-01.png", "kaleidoscope-02.png", "kaleidoscope-03.png", "kaleidoscope-04.png", "kaleidoscope-05.png"],
       "inProgress": false
     },
     {
       "id": 8,
       "title": "Portfolio Website",
-      "subtitle": "this is a bit meta, hey?",
-      "desc": "I wanted to build a website to showcase some of my projects and also present some of the more relevant items from my resume and recommendations pursuant to a career in tech. I chose the DOM instead of Angular so that I could get it up and running quickly on GitHub, though I took the time to learn a few new things in the process. I also decided to code everything from scratch without using Bootstrap for this particular project.",
+      "subtitle": "you are here!",
+      "desc": "I wanted to build a website to showcase some of my projects and also present some of the more relevant items from my resume and recommendations pursuant to a career in tech. I chose the DOM instead of Angular or React so that I could get it up and running quickly on GitHub, though I took the time to learn a few new things in the process. I also decided to code all the CSS from scratch without using Bootstrap for this particular project.",
       "tech": "DOM - HTML, CSS, & JavaScript",
-      "noteworthy": ["Implemented media queries so that I could make each page responsive for any size screen.", "Learned how to code a masonry layout for the projects gallery so that I could have flexible heights on each card (but still maintain a smooth responsive functionality.", "Created a modal on the project details page for displaying the screenshots at full page size without requiring navigation away from the page.", "Experimented with background clipping and gradient text for the timeline on the index page."],
+      "noteworthy": ["Implemented media queries so that I could make each page responsive for any size screen.", "Learned how to code a masonry layout for the projects gallery so that I could have flexible heights on each card (but still maintain a smooth responsiveness).", "Created a modal on the project details page for displaying the screenshots at full page size without requiring navigation away from the page.", "Made site interactive with expandable/collapsible sections, tooltips, a popout nav menu, and more"],
       "devices": "most devices",
       "demo": { "type": "Try it now!", "url": ""},
-      "code": { "type": "GitHub", "url": "https://github.com/Carolista/carolista.github.io"},
-      "images": ["portfolio-meta.png", "portfolio-01.png", "portfolio-02.png", "portfolio-03.png"],
-      "inProgress": true
+      "code": { "type": "GitHub", "url": "https://carolista.github.io"},
+      "images": ["portfolio-01.png", "portfolio-02.png", "portfolio-03.png", "portfolio-04.png", "portfolio-05.png"],
+      "inProgress": false
     },
     {
       "id": 6,

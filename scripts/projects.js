@@ -37,10 +37,10 @@ window.addEventListener("load", () => {
         projectArea.innerHTML += `
           <div class="gallery-item">
             <div class="project-content">
+              <img class="project-image" src="images/${data.images[0]}">
               <a href="project-details.html?id=${data.id}">
-                <img class="project-image" src="images/${data.images[0]}">
+                <p class="project-name">${data.title}</p>
               </a>
-              <p class="project-name">${data.title}</p>
               <p class="project-tagline">${data.subtitle}</p>
             </div>
             <a class="project-switch-page-link" href="project-details.html?id=${data.id}">
