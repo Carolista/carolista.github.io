@@ -25,9 +25,9 @@ body {
 #hidden-image {
   position: fixed;
   top: 0;
-  left: 0;
+  left: -100%;
+  width: 400px;
   z-index: -10;
-  visibility: hidden;
 }
 
 .preload {
