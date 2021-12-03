@@ -37,16 +37,18 @@ window.addEventListener("load", () => {
         projectArea.innerHTML += `
           <div class="gallery-item">
             <div class="project-content">
+              <img class="project-image" src="images/${data.images[0]}">
               <a href="project-details.html?id=${data.id}">
-                <img class="project-image" src="images/${data.images[0]}">
+                <p class="project-name">${data.title}</p>
               </a>
-              <p class="project-name">${data.title}</p>
               <p class="project-tagline">${data.subtitle}</p>
             </div>
             <a class="project-switch-page-link" href="project-details.html?id=${data.id}">
               <div class="project-switch-page-bar project-link-align-right">
-                View Details
-                <i class="project-switch-page-arrow fas fa-chevron-circle-right"></i>
+                <div class="bounce-left">
+                  View Details
+                  <i class="project-switch-page-arrow fas fa-chevron-circle-right"></i>
+                </div>
               </div>
             </a>
           </div>
@@ -123,8 +125,10 @@ window.addEventListener("load", () => {
         </div>
         <a class="project-switch-page-link" href='projects.html'>
           <div class="project-switch-page-bar">
-            <i class="project-switch-page-arrow fas fa-chevron-circle-left"></i>
-            Back to Projects Gallery
+            <div class="bounce-right">
+              <i class="project-switch-page-arrow fas fa-chevron-circle-left"></i>
+              Back to Projects Gallery
+            </div>
           </div>
         </a>
       </div>
