@@ -63,13 +63,15 @@ window.addEventListener("load", () => {
 
 	function displayEducation() {
     educationData.forEach((data) => {
+      let websitePart = data.website.slice(data.website.indexOf("//") + 2);
+      let website = websitePart.includes("/")  ? websitePart.slice(0, websitePart.indexOf("/")) : websitePart;
       edArea.innerHTML += `
         <div class="content-item">
           <div class="content-block">
             <div class="content-primary">
               <div class="content-logo-container tooltip-container">
                 <a href="${data.website}" target="_blank"><img class="content-logo" src="images/${data.image}" width="60px" /></a>
-                <span class="tooltip-left">${data.website.match(/(?<=.\/\/)[^\/]*/)[0]}</span>
+                <span class="tooltip-left">${website}</span>
               </div>
               <div class="content-primary-text">
                 <p><span class="content-header">${data.institution}</span><br />
