@@ -484,5 +484,11 @@
         "skillName": "RegEx",
         "category": "Tools",
         "type": "Tech"
+    },
+    {
+        "id": 82,
+        "skillName": "QuickBooks",
+        "category": "Tools",
+        "type": "General"
     }
 ]

@@ -98,7 +98,7 @@
 	padding: 15px 20px 18px;
 }
 
-.project-back-bar {
+.project-switch-page-bar {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -106,17 +106,21 @@
   color: $contrast-color;
   height: 40px;
   width: 100%;
-  padding: 0px 15px;
+  padding: 0px 5px;
 }
 
-.project-back-link {
+.project-link-align-right {
+  justify-content: flex-end;
+}
+
+.project-switch-page-link {
   color: $contrast-color !important;
 }
 
-.project-back-arrow {
+.project-switch-page-arrow {
   color: $contrast-color;
   font-size: 1.2em;
-  margin-right: 8px;
+  margin: 0px 5px;
   transform: translateY(2px);
 }
 
