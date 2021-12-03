@@ -10,6 +10,7 @@
 
 /*
   Z-INDEX HEIRARCHY   
+  30    tooltip
   20    modal
   15    nav menu
   10    main (index: text-container)
@@ -46,7 +47,7 @@ body {
 }
 
 #page-content {
-  padding-bottom: 40px;
+  padding-bottom: 80px;
   z-index: 5;
 }
 
@@ -245,4 +246,51 @@ td {
 .content-logo {
 	width: 60px;
   height: auto;
+}
+
+.tooltip-container {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.tooltip {
+  position: absolute;
+  bottom: 100%;
+  left: calc(50% - 60px);
+  background: $dark-accent-color;
+  color: $contrast-color;
+  font-size: 12px;
+  font-weight: 400;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+  padding: 5px 10px;
+  border-radius: 2px;
+  opacity: 0;
+  box-shadow: 2px 2px 6px rgba(29, 29, 29, 0.4);
+  z-index: 30;
+  transition: all .2s ease-in-out;
+  transform: scale(0);
+}
+
+.tooltip-wider {
+  left: calc(50% - 80px);
+  width: 160px;
+}
+
+.tooltip:before, .tooltip:after { // arrow
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: calc(50% - 10px);
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid $dark-accent-color;
+}
+
+.tooltip-container:hover .tooltip, a:hover .tooltip {
+  opacity: 1.0;
+  transform: scale(1) translateY(-10px);
 }

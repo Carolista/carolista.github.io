@@ -30,8 +30,9 @@ window.addEventListener("load", () => {
         <div class="content-item">
           <div class="content-block"> 
             <div class="content-primary"> 
-              <div class="content-logo-container">
+              <div class="content-logo-container tooltip-container">
                 <a href="${data.website}" target="_blank"><img class="content-logo" src="images/${data.image}" width="60px" /></a> 
+                <span class="tooltip tooltip-wider">${data.website.match(/(?<=.\/\/)[^\/]*/)[0]}</span>
               </div> 
               <div class="content-primary-text">
                 <p><span class="content-header">${data.employer}</span><br />

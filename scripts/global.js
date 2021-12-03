@@ -11,7 +11,7 @@ function init() {
   let pages = ""
   pageNames.forEach(pageName => {
     if (page !== "" && page !== "index.html") {
-      if (page.slice(0,3) === pageName.toLowerCase().slice(0,3)) {
+      if (page === `${pageName.toLowerCase()}.html`) {
         pages += `<p class="current-page">${pageName}</p>`;
       } else {
         pages += `<p class="highlighted"><a class="highlight" href="${pageName.toLowerCase()}.html">${pageName}</a></p>`;
@@ -69,12 +69,32 @@ function init() {
 		// FOOTER
 		const footer = document.querySelector("footer");
 		footer.innerHTML = `
-      <span class="off-white-text text-center">
-        <p>&copy; 2021&nbsp; Caroline R. Jones &nbsp;&bull;&nbsp;
-          St. Louis, MO &nbsp;&bull;&nbsp; <a href="https://www.linkedin.com/in/carolinerjones/" target="_blank">LinkedIn</a> &nbsp;|&nbsp; 
-          <a href="https://www.hackerrank.com/Carolina49a" target="_blank">HackerRank</a> &nbsp;|&nbsp; 
-          <a href="https://github.com/Carolista" target="_blank">GitHub</a></p>
-      </span>
+      <p>&copy; 2021&nbsp; Caroline R. Jones &nbsp;&bull;&nbsp; St. Louis, MO &nbsp;&bull;&nbsp; 
+        <a href="https://www.linkedin.com/in/carolinerjones/" target="_blank">
+          <span class="tooltip-container">
+            LinkedIn
+            <span class="tooltip">
+              Visit my full profile
+            </span>
+          </span>
+        </a> &nbsp;|&nbsp; 
+        <a href="https://www.hackerrank.com/Carolina49a" target="_blank">
+          <span class="tooltip-container">
+            HackerRank
+            <span class="tooltip">
+              View my badges and certificates
+            </span>
+          </span>
+        </a> &nbsp;|&nbsp; 
+        <a href="https://github.com/Carolista" target="_blank">
+          <span class="tooltip-container">
+            GitHub
+            <span class="tooltip">
+              Check out my repos and contributions
+            </span>
+          </span>
+        </a>
+      </p>
     `;
 	} 
 

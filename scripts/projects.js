@@ -37,11 +37,18 @@ window.addEventListener("load", () => {
         projectArea.innerHTML += `
           <div class="gallery-item">
             <div class="project-content">
-              <a href="project-details.html?id=${data.id}"><img class="project-image" src="images/${data.images[0]}"></a>
+              <a href="project-details.html?id=${data.id}">
+                <img class="project-image" src="images/${data.images[0]}">
+              </a>
               <p class="project-name">${data.title}</p>
               <p class="project-tagline">${data.subtitle}</p>
-              <p class="text-right view-details"><a href="project-details.html?id=${data.id}">View Details &gt;</a></p>
             </div>
+            <a class="project-switch-page-link" href="project-details.html?id=${data.id}">
+              <div class="project-switch-page-bar project-link-align-right">
+                View Details
+                <i class="project-switch-page-arrow fas fa-chevron-circle-right"></i>
+              </div>
+            </a>
           </div>
         `;
       }
@@ -72,10 +79,28 @@ window.addEventListener("load", () => {
     let codeUrl = currentProject.code.url;
     let codeType = currentProject.code.type;
     if (demoUrl !== "")
-      links += `<b>Demo:</b> <a href="${demoUrl}" target="_blank">${demoType}</a>`;
+      links += `
+        <b>Demo:</b> 
+        <a href="${demoUrl}" target="_blank">
+          <span class="tooltip-container">
+            ${demoType}
+            <span class="tooltip">
+              Take it for a spin
+            </span>
+          </span>
+        </a>`;
     if (demoUrl !== "" && codeUrl !== "") links += ` &nbsp;&#124;&nbsp; `;
     if (codeUrl !== "")
-      links += `<b>Code:</b> <a href="${codeUrl}" target="_blank">${codeType}</a>`;
+      links += `
+        <b>Code:</b> 
+        <a href="${codeUrl}" target="_blank">
+          <span class="tooltip-container">
+            ${codeType}
+            <span class="tooltip">
+              Go behind the scenes
+            </span>
+          </span>
+        </a>`;
     let images = "";
     currentProject.images.forEach((image, index) => {
       // TODO: create slideshow version of modal
@@ -95,13 +120,13 @@ window.addEventListener("load", () => {
           <ul>${bullets}</ul>
           <h4 class="project-section">Displays well on ${currentProject.devices}</h4>
           <p class="project-links">${links}</p>
+        </div>
+        <a class="project-switch-page-link" href='projects.html'>
+          <div class="project-switch-page-bar">
+            <i class="project-switch-page-arrow fas fa-chevron-circle-left"></i>
+            Back to Projects Gallery
           </div>
-          <div class="project-back-bar">
-            <a class="project-back-link" href='projects.html'>
-              <i class="project-back-arrow fas fa-chevron-circle-left"></i>
-              Back to Projects Gallery
-            </a>
-          </div>
+        </a>
       </div>
       <div class="project-details-col">
         ${images}
