@@ -47,7 +47,7 @@
       "noteworthy": ["Implemented media queries so that I could make each page responsive for any size screen.", "Learned how to code a masonry layout for the projects gallery so that I could have flexible heights on each card (but still maintain a smooth responsiveness).", "Created a modal on the project details page for displaying the screenshots at full page size without requiring navigation away from the page.", "Made site interactive by applying transitions and animations for expandable/collapsible sections, tooltips, a popout nav menu, and more."],
       "devices": "most devices",
       "demo": { "type": "Try it now!", "url": ""},
-      "code": { "type": "GitHub", "url": "https://carolista.github.io"},
+      "code": { "type": "GitHub", "url": "https://github.com/Carolista/carolista.github.io"},
       "images": ["portfolio-01.png", "portfolio-02.png", "portfolio-03.png", "portfolio-04.png", "portfolio-05.png"],
       "inProgress": false
     },
