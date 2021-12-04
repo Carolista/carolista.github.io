@@ -46,7 +46,7 @@ window.addEventListener("load", () => {
             <div id="${data.id}-click-bar" class="content-click-bar">
               <i id="${data.id}-arrow-icon" class="content-arrow fas fa-chevron-circle-down"></i>
               <p  id="${data.id}-subheader" class="content-subheader">${data.title}</p>
-              </div>
+            </div>
             <div id="${data.id}-secondary" class="content-secondary">
               <div id="${data.id}-desc" class="content-description">${data.desc}</div>
             </div>
