@@ -33,6 +33,7 @@ window.addEventListener("load", () => {
 	function displayProjects() {
     projectData.forEach((data) => {
       // TODO: create responsive gallery of projects in progress, not just completed ones
+      // TODO: split projects into categories next time more are added
       if (!data.inProgress) {
         projectArea.innerHTML += `
           <div class="gallery-item">
