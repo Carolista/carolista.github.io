@@ -81,6 +81,24 @@ main {
 	visibility: hidden;
 }
 
+footer {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  color: $light-color;
+  height: 50px;
+  width: 100vw;
+  padding: 0px 40px;
+  margin-top: auto;
+  z-index: 5;
+}
+
+#footer-links {
+  margin-left: 20px;
+}
+
 @media screen and (max-width: 850px) {
   main {
     top: 100px;
@@ -90,20 +108,12 @@ main {
     max-width: 90%;
     margin: 0px 0px 120px 5%;
   }
-}
-
-footer {
-  position: absolute;
-  bottom: 0;
-	display: flex;
-	flex-direction: column;
-  align-items: flex-end;
-  color: $light-color;
-  height: 50px;
-	width: 100vw;
-	padding: 0px 40px;
-  margin-top: auto;
-  z-index: 5;
+  footer {
+    flex-direction: column;
+    align-items: flex-end;
+    line-height: 24px;
+    padding-bottom: 20px;
+  }
 }
 
 p {
