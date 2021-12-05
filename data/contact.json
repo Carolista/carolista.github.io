@@ -1,0 +1,26 @@
+[
+  {
+    "id": 0,
+    "name": "LinkedIn",
+    "blurb": "The best way to make initial contact is through my <span class='tooltip-container'><a href='https://www.linkedin.com/in/carolinerjones' target='_blank'>LinkedIn profile</a><span class='tooltip'>Connect with me!</span></span>. Thank you!",
+    "image": "linkedin-logo.png"
+  },
+  {
+    "id": 1,
+    "name": "Slack",
+    "blurb": "In addition to some LaunchCode CoderGirl and Liftoff spaces, I can be found in STL Tech and LaunchCode Community.",
+    "image": "slack-logo.png"
+  },
+  {
+    "id": 2,
+    "name": "GitHub",
+    "blurb": "My <span class='tooltip-container'><a href='https://github.com/Carolista' target='_blank'>GitHub profile</a><span class='tooltip'>See my work!</span></span>. showcases projects I've done as a student, side projects, and those I created for students for extra practice.",
+    "image": "github-logo.png"
+  },
+  {
+    "id": 3,
+    "name": "HackerRank",
+    "blurb": "When I'm learning a new language or tool I run through practice problems on <span class='tooltip-container'><a href='https://www.hackerrank.com/Carolina49a' target='_blank'>HackerRank</a><span class='tooltip'>Check out my skills!</span></span> and have earned several badges and certifications.",
+    "image": "hackerrank-logo.png"
+  }
+]
