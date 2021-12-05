@@ -69,12 +69,15 @@ function init() {
 		// FOOTER
 		const footer = document.querySelector("footer");
 		footer.innerHTML = `
-      <p>&copy; 2021&nbsp; Caroline R. Jones &nbsp;&bull;&nbsp; St. Louis, MO &nbsp;&bull;&nbsp; 
-        <a href="https://www.linkedin.com/in/carolinerjones/" target="_blank">
+      <div>
+        &copy; 2021&nbsp; Caroline R. Jones &nbsp;&bull;&nbsp; St. Louis, MO
+      </div>
+      <div id="footer-links">
+        <a href="https://github.com/Carolista" target="_blank">
           <span class="tooltip-container">
-            LinkedIn
+            GitHub
             <span class="tooltip">
-              Visit my full profile
+              Check out my repos and contributions
             </span>
           </span>
         </a> &nbsp;|&nbsp; 
@@ -86,17 +89,27 @@ function init() {
             </span>
           </span>
         </a> &nbsp;|&nbsp; 
-        <a href="https://github.com/Carolista" target="_blank">
+        <a href="https://www.linkedin.com/in/carolinerjones/" target="_blank">
           <span class="tooltip-container">
-            GitHub
+            LinkedIn
             <span class="tooltip">
-              Check out my repos and contributions
+              Visit my full profile
+            </span>
+          </span>
+        </a> &nbsp;|&nbsp; 
+        <a href="https://docs.google.com/document/d/1pp6icQRZ6DPESByECf6JQelUaRB3MLH0uwc7tMwHvUA/edit?usp=sharing" target="_blank">
+          <span class="tooltip-container">
+            Résumé
+            <span class="tooltip">
+              Download from Google Docs
             </span>
           </span>
         </a>
-      </p>
+      </div>
     `;
 	} 
+
+  // https://docs.google.com/document/d/1pp6icQRZ6DPESByECf6JQelUaRB3MLH0uwc7tMwHvUA/edit?usp=sharing
 
   setTimeout(() => {
     if (document.title !== titleEnd.trim()) {
