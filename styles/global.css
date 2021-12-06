@@ -1112,6 +1112,57 @@ td {
   cursor: pointer;
 }
 
+.content-click-bar:hover .content-arrow {
+  -webkit-animation: edge-down 0.6s ease-in-out;
+          animation: edge-down 0.6s ease-in-out;
+}
+
+@-webkit-keyframes edge-down {
+  0% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  35% {
+    -webkit-transform: translateY(2px);
+            transform: translateY(2px);
+  }
+  60% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  75% {
+    -webkit-transform: translateY(2px);
+            transform: translateY(2px);
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+}
+
+@keyframes edge-down {
+  0% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  35% {
+    -webkit-transform: translateY(2px);
+            transform: translateY(2px);
+  }
+  60% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  75% {
+    -webkit-transform: translateY(2px);
+            transform: translateY(2px);
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+}
+
 .content-secondary {
   display: relative;
   background-color: #fff;
