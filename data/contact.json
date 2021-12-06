@@ -14,7 +14,7 @@
   {
     "id": 2,
     "name": "GitHub",
-    "blurb": "My <span class='tooltip-container'><a href='https://github.com/Carolista' target='_blank'>GitHub profile</a><span class='tooltip'>See my work!</span></span>. showcases projects I've done as a student, side projects, and those I created for students for extra practice.",
+    "blurb": "My <span class='tooltip-container'><a href='https://github.com/Carolista' target='_blank'>GitHub profile</a><span class='tooltip'>See my work!</span></span> includes projects I completed as a student, side projects of my own, and many projects I have created for LaunchCode students for extra practice.",
     "image": "github-logo.png"
   },
   {

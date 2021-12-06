@@ -227,6 +227,27 @@ td {
   margin-right: 8px;
   cursor: pointer;
 }
+.content-click-bar:hover .content-arrow {
+  animation: edge-down $short-transition ease-in-out;
+}
+
+@keyframes edge-down {
+  0% {
+    transform: translateY(0px);
+  }
+  35% {
+    transform: translateY(2px);
+  }
+  60% {
+    transform: translateY(0px);
+  }
+  75% {
+    transform: translateY(2px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
 
 .content-secondary {
   display: relative;
