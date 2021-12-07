@@ -117,6 +117,7 @@ function init() {
     } 
   }, 200);
 
+  // FIXME: There are still continuity issues because of the timeouts overlapping if secondary is expanded and collapsed in short succession
   document.addEventListener("click", (e) => {
     if (e.target.classList.contains("content-click-bar") || e.target.classList.contains("content-subheader") || e.target.classList.contains("content-arrow")) {
       let id = e.target.id.slice(0,e.target.id.indexOf("-"));
@@ -126,13 +127,13 @@ function init() {
         arrowIcon.classList.remove("nudge-up");
         setTimeout(() => {
           arrowIcon.classList.add("nudge-down");
-        }, 1500);
+        }, 1100);
       } else {
         arrowIcon.style.transform = "translateY(0px) rotate(180deg)"; 
         arrowIcon.classList.remove("nudge-down");
         setTimeout(() => {
           arrowIcon.classList.add("nudge-up");
-        }, 1500);
+        }, 1100);
       }
       let secondary = document.getElementById(`${id}-secondary`);
       let desc = document.getElementById(`${id}-desc`);
@@ -141,6 +142,20 @@ function init() {
       arrowIcon.style.transition = `transform ${transition + 's'}`;
       secondary.style.transition = `max-height ${transition + 's'}`;
       secondary.style.maxHeight === maxHeight + 'px' ? secondary.style.maxHeight = "0px" : secondary.style.maxHeight = maxHeight + 'px';
+    }
+  });
+  // This will correct things if rapid clicking gets the transform assignments out of sync
+  document.addEventListener("mouseover", (e) => {
+    if (e.target.classList.contains("content-click-bar") || e.target.classList.contains("content-subheader") || e.target.classList.contains("content-arrow")) {
+      let id = e.target.id.slice(0,e.target.id.indexOf("-"));
+      let arrowIcon = document.getElementById(`${id}-arrow-icon`);
+      if (arrowIcon.style.transform === "translateY(0px) rotate(180deg)") {
+        arrowIcon.classList.remove("nudge-down");
+        arrowIcon.classList.add("nudge-up");
+      } else {
+        arrowIcon.classList.remove("nudge-up");
+        arrowIcon.classList.add("nudge-down");
+      }
     }
   });
 
