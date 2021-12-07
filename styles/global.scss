@@ -226,26 +226,47 @@ td {
   font-size: 1.2em;
   margin-right: 8px;
   cursor: pointer;
+  animation: none;
 }
-.content-click-bar:hover .content-arrow {
-  animation: edge-down $short-transition ease-in-out;
+.content-click-bar:hover .content-arrow.nudge-down {
+  animation: nudge-down $short-transition ease-in-out;
+}
+.content-click-bar:hover .content-arrow.nudge-up {
+  animation: nudge-up $short-transition ease-in-out;
 }
 
-@keyframes edge-down {
+@keyframes nudge-down {
   0% {
-    transform: translateY(0px);
+    transform: translateY(0px) rotate(0deg);
   }
   35% {
-    transform: translateY(2px);
+    transform: translateY(2px) rotate(0deg);
   }
   60% {
-    transform: translateY(0px);
+    transform: translateY(0px) rotate(0deg);
   }
   75% {
-    transform: translateY(2px);
+    transform: translateY(2px) rotate(0deg);
   }
   100% {
-    transform: translateY(0px);
+    transform: translateY(0px) rotate(0deg);
+  }
+}
+@keyframes nudge-up {
+  0% {
+    transform: translateY(0px) rotate(180deg);
+  }
+  35% {
+    transform: translateY(-2px) rotate(180deg);
+  }
+  60% {
+    transform: translateY(0px) rotate(180deg);
+  }
+  75% {
+    transform: translateY(-2px) rotate(180deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(180deg);
   }
 }
 

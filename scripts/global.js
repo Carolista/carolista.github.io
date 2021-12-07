@@ -121,7 +121,19 @@ function init() {
     if (e.target.classList.contains("content-click-bar") || e.target.classList.contains("content-subheader") || e.target.classList.contains("content-arrow")) {
       let id = e.target.id.slice(0,e.target.id.indexOf("-"));
       let arrowIcon = document.getElementById(`${id}-arrow-icon`);
-      arrowIcon.style.transform === "rotate(180deg)" ? arrowIcon.style.transform = "rotate(0deg)" : arrowIcon.style.transform = "rotate(180deg)"; 
+      if (arrowIcon.style.transform === "translateY(0px) rotate(180deg)") {
+        arrowIcon.style.transform = "translateY(0px) rotate(0deg)";
+        arrowIcon.classList.remove("nudge-up");
+        setTimeout(() => {
+          arrowIcon.classList.add("nudge-down");
+        }, 1500);
+      } else {
+        arrowIcon.style.transform = "translateY(0px) rotate(180deg)"; 
+        arrowIcon.classList.remove("nudge-down");
+        setTimeout(() => {
+          arrowIcon.classList.add("nudge-up");
+        }, 1500);
+      }
       let secondary = document.getElementById(`${id}-secondary`);
       let desc = document.getElementById(`${id}-desc`);
       let maxHeight = Math.round(desc.innerHTML.length / 3); // TODO: finesse this formula
