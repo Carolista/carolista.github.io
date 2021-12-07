@@ -81,7 +81,7 @@ window.addEventListener("load", () => {
           </div>
           <div id="${data.id}-animated-box" class="content-animated-box">
             <div id="${data.id}-click-bar" class="content-click-bar">
-              <i id="${data.id}-arrow-icon" class="content-arrow fas fa-chevron-circle-down"></i>
+              <i id="${data.id}-arrow-icon" class="content-arrow nudge-down fas fa-chevron-circle-down"></i>
               <p  id="${data.id}-subheader" class="content-subheader">${data.degree === "REPLACE ME" ? courseData.length + " Courses" : data.degree}</p>
               </div>
             <div id="${data.id}-secondary" class="content-secondary">
