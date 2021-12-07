@@ -109,8 +109,6 @@ function init() {
     `;
 	} 
 
-  // https://docs.google.com/document/d/1pp6icQRZ6DPESByECf6JQelUaRB3MLH0uwc7tMwHvUA/edit?usp=sharing
-
   setTimeout(() => {
     if (document.title !== titleEnd.trim()) {
       document.querySelector("main").style.visibility = "visible";
@@ -126,13 +124,13 @@ function init() {
         arrowIcon.classList.remove("nudge-up");
         setTimeout(() => {
           arrowIcon.classList.add("nudge-down");
-        }, 1500);
+        }, 1100);
       } else {
         arrowIcon.style.transform = "translateY(0px) rotate(180deg)"; 
         arrowIcon.classList.remove("nudge-down");
         setTimeout(() => {
           arrowIcon.classList.add("nudge-up");
-        }, 1500);
+        }, 1100);
       }
       let secondary = document.getElementById(`${id}-secondary`);
       let desc = document.getElementById(`${id}-desc`);
@@ -141,6 +139,20 @@ function init() {
       arrowIcon.style.transition = `transform ${transition + 's'}`;
       secondary.style.transition = `max-height ${transition + 's'}`;
       secondary.style.maxHeight === maxHeight + 'px' ? secondary.style.maxHeight = "0px" : secondary.style.maxHeight = maxHeight + 'px';
+    }
+  });
+  // This will correct things if rapid clicking gets the class assignments out of sync
+  document.addEventListener("mouseover", (e) => {
+    if (e.target.classList.contains("content-click-bar") || e.target.classList.contains("content-subheader") || e.target.classList.contains("content-arrow")) {
+      let id = e.target.id.slice(0,e.target.id.indexOf("-"));
+      let arrowIcon = document.getElementById(`${id}-arrow-icon`);
+      if (arrowIcon.style.transform === "translateY(0px) rotate(180deg)") {
+        arrowIcon.classList.remove("nudge-down");
+        arrowIcon.classList.add("nudge-up");
+      } else {
+        arrowIcon.classList.remove("nudge-up");
+        arrowIcon.classList.add("nudge-down");
+      }
     }
   });
 
