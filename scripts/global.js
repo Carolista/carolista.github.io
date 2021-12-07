@@ -109,15 +109,12 @@ function init() {
     `;
 	} 
 
-  // https://docs.google.com/document/d/1pp6icQRZ6DPESByECf6JQelUaRB3MLH0uwc7tMwHvUA/edit?usp=sharing
-
   setTimeout(() => {
     if (document.title !== titleEnd.trim()) {
       document.querySelector("main").style.visibility = "visible";
     } 
   }, 200);
 
-  // FIXME: There are still continuity issues because of the timeouts overlapping if secondary is expanded and collapsed in short succession
   document.addEventListener("click", (e) => {
     if (e.target.classList.contains("content-click-bar") || e.target.classList.contains("content-subheader") || e.target.classList.contains("content-arrow")) {
       let id = e.target.id.slice(0,e.target.id.indexOf("-"));
@@ -144,7 +141,7 @@ function init() {
       secondary.style.maxHeight === maxHeight + 'px' ? secondary.style.maxHeight = "0px" : secondary.style.maxHeight = maxHeight + 'px';
     }
   });
-  // This will correct things if rapid clicking gets the transform assignments out of sync
+  // This will correct things if rapid clicking gets the class assignments out of sync
   document.addEventListener("mouseover", (e) => {
     if (e.target.classList.contains("content-click-bar") || e.target.classList.contains("content-subheader") || e.target.classList.contains("content-arrow")) {
       let id = e.target.id.slice(0,e.target.id.indexOf("-"));
