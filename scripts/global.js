@@ -97,7 +97,7 @@ function init() {
             </span>
           </span>
         </a> &nbsp;|&nbsp; 
-        <a href="https://docs.google.com/document/d/1pp6icQRZ6DPESByECf6JQelUaRB3MLH0uwc7tMwHvUA/edit?usp=sharing" target="_blank">
+        <a href="https://docs.google.com/document/d/1k1mPR0vxqAQla466vhOiXAHgIHWvuDXujZZF_OF_SMs" target="_blank">
           <span class="tooltip-container">
             Résumé
             <span class="tooltip">
