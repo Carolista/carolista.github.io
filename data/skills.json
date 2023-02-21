@@ -1,7 +1,7 @@
 [
     {
         "id": 0,
-        "skillName": "Angular 10",
+        "skillName": "Angular",
         "category": "Frameworks",
         "type": "Tech"
     },
@@ -73,7 +73,7 @@
     },
     {
         "id": 12,
-        "skillName": "Java 13",
+        "skillName": "Java",
         "category": "Languages",
         "type": "Tech"
     },
@@ -490,5 +490,17 @@
         "skillName": "QuickBooks",
         "category": "Tools",
         "type": "General"
+    },
+    {
+        "id": 83,
+        "skillName": "Svelte/SvelteKit",
+        "category": "Frameworks",
+        "type": "Tech"
+    },
+    {
+        "id": 84,
+        "skillName": "Playwright",
+        "category": "Tools",
+        "type": "Tech"
     }
 ]
