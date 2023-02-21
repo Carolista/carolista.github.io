@@ -28,6 +28,18 @@ window.addEventListener("load", () => {
     experienceData.forEach((data) => {
       let websitePart = data.website.slice(data.website.indexOf("//") + 2);
       let website = websitePart.includes("/")  ? websitePart.slice(0, websitePart.indexOf("/")) : websitePart;
+      let description = "";
+      data.desc.forEach(descPart => {
+        if (Array.isArray(descPart)) {
+          let bullets = "";
+          descPart.forEach(bullet => {
+            bullets += `<li>${bullet}</li>`;
+          })
+          description += `<ul class="bullet-list">${bullets}</ul>`
+        } else {
+          description += `<p class="desc-p">${descPart}</p>`
+        }
+      });
       expArea.innerHTML += `
         <div class="content-item">
           <div class="content-block"> 
@@ -48,7 +60,7 @@ window.addEventListener("load", () => {
               <p  id="${data.id}-subheader" class="content-subheader">${data.title}</p>
             </div>
             <div id="${data.id}-secondary" class="content-secondary">
-              <div id="${data.id}-desc" class="content-description">${data.desc}</div>
+              <div id="${data.id}-desc" class="content-description">${description}</div>
             </div>
           </div>
         </div>
