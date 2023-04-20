@@ -2,14 +2,14 @@ window.addEventListener("load", () => init());
 
 function init() {
 
-  document.head.innerHTML = `    <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NERPEQDV17"></script>
+  document.head.innerHTML = `<!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YHZKZ8TB6S"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
-    gtag('config', 'G-NERPEQDV17');
+  
+    gtag('config', 'G-YHZKZ8TB6S');
   </script>` + document.head.innerHTML;
 
 	let page = location.href.split("\\").pop().split("/").pop();
