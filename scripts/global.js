@@ -2,6 +2,13 @@ window.addEventListener("load", () => init());
 
 function init() {
 
+	let page = location.href.split("\\").pop().split("/").pop();
+	let titleEnd = " Caroline Jones | Full Stack Developer";
+
+  console.log('page is ', page);
+	
+	document.title += titleEnd;
+
   document.head.innerHTML = `<!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-YHZKZ8TB6S"></script>
   <script>
@@ -11,11 +18,6 @@ function init() {
   
     gtag('config', 'G-YHZKZ8TB6S');
   </script>` + document.head.innerHTML;
-
-	let page = location.href.split("\\").pop().split("/").pop();
-	let titleEnd = " Caroline Jones | Full Stack Developer";
-	
-	document.title += titleEnd;
 
   let pageNames = ["Projects", "Experience", "Education", "Skills", "Recommendations", "Contact"];
   let pages = ""
