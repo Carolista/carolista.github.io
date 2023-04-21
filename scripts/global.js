@@ -9,15 +9,17 @@ function init() {
 	
 	document.title += titleEnd;
 
-  document.head.innerHTML = `<!-- Google tag (gtag.js) -->
+  document.head.innerHTML = `
+  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-YHZKZ8TB6S"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-  
+
     gtag('config', 'G-YHZKZ8TB6S');
-  </script>` + document.head.innerHTML;
+  </script>
+  ` + document.head.innerHTML;
 
   let pageNames = ["Projects", "Experience", "Education", "Skills", "Recommendations", "Contact"];
   let pages = ""
