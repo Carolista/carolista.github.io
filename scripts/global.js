@@ -3,9 +3,7 @@ window.addEventListener("load", () => init());
 function init() {
 
 	let page = location.href.split("\\").pop().split("/").pop();
-	let titleEnd = " Caroline Jones | Full Stack Developer";
-
-  console.log('page is ', page);
+	let titleEnd = " Caroline Jones | Front End Developer";
 	
 	document.title += titleEnd;
 
