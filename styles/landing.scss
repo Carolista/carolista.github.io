@@ -172,22 +172,6 @@ body {
   max-width: 80vw;
 }
 
-// #left-line,
-// #right-line {
-//   width: 300px;
-//   max-width: calc((80vw - 100px) / 3);
-//   height: 4px;
-//   border-radius: 2px;
-// }
-
-// #left-line {
-//   background: linear-gradient(to left, $primary-color, $contrast-color);
-// }
-
-// #right-line {
-//   background: linear-gradient(to right, $primary-color, $contrast-color);
-// }
-
 #single-line {
   background: linear-gradient(
     to right,
@@ -210,6 +194,10 @@ body {
 #cwc-logo {
   width: 100%;
   filter: grayscale(1) contrast(2.5);
+  transition: filter $longest-transition;
+  &:hover {
+    filter: grayscale(0) contrast(1);
+  }
 }
 
 @media screen and (max-width: 480px) {

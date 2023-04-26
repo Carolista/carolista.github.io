@@ -1179,6 +1179,10 @@ body {
 #cwc-logo {
   width: 100%;
   filter: grayscale(1) contrast(2.5);
+  transition: filter 1.8s;
+}
+#cwc-logo:hover {
+  filter: grayscale(0) contrast(1);
 }
 
 @media screen and (max-width: 480px) {
