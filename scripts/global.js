@@ -36,6 +36,7 @@ function init() {
       </div>
     `;
 
+  // TODO: this logic may not longer be necessary
 	if (page !== "" && page !== "index.html") {
 
     // BACKDROP
@@ -52,6 +53,8 @@ function init() {
 
     const navBox = document.getElementById("nav-box");
     const navBkg = document.querySelector("#nav-bkg");
+
+    // TODO: Make navBox open and close on click only, and fix closing click on left arrow on tab (mobile)
 
     navBox.addEventListener("mouseenter", () => {
       navBkg.style.display = "block";
@@ -109,6 +112,7 @@ function init() {
     `;
 	} 
 
+  // TODO: See if this is still necessary
   setTimeout(() => {
     if (document.title !== titleEnd.trim()) {
       document.querySelector("main").style.visibility = "visible";
@@ -141,7 +145,9 @@ function init() {
       secondary.style.maxHeight === maxHeight + 'px' ? secondary.style.maxHeight = "0px" : secondary.style.maxHeight = maxHeight + 'px';
     }
   });
-  // This will correct things if rapid clicking gets the class assignments out of sync
+  // This will correct things if rapid clicking gets the class assignments out of sync - TODO is this still necessary?
+  // TODO: figure out why everything is wonky in Safari (possible other browsers?) on iPad
+  // TODO: Might need to have different logic based on touchscreens vs desktop
   document.addEventListener("mouseover", (e) => {
     if (e.target.classList.contains("content-click-bar") || e.target.classList.contains("content-subheader") || e.target.classList.contains("content-arrow")) {
       let id = e.target.id.slice(0,e.target.id.indexOf("-"));
@@ -158,3 +164,10 @@ function init() {
 
 }
 
+function isTouchDevice() {
+  return (
+    'ontouchstart' in window ||
+    navigator.maxTouchPoints > 0 ||
+    navigator.msMaxTouchPoints > 0
+  );
+}
