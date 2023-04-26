@@ -24,11 +24,11 @@
   {
       "id": 4,
       "employer": "Apex Systems (at Lumen Technologies)",
-      "period": "April 2021 - Present",
+      "period": "April 2021 - March 2022",
       "title": "Full Stack Engineer",
       "type": "Full-time",
       "location": "St. Louis, MO",
-      "desc": "Re-engineering key platforms and applications for cloud application management and microservices with Morpheus integration at Lumen Technologies. Currently building a custom UI from the ground up with React and Redux, using Jest with Enzyme for unit testing and Cucumber/Puppeteer for end-to-end testing, improving UX. Contributing to development of APIs based in Ruby with Grape and ActiveRecord, utilizing RSpec for test-driven development. Improving CI/CD for multiple environments with automated Jenkins pipelines.",
+      "desc": "Re-engineered key platforms, applications, and microservices at Lumen Technologies, giving users streamlined orchestration of infrastructure and cloud application management. Built a custom UI from the ground up with React, Redux, Babel, JSX, HTML, and CSS, using Jest with Enzyme for unit testing and Cucumber/Puppeteer for end-to-end (E2E) testing. Actively contributed to UX design discussions with complex considerations; conceptualized and implemented solutions to best meet the needs of various project stakeholders. Developed API microservices based in Ruby with Grape and ActiveRecord, utilizing RSpec for test-driven development (TDD). Improved CI/CD for multiple environments with automated Jenkins pipelines in Groovy; deployed containerized applications with Docker, Helm, and Kubernetes to Google Cloud Platform (GCP) for dynamic scaling. Enriched and refined shared libraries to improve efficiency and long-term efficacy of code base. Automated the creation of VPN tunnels with Wireguard, Go, Python, and Bash shell script, leveraging Terraform for infrastructure. Practiced Agile methodology with daily collaboration of team members and regular code review/testing; utilized Git workflow with GitHub/Jira integration.",
       "image": "apex-logo.jpg",
       "website": "https://www.lumen.com"
   },
