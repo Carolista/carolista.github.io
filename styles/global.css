@@ -851,6 +851,7 @@ td {
 .content-secondary {
   display: relative;
   background-color: #fff;
+  max-height: 0px;
   overflow: hidden;
 }
 

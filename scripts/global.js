@@ -1,16 +1,22 @@
-window.addEventListener("load", () => init());
+window.addEventListener('load', () => init());
 
 function init() {
+  let page = location.href.split('\\').pop().split('/').pop();
+  let titleEnd = ' Caroline Jones | Front End Developer';
 
-	let page = location.href.split("\\").pop().split("/").pop();
-	let titleEnd = " Caroline Jones | Front End Developer";
-	
-	document.title += titleEnd;
+  document.title += titleEnd;
 
-  let pageNames = ["Projects", "Experience", "Education", "Skills", "Recommendations", "Contact"];
-  let pages = ""
+  let pageNames = [
+    'Projects',
+    'Experience',
+    'Education',
+    'Skills',
+    'Recommendations',
+    'Contact',
+  ];
+  let pages = '';
   pageNames.forEach(pageName => {
-    if (page !== "" && page !== "index.html") {
+    if (page !== '' && page !== 'index.html') {
       if (page === `${pageName.toLowerCase()}.html`) {
         pages += `<p class="current-page">${pageName}</p>`;
       } else {
@@ -37,7 +43,7 @@ function init() {
     `;
 
   // BACKDROP
-  const backdrop = document.querySelector("#backdrop-container");
+  const backdrop = document.querySelector('#backdrop-container');
   backdrop.innerHTML = `
     <div id="backdrop-right"></div>
     <div id="backdrop-center"></div>
@@ -45,42 +51,43 @@ function init() {
   `;
 
   // HEADER
-  const header = document.querySelector("header");
+  const header = document.querySelector('header');
   header.innerHTML = headerElements;
 
-  const navBox = document.getElementById("nav-box");
-  const navBkg = document.querySelector("#nav-bkg");
-  const navArrow = document.querySelector("#nav-arrow");
-  const navArrowIcon = document.querySelector("#nav-arrow-icon");
+  const navBox = document.getElementById('nav-box');
+  const navBkg = document.getElementById('nav-bkg');
+  const navArrow = document.getElementById('nav-arrow');
+  const navArrowIcon = document.getElementById('nav-arrow-icon');
 
-  navArrow.addEventListener("click", () => {
-    if (navBkg.style.display === "block") {
+  navArrow.addEventListener('click', () => {
+    if (navBkg.style.display === 'block') {
       navBkg.style.opacity = 0;
       navBox.style.transform = null;
-      navArrowIcon.style.transform = "rotate(360deg)";
+      navArrowIcon.style.transform = 'rotate(360deg)';
       setTimeout(() => {
-        navBkg.style.display = "none"
+        navBkg.style.display = 'none';
       }, 500);
     } else {
-      navBkg.style.display = "block";
-      navBox.style.transform = "translate(240px, 18px) scale(1.15)";
-      navArrowIcon.style.transform = "rotate(180deg)";
+      navBkg.style.display = 'block';
+      navBox.style.transform = 'translate(240px, 18px) scale(1.15)';
+      navArrowIcon.style.transform = 'rotate(180deg)';
       setTimeout(() => {
         navBkg.style.opacity = 0.8;
       }, 100);
     }
   });
-  navBkg.addEventListener("click", () => {
+
+  navBkg.addEventListener('click', () => {
     navBkg.style.opacity = 0;
     navBox.style.transform = null;
-    navArrowIcon.style.transform = "rotate(360deg)";
+    navArrowIcon.style.transform = 'rotate(360deg)';
     setTimeout(() => {
-      navBkg.style.display = "none"
+      navBkg.style.display = 'none';
     }, 500);
-  })
+  });
 
   // FOOTER
-  const footer = document.querySelector("footer");
+  const footer = document.querySelector('footer');
   footer.innerHTML = `
     <div>
       &copy; 2021&nbsp; Caroline R. Jones &nbsp;&bull;&nbsp; St. Louis, MO
@@ -122,34 +129,39 @@ function init() {
   `;
 
   setTimeout(() => {
-    document.querySelector("main").style.visibility = "visible";
+    document.querySelector('main').style.visibility = 'visible';
   }, 200);
 
-  document.addEventListener("click", (e) => {
-    if (e.target.classList.contains("content-click-bar") || e.target.classList.contains("content-subheader") || e.target.classList.contains("content-arrow")) {
-      let id = e.target.id.slice(0,e.target.id.indexOf("-"));
+  document.addEventListener('click', e => {
+    if (
+      e.target.classList.contains('content-click-bar') ||
+      e.target.classList.contains('content-subheader') ||
+      e.target.classList.contains('content-arrow')
+    ) {
+      let id = e.target.id.slice(0, e.target.id.indexOf('-'));
       let arrowIcon = document.getElementById(`${id}-arrow-icon`);
-      if (arrowIcon.style.transform === "translateY(0px) rotate(180deg)") {
-        arrowIcon.style.transform = "translateY(0px) rotate(0deg)";
-        arrowIcon.classList.remove("nudge-up");
+      if (arrowIcon.style.transform === 'translateY(0px) rotate(180deg)') {
+        arrowIcon.style.transform = 'translateY(0px) rotate(0deg)';
+        arrowIcon.classList.remove('nudge-up');
         setTimeout(() => {
-          arrowIcon.classList.add("nudge-down");
+          arrowIcon.classList.add('nudge-down');
         }, 1100);
       } else {
-        arrowIcon.style.transform = "translateY(0px) rotate(180deg)"; 
-        arrowIcon.classList.remove("nudge-down");
+        arrowIcon.style.transform = 'translateY(0px) rotate(180deg)';
+        arrowIcon.classList.remove('nudge-down');
         setTimeout(() => {
-          arrowIcon.classList.add("nudge-up");
+          arrowIcon.classList.add('nudge-up');
         }, 1100);
       }
       let secondary = document.getElementById(`${id}-secondary`);
-      let transition = secondary.scrollHeight / 300;
+      let transition = Math.round(10 * secondary.scrollHeight / 300) / 10;
       arrowIcon.style.transition = `transform ${transition + 's'}`;
       secondary.style.transition = `max-height ${transition + 's'}`;
-      secondary.style.maxHeight ? secondary.style.maxHeight = null : secondary.style.maxHeight = secondary.scrollHeight + 'px';
+      parseInt(secondary.style.maxHeight) > 0
+        ? (secondary.style.maxHeight = "0px")
+        : (secondary.style.maxHeight = secondary.scrollHeight + 'px');
     }
   });
-
 }
 
 function isTouchDevice() {
