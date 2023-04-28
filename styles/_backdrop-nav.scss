@@ -71,21 +71,21 @@
 #nav-box {
   position: fixed;
   top: 120px;
-  left: -180px;
+  left: -220px;
   display: flex;
   flex-direction: row;
   color: $primary-color;
   font-family: $title-font;
   text-transform: uppercase;
   width: 260px;
-  max-height: 40px;
+  // max-height: 40px;
   overflow: hidden;
   z-index: 15;
   transition: transform $short-transition, max-height $short-transition;
-  &:hover {
-    transform: translate(200px, 18px) scale(1.15);
-    max-height: 250px;
-  }
+  // &:hover {
+  //   transform: translate(200px, 18px) scale(1.15);
+  //   max-height: 600px;
+  // }
 }
 
 #nav-bkg {
@@ -122,15 +122,15 @@
   width: 40px;
   height: 40px;
   margin: 0;
-  transform: translate(-40px, 0);
+  // transform: translate(-40px, 0);
+  cursor: pointer;
 }
 
 #nav-arrow-icon {
-  transition: $short-transition;
+  transform: rotate(0deg);
+  transition: transform $short-transition;
 }
-#nav-box:hover #nav-arrow-icon {
-  transform: rotate(180deg);
-}
+
 
 .current-page {
   color: $dark-accent-color;

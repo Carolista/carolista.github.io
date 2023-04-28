@@ -41,14 +41,15 @@ window.addEventListener("load", () => {
                 ${data.type} &nbsp;&bull;&nbsp; ${data.location} &nbsp;&bull;&nbsp; ${data.period}</p>
               </div>                     
             </div>
-          </div>
-          <div id="${data.id}-animated-box" class="content-animated-box">
+            </div>
+            <div id="${data.id}-animated-box" class="content-animated-box">
             <div id="${data.id}-secondary" class="content-secondary">
+              <div id="${data.id}-title" class="content-title">${data.title}</div>
               <div id="${data.id}-desc" class="content-description">${data.desc}</div>
             </div>
             <div id="${data.id}-click-bar" class="content-click-bar">
               <i id="${data.id}-arrow-icon" class="content-arrow nudge-down fas fa-chevron-circle-down"></i>
-              <p  id="${data.id}-subheader" class="content-subheader">${data.title}</p>
+              <p id="${data.id}-subheader" class="content-subheader">See Details</p>
             </div>
             
           </div>

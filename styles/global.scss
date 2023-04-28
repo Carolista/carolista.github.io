@@ -277,8 +277,26 @@ td {
   overflow: hidden;
 }
 
+.content-title, .content-subtitle {
+  color: $dark-accent-color;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
 .content-description {
-  margin: 15px 15px 15px 25px;
+  padding: 15px;
+}
+
+.content-title {
+  padding: 0 15px;
+}
+
+.content-subtitle {
+  line-height: 28px;
+}
+
+p.rec {
+  margin: 0;
 }
 
 .content-header {
