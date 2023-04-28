@@ -143,22 +143,6 @@ function init() {
       secondary.style.maxHeight ? secondary.style.maxHeight = null : secondary.style.maxHeight = secondary.scrollHeight + 'px';
     }
   });
-  // This will correct things if rapid clicking gets the class assignments out of sync - TODO is this still necessary?
-  // TODO: figure out why everything is wonky in Safari (possible other browsers?) on iPad
-  // TODO: Might need to have different logic based on touchscreens vs desktop
-  document.addEventListener("mouseover", (e) => {
-    if (e.target.classList.contains("content-click-bar") || e.target.classList.contains("content-subheader") || e.target.classList.contains("content-arrow")) {
-      let id = e.target.id.slice(0,e.target.id.indexOf("-"));
-      let arrowIcon = document.getElementById(`${id}-arrow-icon`);
-      if (arrowIcon.style.transform === "translateY(0px) rotate(180deg)") {
-        arrowIcon.classList.remove("nudge-down");
-        arrowIcon.classList.add("nudge-up");
-      } else {
-        arrowIcon.classList.remove("nudge-up");
-        arrowIcon.classList.add("nudge-down");
-      }
-    }
-  });
 
 }
 
