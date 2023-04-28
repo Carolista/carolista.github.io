@@ -25,7 +25,8 @@ window.addEventListener("load", () => {
         <div class="content-item">
           <div class="content-block">
             <div class="content-primary">
-              <p class="content-header">${data.author}</p>
+              <p class="rec"><span class="content-header">${data.author}</span><br />
+              <span id="${data.id}-title" class="content-subtitle">${data.title}</span></p>
             </div>
           </div>
           <div id="${data.id}-animated-box" class="content-animated-box">
@@ -34,7 +35,7 @@ window.addEventListener("load", () => {
             </div>
             <div id="${data.id}-click-bar" class="content-click-bar">
               <i id="${data.id}-arrow-icon" class="content-arrow nudge-down fas fa-chevron-circle-down"></i>
-              <p  id="${data.id}-subheader" class="content-subheader">${data.title}</p>
+              <p id="${data.id}-subheader" class="content-subheader">Read Recommendation</p>
             </div>
           </div>
         </div>

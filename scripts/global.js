@@ -138,6 +138,8 @@ function init() {
       e.target.classList.contains('content-subheader') ||
       e.target.classList.contains('content-arrow')
     ) {
+      let width = window.innerWidth || document.documentElement.clientWidth || 
+document.body.clientWidth;
       let id = e.target.id.slice(0, e.target.id.indexOf('-'));
       let arrowIcon = document.getElementById(`${id}-arrow-icon`);
       if (arrowIcon.style.transform === 'translateY(0px) rotate(180deg)') {
