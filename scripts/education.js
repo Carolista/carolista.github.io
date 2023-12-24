@@ -38,7 +38,7 @@ window.addEventListener("load", () => {
         subject: obj.subject
       };
     });
-    courseCategories.sort();
+    courseCategories.sort().reverse();
 		buildCourseInfo();
 	}
 
