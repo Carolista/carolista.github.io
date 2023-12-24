@@ -62,6 +62,7 @@ function init() {
   const openNavMenu = () => {
     navBkg.style.display = 'block';
     navBox.style.transform = 'translate(240px, 18px) scale(1.15)';
+    navArrow.style.transform = 'translateX(-1px)';
     navArrowIcon.style.transform = 'rotate(180deg)';
     setTimeout(() => {
       navBkg.style.opacity = 0.8;
