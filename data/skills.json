@@ -3,504 +3,588 @@
         "id": 0,
         "skillName": "Angular",
         "category": "Frameworks",
-        "type": "Tech"
+        "type": "Tech",
+        "shouldHighlight": true
     },
     {
         "id": 1,
         "skillName": "Bootstrap 4",
         "category": "Frameworks",
-        "type": "Tech"
+        "type": "Tech",
+        "shouldHighlight": true
     },
     {
         "id": 2,
         "skillName": "Mule 4",
         "category": "Frameworks",
-        "type": "Tech"
+        "type": "Tech",
+        "shouldHighlight": false
     },
     {
         "id": 3,
         "skillName": "Spring Boot",
         "category": "Frameworks",
-        "type": "Tech"
+        "type": "Tech",
+        "shouldHighlight": false
     },
     {
         "id": 4,
         "skillName": "MySQL",
         "category": "Databases",
-        "type": "Tech"
+        "type": "Tech",
+        "shouldHighlight": false
     },
     {
         "id": 5,
         "skillName": "MS SQL Server",
         "category": "Databases",
-        "type": "Tech"
+        "type": "Tech",
+        "shouldHighlight": false
     },
     {
         "id": 6,
         "skillName": "JavaScript",
         "category": "Languages",
-        "type": "Tech"
+        "type": "Tech",
+        "shouldHighlight": true
     },
     {
         "id": 7,
         "skillName": "TypeScript",
         "category": "Languages",
-        "type": "Tech"
+        "type": "Tech",
+        "shouldHighlight": true
     },
     {
         "id": 8,
-        "skillName": "HTML5",
+        "skillName": "HTML 5",
         "category": "Languages",
-        "type": "Tech"
+        "type": "Tech",
+        "shouldHighlight": true
     },
     {
         "id": 9,
-        "skillName": "CSS3",
+        "skillName": "CSS 3",
         "category": "Languages",
-        "type": "Tech"
+        "type": "Tech",
+        "shouldHighlight": true
     },
     {
         "id": 10,
         "skillName": "SCSS",
         "category": "Languages",
-        "type": "Tech"
+        "type": "Tech",
+        "shouldHighlight": true
     },
     {
         "id": 11,
         "skillName": "Python",
         "category": "Languages",
-        "type": "Tech"
+        "type": "Tech",
+        "shouldHighlight": false
     },
     {
         "id": 12,
         "skillName": "Java",
         "category": "Languages",
-        "type": "Tech"
+        "type": "Tech",
+        "shouldHighlight": false
     },
     {
         "id": 13,
         "skillName": "DataWeave 2.0",
         "category": "Languages",
-        "type": "Tech"
+        "type": "Tech",
+        "shouldHighlight": false
     },
     {
         "id": 14,
         "skillName": "RAML",
         "category": "Languages",
-        "type": "Tech"
+        "type": "Tech",
+        "shouldHighlight": false
     },
     {
         "id": 15,
         "skillName": "XML",
         "category": "Languages",
-        "type": "Tech"
+        "type": "Tech",
+        "shouldHighlight": false
     },
     {
         "id": 16,
         "skillName": "Git",
         "category": "Tools",
-        "type": "Tech"
+        "type": "Tech",
+        "shouldHighlight": true
     },
     {
         "id": 17,
         "skillName": "GitHub",
         "category": "Tools",
-        "type": "Tech"
+        "type": "Tech",
+        "shouldHighlight": false
     },
     {
         "id": 18,
         "skillName": "Anypoint Studio",
         "category": "Tools",
-        "type": "Tech"
+        "type": "Tech",
+        "shouldHighlight": false
     },
     {
         "id": 19,
         "skillName": "Visual Studio Code",
         "category": "Tools",
-        "type": "Tech"
+        "type": "Tech",
+        "shouldHighlight": false
     },
     {
         "id": 20,
         "skillName": "IntelliJ IDEA",
         "category": "Tools",
-        "type": "Tech"
+        "type": "Tech",
+        "shouldHighlight": false
     },
     {
         "id": 21,
         "skillName": "Node.js",
         "category": "Tools",
-        "type": "Tech"
+        "type": "Tech",
+        "shouldHighlight": false
     },
     {
         "id": 22,
         "skillName": "NPM",
         "category": "Tools",
-        "type": "Tech"
+        "type": "Tech",
+        "shouldHighlight": false
     },
     {
         "id": 23,
         "skillName": "Gradle",
         "category": "Tools",
-        "type": "Tech"
+        "type": "Tech",
+        "shouldHighlight": false
     },
     {
         "id": 25,
         "skillName": "Thymeleaf",
         "category": "Tools",
-        "type": "Tech"
-    },
-    {
-        "id": 26,
-        "skillName": "Jasmine",
-        "category": "Tools",
-        "type": "Tech"
+        "type": "Tech",
+        "shouldHighlight": false
     },
     {
         "id": 27,
         "skillName": "JUnit",
         "category": "Tools",
-        "type": "Tech"
+        "type": "Tech",
+        "shouldHighlight": false
     },
     {
         "id": 28,
         "skillName": "Hibernate",
         "category": "Tools",
-        "type": "Tech"
+        "type": "Tech",
+        "shouldHighlight": false
     },
     {
         "id": 29,
         "skillName": "Microsoft Office Pro",
         "category": "Tools",
-        "type": "General"
+        "type": "General",
+        "shouldHighlight": false
     },
     {
         "id": 30,
         "skillName": "Adobe InDesign",
         "category": "Tools",
-        "type": "General"
+        "type": "General",
+        "shouldHighlight": false
     },
     {
         "id": 31,
         "skillName": "Adobe Acrobat Pro",
         "category": "Tools",
-        "type": "General"
+        "type": "General",
+        "shouldHighlight": false
     },
     {
         "id": 32,
         "skillName": "Adobe Illustrator",
         "category": "Tools",
-        "type": "General"
+        "type": "General",
+        "shouldHighlight": false
     },
     {
         "id": 33,
         "skillName": "Adobe Photoshop",
         "category": "Tools",
-        "type": "General"
+        "type": "General",
+        "shouldHighlight": false
     },
     {
         "id": 34,
         "skillName": "GIMP",
         "category": "Tools",
-        "type": "General"
+        "type": "General",
+        "shouldHighlight": false
     },
     {
         "id": 35,
         "skillName": "Problem Solving",
         "category": "Strengths",
-        "type": "General"
+        "type": "General",
+        "shouldHighlight": false
     },
     {
         "id": 36,
         "skillName": "Teaching",
         "category": "Strengths",
-        "type": "General"
+        "type": "General",
+        "shouldHighlight": false
     },
     {
         "id": 37,
         "skillName": "Visual Communication",
         "category": "Strengths",
-        "type": "General"
+        "type": "General",
+        "shouldHighlight": false
     },
     {
         "id": 38,
         "skillName": "Communication",
         "category": "Strengths",
-        "type": "General"
+        "type": "General",
+        "shouldHighlight": false
     },
     {
         "id": 39,
         "skillName": "Attention to Detail",
         "category": "Strengths",
-        "type": "General"
+        "type": "General",
+        "shouldHighlight": false
     },
     {
         "id": 40,
         "skillName": "Big Picture View",
         "category": "Strengths",
-        "type": "General"
+        "type": "General",
+        "shouldHighlight": false
     },
     {
         "id": 41,
         "skillName": "Team Leadership",
         "category": "Strengths",
-        "type": "General"
+        "type": "General",
+        "shouldHighlight": false
     },
     {
         "id": 42,
         "skillName": "Analytical Thinking",
         "category": "Strengths",
-        "type": "General"
+        "type": "General",
+        "shouldHighlight": false
     },
     {
         "id": 43,
         "skillName": "Versatility",
         "category": "Strengths",
-        "type": "General"
+        "type": "General",
+        "shouldHighlight": false
     },
     {
         "id": 44,
         "skillName": "Mentoring",
         "category": "Strengths",
-        "type": "General"
+        "type": "General",
+        "shouldHighlight": false
     },
     {
         "id": 45,
         "skillName": "Graphic Design",
         "category": "Knowledge",
-        "type": "General"
+        "type": "General",
+        "shouldHighlight": false
     },
     {
         "id": 46,
         "skillName": "Publication Design",
         "category": "Knowledge",
-        "type": "General"
+        "type": "General",
+        "shouldHighlight": false
     },
     {
         "id": 47,
         "skillName": "Technical Writing",
         "category": "Knowledge",
-        "type": "General"
+        "type": "General",
+        "shouldHighlight": false
     },
     {
         "id": 48,
         "skillName": "Grant Writing",
         "category": "Knowledge",
-        "type": "General"
+        "type": "General",
+        "shouldHighlight": false
     },
     {
         "id": 49,
         "skillName": "Copy Writing",
         "category": "Knowledge",
-        "type": "General"
+        "type": "General",
+        "shouldHighlight": false
     },
     {
         "id": 51,
         "skillName": "Budgets & Accounting",
         "category": "Knowledge",
-        "type": "General"
+        "type": "General",
+        "shouldHighlight": false
     },
     {
         "id": 52,
         "skillName": "Curriculum Development",
         "category": "Knowledge",
-        "type": "General"
+        "type": "General",
+        "shouldHighlight": false
     },
     {
         "id": 53,
         "skillName": "UI Design",
         "category": "Knowledge",
-        "type": "Tech"
+        "type": "Tech",
+        "shouldHighlight": false
     },
     {
         "id": 54,
         "skillName": "UX Design",
         "category": "Knowledge",
-        "type": "Tech"
+        "type": "Tech",
+        "shouldHighlight": false
     },
     {
         "id": 55,
         "skillName": "Agile Methodologies",
         "category": "Knowledge",
-        "type": "Tech"
+        "type": "Tech",
+        "shouldHighlight": false
     },
     {
         "id": 56,
         "skillName": "Data Collection & Analysis",
         "category": "Knowledge",
-        "type": "Tech"
+        "type": "Tech",
+        "shouldHighlight": false
     },
     {
         "id": 57,
         "skillName": "Writing User Stories",
         "category": "Knowledge",
-        "type": "Tech"
+        "type": "Tech",
+        "shouldHighlight": false
     },
     {
         "id": 58,
         "skillName": "Test-Driven Development",
         "category": "Knowledge",
-        "type": "Tech"
+        "type": "Tech",
+        "shouldHighlight": false
     },
     {
         "id": 59,
         "skillName": "Web Design",
         "category": "Knowledge",
-        "type": "Tech"
+        "type": "Tech",
+        "shouldHighlight": false
     },
     {
         "id": 60,
         "skillName": "Web Development",
         "category": "Knowledge",
-        "type": "Tech"
+        "type": "Tech",
+        "shouldHighlight": false
     },
     {
         "id": 61,
         "skillName": "Excellence",
         "category": "Values",
-        "type": "General"
+        "type": "General",
+        "shouldHighlight": false
     },
     {
         "id": 62,
         "skillName": "Servant Leadership",
         "category": "Values",
-        "type": "General"
+        "type": "General",
+        "shouldHighlight": false
     },
     {
         "id": 62,
         "skillName": "Optimism",
         "category": "Values",
-        "type": "General"
+        "type": "General",
+        "shouldHighlight": false
     },
     {
         "id": 63,
         "skillName": "Kindness",
         "category": "Values",
-        "type": "General"
+        "type": "General",
+        "shouldHighlight": false
     },
     {
         "id": 64,
         "skillName": "Integrity",
         "category": "Values",
-        "type": "General"
+        "type": "General",
+        "shouldHighlight": false
     },
     {
         "id": 65,
         "skillName": "Dependability",
         "category": "Values",
-        "type": "General"
+        "type": "General",
+        "shouldHighlight": false
     },
     {
         "id": 66,
         "skillName": "Passion for Learning",
         "category": "Values",
-        "type": "General"
+        "type": "General",
+        "shouldHighlight": false
     },
     {
         "id": 67,
         "skillName": "Confidence",
         "category": "Values",
-        "type": "General"
+        "type": "General",
+        "shouldHighlight": false
     },
     {
         "id": 68,
         "skillName": "Collaboration",
         "category": "Values",
-        "type": "General"
+        "type": "General",
+        "shouldHighlight": false
     },
     {
         "id": 69,
         "skillName": "React",
         "category": "Frameworks",
-        "type": "Tech"
+        "type": "Tech",
+        "shouldHighlight": true
     },
     {
         "id": 70,
         "skillName": "Redux",
         "category": "Frameworks",
-        "type": "Tech"
+        "type": "Tech",
+        "shouldHighlight": false
     },
     {
         "id": 71,
         "skillName": "Jest",
         "category": "Tools",
-        "type": "Tech"
+        "type": "Tech",
+        "shouldHighlight": true
     },
     {
         "id": 72,
         "skillName": "Enzyme",
         "category": "Tools",
-        "type": "Tech"
+        "type": "Tech",
+        "shouldHighlight": true
     },
     {
         "id": 73,
         "skillName": "Cucumber",
         "category": "Tools",
-        "type": "Tech"
+        "type": "Tech",
+        "shouldHighlight": true
     },
     {
         "id": 74,
         "skillName": "Puppeteer",
         "category": "Tools",
-        "type": "Tech"
+        "type": "Tech",
+        "shouldHighlight": true
     },
     {
         "id": 75,
         "skillName": "Ruby",
         "category": "Languages",
-        "type": "Tech"
+        "type": "Tech",
+        "shouldHighlight": false
     },
     {
         "id": 76,
         "skillName": "RSpec",
         "category": "Tools",
-        "type": "Tech"
+        "type": "Tech",
+        "shouldHighlight": false
     },
     {
         "id": 77,
         "skillName": "Groovy",
         "category": "Languages",
-        "type": "Tech"
+        "type": "Tech",
+        "shouldHighlight": false
     },
     {
         "id": 78,
         "skillName": "Jenkins",
         "category": "Tools",
-        "type": "Tech"
+        "type": "Tech",
+        "shouldHighlight": false
     },
     {
         "id": 79,
         "skillName": "Docker",
         "category": "Frameworks",
-        "type": "Tech"
+        "type": "Tech",
+        "shouldHighlight": false
     },
     {
         "id": 80,
         "skillName": "Kubernetes",
         "category": "Frameworks",
-        "type": "Tech"
+        "type": "Tech",
+        "shouldHighlight": false
     },
     {
         "id": 81,
         "skillName": "RegEx",
         "category": "Tools",
-        "type": "Tech"
+        "type": "Tech",
+        "shouldHighlight": false
     },
     {
         "id": 82,
         "skillName": "QuickBooks",
         "category": "Tools",
-        "type": "General"
+        "type": "General",
+        "shouldHighlight": false
     },
     {
         "id": 83,
-        "skillName": "Svelte/SvelteKit",
+        "skillName": "Svelte",
         "category": "Frameworks",
-        "type": "Tech"
+        "type": "Tech",
+        "shouldHighlight": true
     },
     {
         "id": 84,
+        "skillName": "SvelteKit",
+        "category": "Frameworks",
+        "type": "Tech",
+        "shouldHighlight": true
+    },
+    {
+        "id": 85,
         "skillName": "Playwright",
         "category": "Tools",
-        "type": "Tech"
+        "type": "Tech",
+        "shouldHighlight": true
     }
 ]
