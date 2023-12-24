@@ -59,32 +59,35 @@ function init() {
   const navArrow = document.getElementById('nav-arrow');
   const navArrowIcon = document.getElementById('nav-arrow-icon');
 
-  navArrow.addEventListener('click', () => {
-    if (navBkg.style.display === 'block') {
-      navBkg.style.opacity = 0;
-      navBox.style.transform = null;
-      navArrowIcon.style.transform = 'rotate(360deg)';
-      setTimeout(() => {
-        navBkg.style.display = 'none';
-      }, 500);
-    } else {
-      navBkg.style.display = 'block';
-      navBox.style.transform = 'translate(240px, 18px) scale(1.15)';
-      navArrowIcon.style.transform = 'rotate(180deg)';
-      setTimeout(() => {
-        navBkg.style.opacity = 0.8;
-      }, 100);
-    }
-  });
-
-  navBkg.addEventListener('click', () => {
+  const openNavMenu = () => {
+    navBkg.style.display = 'block';
+    navBox.style.transform = 'translate(240px, 18px) scale(1.15)';
+    navArrowIcon.style.transform = 'rotate(180deg)';
+    setTimeout(() => {
+      navBkg.style.opacity = 0.8;
+    }, 100);
+  }
+  const closeNavMenu = () => {
     navBkg.style.opacity = 0;
     navBox.style.transform = null;
     navArrowIcon.style.transform = 'rotate(360deg)';
     setTimeout(() => {
       navBkg.style.display = 'none';
     }, 500);
-  });
+  }
+
+  if (isTouchDevice()) {
+    navArrow.addEventListener('click', () => {
+      if (navBkg.style.display === 'block') closeNavMenu();
+      else openNavMenu();
+    });
+    navBkg.addEventListener('click', closeNavMenu);
+  } else {
+    navArrow.addEventListener('mouseover', openNavMenu);
+    document.addEventListener('click', () => {
+      if (navBkg.style.display === 'block') closeNavMenu();
+    });    
+  }
 
   // FOOTER
   const footer = document.querySelector('footer');
@@ -138,8 +141,6 @@ function init() {
       e.target.classList.contains('content-subheader') ||
       e.target.classList.contains('content-arrow')
     ) {
-      let width = window.innerWidth || document.documentElement.clientWidth || 
-document.body.clientWidth;
       let id = e.target.id.slice(0, e.target.id.indexOf('-'));
       let arrowIcon = document.getElementById(`${id}-arrow-icon`);
       if (arrowIcon.style.transform === 'translateY(0px) rotate(180deg)') {
