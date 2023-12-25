@@ -7,7 +7,6 @@ window.addEventListener('load', () => init());
 // TODO: Add animations to home page to make choices more obvious, maybe link to text as well
 // TODO: Make sure mobile version of home page has static images
 // TODO: Update project data once demo videos are up on YouTube and READMEs are updated
-// TODO: Add dynamic year to copyright bit
 
 function init() {
   let page = location.href.split('\\').pop().split('/').pop();
@@ -101,9 +100,10 @@ function init() {
 
   // FOOTER
   const footer = document.querySelector('footer');
+  let currYear = new Date().getFullYear();
   footer.innerHTML = `
     <div>
-      &copy; 2021&nbsp; Caroline R. Jones &nbsp;&bull;&nbsp; St. Louis, MO
+      &copy; ${currYear} &nbsp; Caroline R. Jones &nbsp;&bull;&nbsp; St. Louis, MO
     </div>
     <div id="footer-links">
       <a href="https://github.com/Carolista" target="_blank">
