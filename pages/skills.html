@@ -10,11 +10,11 @@
     </script>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width" />
-		<title>Recommendations -</title>
-		<link rel="stylesheet" type="text/css" href="styles/global.css" />
+		<title>Skills -</title>
+		<link rel="stylesheet" type="text/css" href="../styles/global.css" />
     <script src="https://kit.fontawesome.com/679a59d672.js" crossorigin="anonymous"></script>
-		<script src="scripts/global.js"></script>
-		<script src="scripts/recommendations.js"></script>
+		<script src="../scripts/global.js"></script>
+		<script src="../scripts/skills.js"></script>
 	</head>
 	<body>
 
@@ -22,20 +22,25 @@
     <div id="page-container">
       <div id="page-content">
         <header><!-- content from global.js --></header>
+
         <main>
-          <div id="page-title-box">Recommendations</div>
-          <div id="rec-area"><!--content from recommendations.js--></div>
-          <p class="more-info">
-            Additional recommendations are available on my
-            <a href="http://www.linkedin.com/in/carolinerjones" target="_blank"
-              >LinkedIn</a
-            >
-            profile.
-          </p>
+          <div id="page-title-box">Skills</div>
+          <div class="skills-container">
+            <div class="content-item">
+              <p class="skills-subheader">Tech Skills</p>
+              <!-- content from skills.js -->
+            </div>
+            <div id="tech-skills-area" class="content-item skills-group"></div>
+            <div class="content-item">
+              <p class="skills-subheader">General Skills</p>  
+              <!-- content from skills.js -->   
+            </div>
+            <div id="general-skills-area" class="content-item skills-group"></div>
+          </div>
         </main>
+
         <footer><!-- content from global.js --></footer>
       </div>
     </div>
-
 	</body>
 </html>

@@ -70,7 +70,7 @@ window.addEventListener("load", () => {
           <div class="content-block">
             <div class="content-primary">
               <div class="content-logo-container tooltip-container">
-                <a href="${data.website}" target="_blank"><img class="content-logo" src="images/${data.image}" width="60px" /></a>
+                <a href="${data.website}" target="_blank"><img class="content-logo" src="../images/${data.image}" width="60px" /></a>
                 <span class="tooltip-left">${website}</span>
               </div>
               <div class="content-primary-text">

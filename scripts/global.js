@@ -7,6 +7,8 @@ window.addEventListener('load', () => init());
 // TODO: Add animations to home page to make choices more obvious, maybe link to text as well
 // TODO: Make sure mobile version of home page has static images
 // TODO: Update project data once demo videos are up on YouTube and READMEs are updated
+// TODO: Investigate why GitHub logo is smaller than others
+// TODO: Redo About page (home) to speak more to personal values and have some animations 
 
 function init() {
   let page = location.href.split('\\').pop().split('/').pop();
@@ -34,7 +36,7 @@ function init() {
   });
 
   headerElements = `
-      <a href="home.html">
+      <a href="/pages/home.html">
         <div id="name-box">
           <span class="text-light">Caroline&nbsp;</span><span class="text-heavy">Jones</span>
         </div>

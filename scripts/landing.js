@@ -11,13 +11,13 @@ window.addEventListener('load', () => {
 
   if (isTouchDevice()) {
     cjLogoContainer.innerHTML += `
-      <a href="/home.html">
-        <img id="cj-logo" src="/images/CJ-open.png" />
+      <a href="/pages/home.html">
+        <img id="cj-logo" src="../images/CJ-open.png" />
       </a>
     `;
   } else {
     cjLogoContainer.innerHTML += `
-      <a href="/home.html">
+      <a href="/pages/home.html">
         <div id="hover-anchor">
           <div class="text-container">
             <div id="cee" class="text">

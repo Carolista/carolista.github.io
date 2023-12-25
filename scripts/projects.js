@@ -38,13 +38,13 @@ window.addEventListener("load", () => {
         projectArea.innerHTML += `
           <div class="gallery-item">
             <div class="project-content">
-              <img class="project-image" src="images/${data.images[0]}">
-              <a href="project-details.html?id=${data.id}">
+              <img class="project-image" src="../images/${data.images[0]}">
+              <a href="/pages/project-details.html?id=${data.id}">
                 <p class="project-name">${data.title}</p>
               </a>
               <p class="project-tagline">${data.subtitle}</p>
             </div>
-            <a class="project-switch-page-link" href="project-details.html?id=${data.id}">
+            <a class="project-switch-page-link" href="/pages/project-details.html?id=${data.id}">
               <div class="project-switch-page-bar project-link-align-right">
                 <div class="bounce-left">
                   View Details
@@ -108,7 +108,7 @@ window.addEventListener("load", () => {
     currentProject.images.forEach((image, index) => {
       // TODO: create slideshow version of modal
       images += `
-        <img id="image-${index}" class="project-details-image" src="images/${image}" />
+        <img id="image-${index}" class="project-details-image" src="../images/${image}" />
       `;
     });
     detailArea.innerHTML = `
@@ -124,7 +124,7 @@ window.addEventListener("load", () => {
           <h4 class="project-section">Displays well on ${currentProject.devices}</h4>
           <p class="project-links">${links}</p>
         </div>
-        <a class="project-switch-page-link" href='projects.html'>
+        <a class="project-switch-page-link" href="/pages/projects.html">
           <div class="project-switch-page-bar">
             <div class="bounce-right">
               <i class="project-switch-page-arrow fas fa-chevron-circle-left"></i>

@@ -35,7 +35,7 @@ window.addEventListener('load', () => {
           <div class="content-block"> 
             <div class="content-primary"> 
               <div class="exp-logo-container tooltip-container">
-                <a href="${website}" target="_blank"><img class="content-logo" src="images/${image}" width="80px" /></a> 
+                <a href="${website}" target="_blank"><img class="content-logo" src="../images/${image}" width="80px" /></a> 
                 <span class="tooltip-left">${shortWebsite}</span>
               </div> 
               <div class="content-primary-text">
