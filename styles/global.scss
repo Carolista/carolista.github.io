@@ -195,7 +195,7 @@ td {
   flex-direction: column;
   justify-content: center;
   min-height: 50px;
-  margin-left: 15px;
+  margin: 4px 0 0 15px;
 }
 
 .content-animated-box {
@@ -284,11 +284,11 @@ td {
 }
 
 .content-description {
-  padding: 15px;
+  padding: 0px 15px 15px;
 }
 
 .content-title {
-  padding: 0 15px;
+  padding: 4px 0;
 }
 
 .content-subtitle {
@@ -320,8 +320,12 @@ p.rec {
 }
 
 .content-logo {
-	width: 60px;
+	width: 100%;
   height: auto;
+}
+
+.exp-logo-container {
+  width: 80px;
 }
 
 .tooltip-container {

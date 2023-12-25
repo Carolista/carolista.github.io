@@ -1,5 +1,14 @@
 window.addEventListener('load', () => init());
 
+// TODO: Tweak responsive font sizes - use max(a, b) like on gift swap randomizer
+// TODO: Fix issue where changes to green subheading text has no left margin/padding on Education page now
+// TODO: Test nav animation logic on iPhone and iPad
+// TODO: Update descriptions on contact page
+// TODO: Add animations to home page to make choices more obvious, maybe link to text as well
+// TODO: Make sure mobile version of home page has static images
+// TODO: Update project data once demo videos are up on YouTube and READMEs are updated
+// TODO: Add dynamic year to copyright bit
+
 function init() {
   let page = location.href.split('\\').pop().split('/').pop();
   let titleEnd = ' Caroline Jones | Front End Developer';
