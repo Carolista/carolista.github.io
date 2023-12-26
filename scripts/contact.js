@@ -26,7 +26,7 @@ window.addEventListener("load", () => {
           <div class="content-block">
             <div class="content-primary">
               <div class="content-logo-container">
-                <img class="content-logo" src="../images/${data.image}" width="60px" />
+                <img class="content-logo" src="../images/${data.image}" width="80px" />
               </div>
               <div class="content-primary-text">
                 <p><span class="content-header">${data.name}</span></br>

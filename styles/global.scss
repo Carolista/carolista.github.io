@@ -7,7 +7,7 @@
 @import "skills.scss";
 
 /*
-  Z-INDEX HEIRARCHY   
+  Z-INDEX HIERARCHY   
   30    tooltip
   20    modal
   15    nav menu
@@ -314,6 +314,7 @@ p.rec {
   cursor: pointer;
 }
 
+// TODO: standardize logo sizes with responsivity
 .content-logo-container {
   width: 60px;
   height: auto;
@@ -324,7 +325,7 @@ p.rec {
   height: auto;
 }
 
-.exp-logo-container {
+.exp-logo-container { // TODO: make obsolete?
   width: 80px;
 }
 
