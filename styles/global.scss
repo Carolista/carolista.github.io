@@ -1,10 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100;300;400;500;600&family=Quicksand:wght@300;400;500;600;700&display=swap");
-@import "variables.scss";
-@import "backdrop-nav.scss";
-@import "education.scss";
-@import "home.scss";
-@import "projects.scss";
-@import "skills.scss";
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100;300;400;500;600&family=Quicksand:wght@300;400;500;600;700&family=Sarina&display=swap');
+@import 'variables.scss';
+@import 'backdrop-nav.scss';
+@import 'education.scss';
+@import 'home.scss';
+@import 'projects.scss';
+@import 'skills.scss';
 
 /*
   Z-INDEX HIERARCHY   
@@ -19,7 +19,7 @@
 
 * {
   margin: 0;
-	padding: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
@@ -28,15 +28,15 @@ html {
 }
 
 body {
-	display: flex;
-	flex-direction: column;
-	background-color: $dark-shadow-color;
-	color: $primary-color;
-	font-family: $primary-font;
-	font-size: 11pt;
-	font-weight: 400;
-	min-height: 100vh;
-	overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  background-color: $dark-shadow-color;
+  color: $primary-color;
+  font-family: $primary-font;
+  font-size: 11pt;
+  font-weight: 400;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
 #page-container {
@@ -61,7 +61,7 @@ body {
   font-family: $title-font;
   font-weight: 300;
   text-transform: uppercase;
-	font-size: 2rem;
+  font-size: 2rem;
   min-height: 50px;
   padding: 0px 18px;
   z-index: 5;
@@ -71,14 +71,14 @@ main {
   position: relative;
   top: 0px;
   right: 0px;
-	display: flex;
-	flex-direction: column;
-	width: calc(100vw - 340px);
+  display: flex;
+  flex-direction: column;
+  width: calc(100vw - 340px);
   min-width: 600px;
   max-width: 1000px;
   margin: 0px 0px 40px auto;
-	padding: 120px 50px 0px 0px;
-	visibility: hidden;
+  padding: 120px 50px 0px 0px;
+  visibility: hidden;
 }
 
 footer {
@@ -117,15 +117,17 @@ footer {
 }
 
 p {
-	font-size: 0.95rem;
-	margin: 0px 15px 10px 0px;
+  font-size: 0.95rem;
+  margin: 0px 15px 10px 0px;
 }
 
 a {
-	color: $medium-accent-color;
+  color: $medium-accent-color;
   font-weight: 600;
   text-decoration: none;
-  &:hover, &:focus, &:active {
+  &:hover,
+  &:focus,
+  &:active {
     color: $light-accent-color;
   }
   &:visited {
@@ -134,20 +136,20 @@ a {
 }
 
 ul {
-	margin-left: 35px;
+  margin-left: 35px;
 }
 
 td {
-	vertical-align: top;
-	padding: 5px 5px 5px 0px;
+  vertical-align: top;
+  padding: 5px 5px 5px 0px;
 }
 
 .more-info {
   position: relative;
   display: block;
   color: $contrast-color;
-	font-size: 1.1em;
-	font-style: italic;
+  font-size: 1.1em;
+  font-style: italic;
   margin-bottom: 30px;
 }
 
@@ -160,22 +162,22 @@ td {
 }
 
 .content-item {
-	display: inline-block;
-	vertical-align: top;
-	margin: 0px 0px 30px;
-	width: 100%;
+  display: inline-block;
+  vertical-align: top;
+  margin: 0px 0px 30px;
+  width: 100%;
   filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.3));
-	transition: filter $shortest-transition ease-in-out;
+  transition: filter $shortest-transition ease-in-out;
   &:hover {
     filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, 0.5));
   }
 }
 
 .content-block {
-	display: flex;
-	flex-direction: column;
-	background-color: $contrast-color;
-	margin: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: $contrast-color;
+  margin: 0;
 }
 
 .content-primary {
@@ -210,7 +212,13 @@ td {
   display: flex;
   flex-direction: row;
   align-items: center;
-  background-image: linear-gradient(to bottom, #193a03 0, #376618 3%, $dark-accent-color 18%, $dark-accent-color 100%);
+  background-image: linear-gradient(
+    to bottom,
+    #193a03 0,
+    #376618 3%,
+    $dark-accent-color 18%,
+    $dark-accent-color 100%
+  );
   color: $contrast-color;
   height: 40px;
   width: 100%;
@@ -218,7 +226,14 @@ td {
   padding-left: 15px;
   cursor: pointer;
   &:hover {
-    background-image: linear-gradient(to bottom, #143003 0, #193a03 3%, #376618 10%, $dark-accent-color 30%, $dark-accent-color 100%);
+    background-image: linear-gradient(
+      to bottom,
+      #143003 0,
+      #193a03 3%,
+      #376618 10%,
+      $dark-accent-color 30%,
+      $dark-accent-color 100%
+    );
   }
 }
 
@@ -277,7 +292,8 @@ td {
   overflow: hidden;
 }
 
-.content-title, .content-subtitle {
+.content-title,
+.content-subtitle {
   color: $dark-accent-color;
   font-weight: 600;
   font-size: 1.1rem;
@@ -301,16 +317,16 @@ p.rec {
 
 .content-header {
   font-family: Lexend Deca;
-	font-weight: 500;
-	font-size: 1.2rem;
-  margin: 0;
+  font-weight: 500;
+  font-size: 1.2rem;
+  margin: 0 0 4px;
 }
 
 .content-subheader {
-	color: $contrast-color;
-	font-weight: 400;
-	font-size: 1rem;
-	margin-top: 10px;
+  color: $contrast-color;
+  font-weight: 400;
+  font-size: 1rem;
+  margin-top: 10px;
   cursor: pointer;
 }
 
@@ -321,11 +337,12 @@ p.rec {
 }
 
 .content-logo {
-	width: 100%;
+  width: 100%;
   height: auto;
 }
 
-.exp-logo-container { // TODO: make obsolete?
+.exp-logo-container {
+  // TODO: make obsolete?
   width: 80px;
 }
 
@@ -352,7 +369,7 @@ p.rec {
   opacity: 0;
   box-shadow: 2px 2px 6px rgba(29, 29, 29, 0.4);
   z-index: 30;
-  transition: all .2s ease-in-out;
+  transition: all 0.2s ease-in-out;
   transform: scale(0);
 }
 
@@ -361,7 +378,9 @@ p.rec {
   width: 160px;
 }
 
-.tooltip:before, .tooltip:after { // down arrow
+.tooltip:before,
+.tooltip:after {
+  // down arrow
   content: '';
   position: absolute;
   bottom: -10px;
@@ -371,8 +390,9 @@ p.rec {
   border-top: 10px solid $dark-accent-color;
 }
 
-.tooltip-container:hover .tooltip, a:hover .tooltip {
-  opacity: 1.0;
+.tooltip-container:hover .tooltip,
+a:hover .tooltip {
+  opacity: 1;
   transform: scale(1) translateY(-10px);
 }
 
@@ -392,11 +412,13 @@ p.rec {
   opacity: 0;
   box-shadow: 2px 2px 6px rgba(29, 29, 29, 0.4);
   z-index: 30;
-  transition: all .2s ease-in-out;
+  transition: all 0.2s ease-in-out;
   transform: scale(0);
 }
 
-.tooltip-left:before, .tooltip-left:after { // right arrow
+.tooltip-left:before,
+.tooltip-left:after {
+  // right arrow
   content: '';
   position: absolute;
   bottom: 10px;
@@ -406,8 +428,9 @@ p.rec {
   border-left: 10px solid $dark-accent-color;
 }
 
-.tooltip-container:hover .tooltip-left, a:hover .tooltip-left {
-  opacity: 1.0;
+.tooltip-container:hover .tooltip-left,
+a:hover .tooltip-left {
+  opacity: 1;
   transform: scale(1) translateX(-60px);
 }
 

@@ -11,42 +11,6 @@
 	border: 5px solid $dark-shadow-color;
 }
 
-td.year {
-	font-size: 1.1em;
-	font-weight: 600;
-	width: 50px;
-}
-
-.gradient-text {
-  background-image: linear-gradient(rgba(51, 51, 51, 1), rgba(51, 51, 51, 0));
-	background-size: 100%;
-	background-clip: text;
-	-webkit-background-clip: text;
-	-moz-background-clip: text;
-	color: transparent;
-	text-fill-color: transparent;
-	-webkit-text-fill-color: transparent;
-	-moz-text-fill-color: transparent;
-}
-
-.timeline-button-container {
-	display: flex;
-	justify-content: center;
-}
-
-#timeline-button {
-	background-color: $accent-color;
-	color: $contrast-color;
-	font-weight: 600;
-	font-size: 0.9rem;
-	text-transform: uppercase;
-	width: auto;
-	margin: -90px 0px 90px;
-	padding: 10px 15px;
-	border-radius: 10px;
-	cursor: pointer;
-}
-
 @media screen and (max-width: 1100px) {
 	.history-pic {
 		width: 50%;
@@ -67,4 +31,39 @@ td.year {
 		max-width: 100%;
 	}
 
+}
+
+.sequential-group {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.sequential { 
+  transform: translateY(1600px);
+  opacity: 0;
+}
+
+.value {
+  font-family: "Sarina";
+  font-size: min(48px, 5vh); 
+  font-weight: 400;
+  text-align: right;
+  color: ghostwhite;
+}
+
+#all-home-content {
+  margin-top: 40px;
+}
+
+@keyframes fade-and-translate-in {
+  0% {
+  }
+  40% {
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
 }
