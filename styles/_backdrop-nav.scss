@@ -51,7 +51,6 @@
   left: 0px;
   display: flex;
   flex-direction: column;
-  // justify-content: ;
   align-items: flex-start;
   cursor: pointer;
   z-index: 15;
@@ -68,7 +67,6 @@
   font-family: $title-font;
   text-transform: uppercase;
 	font-size: 2rem;
-  // height: 50px;
   padding: 6px 18px 8px 14px;
 }
 
@@ -77,7 +75,6 @@
   font-weight: 400;
   font-family: $title-font;
   text-transform: uppercase;
-  letter-spacing: 2px;
 	font-size: 1.3rem;
   margin-top: 8px;
   padding: 4px 10px 6px 12px;
@@ -93,14 +90,9 @@
   font-family: $title-font;
   text-transform: uppercase;
   width: 260px;
-  // max-height: 40px;
   overflow: hidden;
   z-index: 15;
   transition: transform $short-transition, max-height $short-transition;
-  // &:hover {
-  //   transform: translate(200px, 18px) scale(1.15);
-  //   max-height: 600px;
-  // }
 }
 
 #nav-bkg {
@@ -179,5 +171,17 @@
   }
   &:visited, &:active {
     color: $primary-color;
+  }
+}
+
+@keyframes cycle-colors {
+  0% {
+    color: $medium-accent-color;
+  }
+  50% {
+    color: $dark-accent-color;
+  }
+  100% {
+    color: $medium-accent-color;
   }
 }

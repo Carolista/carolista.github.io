@@ -43,7 +43,24 @@ function init() {
             <span class="text-light">Caroline&nbsp;</span><span class="text-heavy">Jones</span>
           </div>
           <div id="fe">
-            FRONT END ENGINEER
+            <span id="f" class="fe-letter">F</span>
+            <span id="r1" class="fe-letter">R</span>
+            <span id="o" class="fe-letter">O</span>
+            <span id="n1" class="fe-letter">N</span>
+            <span id="t" class="fe-letter">T</span>
+            &nbsp;
+            <span id="e1" class="fe-letter">E</span>
+            <span id="n2" class="fe-letter">N</span>
+            <span id="d" class="fe-letter">D</span>
+            &nbsp;
+            <span id="e2" class="fe-letter">E</span>
+            <span id="n3" class="fe-letter">N</span>
+            <span id="g" class="fe-letter">G</span>
+            <span id="i" class="fe-letter">I</span>
+            <span id="n4" class="fe-letter">N</span>
+            <span id="e3" class="fe-letter">E</span>
+            <span id="e4" class="fe-letter">E</span>
+            <span id="r2" class="fe-letter">R</span>
           </div>
         </div>
       </a>
@@ -57,6 +74,14 @@ function init() {
         </div>
       </div>
     `;
+
+  setTimeout(() => {
+    let feLetters = document.getElementsByClassName('fe-letter');
+    [...feLetters].forEach(letter => {
+      let duration = Math.ceil(Math.random() * 4);
+      letter.style.animation = `cycle-colors ${duration}s infinite`;
+    });
+  }, 50);
 
   // BACKDROP
   const backdrop = document.querySelector('#backdrop-container');
