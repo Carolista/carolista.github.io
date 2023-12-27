@@ -39,7 +39,12 @@ function init() {
   headerElements = `
       <a href="/pages/home.html">
         <div id="name-box">
-          <span class="text-light">Caroline&nbsp;</span><span class="text-heavy">Jones</span>
+          <div id="cj">
+            <span class="text-light">Caroline&nbsp;</span><span class="text-heavy">Jones</span>
+          </div>
+          <div id="fe">
+            FRONT END ENGINEER
+          </div>
         </div>
       </a>
       <div id="nav-bkg"></div>
