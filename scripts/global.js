@@ -4,7 +4,7 @@ window.addEventListener('load', () => init());
 // TODO: Fix issue where changes to green subheading text has no left margin/padding on Education page now
 // TODO: Test nav animation logic on iPhone and iPad
 // TODO: Update descriptions on contact page
-// TODO: Add animations to home page to make choices more obvious, maybe link to text as well
+// TODO: Add animations to landing page to make choices more obvious, maybe link to text as well
 // TODO: Make sure mobile version of home page has static images
 // TODO: Update project data once demo videos are up on YouTube and READMEs are updated
 // TODO: Investigate why GitHub logo is smaller than others
@@ -106,7 +106,7 @@ function init() {
   let currYear = new Date().getFullYear();
   footer.innerHTML = `
     <div>
-      &copy; ${currYear} &nbsp; Caroline R. Jones &nbsp;&bull;&nbsp; St. Louis, MO
+      &copy; ${currYear} Caroline R. Jones &nbsp;&bull;&nbsp; St. Louis, MO
     </div>
     <div id="footer-links">
       <a href="https://github.com/Carolista" target="_blank">
