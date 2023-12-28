@@ -6,27 +6,21 @@
     "image": "linkedin-logo.png"
   },
   {
-    "id": 1,
-    "name": "Slack",
-    "blurb": "In addition to some LaunchCode CoderGirl and Liftoff spaces, I can be found in STL Tech and LaunchCode Community.",
-    "image": "slack-logo.png"
-  },
-  {
     "id": 2,
     "name": "GitHub",
-    "blurb": "My <span class='tooltip-container'><a href='https://github.com/Carolista' target='_blank'>GitHub profile</a><span class='tooltip'>See my work!</span></span> includes projects I completed as a student, side projects of my own, and many projects I have created for LaunchCode students for extra practice.",
+    "blurb": "My <span class='tooltip-container'><a href='https://github.com/Carolista' target='_blank'>GitHub profile</a><span class='tooltip'>See my work!</span></span> includes projects I completed as a student, side projects of my own, and many projects I have created to give LaunchCode students extra practice.",
     "image": "github-logo.png"
   },
   {
     "id": 3,
     "name": "HackerRank",
-    "blurb": "When I'm learning a new language or tool I run through practice problems on <span class='tooltip-container'><a href='https://www.hackerrank.com/Carolina49a' target='_blank'>HackerRank</a><span class='tooltip'>Check out my skills!</span></span> and have earned several badges and certifications.",
+    "blurb": "When I'm learning a new language or tool, I run through practice problems on <span class='tooltip-container'><a href='https://www.hackerrank.com/Carolina49a' target='_blank'>HackerRank</a><span class='tooltip'>Check out my skills!</span></span> and have earned several badges and certifications.",
     "image": "hackerrank-logo.png"
   },
   {
     "id": 4,
     "name": "YouTube",
-    "blurb": "Tutorials and lectures I've given for students at LaunchCode can be found on multiple playlists on my <span class='tooltip-container'><a href='https://www.youtube.com/@CodeWithCarrie' target='_blank'>YouTube channel</a><span class='tooltip'>Check out my videos!</span></span>.",
+    "blurb": "Lectures I've given for students at LaunchCode can be found on multiple playlists on my <span class='tooltip-container'><a href='https://www.youtube.com/@CodeWithCarrie' target='_blank'>YouTube channel</a><span class='tooltip'>Check out my videos!</span></span>. You'll also find topical tutorials, break timers, and more.",
     "image": "youtube-logo.png"
   }
 ]
