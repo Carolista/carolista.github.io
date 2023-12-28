@@ -55,16 +55,16 @@ body {
   top: 20px;
   right: 0px;
   display: flex;
-  justify-content: center;
   align-items: center;
+  text-align: right;
   background-color: $dark-accent-color;
   color: $contrast-color;
   font-family: $title-font;
   font-weight: 300;
   text-transform: uppercase;
   font-size: 2rem;
-  min-height: 50px;
-  padding: 0px 18px;
+  height: fit-content;
+  padding: 6px 18px;
   z-index: 5;
 }
 
@@ -386,6 +386,9 @@ a:hover .tooltip-left {
 }
 
 @media screen and (max-width: 850px) {
+  #page-title-box {
+    font-size: 1.5rem;
+  }
   main {
     top: 140px;
     right: -5%;
@@ -403,5 +406,17 @@ a:hover .tooltip-left {
   }
   .content-logo-container, .content-logo {
     width: 60px;
+  }
+  .skills-subheader {
+    font-size: 1.5rem;
+  }
+  .project-title {
+    font-size: 1.2rem;
+  }
+  .content-header, .project-links {
+    font-size: 1.1rem;
+  }
+  .content-title, .project-subtitle, .content-subtitle, .course-category {
+    font-size: 1rem;
   }
 }

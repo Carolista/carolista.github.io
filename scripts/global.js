@@ -6,6 +6,7 @@ window.addEventListener('load', () => init());
 // TODO: Make sure mobile version of home page has static images
 // TODO: Update project data once demo videos are up on YouTube and READMEs are updated
 // TODO: Revamp skills lists to minimize non-FE skills
+// TODO: Rewrite experience, maybe remove non-coding content
 
 function init() {
   let page = location.href.split('\\').pop().split('/').pop();
