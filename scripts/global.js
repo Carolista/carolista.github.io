@@ -5,7 +5,7 @@ window.addEventListener('load', () => init());
 // TODO: Test nav animation logic on iPhone and iPad
 // TODO: Make sure mobile version of home page has static images
 // TODO: Update project data once demo videos are up on YouTube and READMEs are updated
-
+// TODO: Revamp skills lists to minimize non-FE skills
 
 function init() {
   let page = location.href.split('\\').pop().split('/').pop();
@@ -74,7 +74,8 @@ function init() {
   setTimeout(() => {
     let feLetters = document.getElementsByClassName('fe-letter');
     [...feLetters].forEach(letter => {
-      let duration = Math.ceil(Math.random() * 4);
+      let duration = getRandomNum(6, 2);
+      console.log(duration);
       letter.style.animation = `cycle-colors ${duration}s infinite`;
     });
   }, 50);
@@ -212,4 +213,9 @@ function isTouchDevice() {
     navigator.maxTouchPoints > 0 ||
     navigator.msMaxTouchPoints > 0
   );
+}
+
+function getRandomNum(max, min = 0, isIndex = false) {
+  let randNum = (Math.random() * (max - min)) + min;
+  return isIndex ? Math.floor(randNum) : Math.ceil(randNum);
 }
