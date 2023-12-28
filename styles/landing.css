@@ -298,7 +298,14 @@ body {
   transform: translate(40px, -20) rotate(-62deg);
 }
 
-#divider {
+#divider, #upper, #lower {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 80vw;
+}
+
+#up-portfolio, #down-resources {
   display: flex;
   flex-direction: column;
   gap: 6px;
@@ -306,7 +313,26 @@ body {
   justify-content: center;
   font-size: 1.1rem;
   text-transform: uppercase;
-  max-width: 80vw;
+}
+
+#up-portfolio, #down-resources {
+  transition: 1.6s;
+}
+
+#upper:hover #up-portfolio {
+  transform: scale(1.3);
+}
+
+#upper:hover #up-caret {
+  animation: nudge-down 1s ease-in-out;
+}
+
+#lower:hover #down-resources {
+  transform: scale(1.3);
+}
+
+#lower:hover #down-caret {
+  animation: nudge-down 1s ease-in-out;
 }
 
 #single-line {
@@ -318,18 +344,22 @@ body {
   margin: 10px 0;
 }
 
-#cj-logo,
-#cwc-logo-container {
+#cj-logo {
   width: 410px;
+}
+
+#cwc-logo-container {
+  width: 360px;
 }
 
 #cwc-logo {
   width: 100%;
   filter: grayscale(1) contrast(2.5);
-  transition: filter 1.8s;
+  transition: 1.8s;
 }
 #cwc-logo:hover {
   filter: grayscale(0) contrast(1);
+  transform: scale(1.2);
 }
 
 @media screen and (max-width: 480px) {
