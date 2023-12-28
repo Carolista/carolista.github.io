@@ -34,12 +34,12 @@ window.addEventListener('load', () => {
         <div class="content-item">
           <div class="content-block"> 
             <div class="content-primary"> 
-              <div class="exp-logo-container tooltip-container">
+              <div class="content-logo-container tooltip-container">
                 <a href="${website}" target="_blank"><img class="content-logo" src="../images/${image}" width="80px" /></a> 
                 <span class="tooltip-left">${shortWebsite}</span>
               </div> 
               <div class="content-primary-text">
-                <div class="content-header">${employer}</span></div>
+                <div class="content-header">${employer}</div>
                 <div id="${id}-title" class="content-title">${title}</div>
                 <div>${type} &nbsp;&bull;&nbsp; ${location} &nbsp;&bull;&nbsp; ${period}</div>
               </div>                     

@@ -297,20 +297,14 @@ p.rec {
   cursor: pointer;
 }
 
-// TODO: standardize logo sizes with responsivity
 .content-logo-container {
-  width: 60px;
+  width: 80px;
   height: auto;
 }
 
 .content-logo {
-  width: 100%;
-  height: auto;
-}
-
-.exp-logo-container {
-  // TODO: make obsolete?
   width: 80px;
+  height: auto;
 }
 
 .tooltip-container {

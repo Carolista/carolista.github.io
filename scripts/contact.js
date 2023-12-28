@@ -13,6 +13,7 @@ window.addEventListener("load", () => {
         id: obj.id,
         name: obj.name,
         blurb: obj.blurb,
+        link: obj.link,
         image: obj.image
       };
     });
@@ -25,12 +26,15 @@ window.addEventListener("load", () => {
         <div class="content-item">
           <div class="content-block">
             <div class="content-primary">
-              <div class="content-logo-container">
-                <img class="content-logo" src="../images/${data.image}" width="80px" />
+              <div class="content-logo-container tooltip-container">
+              <a href="${data.link}" target="_blank"><img class="content-logo" src="../images/${data.image}" width="80px" /></a>
+                <span class="tooltip-left">${data.name}</span>
               </div>
               <div class="content-primary-text">
-                <p><span class="content-header">${data.name}</span></br>
-                  ${data.blurb}</p>
+                <div>
+                  <p><span class="content-header">${data.name}</span></br>
+                    ${data.blurb}</p>
+                </div>
               </div>
             </div>            
           </div>

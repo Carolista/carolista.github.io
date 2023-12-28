@@ -922,17 +922,13 @@ p.rec {
 }
 
 .content-logo-container {
-  width: 60px;
+  width: 80px;
   height: auto;
 }
 
 .content-logo {
-  width: 100%;
-  height: auto;
-}
-
-.exp-logo-container {
   width: 80px;
+  height: auto;
 }
 
 .tooltip-container {
