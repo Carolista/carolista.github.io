@@ -55,15 +55,3 @@
 #all-home-content {
   margin-top: 40px;
 }
-
-@keyframes fade-and-translate-in {
-  0% {
-  }
-  40% {
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0px);
-    opacity: 1;
-  }
-}

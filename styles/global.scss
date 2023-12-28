@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100;300;400;500;600&family=Quicksand:wght@300;400;500;600;700&family=Sarina&display=swap');
 @import 'variables.scss';
+@import 'animations.scss';
 @import 'backdrop-nav.scss';
 @import 'education.scss';
 @import 'home.scss';
@@ -77,7 +78,7 @@ main {
   min-width: 600px;
   max-width: 1000px;
   margin: 0px 0px 40px auto;
-  padding: 120px 50px 0px 0px;
+  padding: 160px 50px 0px 0px;
   visibility: hidden;
 }
 
@@ -107,6 +108,7 @@ footer {
     min-width: 90%;
     max-width: 90%;
     margin: 0px 0px 120px 5%;
+    padding-top: 120px;
   }
   footer {
     flex-direction: column;
@@ -248,41 +250,6 @@ td {
 }
 .content-click-bar:hover .content-arrow.nudge-up {
   animation: nudge-up $short-transition ease-in-out;
-}
-
-@keyframes nudge-down {
-  0% {
-    transform: translateY(0px) rotate(0deg);
-  }
-  35% {
-    transform: translateY(2px) rotate(0deg);
-  }
-  60% {
-    transform: translateY(0px) rotate(0deg);
-  }
-  75% {
-    transform: translateY(2px) rotate(0deg);
-  }
-  100% {
-    transform: translateY(0px) rotate(0deg);
-  }
-}
-@keyframes nudge-up {
-  0% {
-    transform: translateY(0px) rotate(180deg);
-  }
-  35% {
-    transform: translateY(-2px) rotate(180deg);
-  }
-  60% {
-    transform: translateY(0px) rotate(180deg);
-  }
-  75% {
-    transform: translateY(-2px) rotate(180deg);
-  }
-  100% {
-    transform: translateY(0px) rotate(180deg);
-  }
 }
 
 .content-secondary {

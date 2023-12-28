@@ -4,12 +4,13 @@ window.addEventListener('load', () => init());
 // TODO: Fix issue where changes to green subheading text has no left margin/padding on Education page now
 // TODO: Test nav animation logic on iPhone and iPad
 // TODO: Update descriptions on contact page
+
 // TODO: Add animations to landing page to make choices more obvious, maybe link to text as well
+
 // TODO: Make sure mobile version of home page has static images
 // TODO: Update project data once demo videos are up on YouTube and READMEs are updated
 // TODO: Investigate why GitHub logo is smaller than others
 // TODO: Redo About page (home) to speak more to personal values and have some animations 
-// TODO: Add "Front End Engineer" under name, maybe make subtle letter color changes
 
 function init() {
   let page = location.href.split('\\').pop().split('/').pop();
