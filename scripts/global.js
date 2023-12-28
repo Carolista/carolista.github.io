@@ -1,7 +1,6 @@
 window.addEventListener('load', () => init());
 
 // TODO: Tweak responsive font sizes - use max(a, b) like on gift swap randomizer
-// TODO: Investigate why GitHub logo is smaller than others
 // TODO: Redo About page (home) to speak more to personal values and focus on front end
 // TODO: Test nav animation logic on iPhone and iPad
 // TODO: Make sure mobile version of home page has static images
