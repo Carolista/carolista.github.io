@@ -3,8 +3,8 @@
     "id": 0,
     "institution": "Udemy",
     "gradDate": "2021",
-    "degree": "REPLACE ME",
-    "desc": "REPLACE ME",
+    "degree": null,
+    "desc": null,
     "image": "udemy-logo.png",
     "website": "https://www.udemy.com"
   },

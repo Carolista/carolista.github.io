@@ -305,6 +305,10 @@
   color: #333;
 }
 
+.ed-title {
+  margin-left: 15px;
+}
+
 .course-category {
   font-size: 1.1rem;
   font-weight: 700;

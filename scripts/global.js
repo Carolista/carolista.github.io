@@ -1,7 +1,6 @@
 window.addEventListener('load', () => init());
 
 // TODO: Tweak responsive font sizes - use max(a, b) like on gift swap randomizer
-// TODO: Fix issue where changes to green subheading text has no left margin/padding on Education page now
 // TODO: Test nav animation logic on iPhone and iPad
 // TODO: Update descriptions on contact page
 // TODO: Make sure mobile version of home page has static images
