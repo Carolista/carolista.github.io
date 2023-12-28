@@ -38,8 +38,8 @@ window.addEventListener("load", () => {
         projectArea.innerHTML += `
           <div class="gallery-item">
             <div class="project-content">
-              <img class="project-image" src="../images/${data.images[0]}">
               <a href="/pages/project-details.html?id=${data.id}">
+                <img class="project-image" src="../images/${data.images[0]}">
                 <p class="project-name">${data.title}</p>
               </a>
               <p class="project-tagline">${data.subtitle}</p>
